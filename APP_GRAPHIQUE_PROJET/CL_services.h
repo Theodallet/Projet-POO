@@ -54,7 +54,7 @@ namespace NS_Comp_Svc
 		System::Data::DataSet^ selectionner_Personel_Rue(System::String^, System::String^);
 		System::Data::DataSet^ selectionner_Personel_Ville(System::String^, System::String^);
 
-		void ajouter_Personel(System::String^, System::String^, System::String^, System::DateTime^, System::String^, System::String^, System::String^, System::String^, int, System::DateTime^, System::String^, int);
+		void ajouterr_Personel(System::String^, System::String^, System::String^, System::DateTime^, System::String^, System::String^, System::String^, System::String^, int, System::DateTime^, System::String^, int);
 		void supprimer_Personel(int);
 		void modifier_Personel(int, System::String^, System::String^, System::String^, System::DateTime^, System::String^, System::String^, System::String^, System::String^, int, System::DateTime^, System::String^, int);
 	};
