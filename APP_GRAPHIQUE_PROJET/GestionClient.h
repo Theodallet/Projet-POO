@@ -1,4 +1,5 @@
 #pragma once
+#include "CL_services.h"
 
 namespace APPGRAPHIQUEPROJET {
 
@@ -106,7 +107,7 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 	private: System::Windows::Forms::Label^ LABEL_CP_CLIENT;
 	private: System::Windows::Forms::Button^ BOUTON_MODIF_CLIENT;
 	private: System::Windows::Forms::TextBox^ TXT_BAT_CLIENT;
-private: System::Windows::Forms::Label^ LABEL_RUE_CLIENT;
+	private: System::Windows::Forms::Label^ LABEL_RUE_CLIENT;
 
 
 
@@ -117,13 +118,16 @@ private: System::Windows::Forms::Label^ LABEL_RUE_CLIENT;
 
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_ZONE_TEXTE;
 	private: System::Windows::Forms::DataGridView^ AFFICHAGE_CLIENT;
-private: System::Windows::Forms::Button^ SKIP_CLIENT_GAUCHE;
+	private: System::Windows::Forms::Button^ SKIP_CLIENT_GAUCHE;
 
-private: System::Windows::Forms::Button^ SKIP_CLIENT_DROITE;
-private: System::Windows::Forms::Button^ BOUTON_CLEAR_CLIENT;
+	private: System::Windows::Forms::Button^ SKIP_CLIENT_DROITE;
+	private: System::Windows::Forms::Button^ BOUTON_CLEAR_CLIENT;
 
 
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_CLIENTS;
+
+	private: NS_Comp_Svc::CLservices_Client^ oSvc_Client;
+	private: System::Data::DataSet^ oDs;
 
 
 #pragma region Windows Form Designer generated code
@@ -679,7 +683,7 @@ private: System::Windows::Forms::Button^ BOUTON_CLEAR_CLIENT;
 
 		// Action à faire
 
-
+		this->oSvc
 		// Vide de la page
 
 		this->TXT_ID_CLIENT->Text = "";
