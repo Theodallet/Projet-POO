@@ -184,7 +184,7 @@ System::Data::DataSet^ NS_Comp_Svc::CLservices_Personel::selectionner_Personel_P
 	return this->oCad->getRows(sql, dataTableName);
 }
 
-System::Data::DataSet^ NS_Comp_Svc::CLservices_Personel::selectionner_Personel_Date_N(System::String^ dataTableName, System::String^ Date_N)
+System::Data::DataSet^ NS_Comp_Svc::CLservices_Personel::selectionner_Personel_Date_N(System::String^ dataTableName, System::DateTime^ Date_N)
 {
 	System::String^ sql;
 	this->oMapp_Personel->setDate_N(Date_N);
@@ -240,7 +240,7 @@ System::Data::DataSet^ NS_Comp_Svc::CLservices_Personel::selectionner_Personel_E
 	return this->oCad->getRows(sql, dataTableName);
 }
 
-System::Data::DataSet^ NS_Comp_Svc::CLservices_Personel::selectionner_Personel_Date_E(System::String^ dataTableName, System::String^ Date_E)
+System::Data::DataSet^ NS_Comp_Svc::CLservices_Personel::selectionner_Personel_Date_E(System::String^ dataTableName, System::DateTime^ Date_E)
 {
 	System::String^ sql;
 	this->oMapp_Personel->setDate_E(Date_E);
@@ -264,7 +264,7 @@ System::Data::DataSet^ NS_Comp_Svc::CLservices_Personel::selectionner_Personel_S
 	return this->oCad->getRows(sql, dataTableName);
 }
 
-void NS_Comp_Svc::CLservices_Personel::ajouter_Personel(System::String^ Nom, System::String^ Prenom, System::String^ Mail, System::String^ Date_N, System::String^ Ville, System::String^ Rue, System::String^ Code_Postal, System::String^ Nom_Bat, int Etage, System::String^ Date_E, System::String^ Role, int Sup_Id) {
+void NS_Comp_Svc::CLservices_Personel::ajouter_Personel(System::String^ Nom, System::String^ Prenom, System::String^ Mail, System::DateTime^ Date_N, System::String^ Ville, System::String^ Rue, System::String^ Code_Postal, System::String^ Nom_Bat, int Etage, System::DateTime^ Date_E, System::String^ Role, int Sup_Id) {
 
 	System::String^ sql;
 
@@ -293,7 +293,7 @@ void NS_Comp_Svc::CLservices_Personel::supprimer_Personel(int Id) {
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices_Personel::modifier_Personel(int Id, System::String^ Nom, System::String^ Prenom, System::String^ Mail, System::String^ Date_N, System::String^ Ville, System::String^ Rue, System::String^ Code_Postal, System::String^ Nom_Bat, int Etage, System::String^ Date_E, System::String^ Role, int Sup_Id) {
+void NS_Comp_Svc::CLservices_Personel::modifier_Personel(int Id, System::String^ Nom, System::String^ Prenom, System::String^ Mail, System::DateTime^ Date_N, System::String^ Ville, System::String^ Rue, System::String^ Code_Postal, System::String^ Nom_Bat, int Etage, System::DateTime^ Date_E, System::String^ Role, int Sup_Id) {
 
 	System::String^ sql;
 	this->oMapp_Personel->setId(Id);

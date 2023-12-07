@@ -56,7 +56,7 @@ NS_Comp_Mappage::CL_Map_Personel::CL_Map_Personel() {}
 void NS_Comp_Mappage::CL_Map_Personel::setId(int Id) { this->Id = Id; }
 void NS_Comp_Mappage::CL_Map_Personel::setNom(System::String^ Nom) { this->Nom = Nom; }
 void NS_Comp_Mappage::CL_Map_Personel::setPrenom(System::String^ Prenom) { this->Prenom = Prenom; }
-void NS_Comp_Mappage::CL_Map_Personel::setDate_N(System::String^ Date_N) { this->Date_N = Date_N; }
+void NS_Comp_Mappage::CL_Map_Personel::setDate_N(System::DateTime^ Date_N) { this->Date_N = Date_N; }
 void NS_Comp_Mappage::CL_Map_Personel::setMail(System::String^ Mail) { this->Mail = Mail; }
 
 void NS_Comp_Mappage::CL_Map_Personel::setVille(System::String^ Ville) { this->Ville = Ville; }
@@ -65,18 +65,18 @@ void NS_Comp_Mappage::CL_Map_Personel::setCode_Postal(System::String^ Code_Posta
 void NS_Comp_Mappage::CL_Map_Personel::setNom_Bat(System::String^ Nom_Bat) { this->Nom_Bat = Nom_Bat; }
 void NS_Comp_Mappage::CL_Map_Personel::setEtage(int Etage) { this->Etage = Etage; }
 
-void NS_Comp_Mappage::CL_Map_Personel::setDate_E(System::String^ Date_E) { this->Date_E = Date_E; }
+void NS_Comp_Mappage::CL_Map_Personel::setDate_E(System::DateTime^ Date_E) { this->Date_E = Date_E; }
 void NS_Comp_Mappage::CL_Map_Personel::setSup_Id(int Id) { this->Sup_Id = Sup_Id; }
 void NS_Comp_Mappage::CL_Map_Personel::setRole(System::String^ Role) { this->Role = Role; }
 
-System::String^ NS_Comp_Mappage::CL_Map_Personel::getDate_E(void) { return this->Date_E; }
+System::DateTime^ NS_Comp_Mappage::CL_Map_Personel::getDate_E(void) { return this->Date_E; }
 int NS_Comp_Mappage::CL_Map_Personel::getSup_Id(void) { return this->Sup_Id; }
 System::String^ NS_Comp_Mappage::CL_Map_Personel::getRole(void) { return this->Role; }
 
 int NS_Comp_Mappage::CL_Map_Personel::getId(void) { return this->Id; }
 System::String^ NS_Comp_Mappage::CL_Map_Personel::getNom(void) { return this->Nom; }
 System::String^ NS_Comp_Mappage::CL_Map_Personel::getPrenom(void) { return this->Prenom; }
-System::String^ NS_Comp_Mappage::CL_Map_Personel::getDate_N(void) { return this->Date_N; }
+System::DateTime^ NS_Comp_Mappage::CL_Map_Personel::getDate_N(void) { return this->Date_N; }
 System::String^ NS_Comp_Mappage::CL_Map_Personel::getMail(void) { return this->Mail; }
 
 System::String^ NS_Comp_Mappage::CL_Map_Personel::getVille(void) { return this->Ville; }

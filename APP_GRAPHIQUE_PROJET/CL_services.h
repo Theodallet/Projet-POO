@@ -41,8 +41,8 @@ namespace NS_Comp_Svc
 		CLservices_Personel(void);
 		System::Data::DataSet^ selectionner_Personel(System::String^);
 		System::Data::DataSet^ selectionner_Personel_Code_Postal(System::String^, System::String^);
-		System::Data::DataSet^ selectionner_Personel_Date_E(System::String^, System::String^);
-		System::Data::DataSet^ selectionner_Personel_Date_N(System::String^, System::String^);
+		System::Data::DataSet^ selectionner_Personel_Date_E(System::String^, System::DateTime^);
+		System::Data::DataSet^ selectionner_Personel_Date_N(System::String^, System::DateTime^);
 		System::Data::DataSet^ selectionner_Personel_Etage(System::String^, int);
 		System::Data::DataSet^ selectionner_Personel_Sup_Id(System::String^, int);
 		System::Data::DataSet^ selectionner_Personel_Ind(System::String^, int);
@@ -54,9 +54,9 @@ namespace NS_Comp_Svc
 		System::Data::DataSet^ selectionner_Personel_Rue(System::String^, System::String^);
 		System::Data::DataSet^ selectionner_Personel_Ville(System::String^, System::String^);
 
-		void ajouter_Personel(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, int, System::String^, System::String^, int);
+		void ajouter_Personel(System::String^, System::String^, System::String^, System::DateTime^, System::String^, System::String^, System::String^, System::String^, int, System::DateTime^, System::String^, int);
 		void supprimer_Personel(int);
-		void modifier_Personel(int, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, int, System::String^, System::String^, int);
+		void modifier_Personel(int, System::String^, System::String^, System::String^, System::DateTime^, System::String^, System::String^, System::String^, System::String^, int, System::DateTime^, System::String^, int);
 	};
 
 	ref class CLservices_Article
