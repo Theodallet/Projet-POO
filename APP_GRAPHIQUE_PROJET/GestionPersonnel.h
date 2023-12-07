@@ -1,4 +1,5 @@
 #pragma once
+#include "CL_services.h"
 
 namespace APPGRAPHIQUEPROJET {
 
@@ -128,6 +129,8 @@ private: System::Windows::Forms::TextBox^ textBox1;
 private: System::Windows::Forms::TextBox^ textBox2;
 
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
+
 
 #pragma region Windows Form Designer generated code
 		   /// <summary>
@@ -629,7 +632,7 @@ private: System::Windows::Forms::TextBox^ textBox2;
 			   this->TXT_ID_SUP_PERSONNEL->AutoSize = true;
 			   this->TXT_ID_SUP_PERSONNEL->BackColor = System::Drawing::Color::Black;
 			   this->TXT_ID_SUP_PERSONNEL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
+					static_cast<System::Byte>(0)));
 			   this->TXT_ID_SUP_PERSONNEL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->TXT_ID_SUP_PERSONNEL->Location = System::Drawing::Point(573, 495);
 			   this->TXT_ID_SUP_PERSONNEL->Name = L"TXT_ID_SUP_PERSONNEL";
@@ -726,7 +729,7 @@ private: System::Windows::Forms::TextBox^ textBox2;
 #pragma endregion
 	private: System::Void GestionPersonnel_Load(System::Object^ sender, System::EventArgs^ e)
 	{
-		
+	
 	}
 
 	private: System::Void RETOUR_PERSONNEL_HOME_Click(System::Object^ sender, System::EventArgs^ e) 
@@ -742,7 +745,6 @@ private: System::Windows::Forms::TextBox^ textBox2;
 
 	private: System::Void BOUTON_ADD_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		
 		String^ Personnel_Nom = this->TXT_NOM_PERSONNEL->Text;
 		String^ Personnel_Prenom = this->TXT_PRENOM_PERSONNEL->Text;
 		String^ Personnel_Date_N = this->TXT_BD_PERSONNEL->Text;
@@ -755,8 +757,6 @@ private: System::Windows::Forms::TextBox^ textBox2;
 		String^ Personnel_Date_E = this->TXT_DATE_EMBAUCHE_PERSONNEL->Text;
 		String^ Personnel_Role = this->TXT_RUE_PERSONNEL->Text;
 		String^ Personnel_ID_Supperieur = this->TXT_ID_SUP_PERSONNEL->Text;
-
-
 		
 		this->TXT_NOM_PERSONNEL->Text = "";
 		this->TXT_PRENOM_PERSONNEL->Text = "";
@@ -770,11 +770,6 @@ private: System::Windows::Forms::TextBox^ textBox2;
 		this->TXT_DATE_EMBAUCHE_PERSONNEL->Text = "";
 		this->TXT_RUE_PERSONNEL->Text = "";
 		this->TXT_ID_SUP_PERSONNEL->Text = "";
-
-		
-
-
-
 	}
 	private: System::Void BOUTON_MODIF_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
@@ -792,7 +787,6 @@ private: System::Windows::Forms::TextBox^ textBox2;
 		String^ Personnel_Role = this->TXT_RUE_PERSONNEL->Text;
 		String^ Personnel_ID_Supperieur = this->TXT_ID_SUP_PERSONNEL->Text;
 
-
 		this->TXT_ID_PERSONNEL->Text = "";
 		this->TXT_NOM_PERSONNEL->Text = "";
 		this->TXT_PRENOM_PERSONNEL->Text = "";
@@ -808,21 +802,16 @@ private: System::Windows::Forms::TextBox^ textBox2;
 		this->TXT_ID_SUP_PERSONNEL->Text = "";
 	}
 
-
 	private: System::Void BOUTON_SUPP_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 		String^ Personnel_ID = this->TXT_ID_PERSONNEL->Text;
 		this->TXT_ID_PERSONNEL->Text = "";
 	}
-
-
 	private: System::Void BOUTON_AFF_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 		String^ Personnel_ID = this->TXT_ID_PERSONNEL->Text;
 		this->TXT_ID_PERSONNEL->Text = "";
 	}
-
-
 	private: System::Void SKIP_PERSONNEL_GAUCHE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 		this->TXT_ID_PERSONNEL->Text = "Précédent"; 
@@ -839,8 +828,6 @@ private: System::Windows::Forms::TextBox^ textBox2;
 		this->TXT_RUE_PERSONNEL->Text = "Précédent";
 		this->TXT_ID_SUP_PERSONNEL->Text = "Précédent";
 	} 
-
-
 	private: System::Void SKIP_PERSONNEL_DROITE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 		this->TXT_ID_PERSONNEL->Text = "Suivant"; 
@@ -857,8 +844,5 @@ private: System::Windows::Forms::TextBox^ textBox2;
 		this->TXT_RUE_PERSONNEL->Text = "Suivant";
 		this->TXT_ID_SUP_PERSONNEL->Text = "Suivant";
 	}
-
-
-
 	};
 }
