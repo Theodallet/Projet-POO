@@ -534,7 +534,6 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 			   // 
 			   // BACKGROUND_ZONE_TEXTE
 			   // 
-			   this->BACKGROUND_ZONE_TEXTE->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"BACKGROUND_ZONE_TEXTE.BackgroundImage")));
 			   this->BACKGROUND_ZONE_TEXTE->Location = System::Drawing::Point(75, 116);
 			   this->BACKGROUND_ZONE_TEXTE->Name = L"BACKGROUND_ZONE_TEXTE";
 			   this->BACKGROUND_ZONE_TEXTE->Size = System::Drawing::Size(683, 550);
@@ -649,6 +648,7 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 
 	private: System::Void GestionClient_Load(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
 	}
 
 
@@ -669,8 +669,6 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 		// On vérifie si l'ID contient quelque chose, sinon il contient quelque chose on ne fait rien et on transmet
 
 		// Acquisition des données
-		
-		
 		String^ Client_Nom = this->TXT_NOM_CLIENT->Text;
 		String^ Client_Prenom = this->TXT_PRENOM_CLIENT->Text;
 		String^ Client_Date_N = this->TXT_BD_CLIENT->Text;  
@@ -680,9 +678,6 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 		String^ Client_Ville = this->TXT_VILLE_CLIENT->Text;
 		String^ Client_Batiment = this->TXT_BAT_CLIENT->Text;
 		int Client_Etage = Convert::ToInt32(this->TXT_ETAGE_CLIENT->Text);
-
-
-
 		// Action à faire
 		this->oSvc_Client->ajouter_Client(Client_Nom, Client_Prenom, Client_Date_N, Client_Mail, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
 		// Vide de la page
@@ -810,6 +805,8 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 		this->TXT_BAT_CLIENT->Text = "";
 		this->TXT_ETAGE_CLIENT->Text = "";
 	}
+
+
 };
 
 }
