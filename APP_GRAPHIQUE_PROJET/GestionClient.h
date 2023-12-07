@@ -649,6 +649,11 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 	private: System::Void GestionClient_Load(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
+
+		this->AFFICHAGE_CLIENT->Refresh();
+		this->oSvc_Client->selectionner_Client("Rsl");
+		this->AFFICHAGE_CLIENT->DataSource = this->oDs;
+		this->AFFICHAGE_CLIENT->DataMember = "Rsl";
 	}
 
 
@@ -743,7 +748,13 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 
 	private: System::Void BOUTON_AFF_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		String^ Client_ID = this->TXT_ID_CLIENT->Text;
+		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
+
+		this->AFFICHAGE_CLIENT->Refresh();
+		this->oSvc_Client->selectionner_Client_Ind("Rsl", Client_ID);
+		this->AFFICHAGE_CLIENT->DataSource = this->oDs;
+		this->AFFICHAGE_CLIENT->DataMember = "Rsl";
+
 
 		this->TXT_ID_CLIENT->Text = "";
 	}
