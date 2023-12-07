@@ -65,147 +65,15 @@ namespace APPGRAPHIQUEPROJET {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::PictureBox^ LOGO;
 	private: System::Windows::Forms::Label^ LABEL_NOM_CLIENT;
 	private: System::Windows::Forms::Label^ LABEL_PRENOM_CLIENT;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Label^ TITRE_CLIENT;
 	private: System::Windows::Forms::Button^ BOUTON_ADD_CLIENT;
 private: System::Windows::Forms::Label^ LABEL_ID_CLIENT;
-
-
-
 
 
 	private: System::Windows::Forms::Label^ LABEL_BD_CLIENT;
@@ -217,9 +85,6 @@ private: System::Windows::Forms::Label^ LABEL_ID_CLIENT;
 	private: System::Windows::Forms::Button^ BOUTON_AFF_CLIENT;
 	private: System::Windows::Forms::TextBox^ TXT_NOM_CLIENT;
 private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
-
-
-
 
 
 	private: System::Windows::Forms::Label^ LABEL_MAIL_CLIENT;
@@ -245,10 +110,6 @@ private: System::Windows::Forms::Label^ LABEL_RUE_CLIENT;
 
 
 
-
-
-
-
 	private: System::Windows::Forms::TextBox^ TXT_MAIL_CLIENT;
 	private: System::Windows::Forms::TextBox^ TXT_ETAGE_CLIENT;
 
@@ -262,38 +123,7 @@ private: System::Windows::Forms::Button^ SKIP_CLIENT_DROITE;
 private: System::Windows::Forms::Button^ BOUTON_CLEAR_CLIENT;
 
 
-
-
-
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_CLIENTS;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #pragma region Windows Form Designer generated code
@@ -811,7 +641,6 @@ private: System::Windows::Forms::Button^ BOUTON_CLEAR_CLIENT;
 		   }
 
 
-
 #pragma endregion
 
 	private: System::Void GestionClient_Load(System::Object^ sender, System::EventArgs^ e)
@@ -827,7 +656,6 @@ private: System::Windows::Forms::Button^ BOUTON_CLEAR_CLIENT;
 
 	}
 
-
 // Récolte et actions bouton -----------------------------------------------------------------------------------------------------------
 
 	private: System::Void BOUTON_ADD_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
@@ -837,7 +665,6 @@ private: System::Windows::Forms::Button^ BOUTON_CLEAR_CLIENT;
 		// On vérifie si l'ID contient quelque chose, sinon il contient quelque chose on ne fait rien et on transmet
 
 		// Acquisition des données
-		
 		
 		
 		String^ Client_Nom = this->TXT_NOM_CLIENT->Text;
@@ -867,9 +694,6 @@ private: System::Windows::Forms::Button^ BOUTON_CLEAR_CLIENT;
 		this->TXT_ETAGE_CLIENT->Text = "";
 
 	}
-
-
-
 
 	private: System::Void BOUTON_MODIF_CLIENT_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
@@ -908,15 +732,11 @@ private: System::Windows::Forms::Button^ BOUTON_CLEAR_CLIENT;
 		
 	}
 
-	
-
 	private: System::Void BOUTON_SUPP_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		String^ Client_ID = this->TXT_ID_CLIENT->Text;
 
 		this->TXT_ID_CLIENT->Text = "";
-
-
 	}
 
 	private: System::Void BOUTON_AFF_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
@@ -971,8 +791,6 @@ private: System::Windows::Forms::Button^ BOUTON_CLEAR_CLIENT;
 		this->TXT_BAT_CLIENT->Text = "Bat suivant";
 		this->TXT_ETAGE_CLIENT->Text = "Etage suivant";
 	}
-
-
 
 	private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
