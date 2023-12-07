@@ -22,7 +22,7 @@ namespace NS_Comp_Mappage
 	public:
 		CL_Map_Client();
 		void setId(int);
-		void setNom(System::String^);
+		void setNom(System::String^);	
 		void setPrenom(System::String^);
 		void setDate_N(System::String^);
 		void setMail(System::String^);
