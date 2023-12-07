@@ -731,7 +731,7 @@ namespace APPGRAPHIQUEPROJET {
 #pragma endregion
 	private: System::Void GestionPersonnel_Load(System::Object^ sender, System::EventArgs^ e)
 	{
-	
+		this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
 	}
 
 	private: System::Void RETOUR_PERSONNEL_HOME_Click(System::Object^ sender, System::EventArgs^ e) 
