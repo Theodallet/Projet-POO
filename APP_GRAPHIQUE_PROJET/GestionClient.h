@@ -763,23 +763,43 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 	{
 		// On récupère l'ID en cours 
 
-		String^ Client_ID = this->TXT_ID_CLIENT->Text;
+		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
 
 		// On la transmet a une méthode qui va récupérer tout les éléments précédents dans la BDD et les transmettre.
 
 		// Ensuite on les affiche dans les TXT
+		/*
+		if (this->TXT_ID_CLIENT->Text == "")
+		{
+			this->TXT_ID_CLIENT->Text = getId(Client_ID);
+			this->TXT_NOM_CLIENT->Text = getNom(Client_ID);
+			this->TXT_PRENOM_CLIENT->Text = getPrenom(Client_ID);
+			this->TXT_BD_CLIENT->Text = getDate_N(Client_ID);
+			this->TXT_MAIL_CLIENT->Text = getMail(Client_ID);
+			this->TXT_RUE_CLIENT->Text = getRue(Client_ID);
+			this->TXT_CP_CLIENT->Text = getCP(Client_ID);
+			this->TXT_VILLE_CLIENT->Text = getVille(Client_ID);
+			this->TXT_BAT_CLIENT->Text = getBat(Client_ID);
+			this->TXT_ETAGE_CLIENT->Text = getEtage(Client_ID);
+		}
+		else
+		{
+			int ID_Precedent = Client_ID - 1;
 
-		this->TXT_ID_CLIENT->Text = "ID précédent";
+			this->TXT_ID_CLIENT->Text = getId(ID_Precedent);
+			this->TXT_NOM_CLIENT->Text = getNom(ID_Precedent);
+			this->TXT_PRENOM_CLIENT->Text = getPrenom(ID_Precedent);
+			this->TXT_BD_CLIENT->Text = getDate_N(ID_Precedent);
+			this->TXT_MAIL_CLIENT->Text = getMail(ID_Precedent);
+			this->TXT_RUE_CLIENT->Text = getRue(ID_Precedent;
+			this->TXT_CP_CLIENT->Text = getCP(ID_Precedent);
+			this->TXT_VILLE_CLIENT->Text = getVille(ID_Precedent);
+			this->TXT_BAT_CLIENT->Text = getBat(ID_Precedent);
+			this->TXT_ETAGE_CLIENT->Text = getEtage(ID_Precedent);
+		}
 
-		this->TXT_NOM_CLIENT->Text = "Nom précédent";
-		this->TXT_PRENOM_CLIENT->Text = "Prenom précédent";
-		this->TXT_BD_CLIENT->Text = "06/12/2023 00:00";
-		this->TXT_MAIL_CLIENT->Text = "E mail";
-		this->TXT_RUE_CLIENT->Text = "Rue précédent";
-		this->TXT_CP_CLIENT->Text = "CP précédent";
-		this->TXT_VILLE_CLIENT->Text = "Ville précédent";
-		this->TXT_BAT_CLIENT->Text = "Bat précédent";
-		this->TXT_ETAGE_CLIENT->Text = "Etage précédent";
+		*/
+		
 	}
 
 	private: System::Void SKIP_CLIENT_DROITE_Click(System::Object^ sender, System::EventArgs^ e)

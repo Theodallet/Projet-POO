@@ -758,8 +758,8 @@ namespace APPGRAPHIQUEPROJET {
 		int Personnel_Etage = Convert::ToInt32(this->TXT_ETAGE_PERSONNEL->Text);
 		DateTime Personnel_Date_E = DateTime::Parse(this->TXT_DATE_EMBAUCHE_PERSONNEL->Text);
 		String^ Personnel_Role = this->TXT_RUE_PERSONNEL->Text;
-		int Personnel_ID_Supperieur = Convert::ToInt32(this->TXT_ID_SUP_PERSONNEL->Text);
-		
+		int Personnel_ID_Supperieur = Convert::ToInt32(this->textBox2->Text);
+
 		this->oSvc_Personel->ajouter_Personel(Personnel_Nom, Personnel_Prenom, Personnel_Mail, Personnel_Date_N, Personnel_Ville, Personnel_Rue, Personnel_Code_Postal, Personnel_Batiment, Personnel_Etage, Personnel_Date_E, Personnel_Role, Personnel_ID_Supperieur);
 
 
