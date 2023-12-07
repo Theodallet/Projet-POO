@@ -120,16 +120,18 @@ namespace APPGRAPHIQUEPROJET {
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_ZONE_PERSONNEL;
 
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_PERSONNEL;
-private: System::Windows::Forms::Label^ DATE_EMBAUCHE_PERSONNEL;
-private: System::Windows::Forms::Label^ TXT_ROLE_PERSONNEL;
-private: System::Windows::Forms::Label^ TXT_ID_SUP_PERSONNEL;
-private: System::Windows::Forms::DateTimePicker^ TXT_DATE_EMBAUCHE_PERSONNEL;
+	private: System::Windows::Forms::Label^ DATE_EMBAUCHE_PERSONNEL;
+	private: System::Windows::Forms::Label^ TXT_ROLE_PERSONNEL;
+	private: System::Windows::Forms::Label^ TXT_ID_SUP_PERSONNEL;
+	private: System::Windows::Forms::DateTimePicker^ TXT_DATE_EMBAUCHE_PERSONNEL;
 
-private: System::Windows::Forms::TextBox^ textBox1;
-private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ textBox2;
 
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
+	private: NS_Comp_Svc::CLservices_Personel^ oSvc_Personel;
+	private: System::Data::DataSet^ oDs;
 
 
 #pragma region Windows Form Designer generated code
