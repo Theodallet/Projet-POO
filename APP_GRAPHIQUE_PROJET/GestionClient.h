@@ -671,7 +671,7 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 		// Acquisition des données
 		String^ Client_Nom = this->TXT_NOM_CLIENT->Text;
 		String^ Client_Prenom = this->TXT_PRENOM_CLIENT->Text;
-		String^ Client_Date_N = this->TXT_BD_CLIENT->Text;  
+		DateTime Client_Date_N = DateTime::Parse(this->TXT_BD_CLIENT->Text);
 		String^ Client_Mail = this->TXT_MAIL_CLIENT->Text;
 		String^ Client_Rue = this->TXT_RUE_CLIENT->Text;
 		String^ Client_Code_Postal = this->TXT_CP_CLIENT->Text;
@@ -679,7 +679,7 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 		String^ Client_Batiment = this->TXT_BAT_CLIENT->Text;
 		int Client_Etage = Convert::ToInt32(this->TXT_ETAGE_CLIENT->Text);
 		// Action à faire
-		this->oSvc_Client->ajouter_Client(Client_Nom, Client_Prenom, Client_Date_N, Client_Mail, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
+		this->oSvc_Client->ajouter_Client(Client_Nom, Client_Prenom, Client_Mail, Client_Date_N, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
 		// Vide de la page
 
 		this->TXT_ID_CLIENT->Text = "";

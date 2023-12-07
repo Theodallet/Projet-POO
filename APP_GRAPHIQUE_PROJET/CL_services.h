@@ -4,6 +4,7 @@
 #include "CL_Map.h"
 #include "CL_Cad.h"
 
+
 namespace NS_Comp_Svc
 {
 	ref class CLservices_Client
@@ -15,7 +16,7 @@ namespace NS_Comp_Svc
 		CLservices_Client(void);
 		System::Data::DataSet^ selectionner_Client(System::String^);
 		System::Data::DataSet^ selectionner_Client_Code_Postal(System::String^, System::String^);
-		System::Data::DataSet^ selectionner_Client_Date_N(System::String^, System::String^);
+		System::Data::DataSet^ selectionner_Client_Date_N(System::String^, System::DateTime^);
 		System::Data::DataSet^ selectionner_Client_Etage(System::String^, int);
 		System::Data::DataSet^ selectionner_Client_Ind(System::String^, int);
 		System::Data::DataSet^ selectionner_Client_Mail(System::String^, System::String^);
@@ -26,9 +27,9 @@ namespace NS_Comp_Svc
 		System::Data::DataSet^ selectionner_Client_Ville(System::String^, System::String^);
 
 
-		void ajouter_Client(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, int);
+		void ajouter_Client(System::String^, System::String^, System::String^, System::DateTime^, System::String^, System::String^, System::String^, System::String^, int);
 		void supprimer_Client(int);
-		void modifier_Client(int, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, int);
+		void modifier_Client(int, System::String^, System::String^, System::String^, System::DateTime^, System::String^, System::String^, System::String^, System::String^, int);
 	};
 
 	ref class CLservices_Personel

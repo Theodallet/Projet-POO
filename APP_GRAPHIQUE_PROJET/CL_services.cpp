@@ -42,7 +42,7 @@ System::Data::DataSet^ NS_Comp_Svc::CLservices_Client::selectionner_Client_Preno
 	return this->oCad->getRows(sql, dataTableName);
 }
 
-System::Data::DataSet^ NS_Comp_Svc::CLservices_Client::selectionner_Client_Date_N(System::String^ dataTableName, System::String^ Date_N)
+System::Data::DataSet^ NS_Comp_Svc::CLservices_Client::selectionner_Client_Date_N(System::String^ dataTableName, System::DateTime^ Date_N)
 {
 	System::String^ sql;
 	this->oMapp_Client->setDate_N(Date_N);
@@ -100,7 +100,7 @@ System::Data::DataSet^ NS_Comp_Svc::CLservices_Client::selectionner_Client_Etage
 }
 
 
-void NS_Comp_Svc::CLservices_Client::ajouter_Client(System::String^ Nom, System::String^ Prenom, System::String^ Mail, System::String^ Date_N, System::String^ Ville, System::String^ Rue, System::String^ Code_Postal, System::String^ Nom_Bat, int Etage) {
+void NS_Comp_Svc::CLservices_Client::ajouter_Client(System::String^ Nom, System::String^ Prenom, System::String^ Mail, System::DateTime^ Date_N, System::String^ Ville, System::String^ Rue, System::String^ Code_Postal, System::String^ Nom_Bat, int Etage) {
 
 	System::String^ sql;
 
@@ -127,7 +127,7 @@ void NS_Comp_Svc::CLservices_Client::supprimer_Client(int Id) {
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices_Client::modifier_Client(int Id, System::String^ Nom, System::String^ Prenom, System::String^ Mail, System::String^ Date_N, System::String^ Ville, System::String^ Rue, System::String^ Code_Postal, System::String^ Nom_Bat, int Etage) {
+void NS_Comp_Svc::CLservices_Client::modifier_Client(int Id, System::String^ Nom, System::String^ Prenom, System::String^ Mail, System::DateTime^ Date_N, System::String^ Ville, System::String^ Rue, System::String^ Code_Postal, System::String^ Nom_Bat, int Etage) {
 
 	System::String^ sql;
 	this->oMapp_Client->setId(Id);

@@ -8,7 +8,7 @@ NS_Comp_Mappage::CL_Map_Client::CL_Map_Client() {}
 void NS_Comp_Mappage::CL_Map_Client::setId(int Id) { this->Id = Id; }
 void NS_Comp_Mappage::CL_Map_Client::setNom(System::String^ Nom) { this->Nom = Nom; }
 void NS_Comp_Mappage::CL_Map_Client::setPrenom(System::String^ Prenom) { this->Prenom = Prenom; }
-void NS_Comp_Mappage::CL_Map_Client::setDate_N(System::String^ Date_N) { this->Date_N = Date_N; }
+void NS_Comp_Mappage::CL_Map_Client::setDate_N(System::DateTime^ Date_N) { this->Date_N = Date_N; }
 void NS_Comp_Mappage::CL_Map_Client::setMail(System::String^ Mail) { this->Mail = Mail; }
 
 void NS_Comp_Mappage::CL_Map_Client::setVille(System::String^ Ville) { this->Ville = Ville; }
@@ -20,7 +20,7 @@ void NS_Comp_Mappage::CL_Map_Client::setEtage(int Etage) { this->Etage = Etage; 
 int NS_Comp_Mappage::CL_Map_Client::getId(void) { return this->Id; }
 System::String^ NS_Comp_Mappage::CL_Map_Client::getNom(void) { return this->Nom; }
 System::String^ NS_Comp_Mappage::CL_Map_Client::getPrenom(void) { return this->Prenom; }
-System::String^ NS_Comp_Mappage::CL_Map_Client::getDate_N(void) { return this->Date_N; }
+System::DateTime^ NS_Comp_Mappage::CL_Map_Client::getDate_N(void) { return this->Date_N; }
 System::String^ NS_Comp_Mappage::CL_Map_Client::getMail(void) { return this->Mail; }
 
 System::String^ NS_Comp_Mappage::CL_Map_Client::getVille(void) { return this->Ville; }

@@ -9,7 +9,7 @@ namespace NS_Comp_Mappage
 		int Id;
 		System::String^ Nom;
 		System::String^ Prenom;
-		System::String^ Date_N;
+		System::DateTime^ Date_N;
 		System::String^ Mail;
 
 		System::String^ Ville;
@@ -24,7 +24,7 @@ namespace NS_Comp_Mappage
 		void setId(int);
 		void setNom(System::String^);	
 		void setPrenom(System::String^);
-		void setDate_N(System::String^);
+		void setDate_N(System::DateTime^);
 		void setMail(System::String^);
 
 		void setVille(System::String^);
@@ -36,7 +36,7 @@ namespace NS_Comp_Mappage
 		int getId(void);
 		System::String^ getNom(void);
 		System::String^ getPrenom(void);
-		System::String^ getDate_N(void);
+		System::DateTime^ getDate_N(void);
 		System::String^ getMail(void);
 
 		System::String^ getVille(void);
