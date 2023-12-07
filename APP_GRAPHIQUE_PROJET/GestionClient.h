@@ -679,11 +679,12 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 		String^ Client_Code_Postal = this->TXT_CP_CLIENT->Text;
 		String^ Client_Ville = this->TXT_VILLE_CLIENT->Text;
 		String^ Client_Batiment = this->TXT_BAT_CLIENT->Text;
-		String^ Client_Etage = this->TXT_ETAGE_CLIENT->Text;
+		int Client_Etage = Convert::ToInt32(this->TXT_ETAGE_CLIENT->Text);
+
+
 
 		// Action à faire
-
-		this->oSvc
+		this->oSvc_Client->ajouter_Client(Client_Nom, Client_Prenom, Client_Date_N, Client_Mail, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
 		// Vide de la page
 
 		this->TXT_ID_CLIENT->Text = "";
