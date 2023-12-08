@@ -720,7 +720,6 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 
 	private: System::Void BOUTON_AJOUTER_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		int Commande_ID = Convert::ToInt32(this->TXT_ID_COMMANDE->Text); // A retirer
 		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT_COMMANDE->Text);
 		DateTime^ Date_Livraison = DateTime::Parse(this->TXT_DATE_LIV_COMMANDE->Text);
 		String^ Moyen_Paiment = this->TXT_MOYEN_PAIMENT_COMMANDE->Text;
@@ -732,8 +731,6 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 		this->oSvc_Commande->ajouter_Commande(Date_Livraison, 0, 0, 0, Moyen_Paiment, Commande_ID_Livraison, Article_ID);
 		
 		
-
-		this->TXT_ID_COMMANDE->Text = "";  // A retirer
 		this->TXT_ID_CLIENT_COMMANDE->Text = "";
 		this->TXT_DATE_LIV_COMMANDE->Text = "";
 		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "";
@@ -783,11 +780,11 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 
 	private: System::Void BOUTON_AFFICHER_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		int Commande_ID = Convert::ToInt32(this->TXT_ID_COMMANDE->Text);
+		//int Commande_ID = Convert::ToInt32(this->TXT_ID_COMMANDE->Text);
 
 		this->oSvc_Commande = gcnew NS_Comp_Svc::CLservices_Commande();
 		this->AFFICHAGE_COMMANDES->Refresh();
-		this->oDs = this->oSvc_Commande->selectionner_Commande_Id("Rsl", Commande_ID);
+		this->oDs = this->oSvc_Commande->selectionner_Commande("Rsl");
 		this->AFFICHAGE_COMMANDES->DataSource = this->oDs;
 		this->AFFICHAGE_COMMANDES->DataMember = "Rsl";
 

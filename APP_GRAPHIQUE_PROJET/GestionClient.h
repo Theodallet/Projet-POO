@@ -753,37 +753,98 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Void BOUTON_AFF_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		if (this->TXT_ID_CLIENT->Text == "") {
+		if (this->TXT_ID_CLIENT->Text != "") {
+			int CLIENT_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
+			this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
+			this->AFFICHAGE_CLIENT->Refresh();
+			this->oDs = this->oSvc_Client->selectionner_Client_Ind("Rsl", CLIENT_ID);
+			this->AFFICHAGE_CLIENT->DataSource = this->oDs;
+			this->AFFICHAGE_CLIENT->DataMember = "Rsl";
+		}
+		else if (this->TXT_NOM_CLIENT->Text != "") {
+			String^ CLIENT_Nom = this->TXT_NOM_CLIENT->Text;
+			this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
+			this->AFFICHAGE_CLIENT->Refresh();
+			this->oDs = this->oSvc_Client->selectionner_Client_Nom("Rsl", CLIENT_Nom);
+			this->AFFICHAGE_CLIENT->DataSource = this->oDs;
+			this->AFFICHAGE_CLIENT->DataMember = "Rsl";
+		}
+		else if (this->TXT_PRENOM_CLIENT->Text != "") {
+			String^ CLIENT_Prenom = this->TXT_PRENOM_CLIENT->Text;
+			this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
+			this->AFFICHAGE_CLIENT->Refresh();
+			this->oDs = this->oSvc_Client->selectionner_Client_Prenom("Rsl", CLIENT_Prenom);
+			this->AFFICHAGE_CLIENT->DataSource = this->oDs;
+			this->AFFICHAGE_CLIENT->DataMember = "Rsl";
+		}
+		else if (this->TXT_MAIL_CLIENT->Text != "") {
+			String^ CLIENT_Mail = this->TXT_MAIL_CLIENT->Text;
+			this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
+			this->AFFICHAGE_CLIENT->Refresh();
+			this->oDs = this->oSvc_Client->selectionner_Client_Mail("Rsl", CLIENT_Mail);
+			this->AFFICHAGE_CLIENT->DataSource = this->oDs;
+			this->AFFICHAGE_CLIENT->DataMember = "Rsl";
+		}
+		else if (this->TXT_VILLE_CLIENT->Text != "") {
+			String^ CLIENT_Ville = this->TXT_VILLE_CLIENT->Text;
+			this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
+			this->AFFICHAGE_CLIENT->Refresh();
+			this->oDs = this->oSvc_Client->selectionner_Client_Ville("Rsl", CLIENT_Ville);
+			this->AFFICHAGE_CLIENT->DataSource = this->oDs;
+			this->AFFICHAGE_CLIENT->DataMember = "Rsl";
+		}
+		else if (this->TXT_RUE_CLIENT->Text != "") {
+			String^ CLIENT_Rue = this->TXT_RUE_CLIENT->Text;
+			this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
+			this->AFFICHAGE_CLIENT->Refresh();
+			this->oDs = this->oSvc_Client->selectionner_Client_Rue("Rsl", CLIENT_Rue);
+			this->AFFICHAGE_CLIENT->DataSource = this->oDs;
+			this->AFFICHAGE_CLIENT->DataMember = "Rsl";
+		}
+		else if (this->TXT_CP_CLIENT->Text != "") {
+			String^ CLIENT_Code_Postal = this->TXT_CP_CLIENT->Text;
+			this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
+			this->AFFICHAGE_CLIENT->Refresh();
+			this->oDs = this->oSvc_Client->selectionner_Client_Code_Postal("Rsl", CLIENT_Code_Postal);
+			this->AFFICHAGE_CLIENT->DataSource = this->oDs;
+			this->AFFICHAGE_CLIENT->DataMember = "Rsl";
+		}
+		else if (this->TXT_ETAGE_CLIENT->Text != "") {
+			int CLIENT_Etage = Convert::ToInt32(this->TXT_ETAGE_CLIENT->Text);
+			this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
+			this->AFFICHAGE_CLIENT->Refresh();
+			this->oDs = this->oSvc_Client->selectionner_Client_Etage("Rsl", CLIENT_Etage);
+			this->AFFICHAGE_CLIENT->DataSource = this->oDs;
+			this->AFFICHAGE_CLIENT->DataMember = "Rsl";
+		}
+		else {
 			this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
 			this->AFFICHAGE_CLIENT->Refresh();
 			this->oDs = this->oSvc_Client->selectionner_Client("Rsl");
 			this->AFFICHAGE_CLIENT->DataSource = this->oDs;
 			this->AFFICHAGE_CLIENT->DataMember = "Rsl";
 		}
-		else {
-			int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
-			this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
-			this->AFFICHAGE_CLIENT->Refresh();
-			this->oDs = this->oSvc_Client->selectionner_Client_Ind("Rsl", Client_ID);
-			this->AFFICHAGE_CLIENT->DataSource = this->oDs;
-			this->AFFICHAGE_CLIENT->DataMember = "Rsl";
-		}
 
 		this->TXT_ID_CLIENT->Text = "";
+		this->TXT_NOM_CLIENT->Text = "";
+		this->TXT_PRENOM_CLIENT->Text = "";
+		this->TXT_BD_CLIENT->Text = "";
+		this->TXT_MAIL_CLIENT->Text = "";
+		this->TXT_RUE_CLIENT->Text = "";
+		this->TXT_CP_CLIENT->Text = "";
+		this->TXT_VILLE_CLIENT->Text = "";
+		this->TXT_BAT_CLIENT->Text = "";
+		this->TXT_ETAGE_CLIENT->Text = "";
 	}
 
 	private: System::Void SKIP_CLIENT_GAUCHE_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		// On récupère l'ID en cours 
 
 		String^ Client_ID = this->TXT_ID_CLIENT->Text;
 
-		// On la transmet a une méthode qui va récupérer tout les éléments précédents dans la BDD et les transmettre.
+		
 
-		// Ensuite on les affiche dans les TXT
-
-		this->TXT_ID_CLIENT->Text = "ID précédent";
-
+		this->TXT_ID_CLIENT->Text = "eughe";
 		this->TXT_NOM_CLIENT->Text = "Nom précédent";
 		this->TXT_PRENOM_CLIENT->Text = "Prenom précédent";
 		this->TXT_BD_CLIENT->Text = "06/12/2023 00:00";

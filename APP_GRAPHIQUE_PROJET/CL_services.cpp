@@ -145,6 +145,8 @@ void NS_Comp_Svc::CLservices_Client::modifier_Client(int Id, System::String^ Nom
 	this->oCad->actionRows(sql);
 }
 
+
+
 //--------------------------------------------------Service Personel------------------------------------------
 
 NS_Comp_Svc::CLservices_Personel::CLservices_Personel(void)
