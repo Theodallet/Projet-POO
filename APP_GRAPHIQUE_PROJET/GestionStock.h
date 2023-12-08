@@ -1,5 +1,5 @@
 #pragma once
-
+#include "CL_services.h"
 namespace APPGRAPHIQUEPROJET {
 
 	using namespace System;
@@ -73,114 +73,29 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Windows::Forms::Label^ TITREADD_Stock;
 	private: System::Windows::Forms::TextBox^ TXT_TVA_ARTICLE;
-
-
-
 	private: System::Windows::Forms::Label^ LABEL_NOM_ARTICLE;
 	private: System::Windows::Forms::TextBox^ TXT_ID_ARTICLE;
-
-
 	private: System::Windows::Forms::Label^ LABEL_PRIX_ARTICLE;
 	private: System::Windows::Forms::Button^ BOUTON_AJOUTER_ARTICLE;
-
-
 	private: System::Windows::Forms::Label^ LABEL_ID_ARTICLE;
 	private: System::Windows::Forms::Button^ BOUTON_SUPPRIMER_ARTICLE;
-
-
-
 	private: System::Windows::Forms::Label^ LABEL8COULEUR_ARTICLE;
 	private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 	private: System::Windows::Forms::Button^ BOUTON_AFFICHAGE_ARTICLE;
-
-
-
-
-
 	private: System::Windows::Forms::Label^ LABEL_TVA_ARTICLE;
-
-
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_STOCK_TEXTE;
-
-
-
-
 	private: System::Windows::Forms::PictureBox^ Background;
 	private: System::Windows::Forms::Label^ label40;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ SKIP_PERSONNEL_GAUCHE;
 	private: System::Windows::Forms::Button^ SKIP_PERSONNEL_DROITE;
 	private: System::Windows::Forms::Button^ BOUTON_CLEAR_STOCK;
+
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	private: NS_Comp_Svc::CLservices_Article^ oSvc_Article;
+	private: NS_Comp_Svc::CLservices_Contient^ oSvc_Contient;
+	private: System::Data::DataSet^ oDs;
 #pragma region Windows Form Designer generated code
 		   /// <summary>
 		   /// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
@@ -598,7 +513,8 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Void GestionStock_Load(System::Object^ sender, System::EventArgs^ e)
 	{
-		
+		this->oSvc_Article = gcnew NS_Comp_Svc::CLservices_Article();
+		this->oSvc_Contient = gcnew NS_Comp_Svc::CLservices_Contient();
 	}	
 
 	private: System::Void RETURN_CLIENTS_HOME_Click(System::Object^ sender, System::EventArgs^ e) 
