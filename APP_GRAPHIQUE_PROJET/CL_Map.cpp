@@ -105,9 +105,9 @@ System::String^ NS_Comp_Mappage::CL_Map_Personel::Select_Personel_Role(void) { r
 
 System::String^ NS_Comp_Mappage::CL_Map_Personel::Select_Personel(void) { return "EXECUTE Select_Personel ;"; }
 
-System::String^ NS_Comp_Mappage::CL_Map_Personel::Insert_Personel(void) { return "EXECUTE Creer_Client '" + this->Nom + "','" + this->Prenom + "','" + this->Mail + "','" + this->Date_N + "','" + this->Ville + "','" + this->Rue + "','" + this->Code_Postal + "','" + this->Nom_Bat + "'," + this->Etage + ",'" + this->Date_E + "','" + this->Role + "'," + this->Sup_Id + " ;"; }
+System::String^ NS_Comp_Mappage::CL_Map_Personel::Insert_Personel(void) { return "EXECUTE Creer_Personel '" + this->Nom + "','" + this->Prenom + "','" + this->Mail + "','" + this->Date_N + "','" + this->Ville + "','" + this->Rue + "','" + this->Code_Postal + "','" + this->Nom_Bat + "'," + this->Etage + ",'" + this->Date_E + "','" + this->Role + "'," + this->Sup_Id + " ;"; }
 System::String^ NS_Comp_Mappage::CL_Map_Personel::Delete_Personel(void) { return "EXECUTE Delete_Personel " + this->Id + " ;"; }
-System::String^ NS_Comp_Mappage::CL_Map_Personel::Update_Personel(void) { return "EXECUTE Creer_Client " + this->Id + ",'" + this->Nom + "','" + this->Prenom + "','" + this->Mail + "','" + this->Date_N + "','" + this->Ville + "','" + this->Rue + "','" + this->Code_Postal + "','" + this->Nom_Bat + "'," + this->Etage + ",'" + this->Date_E + "','" + this->Role + "'," + this->Sup_Id + " ;"; }
+System::String^ NS_Comp_Mappage::CL_Map_Personel::Update_Personel(void) { return "EXECUTE Creer_Personel " + this->Id + ",'" + this->Nom + "','" + this->Prenom + "','" + this->Mail + "','" + this->Date_N + "','" + this->Ville + "','" + this->Rue + "','" + this->Code_Postal + "','" + this->Nom_Bat + "'," + this->Etage + ",'" + this->Date_E + "','" + this->Role + "'," + this->Sup_Id + " ;"; }
 
 
 //---------------------------------Mappage de la classe Article--------------------------------------------------------
