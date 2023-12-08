@@ -652,11 +652,7 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "";
 		this->TXT_ARTICLE_COMMANDE->Text = "";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "";
-		this->TXT_RUE_LIV_COMMANDE->Text = "";
-		this->TXT_CP_LIV_COMMANDE->Text = "";
-		this->TXT_VILLE_LIV_COMMANDE->Text = "";
-		this->TXT_BAT_LIV_COMMANDE->Text = "";
-		this->TXT_ETAGE_LIV_COMMANDE->Text = "";
+
 
 	}
 
@@ -674,7 +670,7 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 		// Action à faire
 		
 
-		this->oSvc_Commande->ajouter_Commande(Date_Livraison, nullptr, nullptr, nullptr, Moyen_Paiment, Commande_ID_Livraison, Article_ID);
+		this->oSvc_Commande->ajouter_Commande(Date_Livraison, 0, 0, 0, Moyen_Paiment, Commande_ID_Livraison, Article_ID);
 		//this->ajouter_Contient(int Id_Art, int Id_Com, int Quantite_Article)
 		//this->ajouter_Commande(System::String ^ Date_Liv, float Total_HT, float Total_TTC, float Total_TVA, System::String ^ Moyen_Paiment, int Id_Cli, int Adresse_Liv);
 
