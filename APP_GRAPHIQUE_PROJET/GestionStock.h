@@ -393,7 +393,6 @@ namespace APPGRAPHIQUEPROJET {
 			   this->BACKGROUND_STOCK_TEXTE->Size = System::Drawing::Size(683, 550);
 			   this->BACKGROUND_STOCK_TEXTE->TabIndex = 305;
 			   this->BACKGROUND_STOCK_TEXTE->TabStop = false;
-			   this->BACKGROUND_STOCK_TEXTE->Click += gcnew System::EventHandler(this, &GestionStock::BACKGROUND_STOCK_TEXTE_Click);
 			   // 
 			   // Background
 			   // 
@@ -575,14 +574,16 @@ namespace APPGRAPHIQUEPROJET {
 		String^ Article_Nom = this->TXT_NOM_ARTICLE->Text;
 		float Article_Prix = Convert::ToSingle(this->TXT_PRIX_ARTICLE->Text);
 		String^ Article_Couleur = this->TXT_COULEUR_ARTICLE->Text;
-		float Article_TVA = Convert::ToSingle(this->TXT_TVA_ARTICLE->Text);
+		float Article_TVA = Convert::ToSingle(this->TXT_TVA_ARTICLE->Text); 
+		int Article_Stock = Convert::ToInt32(this->TXT_STOCK_ARTICLE->Text);
 
-		//this->oSvc_Article->ajouter_Article(Article_Nom, Article_Prix, Article_Couleur, Article_TVA);
+		this->oSvc_Article->ajouter_Article(Article_Prix, Article_Nom, Article_Couleur, Article_Stock, Article_TVA);
 
 		this->TXT_NOM_ARTICLE->Text = "";
 		this->TXT_PRIX_ARTICLE->Text = "";
 		this->TXT_COULEUR_ARTICLE->Text = "";
 		this->TXT_TVA_ARTICLE->Text = "";
+		this->TXT_STOCK_ARTICLE->Text = "";
 	}
 
 
@@ -595,8 +596,9 @@ namespace APPGRAPHIQUEPROJET {
 		float Article_Prix = Convert::ToSingle(this->TXT_PRIX_ARTICLE->Text);
 		String^ Article_Couleur = this->TXT_COULEUR_ARTICLE->Text;
 		float Article_TVA = Convert::ToSingle(this->TXT_TVA_ARTICLE->Text);
+		int Article_Stock = Convert::ToInt32(this->TXT_STOCK_ARTICLE->Text);
 
-		//this->oSvc_Article->ajouter_Article(Article_ID, Article_Prix, Article_Nom, Article_Couleur, Article_TVA);
+		this->oSvc_Article->modifier_Article(Article_ID, Article_Prix, Article_Nom, Article_Couleur, Article_Stock, Article_TVA);
 
 
 		this->TXT_ID_ARTICLE->Text = "";
@@ -615,13 +617,21 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Void BOUTON_AFFICHAGE_ARTICLE_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		String^ Article_ID = this->TXT_ID_ARTICLE->Text;
+		if (this->TXT_ID_ARTICLE->Text == "") {
+			this->AFFICHAGE_STOCK->Refresh();
+			this->oDs = this->oSvc_Article->selectionner_Article("Rsl");
+			this->AFFICHAGE_STOCK->DataSource = this->oDs;
+			this->AFFICHAGE_STOCK->DataMember = "Rsl";
+		}
+		else {
+			int Article_ID = Convert::ToInt32(this->TXT_ID_ARTICLE->Text);
 
-		this->AFFICHAGE_STOCK->Refresh();
-		//this->oSvc_Article->selectionner_Article_Id("Rsl", Article_Id); //  à compléter
-		this->AFFICHAGE_STOCK->DataSource = this->oDs;
-		this->AFFICHAGE_STOCK->DataMember = "Rsl";
-
+			this->AFFICHAGE_STOCK->Refresh();
+			this->oDs = this->oSvc_Article->selectionner_Article_Id("Rsl", Article_ID);
+			this->AFFICHAGE_STOCK->DataSource = this->oDs;
+			this->AFFICHAGE_STOCK->DataMember = "Rsl";
+		}
+		
 		this->TXT_ID_ARTICLE->Text = "";
 	}
 
@@ -647,7 +657,7 @@ namespace APPGRAPHIQUEPROJET {
 		this->TXT_COULEUR_ARTICLE->Text = "Suivant";
 		this->TXT_TVA_ARTICLE->Text = "Suivant";
 	}
-	private: System::Void BACKGROUND_STOCK_TEXTE_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	};
+
+
+};
 }
