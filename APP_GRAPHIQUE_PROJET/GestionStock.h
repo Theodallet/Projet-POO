@@ -565,6 +565,7 @@ namespace APPGRAPHIQUEPROJET {
 		this->TXT_PRIX_ARTICLE->Text = "";
 		this->TXT_COULEUR_ARTICLE->Text = "";
 		this->TXT_TVA_ARTICLE->Text = "";
+		this->TXT_STOCK_ARTICLE->Text = "";
 	}
 
 
@@ -584,6 +585,11 @@ namespace APPGRAPHIQUEPROJET {
 		this->TXT_COULEUR_ARTICLE->Text = "";
 		this->TXT_TVA_ARTICLE->Text = "";
 		this->TXT_STOCK_ARTICLE->Text = "";
+
+		this->AFFICHAGE_STOCK->Refresh();
+		this->oDs = this->oSvc_Article->selectionner_Article_Id("Rsl", Article_ID);
+		this->AFFICHAGE_STOCK->DataSource = this->oDs;
+		this->AFFICHAGE_STOCK->DataMember = "Rsl";
 	}
 
 
@@ -606,6 +612,12 @@ namespace APPGRAPHIQUEPROJET {
 		this->TXT_PRIX_ARTICLE->Text = "";
 		this->TXT_COULEUR_ARTICLE->Text = "";
 		this->TXT_TVA_ARTICLE->Text = "";
+		this->TXT_STOCK_ARTICLE->Text = "";
+
+		this->AFFICHAGE_STOCK->Refresh();
+		this->oDs = this->oSvc_Article->selectionner_Article_Id("Rsl", Article_ID);
+		this->AFFICHAGE_STOCK->DataSource = this->oDs;
+		this->AFFICHAGE_STOCK->DataMember = "Rsl";
 	}
 
 	private: System::Void BOUTON_SUPPRIMER_ARTICLE_Click(System::Object^ sender, System::EventArgs^ e)
@@ -613,6 +625,11 @@ namespace APPGRAPHIQUEPROJET {
 		int Article_ID = Convert::ToInt32(this->TXT_ID_ARTICLE->Text);
 
 		this->TXT_ID_ARTICLE->Text = "";
+
+		this->AFFICHAGE_STOCK->Refresh();
+		this->oDs = this->oSvc_Article->selectionner_Article_Id("Rsl", Article_ID);
+		this->AFFICHAGE_STOCK->DataSource = this->oDs;
+		this->AFFICHAGE_STOCK->DataMember = "Rsl";
 	}
 
 	private: System::Void BOUTON_AFFICHAGE_ARTICLE_Click(System::Object^ sender, System::EventArgs^ e)
