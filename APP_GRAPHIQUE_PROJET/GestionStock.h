@@ -624,6 +624,8 @@ namespace APPGRAPHIQUEPROJET {
 	{
 		int Article_ID = Convert::ToInt32(this->TXT_ID_ARTICLE->Text);
 
+		this->oSvc_Article->supprimer_Article(Article_ID);
+
 		this->TXT_ID_ARTICLE->Text = "";
 
 		this->AFFICHAGE_STOCK->Refresh();
