@@ -888,6 +888,15 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 		
 	}
 private: System::Void BOUTON_MODIFIER_ARTICLE_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ Commande_ID = this->TXT_ID_COMMANDE->Text;
+	int Article_ID = Convert::ToInt32(this->TXT_ARTICLE_COMMANDE->Text);
+	int Article_Quantite = Convert::ToInt32(this->TXT_QUANTITE_ARTICLE_CLIENT->Text);
+
+	this->oSvc_Contient->modifier_Contient(Article_ID, Commande_ID, Article_Quantite);
+
+	this->TXT_ID_COMMANDE->Text = "";
+	this->TXT_ARTICLE_COMMANDE->Text = "";
+	this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "";
 }
 };
 }
