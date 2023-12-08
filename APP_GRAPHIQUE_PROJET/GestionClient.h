@@ -748,6 +748,36 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Void BOUTON_AFF_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		// solution a josolf à edit :
+		/*
+		// Connexion à la base de données
+        String^ connectionString = "Data Source=MAXIMED\\MSSQL_MAXIME_D;Initial Catalog=Projet;Integrated Security=True";
+        SqlConnection^ connection = gcnew SqlConnection(connectionString);
+
+        try {
+
+            connection->Open();
+
+            String^ querySelectStock = "SELECT CATALOGUE_PRODUIT.ID_PRODUIT, REF_PRODUIT, DESIGNATION, PRIX_HT_FIXE, TAUX_TVA, HISTORIQUE_FACTURATION, PROVIENT2.QUANTITE_PRODUIT_STOCK, PROVIENT2.SEUIL_REAPPROVISIONNEMENT ,ENTREPOT.NOM_ENTREPOT, ENTREPOT.ID_ENTREPOT FROM [Projet].[dbo].[CATALOGUE_PRODUIT] JOIN PROVIENT2 ON CATALOGUE_PRODUIT.ID_PRODUIT = PROVIENT2.ID_PRODUIT JOIN ENTREPOT ON PROVIENT2.ID_ENTREPOT = ENTREPOT.ID_ENTREPOT";
+            SqlDataAdapter^ commandStock = gcnew SqlDataAdapter(querySelectStock, connection);
+
+            DataTable^ dataTable = gcnew DataTable();
+
+            commandStock->Fill(dataTable);
+
+            connection->Close();
+
+            DgvArt->DataSource = dataTable;
+        }
+        catch (Exception^ ex) {
+            // Gérer les erreurs (affichage ou journalisation)
+            MessageBox::Show("Erreur lors de la récupération du stock : " + ex->Message, "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        }
+        finally {
+            // Fermer la connexion, même en cas d'erreur
+            connection->Close();
+        }
+		*/
 		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
 
 		this->AFFICHAGE_CLIENT->Refresh();
