@@ -460,6 +460,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_ADR_FACT;
 			   this->BOUTON_AJOUTER_ARTICLE_COMMANDE->TabIndex = 205;
 			   this->BOUTON_AJOUTER_ARTICLE_COMMANDE->Text = L"AJOUTER ARTICLE";
 			   this->BOUTON_AJOUTER_ARTICLE_COMMANDE->UseVisualStyleBackColor = false;
+			   this->BOUTON_AJOUTER_ARTICLE_COMMANDE->Click += gcnew System::EventHandler(this, &GestionCommandes::BOUTON_AJOUTER_ARTICLE_COMMANDE_Click);
 			   // 
 			   // BOUTON_SUPPRIMER_ARTICLE_COMMANDE
 			   // 
@@ -474,6 +475,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_ADR_FACT;
 			   this->BOUTON_SUPPRIMER_ARTICLE_COMMANDE->TabIndex = 206;
 			   this->BOUTON_SUPPRIMER_ARTICLE_COMMANDE->Text = L"SUPPRIMER ARTICLE";
 			   this->BOUTON_SUPPRIMER_ARTICLE_COMMANDE->UseVisualStyleBackColor = false;
+			   this->BOUTON_SUPPRIMER_ARTICLE_COMMANDE->Click += gcnew System::EventHandler(this, &GestionCommandes::BOUTON_SUPPRIMER_ARTICLE_COMMANDE_Click);
 			   // 
 			   // BOUTON_AFFICHER_ARTICLE_COMMANDE
 			   // 
@@ -725,7 +727,7 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 
 	
 		this->oSvc_Commande->ajouter_Commande(Date_Livraison, 0, 0, 0, Moyen_Paiment, Commande_ID_Livraison, Article_ID);
-		this->oSvc_Contient->ajouter_Contient(Article_ID, Commande_ID, Article_Quantite);
+		
 		
 
 		this->TXT_ID_COMMANDE->Text = "";  // A retirer
@@ -751,11 +753,9 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 	int Commande_ID_Livraison = Convert::ToInt32(this->TXT_ID_ADRESSE_COMMANDE->Text);
 	int Commande_ID_Facturation = Convert::ToInt32(this->TXT_ID_ADR_FACT->Text);
 
-	//modifier_Commande(int Id, System::DateTime ^ Date_Liv, System::DateTime ^ Date_Emi, float Total_HT, float Total_TTC, float Total_TVA, System::String ^ Moyen_Paiment, int Id_Cli, int Adresse_Liv, int Adresse_Fac)
+	
 	this->oSvc_Commande->modifier_Commande(Commande_ID, Date_Livraison, Date_Emission, 0, 0, 0, Moyen_Paiment, Client_ID, Commande_ID_Livraison, Commande_ID_Facturation);
-	this->oSvc_Contient->modifier_Contient(Article_ID, Commande_ID, Article_Quantite);
-
-
+	
 	this->TXT_ID_COMMANDE->Text = "";  // A retirer
 	this->TXT_ID_CLIENT_COMMANDE->Text = "";
 	this->TXT_DATE_LIV_COMMANDE->Text = "";
@@ -769,9 +769,9 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 
 	private: System::Void BOUTON_SUPPRIMER_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		String^ Commande_ID = this->TXT_ID_COMMANDE->Text;
+		int Commande_ID = Convert::ToInt32(this->TXT_ID_COMMANDE->Text);
 
-		// Commannde de suppression
+		this->oSvc_Commande->supprimer_Commande(Commande_ID);
 
 		this->TXT_ID_COMMANDE->Text = "";
 
@@ -828,6 +828,31 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 		this->TXT_ARTICLE_COMMANDE->Text = "Suivant";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "Suivant";
 
+	}
+	private: System::Void BOUTON_AJOUTER_ARTICLE_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		int Commande_ID = Convert::ToInt32(this->TXT_ID_COMMANDE->Text);
+		int Article_ID = Convert::ToInt32(this->TXT_ARTICLE_COMMANDE->Text);
+		int Article_Quantite = Convert::ToInt32(this->TXT_QUANTITE_ARTICLE_CLIENT->Text);
+		
+		
+		this->oSvc_Contient->ajouter_Contient(Article_ID, Commande_ID, Article_Quantite);
+
+
+		this->TXT_ID_COMMANDE->Text = ""; 
+		this->TXT_ARTICLE_COMMANDE->Text = "";
+		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "";
+
+	}
+	private: System::Void BOUTON_SUPPRIMER_ARTICLE_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		int Commande_ID = Convert::ToInt32(this->TXT_ID_COMMANDE->Text);
+		
+		this->oSvc_Commande->supprimer_Commande(Commande_ID);
+
+		this->TXT_ID_COMMANDE->Text = ""; 
+	
+		
 	}
 };
 }
