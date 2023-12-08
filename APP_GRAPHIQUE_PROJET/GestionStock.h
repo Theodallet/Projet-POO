@@ -590,7 +590,7 @@ namespace APPGRAPHIQUEPROJET {
 		String^ Article_ID = this->TXT_ID_ARTICLE->Text;
 
 		this->AFFICHAGE_STOCK->Refresh();
-		this->oSvc_Article->selectionner_Article_Id("Rsl", Article_Id); //  à compléter
+		//this->oSvc_Article->selectionner_Article_Id("Rsl", Article_Id); //  à compléter
 		this->AFFICHAGE_STOCK->DataSource = this->oDs;
 		this->AFFICHAGE_STOCK->DataMember = "Rsl";
 
