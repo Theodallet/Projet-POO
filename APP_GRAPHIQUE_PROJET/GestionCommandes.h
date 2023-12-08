@@ -768,9 +768,9 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 
 	private: System::Void BOUTON_SUPPRIMER_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		String^ Commande_ID = this->TXT_ID_COMMANDE->Text;
+		int Commande_ID = Convert::ToInt32(this->TXT_ID_COMMANDE->Text);
 
-		// Commannde de suppression
+		this->oSvc_Commande->supprimer_Commande(Commande_ID);
 
 		this->TXT_ID_COMMANDE->Text = "";
 
