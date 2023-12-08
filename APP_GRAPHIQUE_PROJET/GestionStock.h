@@ -543,10 +543,10 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Void GestionStock_Load(System::Object^ sender, System::EventArgs^ e)
 	{
-		this->oDs = this->oSvc_Article = gcnew NS_Comp_Svc::CLservices_Article();
+		this->oSvc_Article = gcnew NS_Comp_Svc::CLservices_Article();
 
 		this->AFFICHAGE_STOCK->Refresh();
-		this->oSvc_Article->selectionner_Article("Rsl");
+		this->oDs = this->oSvc_Article->selectionner_Article("Rsl");
 		this->AFFICHAGE_STOCK->DataSource = this->oDs;
 		this->AFFICHAGE_STOCK->DataMember = "Rsl";
 
