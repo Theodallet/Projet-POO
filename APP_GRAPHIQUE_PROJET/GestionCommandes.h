@@ -690,8 +690,11 @@ private: System::Windows::Forms::TextBox^ TXT_ID_ADR_FACT;
 
 	private: System::Void GestionCommandes_Load(System::Object^ sender, System::EventArgs^ e)
 	{
-		this->oSvc_Contient = gcnew NS_Comp_Svc::CLservices_Contient();
 		this->oSvc_Commande = gcnew NS_Comp_Svc::CLservices_Commande();
+		this->AFFICHAGE_COMMANDES->Refresh();
+		this->oDs = this->oSvc_Commande->selectionner_Commande("Rsl");
+		this->AFFICHAGE_COMMANDES->DataSource = this->oDs;
+		this->AFFICHAGE_COMMANDES->DataMember = "Rsl";
 	}
 
 
