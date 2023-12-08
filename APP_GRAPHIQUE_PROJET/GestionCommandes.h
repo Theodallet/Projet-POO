@@ -709,6 +709,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 	private: System::Void GestionCommandes_Load(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->oSvc_Commande = gcnew NS_Comp_Svc::CLservices_Commande();
+		this->oSvc_Contient = gcnew NS_Comp_Svc::CLservices_Contient();
 		this->AFFICHAGE_COMMANDES->Refresh();
 		this->oDs = this->oSvc_Commande->selectionner_Commande("Rsl");
 		this->AFFICHAGE_COMMANDES->DataSource = this->oDs;
