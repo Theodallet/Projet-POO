@@ -534,7 +534,6 @@ namespace APPGRAPHIQUEPROJET {
 			   // 
 			   // BACKGROUND_ZONE_TEXTE
 			   // 
-			   this->BACKGROUND_ZONE_TEXTE->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"BACKGROUND_ZONE_TEXTE.BackgroundImage")));
 			   this->BACKGROUND_ZONE_TEXTE->Location = System::Drawing::Point(75, 116);
 			   this->BACKGROUND_ZONE_TEXTE->Name = L"BACKGROUND_ZONE_TEXTE";
 			   this->BACKGROUND_ZONE_TEXTE->Size = System::Drawing::Size(683, 550);
@@ -649,6 +648,12 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Void GestionClient_Load(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
+
+		this->AFFICHAGE_CLIENT->Refresh();
+		this->oSvc_Client->selectionner_Client("Rsl");
+		this->AFFICHAGE_CLIENT->DataSource = this->oDs;
+		this->AFFICHAGE_CLIENT->DataMember = "Rsl";
 	}
 
 
@@ -669,22 +674,17 @@ namespace APPGRAPHIQUEPROJET {
 		// On vérifie si l'ID contient quelque chose, sinon il contient quelque chose on ne fait rien et on transmet
 
 		// Acquisition des données
-
-
 		String^ Client_Nom = this->TXT_NOM_CLIENT->Text;
 		String^ Client_Prenom = this->TXT_PRENOM_CLIENT->Text;
-		String^ Client_Date_N = this->TXT_BD_CLIENT->Text;
+		DateTime Client_Date_N = DateTime::Parse(this->TXT_BD_CLIENT->Text);
 		String^ Client_Mail = this->TXT_MAIL_CLIENT->Text;
 		String^ Client_Rue = this->TXT_RUE_CLIENT->Text;
 		String^ Client_Code_Postal = this->TXT_CP_CLIENT->Text;
 		String^ Client_Ville = this->TXT_VILLE_CLIENT->Text;
 		String^ Client_Batiment = this->TXT_BAT_CLIENT->Text;
 		int Client_Etage = Convert::ToInt32(this->TXT_ETAGE_CLIENT->Text);
-
-
-
 		// Action à faire
-		this->oSvc_Client->ajouter_Client(Client_Nom, Client_Prenom, Client_Date_N, Client_Mail, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
+		this->oSvc_Client->ajouter_Client(Client_Nom, Client_Prenom, Client_Mail, Client_Date_N, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
 		// Vide de la page
 
 		this->TXT_ID_CLIENT->Text = "";
@@ -706,20 +706,20 @@ namespace APPGRAPHIQUEPROJET {
 
 		// Acquisition des données
 
-		String^ Client_ID = this->TXT_ID_CLIENT->Text;
+		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
 
 		String^ Client_Nom = this->TXT_NOM_CLIENT->Text;
 		String^ Client_Prenom = this->TXT_PRENOM_CLIENT->Text;
-		String^ Client_Date_N = this->TXT_BD_CLIENT->Text;
+		DateTime Client_Date_N = DateTime::Parse(this->TXT_BD_CLIENT->Text);
 		String^ Client_Mail = this->TXT_MAIL_CLIENT->Text;
 		String^ Client_Rue = this->TXT_RUE_CLIENT->Text;
 		String^ Client_Code_Postal = this->TXT_CP_CLIENT->Text;
 		String^ Client_Ville = this->TXT_VILLE_CLIENT->Text;
 		String^ Client_Batiment = this->TXT_BAT_CLIENT->Text;
-		String^ Client_Etage = this->TXT_ETAGE_CLIENT->Text;
+		int Client_Etage = Convert::ToInt32(this->TXT_ETAGE_CLIENT->Text);
 
 		// Action à faire
-
+		this->oSvc_Client->modifier_Client(Client_ID, Client_Nom, Client_Prenom, Client_Mail, Client_Date_N, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
 
 		// Vide de la page
 
@@ -739,14 +739,22 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Void BOUTON_SUPP_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		String^ Client_ID = this->TXT_ID_CLIENT->Text;
+		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
+
+		this->oSvc_Client->supprimer_Client(Client_ID);
 
 		this->TXT_ID_CLIENT->Text = "";
 	}
 
 	private: System::Void BOUTON_AFF_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		String^ Client_ID = this->TXT_ID_CLIENT->Text;
+		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
+
+		this->AFFICHAGE_CLIENT->Refresh();
+		this->oSvc_Client->selectionner_Client_Ind("Rsl", Client_ID);
+		this->AFFICHAGE_CLIENT->DataSource = this->oDs;
+		this->AFFICHAGE_CLIENT->DataMember = "Rsl";
+
 
 		this->TXT_ID_CLIENT->Text = "";
 	}
@@ -810,6 +818,8 @@ namespace APPGRAPHIQUEPROJET {
 		this->TXT_BAT_CLIENT->Text = "";
 		this->TXT_ETAGE_CLIENT->Text = "";
 	}
+
+
 	};
 
 }
