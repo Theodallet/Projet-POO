@@ -1,5 +1,5 @@
 #pragma once
-
+#include "CL_services.h"
 namespace APPGRAPHIQUEPROJET {
 
 	using namespace System;
@@ -115,36 +115,25 @@ namespace APPGRAPHIQUEPROJET {
 
 
 	private: System::Windows::Forms::Label^ LABEL_BAT_LIV_COMMANDE;
-private: System::Windows::Forms::Label^ LABEL_RUE_LIV_COMMANDE;
-
-
-
+	private: System::Windows::Forms::Label^ LABEL_RUE_LIV_COMMANDE;
 	private: System::Windows::Forms::Label^ ID_ARTICLE_COMMANDE;
 	private: System::Windows::Forms::Label^ LABEL_CP_LIV_COMMANDE;
 	private: System::Windows::Forms::Label^ LABEL_VILLE_LIV_COMMANDE;
-
-
-
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_ZONE_TEXTE;
-
-
 	private: System::Windows::Forms::PictureBox^ Background;
 	private: System::Windows::Forms::Button^ BOUTON_AJOUTER_ARTICLE_COMMANDE;
 	private: System::Windows::Forms::Button^ BOUTON_SUPPRIMER_ARTICLE_COMMANDE;
 	private: System::Windows::Forms::Button^ BOUTON_AFFICHER_ARTICLE_COMMANDE;
-
-
-
 	private: System::Windows::Forms::TextBox^ TXT_QUANTITE_ARTICLE_CLIENT;
 	private: System::Windows::Forms::Label^ LABEL_QUANTITE_ARTICLE_COMMANDE;
-
-
 	private: System::Windows::Forms::Button^ SKIP_CLIENT_GAUCHE;
 	private: System::Windows::Forms::Button^ SKIP_CLIENT_DROITE;
-private: System::Windows::Forms::Button^ BOUTON_CLEAR_CLIENT;
-
+	private: System::Windows::Forms::Button^ BOUTON_CLEAR_CLIENT;
 	private: System::Windows::Forms::Label^ label40;
 
+	private: NS_Comp_Svc::CLservices_Contient^ oSvc_Contient;
+	private: NS_Comp_Svc::CLservices_Commande^ oSvc_Commande;
+	private: System::Data::DataSet^ oDs;
 #pragma region Windows Form Designer generated code
 		   /// <summary>
 		   /// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
@@ -724,7 +713,8 @@ private: System::Windows::Forms::Button^ BOUTON_CLEAR_CLIENT;
 
 	private: System::Void GestionCommandes_Load(System::Object^ sender, System::EventArgs^ e)
 	{
-
+		this->oSvc_Contient = gcnew NS_Comp_Svc::CLservices_Contient();
+		this->oSvc_Commande = gcnew NS_Comp_Svc::CLservices_Commande();
 	}
 
 
@@ -753,19 +743,22 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 
 	private: System::Void BOUTON_AJOUTER_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		String^ Commande_ID = this->TXT_ID_COMMANDE->Text; // A retirer
-		String^ Client_ID = this->TXT_ID_CLIENT_COMMANDE->Text;
-		String^ Date_Livraison = this->TXT_DATE_LIV_COMMANDE->Text;
-		String^ Article_ID = this->TXT_ARTICLE_COMMANDE->Text;
-		String^ Article_Quantite = this->TXT_QUANTITE_ARTICLE_CLIENT->Text;
+		int Commande_ID = Convert::ToInt32(this->TXT_ID_COMMANDE->Text); // A retirer
+		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT_COMMANDE->Text);
+		DateTime Date_Livraison = DateTime::Parse(this->TXT_DATE_LIV_COMMANDE->Text);
+		int Article_ID = Convert::ToInt32(this->TXT_ARTICLE_COMMANDE->Text);
+		int Article_Quantite = Convert::ToInt32(this->TXT_QUANTITE_ARTICLE_CLIENT->Text);
 		String^ Route_Livraison = this->TXT_RUE_LIV_COMMANDE->Text;
 		String^ CodePostal_Livraison = this->TXT_CP_LIV_COMMANDE->Text;
 		String^ Ville_Livraison = this->TXT_VILLE_LIV_COMMANDE->Text;
 		String^ Batiment_Livraison = this->TXT_BAT_LIV_COMMANDE->Text;
-		String^ Etage_Livraison = this->TXT_ETAGE_LIV_COMMANDE->Text;
+		int Etage_Livraison = Convert::ToInt32(this->TXT_ETAGE_LIV_COMMANDE->Text);
 
 		// Action à faire
-
+		this->oSvc_Commande->ajouter_Commande(Date_Livraison,nullptr,nullptr,nullptr,Moyen_Paiment, Client_ID,);
+		this
+		ajouter_Contient(int Id_Art, int Id_Com, int Quantite_Article) 
+			ajouter_Commande(System::String ^ Date_Liv, float Total_HT, float Total_TTC, float Total_TVA, System::String ^ Moyen_Paiment, int Id_Cli, int Adresse_Liv)
 
 		// Vide de la page
 
