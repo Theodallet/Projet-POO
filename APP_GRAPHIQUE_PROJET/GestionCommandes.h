@@ -56,7 +56,7 @@ namespace APPGRAPHIQUEPROJET {
 	// private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::DataGridView^ AFFICHAGE_COMMANDES;
 	private: System::Windows::Forms::TextBox^ TXT_ARTICLE_COMMANDE;
-	private: System::Windows::Forms::TextBox^ TXT_ETAGE_LIV_COMMANDE;
+
 
 
 
@@ -65,21 +65,22 @@ namespace APPGRAPHIQUEPROJET {
 
 
 	private: System::Windows::Forms::Button^ RETURN_COMMANDES_HOME;
-	private: System::Windows::Forms::TextBox^ TXT_BAT_LIV_COMMANDE;
+
 
 
 	private: System::Windows::Forms::Label^ NomApp;
-	private: System::Windows::Forms::TextBox^ TXT_VILLE_LIV_COMMANDE;
+
 
 	private: System::Windows::Forms::PictureBox^ BarreNoir;
 	private: System::Windows::Forms::TextBox^ TXT_ID_CLIENT_COMMANDE;
 
-	private: System::Windows::Forms::TextBox^ TXT_CP_LIV_COMMANDE;
+
 
 
 
 	private: System::Windows::Forms::Label^ TITRE_COMMANDES;
-	private: System::Windows::Forms::TextBox^ TXT_RUE_LIV_COMMANDE;
+	private: System::Windows::Forms::TextBox^ TXT_ID_ADRESSE_COMMANDE;
+
 
 	private: System::Windows::Forms::Label^ LABEL_ID_CLIEN_COMMANDE;
 
@@ -100,16 +101,17 @@ namespace APPGRAPHIQUEPROJET {
 
 
 
-	private: System::Windows::Forms::Label^ LABEL_ETAGE_LIV_COMMANDE;
+
 	private: System::Windows::Forms::Button^ BOUTON_AFFICHER_COMMANDE;
 
 
-	private: System::Windows::Forms::Label^ LABEL_BAT_LIV_COMMANDE;
-	private: System::Windows::Forms::Label^ LABEL_RUE_LIV_COMMANDE;
+
+	private: System::Windows::Forms::Label^ LABEL_ID_ADRESSE_COMMANDE;
+
 	private: System::Windows::Forms::Label^ ID_ARTICLE_COMMANDE;
-	private: System::Windows::Forms::Label^ LABEL_CP_LIV_COMMANDE;
-	private: System::Windows::Forms::Label^ LABEL_VILLE_LIV_COMMANDE;
-	private: System::Windows::Forms::PictureBox^ BACKGROUND_ZONE_TEXTE;
+
+
+
 	private: System::Windows::Forms::PictureBox^ Background;
 	private: System::Windows::Forms::Button^ BOUTON_AJOUTER_ARTICLE_COMMANDE;
 	private: System::Windows::Forms::Button^ BOUTON_SUPPRIMER_ARTICLE_COMMANDE;
@@ -125,6 +127,7 @@ namespace APPGRAPHIQUEPROJET {
 	private: NS_Comp_Svc::CLservices_Commande^ oSvc_Commande;
 private: System::Windows::Forms::Label^ label2;
 private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
+private: System::Windows::Forms::PictureBox^ BACKGROUND_ZONE_TEXTE;
 	private: System::Data::DataSet^ oDs;
 #pragma region Windows Form Designer generated code
 		   /// <summary>
@@ -137,18 +140,14 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   this->label40 = (gcnew System::Windows::Forms::Label());
 			   this->AFFICHAGE_COMMANDES = (gcnew System::Windows::Forms::DataGridView());
 			   this->TXT_ARTICLE_COMMANDE = (gcnew System::Windows::Forms::TextBox());
-			   this->TXT_ETAGE_LIV_COMMANDE = (gcnew System::Windows::Forms::TextBox());
 			   this->LOGO = (gcnew System::Windows::Forms::PictureBox());
 			   this->TXT_DATE_LIV_COMMANDE = (gcnew System::Windows::Forms::DateTimePicker());
 			   this->RETURN_COMMANDES_HOME = (gcnew System::Windows::Forms::Button());
-			   this->TXT_BAT_LIV_COMMANDE = (gcnew System::Windows::Forms::TextBox());
 			   this->NomApp = (gcnew System::Windows::Forms::Label());
-			   this->TXT_VILLE_LIV_COMMANDE = (gcnew System::Windows::Forms::TextBox());
 			   this->BarreNoir = (gcnew System::Windows::Forms::PictureBox());
 			   this->TXT_ID_CLIENT_COMMANDE = (gcnew System::Windows::Forms::TextBox());
-			   this->TXT_CP_LIV_COMMANDE = (gcnew System::Windows::Forms::TextBox());
 			   this->TITRE_COMMANDES = (gcnew System::Windows::Forms::Label());
-			   this->TXT_RUE_LIV_COMMANDE = (gcnew System::Windows::Forms::TextBox());
+			   this->TXT_ID_ADRESSE_COMMANDE = (gcnew System::Windows::Forms::TextBox());
 			   this->LABEL_ID_CLIEN_COMMANDE = (gcnew System::Windows::Forms::Label());
 			   this->TXT_ID_COMMANDE = (gcnew System::Windows::Forms::TextBox());
 			   this->BOUTON_AJOUTER_COMMANDE = (gcnew System::Windows::Forms::Button());
@@ -156,14 +155,9 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   this->BOUTON_MODIFIER_COMMANDE = (gcnew System::Windows::Forms::Button());
 			   this->LABEL_DATE_LIV_COMMANDE = (gcnew System::Windows::Forms::Label());
 			   this->BOUTON_SUPPRIMER_COMMANDE = (gcnew System::Windows::Forms::Button());
-			   this->LABEL_ETAGE_LIV_COMMANDE = (gcnew System::Windows::Forms::Label());
 			   this->BOUTON_AFFICHER_COMMANDE = (gcnew System::Windows::Forms::Button());
-			   this->LABEL_BAT_LIV_COMMANDE = (gcnew System::Windows::Forms::Label());
-			   this->LABEL_RUE_LIV_COMMANDE = (gcnew System::Windows::Forms::Label());
+			   this->LABEL_ID_ADRESSE_COMMANDE = (gcnew System::Windows::Forms::Label());
 			   this->ID_ARTICLE_COMMANDE = (gcnew System::Windows::Forms::Label());
-			   this->LABEL_CP_LIV_COMMANDE = (gcnew System::Windows::Forms::Label());
-			   this->LABEL_VILLE_LIV_COMMANDE = (gcnew System::Windows::Forms::Label());
-			   this->BACKGROUND_ZONE_TEXTE = (gcnew System::Windows::Forms::PictureBox());
 			   this->Background = (gcnew System::Windows::Forms::PictureBox());
 			   this->BOUTON_AJOUTER_ARTICLE_COMMANDE = (gcnew System::Windows::Forms::Button());
 			   this->BOUTON_SUPPRIMER_ARTICLE_COMMANDE = (gcnew System::Windows::Forms::Button());
@@ -175,11 +169,12 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   this->BOUTON_CLEAR_CLIENT = (gcnew System::Windows::Forms::Button());
 			   this->label2 = (gcnew System::Windows::Forms::Label());
 			   this->TXT_MOYEN_PAIMENT_COMMANDE = (gcnew System::Windows::Forms::TextBox());
+			   this->BACKGROUND_ZONE_TEXTE = (gcnew System::Windows::Forms::PictureBox());
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AFFICHAGE_COMMANDES))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LOGO))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BarreNoir))->BeginInit();
-			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BACKGROUND_ZONE_TEXTE))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Background))->BeginInit();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BACKGROUND_ZONE_TEXTE))->BeginInit();
 			   this->SuspendLayout();
 			   // 
 			   // label40
@@ -188,7 +183,7 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   this->label40->ForeColor = System::Drawing::Color::Red;
 			   this->label40->Location = System::Drawing::Point(817, 827);
 			   this->label40->Name = L"label40";
-			   this->label40->Size = System::Drawing::Size(225, 17);
+			   this->label40->Size = System::Drawing::Size(166, 13);
 			   this->label40->TabIndex = 172;
 			   this->label40->Text = L"Message erreur potentielle ajouter";
 			   // 
@@ -208,17 +203,8 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_ARTICLE_COMMANDE->Location = System::Drawing::Point(101, 431);
 			   this->TXT_ARTICLE_COMMANDE->Name = L"TXT_ARTICLE_COMMANDE";
-			   this->TXT_ARTICLE_COMMANDE->Size = System::Drawing::Size(136, 30);
+			   this->TXT_ARTICLE_COMMANDE->Size = System::Drawing::Size(136, 26);
 			   this->TXT_ARTICLE_COMMANDE->TabIndex = 202;
-			   // 
-			   // TXT_ETAGE_LIV_COMMANDE
-			   // 
-			   this->TXT_ETAGE_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
-				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->TXT_ETAGE_LIV_COMMANDE->Location = System::Drawing::Point(424, 501);
-			   this->TXT_ETAGE_LIV_COMMANDE->Name = L"TXT_ETAGE_LIV_COMMANDE";
-			   this->TXT_ETAGE_LIV_COMMANDE->Size = System::Drawing::Size(303, 30);
-			   this->TXT_ETAGE_LIV_COMMANDE->TabIndex = 200;
 			   // 
 			   // LOGO
 			   // 
@@ -237,7 +223,7 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_DATE_LIV_COMMANDE->Location = System::Drawing::Point(98, 317);
 			   this->TXT_DATE_LIV_COMMANDE->Name = L"TXT_DATE_LIV_COMMANDE";
-			   this->TXT_DATE_LIV_COMMANDE->Size = System::Drawing::Size(286, 30);
+			   this->TXT_DATE_LIV_COMMANDE->Size = System::Drawing::Size(286, 26);
 			   this->TXT_DATE_LIV_COMMANDE->TabIndex = 183;
 			   // 
 			   // RETURN_COMMANDES_HOME
@@ -256,15 +242,6 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   this->RETURN_COMMANDES_HOME->UseVisualStyleBackColor = false;
 			   this->RETURN_COMMANDES_HOME->Click += gcnew System::EventHandler(this, &GestionCommandes::RETURN_COMMANDES_HOME_Click);
 			   // 
-			   // TXT_BAT_LIV_COMMANDE
-			   // 
-			   this->TXT_BAT_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
-				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->TXT_BAT_LIV_COMMANDE->Location = System::Drawing::Point(425, 431);
-			   this->TXT_BAT_LIV_COMMANDE->Name = L"TXT_BAT_LIV_COMMANDE";
-			   this->TXT_BAT_LIV_COMMANDE->Size = System::Drawing::Size(302, 30);
-			   this->TXT_BAT_LIV_COMMANDE->TabIndex = 190;
-			   // 
 			   // NomApp
 			   // 
 			   this->NomApp->AutoSize = true;
@@ -274,18 +251,9 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   this->NomApp->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->NomApp->Location = System::Drawing::Point(69, 6);
 			   this->NomApp->Name = L"NomApp";
-			   this->NomApp->Size = System::Drawing::Size(507, 62);
+			   this->NomApp->Size = System::Drawing::Size(401, 50);
 			   this->NomApp->TabIndex = 173;
 			   this->NomApp->Text = L"| Gestion Commandes";
-			   // 
-			   // TXT_VILLE_LIV_COMMANDE
-			   // 
-			   this->TXT_VILLE_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
-				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->TXT_VILLE_LIV_COMMANDE->Location = System::Drawing::Point(425, 353);
-			   this->TXT_VILLE_LIV_COMMANDE->Name = L"TXT_VILLE_LIV_COMMANDE";
-			   this->TXT_VILLE_LIV_COMMANDE->Size = System::Drawing::Size(302, 30);
-			   this->TXT_VILLE_LIV_COMMANDE->TabIndex = 194;
 			   // 
 			   // BarreNoir
 			   // 
@@ -302,17 +270,8 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_ID_CLIENT_COMMANDE->Location = System::Drawing::Point(98, 253);
 			   this->TXT_ID_CLIENT_COMMANDE->Name = L"TXT_ID_CLIENT_COMMANDE";
-			   this->TXT_ID_CLIENT_COMMANDE->Size = System::Drawing::Size(286, 30);
+			   this->TXT_ID_CLIENT_COMMANDE->Size = System::Drawing::Size(286, 26);
 			   this->TXT_ID_CLIENT_COMMANDE->TabIndex = 179;
-			   // 
-			   // TXT_CP_LIV_COMMANDE
-			   // 
-			   this->TXT_CP_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
-				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->TXT_CP_LIV_COMMANDE->Location = System::Drawing::Point(423, 272);
-			   this->TXT_CP_LIV_COMMANDE->Name = L"TXT_CP_LIV_COMMANDE";
-			   this->TXT_CP_LIV_COMMANDE->Size = System::Drawing::Size(302, 30);
-			   this->TXT_CP_LIV_COMMANDE->TabIndex = 186;
 			   // 
 			   // TITRE_COMMANDES
 			   // 
@@ -323,18 +282,18 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   this->TITRE_COMMANDES->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->TITRE_COMMANDES->Location = System::Drawing::Point(94, 134);
 			   this->TITRE_COMMANDES->Name = L"TITRE_COMMANDES";
-			   this->TITRE_COMMANDES->Size = System::Drawing::Size(381, 25);
+			   this->TITRE_COMMANDES->Size = System::Drawing::Size(308, 20);
 			   this->TITRE_COMMANDES->TabIndex = 191;
 			   this->TITRE_COMMANDES->Text = L"CARACTERISTIQUES COMMANDES";
 			   // 
-			   // TXT_RUE_LIV_COMMANDE
+			   // TXT_ID_ADRESSE_COMMANDE
 			   // 
-			   this->TXT_RUE_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+			   this->TXT_ID_ADRESSE_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->TXT_RUE_LIV_COMMANDE->Location = System::Drawing::Point(422, 194);
-			   this->TXT_RUE_LIV_COMMANDE->Name = L"TXT_RUE_LIV_COMMANDE";
-			   this->TXT_RUE_LIV_COMMANDE->Size = System::Drawing::Size(303, 26);
-			   this->TXT_RUE_LIV_COMMANDE->TabIndex = 188;
+			   this->TXT_ID_ADRESSE_COMMANDE->Location = System::Drawing::Point(422, 194);
+			   this->TXT_ID_ADRESSE_COMMANDE->Name = L"TXT_ID_ADRESSE_COMMANDE";
+			   this->TXT_ID_ADRESSE_COMMANDE->Size = System::Drawing::Size(303, 22);
+			   this->TXT_ID_ADRESSE_COMMANDE->TabIndex = 188;
 			   // 
 			   // LABEL_ID_CLIEN_COMMANDE
 			   // 
@@ -345,7 +304,7 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   this->LABEL_ID_CLIEN_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_ID_CLIEN_COMMANDE->Location = System::Drawing::Point(97, 226);
 			   this->LABEL_ID_CLIEN_COMMANDE->Name = L"LABEL_ID_CLIEN_COMMANDE";
-			   this->LABEL_ID_CLIEN_COMMANDE->Size = System::Drawing::Size(95, 25);
+			   this->LABEL_ID_CLIEN_COMMANDE->Size = System::Drawing::Size(79, 20);
 			   this->LABEL_ID_CLIEN_COMMANDE->TabIndex = 181;
 			   this->LABEL_ID_CLIEN_COMMANDE->Text = L"ID Client";
 			   // 
@@ -355,7 +314,7 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 				   static_cast<System::Byte>(0)));
 			   this->TXT_ID_COMMANDE->Location = System::Drawing::Point(98, 190);
 			   this->TXT_ID_COMMANDE->Name = L"TXT_ID_COMMANDE";
-			   this->TXT_ID_COMMANDE->Size = System::Drawing::Size(286, 30);
+			   this->TXT_ID_COMMANDE->Size = System::Drawing::Size(286, 26);
 			   this->TXT_ID_COMMANDE->TabIndex = 196;
 			   // 
 			   // BOUTON_AJOUTER_COMMANDE
@@ -382,7 +341,7 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   this->LABEL_ID_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_ID_COMMANDE->Location = System::Drawing::Point(94, 167);
 			   this->LABEL_ID_COMMANDE->Name = L"LABEL_ID_COMMANDE";
-			   this->LABEL_ID_COMMANDE->Size = System::Drawing::Size(144, 25);
+			   this->LABEL_ID_COMMANDE->Size = System::Drawing::Size(120, 20);
 			   this->LABEL_ID_COMMANDE->TabIndex = 195;
 			   this->LABEL_ID_COMMANDE->Text = L"ID commande";
 			   // 
@@ -410,7 +369,7 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   this->LABEL_DATE_LIV_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_DATE_LIV_COMMANDE->Location = System::Drawing::Point(97, 287);
 			   this->LABEL_DATE_LIV_COMMANDE->Name = L"LABEL_DATE_LIV_COMMANDE";
-			   this->LABEL_DATE_LIV_COMMANDE->Size = System::Drawing::Size(173, 25);
+			   this->LABEL_DATE_LIV_COMMANDE->Size = System::Drawing::Size(143, 20);
 			   this->LABEL_DATE_LIV_COMMANDE->TabIndex = 184;
 			   this->LABEL_DATE_LIV_COMMANDE->Text = L"Date de livraison";
 			   // 
@@ -429,19 +388,6 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   this->BOUTON_SUPPRIMER_COMMANDE->UseVisualStyleBackColor = false;
 			   this->BOUTON_SUPPRIMER_COMMANDE->Click += gcnew System::EventHandler(this, &GestionCommandes::BOUTON_SUPPRIMER_COMMANDE_Click);
 			   // 
-			   // LABEL_ETAGE_LIV_COMMANDE
-			   // 
-			   this->LABEL_ETAGE_LIV_COMMANDE->AutoSize = true;
-			   this->LABEL_ETAGE_LIV_COMMANDE->BackColor = System::Drawing::Color::Black;
-			   this->LABEL_ETAGE_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
-				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->LABEL_ETAGE_LIV_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->LABEL_ETAGE_LIV_COMMANDE->Location = System::Drawing::Point(420, 469);
-			   this->LABEL_ETAGE_LIV_COMMANDE->Name = L"LABEL_ETAGE_LIV_COMMANDE";
-			   this->LABEL_ETAGE_LIV_COMMANDE->Size = System::Drawing::Size(177, 25);
-			   this->LABEL_ETAGE_LIV_COMMANDE->TabIndex = 193;
-			   this->LABEL_ETAGE_LIV_COMMANDE->Text = L"Etage (Livraison)";
-			   // 
 			   // BOUTON_AFFICHER_COMMANDE
 			   // 
 			   this->BOUTON_AFFICHER_COMMANDE->BackColor = System::Drawing::SystemColors::HotTrack;
@@ -457,31 +403,18 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   this->BOUTON_AFFICHER_COMMANDE->UseVisualStyleBackColor = false;
 			   this->BOUTON_AFFICHER_COMMANDE->Click += gcnew System::EventHandler(this, &GestionCommandes::BOUTON_AFFICHER_COMMANDE_Click);
 			   // 
-			   // LABEL_BAT_LIV_COMMANDE
+			   // LABEL_ID_ADRESSE_COMMANDE
 			   // 
-			   this->LABEL_BAT_LIV_COMMANDE->AutoSize = true;
-			   this->LABEL_BAT_LIV_COMMANDE->BackColor = System::Drawing::Color::Black;
-			   this->LABEL_BAT_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
+			   this->LABEL_ID_ADRESSE_COMMANDE->AutoSize = true;
+			   this->LABEL_ID_ADRESSE_COMMANDE->BackColor = System::Drawing::Color::Black;
+			   this->LABEL_ID_ADRESSE_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->LABEL_BAT_LIV_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->LABEL_BAT_LIV_COMMANDE->Location = System::Drawing::Point(420, 399);
-			   this->LABEL_BAT_LIV_COMMANDE->Name = L"LABEL_BAT_LIV_COMMANDE";
-			   this->LABEL_BAT_LIV_COMMANDE->Size = System::Drawing::Size(255, 25);
-			   this->LABEL_BAT_LIV_COMMANDE->TabIndex = 192;
-			   this->LABEL_BAT_LIV_COMMANDE->Text = L"Nom Batiment (Livraison)";
-			   // 
-			   // LABEL_RUE_LIV_COMMANDE
-			   // 
-			   this->LABEL_RUE_LIV_COMMANDE->AutoSize = true;
-			   this->LABEL_RUE_LIV_COMMANDE->BackColor = System::Drawing::Color::Black;
-			   this->LABEL_RUE_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
-				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->LABEL_RUE_LIV_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->LABEL_RUE_LIV_COMMANDE->Location = System::Drawing::Point(420, 170);
-			   this->LABEL_RUE_LIV_COMMANDE->Name = L"LABEL_RUE_LIV_COMMANDE";
-			   this->LABEL_RUE_LIV_COMMANDE->Size = System::Drawing::Size(159, 25);
-			   this->LABEL_RUE_LIV_COMMANDE->TabIndex = 185;
-			   this->LABEL_RUE_LIV_COMMANDE->Text = L"Rue (Livraison)";
+			   this->LABEL_ID_ADRESSE_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->LABEL_ID_ADRESSE_COMMANDE->Location = System::Drawing::Point(420, 170);
+			   this->LABEL_ID_ADRESSE_COMMANDE->Name = L"LABEL_ID_ADRESSE_COMMANDE";
+			   this->LABEL_ID_ADRESSE_COMMANDE->Size = System::Drawing::Size(187, 20);
+			   this->LABEL_ID_ADRESSE_COMMANDE->TabIndex = 185;
+			   this->LABEL_ID_ADRESSE_COMMANDE->Text = L"ID Adresse (Livraison)";
 			   // 
 			   // ID_ARTICLE_COMMANDE
 			   // 
@@ -492,44 +425,9 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   this->ID_ARTICLE_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->ID_ARTICLE_COMMANDE->Location = System::Drawing::Point(97, 406);
 			   this->ID_ARTICLE_COMMANDE->Name = L"ID_ARTICLE_COMMANDE";
-			   this->ID_ARTICLE_COMMANDE->Size = System::Drawing::Size(100, 25);
+			   this->ID_ARTICLE_COMMANDE->Size = System::Drawing::Size(84, 20);
 			   this->ID_ARTICLE_COMMANDE->TabIndex = 199;
 			   this->ID_ARTICLE_COMMANDE->Text = L"ID Article";
-			   // 
-			   // LABEL_CP_LIV_COMMANDE
-			   // 
-			   this->LABEL_CP_LIV_COMMANDE->AutoSize = true;
-			   this->LABEL_CP_LIV_COMMANDE->BackColor = System::Drawing::Color::Black;
-			   this->LABEL_CP_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->LABEL_CP_LIV_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->LABEL_CP_LIV_COMMANDE->Location = System::Drawing::Point(420, 240);
-			   this->LABEL_CP_LIV_COMMANDE->Name = L"LABEL_CP_LIV_COMMANDE";
-			   this->LABEL_CP_LIV_COMMANDE->Size = System::Drawing::Size(239, 25);
-			   this->LABEL_CP_LIV_COMMANDE->TabIndex = 187;
-			   this->LABEL_CP_LIV_COMMANDE->Text = L"Code Postal (Livraison)";
-			   // 
-			   // LABEL_VILLE_LIV_COMMANDE
-			   // 
-			   this->LABEL_VILLE_LIV_COMMANDE->AutoSize = true;
-			   this->LABEL_VILLE_LIV_COMMANDE->BackColor = System::Drawing::Color::Black;
-			   this->LABEL_VILLE_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
-				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->LABEL_VILLE_LIV_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->LABEL_VILLE_LIV_COMMANDE->Location = System::Drawing::Point(420, 321);
-			   this->LABEL_VILLE_LIV_COMMANDE->Name = L"LABEL_VILLE_LIV_COMMANDE";
-			   this->LABEL_VILLE_LIV_COMMANDE->Size = System::Drawing::Size(163, 25);
-			   this->LABEL_VILLE_LIV_COMMANDE->TabIndex = 189;
-			   this->LABEL_VILLE_LIV_COMMANDE->Text = L"Ville (Livraison)";
-			   // 
-			   // BACKGROUND_ZONE_TEXTE
-			   // 
-			   this->BACKGROUND_ZONE_TEXTE->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"BACKGROUND_ZONE_TEXTE.BackgroundImage")));
-			   this->BACKGROUND_ZONE_TEXTE->Location = System::Drawing::Point(78, 138);
-			   this->BACKGROUND_ZONE_TEXTE->Name = L"BACKGROUND_ZONE_TEXTE";
-			   this->BACKGROUND_ZONE_TEXTE->Size = System::Drawing::Size(683, 550);
-			   this->BACKGROUND_ZONE_TEXTE->TabIndex = 203;
-			   this->BACKGROUND_ZONE_TEXTE->TabStop = false;
 			   // 
 			   // Background
 			   // 
@@ -588,7 +486,7 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_QUANTITE_ARTICLE_CLIENT->Location = System::Drawing::Point(245, 430);
 			   this->TXT_QUANTITE_ARTICLE_CLIENT->Name = L"TXT_QUANTITE_ARTICLE_CLIENT";
-			   this->TXT_QUANTITE_ARTICLE_CLIENT->Size = System::Drawing::Size(139, 30);
+			   this->TXT_QUANTITE_ARTICLE_CLIENT->Size = System::Drawing::Size(139, 26);
 			   this->TXT_QUANTITE_ARTICLE_CLIENT->TabIndex = 208;
 			   // 
 			   // LABEL_QUANTITE_ARTICLE_COMMANDE
@@ -600,7 +498,7 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->Location = System::Drawing::Point(241, 407);
 			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->Name = L"LABEL_QUANTITE_ARTICLE_COMMANDE";
-			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->Size = System::Drawing::Size(158, 25);
+			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->Size = System::Drawing::Size(132, 20);
 			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->TabIndex = 209;
 			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->Text = L"Quantité article";
 			   // 
@@ -656,7 +554,7 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->label2->Location = System::Drawing::Point(97, 350);
 			   this->label2->Name = L"label2";
-			   this->label2->Size = System::Drawing::Size(189, 25);
+			   this->label2->Size = System::Drawing::Size(155, 20);
 			   this->label2->TabIndex = 213;
 			   this->label2->Text = L"Moyen de paiment";
 			   // 
@@ -666,9 +564,18 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_MOYEN_PAIMENT_COMMANDE->Location = System::Drawing::Point(98, 376);
 			   this->TXT_MOYEN_PAIMENT_COMMANDE->Name = L"TXT_MOYEN_PAIMENT_COMMANDE";
-			   this->TXT_MOYEN_PAIMENT_COMMANDE->Size = System::Drawing::Size(286, 30);
+			   this->TXT_MOYEN_PAIMENT_COMMANDE->Size = System::Drawing::Size(286, 26);
 			   this->TXT_MOYEN_PAIMENT_COMMANDE->TabIndex = 214;
 			   this->TXT_MOYEN_PAIMENT_COMMANDE->TextChanged += gcnew System::EventHandler(this, &GestionCommandes::TXT_MOYEN_PAIMENT_COMMANDE_TextChanged);
+			   // 
+			   // BACKGROUND_ZONE_TEXTE
+			   // 
+			   this->BACKGROUND_ZONE_TEXTE->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"BACKGROUND_ZONE_TEXTE.BackgroundImage")));
+			   this->BACKGROUND_ZONE_TEXTE->Location = System::Drawing::Point(78, 114);
+			   this->BACKGROUND_ZONE_TEXTE->Name = L"BACKGROUND_ZONE_TEXTE";
+			   this->BACKGROUND_ZONE_TEXTE->Size = System::Drawing::Size(683, 574);
+			   this->BACKGROUND_ZONE_TEXTE->TabIndex = 203;
+			   this->BACKGROUND_ZONE_TEXTE->TabStop = false;
 			   // 
 			   // GestionCommandes
 			   // 
@@ -685,18 +592,14 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   this->Controls->Add(this->BOUTON_AJOUTER_ARTICLE_COMMANDE);
 			   this->Controls->Add(this->AFFICHAGE_COMMANDES);
 			   this->Controls->Add(this->TXT_ARTICLE_COMMANDE);
-			   this->Controls->Add(this->TXT_ETAGE_LIV_COMMANDE);
 			   this->Controls->Add(this->LOGO);
 			   this->Controls->Add(this->TXT_DATE_LIV_COMMANDE);
 			   this->Controls->Add(this->RETURN_COMMANDES_HOME);
-			   this->Controls->Add(this->TXT_BAT_LIV_COMMANDE);
 			   this->Controls->Add(this->NomApp);
-			   this->Controls->Add(this->TXT_VILLE_LIV_COMMANDE);
 			   this->Controls->Add(this->BarreNoir);
 			   this->Controls->Add(this->TXT_ID_CLIENT_COMMANDE);
-			   this->Controls->Add(this->TXT_CP_LIV_COMMANDE);
 			   this->Controls->Add(this->TITRE_COMMANDES);
-			   this->Controls->Add(this->TXT_RUE_LIV_COMMANDE);
+			   this->Controls->Add(this->TXT_ID_ADRESSE_COMMANDE);
 			   this->Controls->Add(this->LABEL_ID_CLIEN_COMMANDE);
 			   this->Controls->Add(this->TXT_ID_COMMANDE);
 			   this->Controls->Add(this->BOUTON_AJOUTER_COMMANDE);
@@ -704,13 +607,9 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   this->Controls->Add(this->BOUTON_MODIFIER_COMMANDE);
 			   this->Controls->Add(this->LABEL_DATE_LIV_COMMANDE);
 			   this->Controls->Add(this->BOUTON_SUPPRIMER_COMMANDE);
-			   this->Controls->Add(this->LABEL_ETAGE_LIV_COMMANDE);
 			   this->Controls->Add(this->BOUTON_AFFICHER_COMMANDE);
-			   this->Controls->Add(this->LABEL_BAT_LIV_COMMANDE);
-			   this->Controls->Add(this->LABEL_RUE_LIV_COMMANDE);
+			   this->Controls->Add(this->LABEL_ID_ADRESSE_COMMANDE);
 			   this->Controls->Add(this->ID_ARTICLE_COMMANDE);
-			   this->Controls->Add(this->LABEL_CP_LIV_COMMANDE);
-			   this->Controls->Add(this->LABEL_VILLE_LIV_COMMANDE);
 			   this->Controls->Add(this->BACKGROUND_ZONE_TEXTE);
 			   this->Controls->Add(this->Background);
 			   this->Controls->Add(this->label40);
@@ -720,8 +619,8 @@ private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AFFICHAGE_COMMANDES))->EndInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LOGO))->EndInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BarreNoir))->EndInit();
-			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BACKGROUND_ZONE_TEXTE))->EndInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Background))->EndInit();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BACKGROUND_ZONE_TEXTE))->EndInit();
 			   this->ResumeLayout(false);
 			   this->PerformLayout();
 
@@ -753,11 +652,7 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "";
 		this->TXT_ARTICLE_COMMANDE->Text = "";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "";
-		this->TXT_RUE_LIV_COMMANDE->Text = "";
-		this->TXT_CP_LIV_COMMANDE->Text = "";
-		this->TXT_VILLE_LIV_COMMANDE->Text = "";
-		this->TXT_BAT_LIV_COMMANDE->Text = "";
-		this->TXT_ETAGE_LIV_COMMANDE->Text = "";
+
 
 	}
 
@@ -766,21 +661,16 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 	{
 		int Commande_ID = Convert::ToInt32(this->TXT_ID_COMMANDE->Text); // A retirer
 		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT_COMMANDE->Text);
-		DateTime Date_Livraison = DateTime::Parse(this->TXT_DATE_LIV_COMMANDE->Text);
+		DateTime^ Date_Livraison = DateTime::Parse(this->TXT_DATE_LIV_COMMANDE->Text);
 		String^ Moyen_Paiment = this->TXT_MOYEN_PAIMENT_COMMANDE->Text;
 		int Article_ID = Convert::ToInt32(this->TXT_ARTICLE_COMMANDE->Text);
 		int Article_Quantite = Convert::ToInt32(this->TXT_QUANTITE_ARTICLE_CLIENT->Text);
-		String^ Route_Livraison = this->TXT_RUE_LIV_COMMANDE->Text;
-		String^ CodePostal_Livraison = this->TXT_CP_LIV_COMMANDE->Text;
-		String^ Ville_Livraison = this->TXT_VILLE_LIV_COMMANDE->Text;
-		String^ Batiment_Livraison = this->TXT_BAT_LIV_COMMANDE->Text;
-		int Etage_Livraison = Convert::ToInt32(this->TXT_ETAGE_LIV_COMMANDE->Text);
+		int Commande_ID_Livraison = Convert::ToInt32(this->TXT_ID_ADRESSE_COMMANDE->Text);
 
-		// Action à faire
-		this->oSvc_Commande->ajouter_Commande(Date_Livraison,nullptr,nullptr,nullptr,Moyen_Paiment, Client_ID,);
-		this
-		ajouter_Contient(int Id_Art, int Id_Com, int Quantite_Article) 
-			ajouter_Commande(System::String ^ Date_Liv, float Total_HT, float Total_TTC, float Total_TVA, System::String ^ Moyen_Paiment, int Id_Cli, int Adresse_Liv)
+	
+		this->oSvc_Commande->ajouter_Commande(Date_Livraison, 0, 0, 0, Moyen_Paiment, Commande_ID_Livraison, Article_ID);
+		this->oSvc_Contient->ajouter_Contient(Article_ID, Commande_ID, Article_Quantite);
+		
 
 		this->TXT_ID_COMMANDE->Text = "";  // A retirer
 		this->TXT_ID_CLIENT_COMMANDE->Text = "";
@@ -788,11 +678,8 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "";
 		this->TXT_ARTICLE_COMMANDE->Text = "";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "";
-		this->TXT_RUE_LIV_COMMANDE->Text = "";
-		this->TXT_CP_LIV_COMMANDE->Text = "";
-		this->TXT_VILLE_LIV_COMMANDE->Text = "";
-		this->TXT_BAT_LIV_COMMANDE->Text = "";
-		this->TXT_ETAGE_LIV_COMMANDE->Text = "";
+		this->TXT_ID_ADRESSE_COMMANDE->Text = "";
+	
 	}
 		   
 
@@ -804,11 +691,7 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 		String^ Moyen_Paiment = this->TXT_MOYEN_PAIMENT_COMMANDE->Text;
 		String^ Article_ID = this->TXT_ARTICLE_COMMANDE->Text;
 		String^ Article_Quantite = this->TXT_QUANTITE_ARTICLE_CLIENT->Text;
-		String^ Route_Livraison = this->TXT_RUE_LIV_COMMANDE->Text;
-		String^ CodePostal_Livraison = this->TXT_CP_LIV_COMMANDE->Text;
-		String^ Ville_Livraison = this->TXT_VILLE_LIV_COMMANDE->Text;
-		String^ Batiment_Livraison = this->TXT_BAT_LIV_COMMANDE->Text;
-		String^ Etage_Livraison = this->TXT_ETAGE_LIV_COMMANDE->Text;
+
 
 		// Action à faire
 
@@ -822,11 +705,7 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "";
 		this->TXT_ARTICLE_COMMANDE->Text = "";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "";
-		this->TXT_RUE_LIV_COMMANDE->Text = "";
-		this->TXT_CP_LIV_COMMANDE->Text = "";
-		this->TXT_VILLE_LIV_COMMANDE->Text = "";
-		this->TXT_BAT_LIV_COMMANDE->Text = "";
-		this->TXT_ETAGE_LIV_COMMANDE->Text = "";
+
 	}
 
 
@@ -864,11 +743,7 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "Précédent";
 		this->TXT_ARTICLE_COMMANDE->Text = "Précédent";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "Précédent";
-		this->TXT_RUE_LIV_COMMANDE->Text = "Précédent";
-		this->TXT_CP_LIV_COMMANDE->Text = "Précédent";
-		this->TXT_VILLE_LIV_COMMANDE->Text = "Précédent";
-		this->TXT_BAT_LIV_COMMANDE->Text = "Précédent";
-		this->TXT_ETAGE_LIV_COMMANDE->Text = "Précédent";
+
 
 
 	}
@@ -887,12 +762,7 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "Suivant";
 		this->TXT_ARTICLE_COMMANDE->Text = "Suivant";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "Suivant";
-		this->TXT_RUE_LIV_COMMANDE->Text = "Suivant";
-		this->TXT_CP_LIV_COMMANDE->Text = "Suivant";
-		this->TXT_VILLE_LIV_COMMANDE->Text = "Suivant";
-		this->TXT_BAT_LIV_COMMANDE->Text = "Suivant";
-		this->TXT_ETAGE_LIV_COMMANDE->Text = "Suivant";
-	}
+	
 	
 
 
