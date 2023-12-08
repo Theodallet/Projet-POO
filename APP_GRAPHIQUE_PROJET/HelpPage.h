@@ -154,7 +154,7 @@ namespace APPGRAPHIQUEPROJET {
 	private: System::Void RETURN_STATS_HOME_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->Hide();
-		ObjetManuel->ShowDialog();
+		ObjetManuel->Show();
 	}
 
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
