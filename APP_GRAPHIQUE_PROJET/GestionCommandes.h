@@ -128,6 +128,10 @@ namespace APPGRAPHIQUEPROJET {
 private: System::Windows::Forms::Label^ label2;
 private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 private: System::Windows::Forms::PictureBox^ BACKGROUND_ZONE_TEXTE;
+private: System::Windows::Forms::Label^ label3;
+private: System::Windows::Forms::DateTimePicker^ TXT_DATE_EM_COMMANDE;
+private: System::Windows::Forms::Label^ label4;
+private: System::Windows::Forms::TextBox^ TXT_ID_ADR_FACT;
 	private: System::Data::DataSet^ oDs;
 #pragma region Windows Form Designer generated code
 		   /// <summary>
@@ -170,6 +174,10 @@ private: System::Windows::Forms::PictureBox^ BACKGROUND_ZONE_TEXTE;
 			   this->label2 = (gcnew System::Windows::Forms::Label());
 			   this->TXT_MOYEN_PAIMENT_COMMANDE = (gcnew System::Windows::Forms::TextBox());
 			   this->BACKGROUND_ZONE_TEXTE = (gcnew System::Windows::Forms::PictureBox());
+			   this->label3 = (gcnew System::Windows::Forms::Label());
+			   this->TXT_DATE_EM_COMMANDE = (gcnew System::Windows::Forms::DateTimePicker());
+			   this->label4 = (gcnew System::Windows::Forms::Label());
+			   this->TXT_ID_ADR_FACT = (gcnew System::Windows::Forms::TextBox());
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AFFICHAGE_COMMANDES))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LOGO))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BarreNoir))->BeginInit();
@@ -576,9 +584,57 @@ private: System::Windows::Forms::PictureBox^ BACKGROUND_ZONE_TEXTE;
 			   this->BACKGROUND_ZONE_TEXTE->TabIndex = 203;
 			   this->BACKGROUND_ZONE_TEXTE->TabStop = false;
 			   // 
+			   // label3
+			   // 
+			   this->label3->AutoSize = true;
+			   this->label3->BackColor = System::Drawing::Color::Black;
+			   this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->label3->Location = System::Drawing::Point(418, 287);
+			   this->label3->Name = L"label3";
+			   this->label3->Size = System::Drawing::Size(137, 20);
+			   this->label3->TabIndex = 215;
+			   this->label3->Text = L"Date d\'emission";
+			   // 
+			   // TXT_DATE_EM_COMMANDE
+			   // 
+			   this->TXT_DATE_EM_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
+				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			   this->TXT_DATE_EM_COMMANDE->Location = System::Drawing::Point(422, 317);
+			   this->TXT_DATE_EM_COMMANDE->Name = L"TXT_DATE_EM_COMMANDE";
+			   this->TXT_DATE_EM_COMMANDE->Size = System::Drawing::Size(286, 26);
+			   this->TXT_DATE_EM_COMMANDE->TabIndex = 216;
+			   // 
+			   // label4
+			   // 
+			   this->label4->AutoSize = true;
+			   this->label4->BackColor = System::Drawing::Color::Black;
+			   this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->label4->Location = System::Drawing::Point(418, 226);
+			   this->label4->Name = L"label4";
+			   this->label4->Size = System::Drawing::Size(208, 20);
+			   this->label4->TabIndex = 217;
+			   this->label4->Text = L"ID Adresse (Facturation)";
+			   // 
+			   // TXT_ID_ADR_FACT
+			   // 
+			   this->TXT_ID_ADR_FACT->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->TXT_ID_ADR_FACT->Location = System::Drawing::Point(422, 253);
+			   this->TXT_ID_ADR_FACT->Name = L"TXT_ID_ADR_FACT";
+			   this->TXT_ID_ADR_FACT->Size = System::Drawing::Size(303, 22);
+			   this->TXT_ID_ADR_FACT->TabIndex = 218;
+			   // 
 			   // GestionCommandes
 			   // 
 			   this->ClientSize = System::Drawing::Size(1256, 725);
+			   this->Controls->Add(this->TXT_ID_ADR_FACT);
+			   this->Controls->Add(this->label4);
+			   this->Controls->Add(this->TXT_DATE_EM_COMMANDE);
+			   this->Controls->Add(this->label3);
 			   this->Controls->Add(this->TXT_MOYEN_PAIMENT_COMMANDE);
 			   this->Controls->Add(this->label2);
 			   this->Controls->Add(this->BOUTON_CLEAR_CLIENT);
@@ -684,26 +740,28 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 
 private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		String^ Commande_ID = this->TXT_ID_COMMANDE->Text;
-		String^ Client_ID = this->TXT_ID_CLIENT_COMMANDE->Text;
-		String^ Date_Livraison = this->TXT_DATE_LIV_COMMANDE->Text;
-		String^ Moyen_Paiment = this->TXT_MOYEN_PAIMENT_COMMANDE->Text;
-		String^ Article_ID = this->TXT_ARTICLE_COMMANDE->Text;
-		String^ Article_Quantite = this->TXT_QUANTITE_ARTICLE_CLIENT->Text;
+	int Commande_ID = Convert::ToInt32(this->TXT_ID_COMMANDE->Text); // A retirer
+	int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT_COMMANDE->Text);
+	DateTime^ Date_Livraison = DateTime::Parse(this->TXT_DATE_LIV_COMMANDE->Text);
+	DateTime^ Date_Emission = DateTime::Parse(this->TXT_DATE_EM_COMMANDE->Text);
+	String^ Moyen_Paiment = this->TXT_MOYEN_PAIMENT_COMMANDE->Text;
+	int Article_ID = Convert::ToInt32(this->TXT_ARTICLE_COMMANDE->Text);
+	int Article_Quantite = Convert::ToInt32(this->TXT_QUANTITE_ARTICLE_CLIENT->Text);
+	int Commande_ID_Livraison = Convert::ToInt32(this->TXT_ID_ADRESSE_COMMANDE->Text);
+	int Commande_ID_Facturation = Convert::ToInt32(this->TXT_ID_ADR_FACT->Text);
+
+	//modifier_Commande(int Id, System::DateTime ^ Date_Liv, System::DateTime ^ Date_Emi, float Total_HT, float Total_TTC, float Total_TVA, System::String ^ Moyen_Paiment, int Id_Cli, int Adresse_Liv, int Adresse_Fac)
+	this->oSvc_Commande->modifier_Commande(Commande_ID, Date_Livraison, Date_Emission, 0, 0, 0, Moyen_Paiment, Client_ID, Commande_ID_Livraison, Commande_ID_Facturation);
+	this->oSvc_Contient->modifier_Contient(Article_ID, Commande_ID, Article_Quantite);
 
 
-		// Action à faire
-
-
-		// Vide de la page
-
-		this->TXT_ID_COMMANDE->Text = "";
-
-		this->TXT_ID_CLIENT_COMMANDE->Text = "";
-		this->TXT_DATE_LIV_COMMANDE->Text = "";
-		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "";
-		this->TXT_ARTICLE_COMMANDE->Text = "";
-		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "";
+	this->TXT_ID_COMMANDE->Text = "";  // A retirer
+	this->TXT_ID_CLIENT_COMMANDE->Text = "";
+	this->TXT_DATE_LIV_COMMANDE->Text = "";
+	this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "";
+	this->TXT_ARTICLE_COMMANDE->Text = "";
+	this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "";
+	this->TXT_ID_ADRESSE_COMMANDE->Text = "";
 
 	}
 
