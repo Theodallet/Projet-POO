@@ -760,6 +760,7 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 		this->TXT_ID_COMMANDE->Text = "";
 		this->TXT_ID_CLIENT_COMMANDE->Text = "";
 		this->TXT_DATE_LIV_COMMANDE->Text = "";
+		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "";
 		this->TXT_ARTICLE_COMMANDE->Text = "";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "";
 		this->TXT_RUE_LIV_COMMANDE->Text = "";
@@ -776,6 +777,7 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 		int Commande_ID = Convert::ToInt32(this->TXT_ID_COMMANDE->Text); // A retirer
 		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT_COMMANDE->Text);
 		DateTime Date_Livraison = DateTime::Parse(this->TXT_DATE_LIV_COMMANDE->Text);
+		String^ Moyen_Paiment = this->TXT_MOYEN_PAIMENT_COMMANDE->Text;
 		int Article_ID = Convert::ToInt32(this->TXT_ARTICLE_COMMANDE->Text);
 		int Article_Quantite = Convert::ToInt32(this->TXT_QUANTITE_ARTICLE_CLIENT->Text);
 		String^ Route_Livraison = this->TXT_RUE_LIV_COMMANDE->Text;
@@ -790,270 +792,10 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 		ajouter_Contient(int Id_Art, int Id_Com, int Quantite_Article) 
 			ajouter_Commande(System::String ^ Date_Liv, float Total_HT, float Total_TTC, float Total_TVA, System::String ^ Moyen_Paiment, int Id_Cli, int Adresse_Liv)
 
-		//
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
-		
-		
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
-		
-		
-		
-		
-		
-		
-		
-		Vide de la page
-
 		this->TXT_ID_COMMANDE->Text = "";  // A retirer
 		this->TXT_ID_CLIENT_COMMANDE->Text = "";
 		this->TXT_DATE_LIV_COMMANDE->Text = "";
+		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "";
 		this->TXT_ARTICLE_COMMANDE->Text = "";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "";
 		this->TXT_RUE_LIV_COMMANDE->Text = "";
@@ -1067,9 +809,9 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 		String^ Commande_ID = this->TXT_ID_COMMANDE->Text;
-
 		String^ Client_ID = this->TXT_ID_CLIENT_COMMANDE->Text;
 		String^ Date_Livraison = this->TXT_DATE_LIV_COMMANDE->Text;
+		String^ Moyen_Paiment = this->TXT_MOYEN_PAIMENT_COMMANDE->Text;
 		String^ Article_ID = this->TXT_ARTICLE_COMMANDE->Text;
 		String^ Article_Quantite = this->TXT_QUANTITE_ARTICLE_CLIENT->Text;
 		String^ Route_Livraison = this->TXT_RUE_LIV_COMMANDE->Text;
@@ -1087,6 +829,7 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 
 		this->TXT_ID_CLIENT_COMMANDE->Text = "";
 		this->TXT_DATE_LIV_COMMANDE->Text = "";
+		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "";
 		this->TXT_ARTICLE_COMMANDE->Text = "";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "";
 		this->TXT_RUE_LIV_COMMANDE->Text = "";
@@ -1128,6 +871,7 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 
 		this->TXT_ID_CLIENT_COMMANDE->Text = "Précédent";
 		this->TXT_DATE_LIV_COMMANDE->Text = "06/12/2023 00:00";
+		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "Précédent";
 		this->TXT_ARTICLE_COMMANDE->Text = "Précédent";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "Précédent";
 		this->TXT_RUE_LIV_COMMANDE->Text = "Précédent";
@@ -1150,6 +894,7 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 
 		this->TXT_ID_CLIENT_COMMANDE->Text = "Suivant"; 
 		this->TXT_DATE_LIV_COMMANDE->Text = "06/12/2023 00:00";
+		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "Suivant";
 		this->TXT_ARTICLE_COMMANDE->Text = "Suivant";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "Suivant";
 		this->TXT_RUE_LIV_COMMANDE->Text = "Suivant";
