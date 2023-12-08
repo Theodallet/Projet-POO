@@ -839,6 +839,13 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 	private: System::Void BOUTON_AFF_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 		String^ Personnel_ID = this->TXT_ID_PERSONNEL->Text;
+	
+		this->AFFICHAGE_PERSONNEL->Refresh();
+		this->oSvc_Personel->selectionner_Personel("Rsl");
+		this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+		this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
+
+
 		this->TXT_ID_PERSONNEL->Text = "";
 	}
 	private: System::Void SKIP_PERSONNEL_GAUCHE_Click(System::Object^ sender, System::EventArgs^ e) 
