@@ -753,10 +753,7 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Void BOUTON_AFF_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		
-
 		if (this->TXT_ID_CLIENT->Text == "") {
-			this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
 			this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
 			this->AFFICHAGE_CLIENT->Refresh();
 			this->oDs = this->oSvc_Client->selectionner_Client("Rsl");
@@ -765,7 +762,6 @@ namespace APPGRAPHIQUEPROJET {
 		}
 		else {
 			int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
-			this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
 			this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
 			this->AFFICHAGE_CLIENT->Refresh();
 			this->oDs = this->oSvc_Client->selectionner_Client_Ind("Rsl", Client_ID);
