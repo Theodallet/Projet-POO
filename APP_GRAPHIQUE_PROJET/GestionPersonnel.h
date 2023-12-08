@@ -753,7 +753,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 	
 	private: System::Void BOUTON_CLEAR_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-			this->TXT_ID_PERSONNEL->Text = "";
+		this->TXT_ID_PERSONNEL->Text = "";
 		this->TXT_NOM_PERSONNEL->Text = "";
 		this->TXT_PRENOM_PERSONNEL->Text = "";
 		this->TXT_BD_PERSONNEL->Text = "";
@@ -764,7 +764,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 		this->TXT_BAT_PERSONNEL->Text = "";
 		this->TXT_ETAGE_PERSONNEL->Text = "";
 		this->TXT_DATE_EMBAUCHE_PERSONNEL->Text = "";
-		this->TXT_RUE_PERSONNEL->Text = "";
+		this->TEXT_ROLE_PERSONNEL->Text = "";
 		this->TXT_ID_SUP->Text = "";
 	}
 
@@ -795,7 +795,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 		this->TXT_BAT_PERSONNEL->Text = "";
 		this->TXT_ETAGE_PERSONNEL->Text = "";
 		this->TXT_DATE_EMBAUCHE_PERSONNEL->Text = "";
-		this->TXT_RUE_PERSONNEL->Text = "";
+		this->TEXT_ROLE_PERSONNEL->Text = "";
 		this->TXT_ID_SUP->Text = "";
 	}
 	private: System::Void BOUTON_MODIF_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
@@ -828,7 +828,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 		this->TXT_BAT_PERSONNEL->Text = "";
 		this->TXT_ETAGE_PERSONNEL->Text = "";
 		this->TXT_DATE_EMBAUCHE_PERSONNEL->Text = "";
-		this->TXT_RUE_PERSONNEL->Text = "";
+		this->TEXT_ROLE_PERSONNEL->Text = "";
 		this->TXT_ID_SUP->Text = "";
 	}
 
@@ -842,13 +842,118 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 	}
 	private: System::Void BOUTON_AFF_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		int Personnel_ID = Convert::ToInt32(this->TXT_ID_PERSONNEL->Text);
+		if (this->TXT_ID_PERSONNEL->Text != "") {
+			int Personnel_ID = Convert::ToInt32(this->TXT_ID_PERSONNEL->Text);
+			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+			this->AFFICHAGE_PERSONNEL->Refresh();
+			this->oDs = this->oSvc_Personel->selectionner_Personel_Ind("Rsl", Personnel_ID);
+			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
+		}
+		else if(this->TXT_NOM_PERSONNEL->Text != "") {
+			String^ Personnel_Nom = this->TXT_NOM_PERSONNEL->Text;
+			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+			this->AFFICHAGE_PERSONNEL->Refresh();
+			this->oDs = this->oSvc_Personel->selectionner_Personel_Nom("Rsl", Personnel_Nom);
+			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
+		}
+		else if (this->TXT_PRENOM_PERSONNEL->Text != "") {
+			String^ Personnel_Prenom = this->TXT_PRENOM_PERSONNEL->Text;
+			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+			this->AFFICHAGE_PERSONNEL->Refresh();
+			this->oDs = this->oSvc_Personel->selectionner_Personel_Prenom("Rsl", Personnel_Prenom);
+			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
+		}
+		else if (this->TXT_BD_PERSONNEL->Text != "") {
+			DateTime Personnel_Date_N = DateTime::Parse(this->TXT_BD_PERSONNEL->Text);
+			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+			this->AFFICHAGE_PERSONNEL->Refresh();
+			this->oDs = this->oSvc_Personel->selectionner_Personel_Date_N("Rsl", Personnel_Date_N);
+			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
+		}
+		else if (this->TXT_MAIL_PERSONNEL->Text != "") {
+			String^ Personnel_Mail = this->TXT_MAIL_PERSONNEL->Text;
+			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+			this->AFFICHAGE_PERSONNEL->Refresh();
+			this->oDs = this->oSvc_Personel->selectionner_Personel_Mail("Rsl", Personnel_Mail);
+			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
+		}
+		else if (this->TXT_VILLE_PERSONNEL->Text != "") {
+			String^ Personnel_Ville = this->TXT_VILLE_PERSONNEL->Text;
+			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+			this->AFFICHAGE_PERSONNEL->Refresh();
+			this->oDs = this->oSvc_Personel->selectionner_Personel_Ville("Rsl", Personnel_Ville);
+			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
+		}
+		else if (this->TXT_RUE_PERSONNEL->Text != "") {
+			String^ Personnel_Rue = this->TXT_RUE_PERSONNEL->Text;
+			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+			this->AFFICHAGE_PERSONNEL->Refresh();
+			this->oDs = this->oSvc_Personel->selectionner_Personel_Rue("Rsl", Personnel_Rue);
+			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
+		}
+		else if (this->TXT_CP_PERSONNEL->Text != "") {
+			String^ Personnel_Code_Postal = this->TXT_CP_PERSONNEL->Text;
+			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+			this->AFFICHAGE_PERSONNEL->Refresh();
+			this->oDs = this->oSvc_Personel->selectionner_Personel_Code_Postal("Rsl", Personnel_Code_Postal);
+			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
+		}
+		else if (this->TXT_BAT_PERSONNEL->Text != "") {
+			String^ Personnel_Batiment = this->TXT_BAT_PERSONNEL->Text;
+			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+			this->AFFICHAGE_PERSONNEL->Refresh();
+			this->oDs = this->oSvc_Personel->selectionner_Personel_Nom_Bat("Rsl", Personnel_Batiment);
+			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
+		}
+		else if (this->TXT_ETAGE_PERSONNEL->Text != "") {
+			int Personnel_Etage = Convert::ToInt32(this->TXT_ETAGE_PERSONNEL->Text);
+			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+			this->AFFICHAGE_PERSONNEL->Refresh();
+			this->oDs = this->oSvc_Personel->selectionner_Personel_Etage("Rsl", Personnel_Etage);
+			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
+		}
+		else if (this->TEXT_ROLE_PERSONNEL->Text != "") {
+			String^ Personnel_Role = this->TEXT_ROLE_PERSONNEL->Text;
+			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+			this->AFFICHAGE_PERSONNEL->Refresh();
+			this->oDs = this->oSvc_Personel->selectionner_Personel_Role("Rsl", Personnel_Role);
+			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
+		}
+		else if (this->TXT_DATE_EMBAUCHE_PERSONNEL->Text != "") {
+			DateTime Personnel_Date_E = DateTime::Parse(this->TXT_DATE_EMBAUCHE_PERSONNEL->Text);
+			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+			this->AFFICHAGE_PERSONNEL->Refresh();
+			this->oDs = this->oSvc_Personel->selectionner_Personel_Date_E("Rsl", Personnel_Date_E);
+			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
+		}
+		else if (this->TXT_ID_SUP->Text != "") {
+			int Personnel_ID_Supperieur = Convert::ToInt32(this->TXT_ID_SUP->Text);
+			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+			this->AFFICHAGE_PERSONNEL->Refresh();
+			this->oDs = this->oSvc_Personel->selectionner_Personel_Sup_Id("Rsl", Personnel_ID_Supperieur);
+			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
+		}
+		else {
+			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+			this->AFFICHAGE_PERSONNEL->Refresh();
+			this->oDs = this->oSvc_Personel->selectionner_Personel("Rsl");
+			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
+		}
 
-		this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
-		this->AFFICHAGE_PERSONNEL->Refresh();
-		this->oDs = this->oSvc_Personel->selectionner_Personel_Ind("Rsl", Personnel_ID);
-		this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
-		this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
 
 
 		this->TXT_ID_PERSONNEL->Text = "";
@@ -866,7 +971,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 		this->TXT_BAT_PERSONNEL->Text = "Précédent";
 		this->TXT_ETAGE_PERSONNEL->Text = "Précédent";
 		this->TXT_DATE_EMBAUCHE_PERSONNEL->Text = "06/12/2023 00:00";
-		this->TXT_RUE_PERSONNEL->Text = "Précédent";
+		this->TEXT_ROLE_PERSONNEL->Text = "Précédent";
 		this->TXT_ID_SUP->Text = "Précédent";
 	} 
 	private: System::Void SKIP_PERSONNEL_DROITE_Click(System::Object^ sender, System::EventArgs^ e) 

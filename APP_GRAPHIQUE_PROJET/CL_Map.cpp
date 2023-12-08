@@ -31,18 +31,18 @@ int NS_Comp_Mappage::CL_Map_Client::getEtage(void) { return this->Etage; }
 
 
 
-System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Id(void) { return "EXECUTE Select_Client_Ind" + this->Id + " ;"; }
-System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Nom(void) { return "EXECUTE Select_Client_Nom'" + this->Nom + "' ;"; }
-System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Prenom(void) { return "EXECUTE Select_Client_Prenom'" + this->Prenom + "' ;"; }
-System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Date_N(void) { return "EXECUTE Select_Client_Date_Naissance'" + this->Date_N + "' ;"; }
-System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Mail(void) { return "EXECUTE Select_Client_Mail'" + this->Mail + "' ;"; }
+System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Id(void) { return "EXECUTE Select_Client_Ind " + this->Id + " ;"; }
+System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Nom(void) { return "EXECUTE Select_Client_Nom '" + this->Nom + "' ;"; }
+System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Prenom(void) { return "EXECUTE Select_Client_Prenom '" + this->Prenom + "' ;"; }
+System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Date_N(void) { return "EXECUTE Select_Client_Date_Naissance '" + this->Date_N + "' ;"; }
+System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Mail(void) { return "EXECUTE Select_Client_Mail '" + this->Mail + "' ;"; }
 
 
 System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Ville(void) { return "EXECUTE Select_Client_Ville '" + this->Ville + "' ;"; }
-System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Rue(void) { return "EXECUTE Select_Client_Rue'" + this->Rue + "' ;"; }
-System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Code_Postal(void) { return "EXECUTE Select_Client_Code_Postal'" + this->Code_Postal + "' ;"; }
-System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Nom_Bat(void) { return "EXECUTE Select_Client_Nom_Batiment'" + this->Nom_Bat + "' ;"; }
-System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Etage(void) { return "EXECUTE Select_Client_Etage" + this->Etage + " ;"; }
+System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Rue(void) { return "EXECUTE Select_Client_Rue '" + this->Rue + "' ;"; }
+System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Code_Postal(void) { return "EXECUTE Select_Client_Code_Postal '" + this->Code_Postal + "' ;"; }
+System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Nom_Bat(void) { return "EXECUTE Select_Client_Nom_Batiment '" + this->Nom_Bat + "' ;"; }
+System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client_Etage(void) { return "EXECUTE Select_Client_Etage " + this->Etage + " ;"; }
 
 System::String^ NS_Comp_Mappage::CL_Map_Client::Select_Client(void) { return "EXECUTE Select_Client"; }
 

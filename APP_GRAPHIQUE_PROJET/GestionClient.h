@@ -649,9 +649,9 @@ namespace APPGRAPHIQUEPROJET {
 	private: System::Void GestionClient_Load(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
-
+		this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
 		this->AFFICHAGE_CLIENT->Refresh();
-		this->oSvc_Client->selectionner_Client("Rsl");
+		this->oDs = this->oSvc_Client->selectionner_Client("Rsl");
 		this->AFFICHAGE_CLIENT->DataSource = this->oDs;
 		this->AFFICHAGE_CLIENT->DataMember = "Rsl";
 	}
@@ -753,13 +753,21 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Void BOUTON_AFF_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
-
-		this->AFFICHAGE_CLIENT->Refresh();
-		this->oSvc_Client->selectionner_Client_Ind("Rsl", Client_ID);
-		this->AFFICHAGE_CLIENT->DataSource = this->oDs;
-		this->AFFICHAGE_CLIENT->DataMember = "Rsl";
-
+		if (this->TXT_ID_CLIENT->Text == "") {
+			this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
+			this->AFFICHAGE_CLIENT->Refresh();
+			this->oDs = this->oSvc_Client->selectionner_Client("Rsl");
+			this->AFFICHAGE_CLIENT->DataSource = this->oDs;
+			this->AFFICHAGE_CLIENT->DataMember = "Rsl";
+		}
+		else {
+			int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
+			this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
+			this->AFFICHAGE_CLIENT->Refresh();
+			this->oDs = this->oSvc_Client->selectionner_Client_Ind("Rsl", Client_ID);
+			this->AFFICHAGE_CLIENT->DataSource = this->oDs;
+			this->AFFICHAGE_CLIENT->DataMember = "Rsl";
+		}
 
 		this->TXT_ID_CLIENT->Text = "";
 	}
