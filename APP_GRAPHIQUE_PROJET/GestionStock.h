@@ -517,6 +517,11 @@ namespace APPGRAPHIQUEPROJET {
 	private: System::Void GestionStock_Load(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->oSvc_Article = gcnew NS_Comp_Svc::CLservices_Article();
+
+		this->AFFICHAGE_STOCK->Refresh();
+		this->oSvc_Article->selectionner_Article("Rsl");
+		this->AFFICHAGE_STOCK->DataSource = this->oDs;
+		this->AFFICHAGE_STOCK->DataMember = "Rsl";
 		
 	}	
 
@@ -583,6 +588,11 @@ namespace APPGRAPHIQUEPROJET {
 	private: System::Void BOUTON_AFFICHAGE_ARTICLE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 		String^ Article_ID = this->TXT_ID_ARTICLE->Text;
+
+		this->AFFICHAGE_STOCK->Refresh();
+		this->oSvc_Article->selectionner_Article_Id("Rsl", Article_Id); //  à compléter
+		this->AFFICHAGE_STOCK->DataSource = this->oDs;
+		this->AFFICHAGE_STOCK->DataMember = "Rsl";
 
 		this->TXT_ID_ARTICLE->Text = "";
 	}
