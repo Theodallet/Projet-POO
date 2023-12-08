@@ -866,15 +866,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
 			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
 		}
-		else if (this->TXT_BD_PERSONNEL->Text != "") {
-			DateTime Personnel_Date_N = DateTime::Parse(this->TXT_BD_PERSONNEL->Text);
-			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
-			this->AFFICHAGE_PERSONNEL->Refresh();
-			this->oDs = this->oSvc_Personel->selectionner_Personel_Date_N("Rsl", Personnel_Date_N);
-			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
-			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
-		}
-		else if (this->TXT_MAIL_PERSONNEL->Text != "") {
+			else if (this->TXT_MAIL_PERSONNEL->Text != "") {
 			String^ Personnel_Mail = this->TXT_MAIL_PERSONNEL->Text;
 			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
 			this->AFFICHAGE_PERSONNEL->Refresh();
@@ -903,14 +895,6 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
 			this->AFFICHAGE_PERSONNEL->Refresh();
 			this->oDs = this->oSvc_Personel->selectionner_Personel_Code_Postal("Rsl", Personnel_Code_Postal);
-			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
-			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
-		}
-		else if (this->TXT_BAT_PERSONNEL->Text != "") {
-			String^ Personnel_Batiment = this->TXT_BAT_PERSONNEL->Text;
-			this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
-			this->AFFICHAGE_PERSONNEL->Refresh();
-			this->oDs = this->oSvc_Personel->selectionner_Personel_Nom_Bat("Rsl", Personnel_Batiment);
 			this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
 			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
 		}
