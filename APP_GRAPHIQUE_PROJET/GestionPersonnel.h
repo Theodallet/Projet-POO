@@ -784,10 +784,10 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 	}
 	private: System::Void BOUTON_MODIF_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		String^ Personnel_ID = this->TXT_ID_PERSONNEL->Text;
+		int Personnel_ID = Convert::ToInt32(this->TXT_ID_PERSONNEL->Text);
 		String^ Personnel_Nom = this->TXT_NOM_PERSONNEL->Text;
 		String^ Personnel_Prenom = this->TXT_PRENOM_PERSONNEL->Text;
-		String^ Personnel_Date_N = this->TXT_BD_PERSONNEL->Text;
+		DateTime Personnel_Date_N = DateTime::Parse(this->TXT_BD_PERSONNEL->Text);
 		String^ Personnel_Mail = this->TXT_MAIL_PERSONNEL->Text;
 		String^ Personnel_Rue = this->TXT_RUE_PERSONNEL->Text;
 		String^ Personnel_Code_Postal = this->TXT_CP_PERSONNEL->Text;
