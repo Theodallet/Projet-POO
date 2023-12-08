@@ -1,5 +1,5 @@
 #pragma once
-
+#include "CL_services.h"
 namespace APPGRAPHIQUEPROJET {
 
 	using namespace System;
@@ -64,43 +64,12 @@ namespace APPGRAPHIQUEPROJET {
 	private: System::Windows::Forms::Label^ TITRE_STATISTIQUES;
 	private: System::Windows::Forms::Button^ BOUTON_AFFICHER_STAT;
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_TEXT_8;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_TEXT_1;
 
 	private: System::Windows::Forms::Label^ label40;
 
 	private: System::Windows::Forms::Label^ LABEL_PANIER_MOY;
 	private: System::Windows::Forms::ComboBox^ SELECTEUR_VAL;
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
 	private: System::Windows::Forms::TextBox^ TXT_INT_MOIS_2;
 
@@ -170,31 +139,8 @@ private: System::Windows::Forms::Label^ LABEL_INDICATION_10;
 
 
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	private: NS_Comp_Svc::CLservices_Stat^ oSvc_Stat;
+	private: System::Data::DataSet^ oDs;
 #pragma region Windows Form Designer generated code
 		   /// <summary>
 		   /// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
@@ -825,17 +771,60 @@ private: System::Windows::Forms::Label^ LABEL_INDICATION_10;
 
 	private: System::Void BOUTON_AFFICHER_STAT_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		String^ ID_Requete_Stat = this->SELECTEUR_VAL->Text;
+		int Val = Convert::ToInt32(this->SELECTEUR_VAL->Text);
 
 		// Je met ici toutes les récupérations de valeurs :
 
-		String^ Stat_Mois = this->TXT_INT_MOIS_2->Text;
-		String^ Stat_ID_Client = this->TXT_ID_CLI_4->Text;
-		String^ Stat_TVA = this->TXT_TVA_10->Text;
-		String^ Stat_Marge = this->TXT_MARGE_10->Text;
-		String^ Stat_Remise = this->TXT_REMISE_10->Text;
-		String^ Stat_Demarque = this->TXT_DEMARQUE_10->Text;
-		// Retour 
+		int Stat_Mois = Convert::ToInt32(this->TXT_INT_MOIS_2->Text);
+		int Stat_ID_Client = Convert::ToInt32(this->TXT_ID_CLI_4->Text);
+		float Stat_TVA = Convert::ToSingle(this->TXT_TVA_10->Text);
+		float Stat_Marge = Convert::ToSingle(this->TXT_MARGE_10->Text);
+		float Stat_Remise = Convert::ToSingle(this->TXT_REMISE_10->Text);
+		float Stat_Demarque = Convert::ToSingle(this->TXT_DEMARQUE_10->Text);
+
+		if (Val == 1)
+		{
+			this->oSvc_Stat->Calcul_Panier_Moyen();
+		}
+		else if (Val == 2)
+		{
+			this->oSvc_Stat->Calcul_Chiffre_Affaire_Mois(Stat_Mois);
+		}
+		else if (Val == 3)
+		{
+			this->oSvc_Stat->Produit_Reaprovisionnement();
+		}
+		else if (Val == 4)
+		{
+			this->oSvc_Stat->Total_Achat_Client(Stat_ID_Client);
+		}
+		else if (Val == 5)
+		{
+			this->oSvc_Stat->Article_Plus_Vendu();
+		}
+		else if (Val == 6)
+		{
+			this->oSvc_Stat->Article_Moins_Vendu();
+		}
+		else if (Val == 7)
+		{
+			this->oSvc_Stat->Valeur_Commercial_Stock();
+		}
+		else if (Val == 8)
+		{
+			this->oSvc_Stat->Valeur_Achat_Stock();
+		}
+		else if (Val == 9)
+		{
+			this->oSvc_Stat->Variations_Valeurs_Commerciales();
+		}
+		else
+		{
+			this->oSvc_Stat->Variations_Valeurs_Commerciales_Valeur(Stat_TVA, Stat_Marge, Stat_Remise, Stat_Demarque);
+		}
+
+
+	}
 
 	}
 
