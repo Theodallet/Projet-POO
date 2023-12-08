@@ -534,6 +534,7 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 			   // 
 			   // BACKGROUND_ZONE_TEXTE
 			   // 
+			   this->BACKGROUND_ZONE_TEXTE->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"BACKGROUND_ZONE_TEXTE.BackgroundImage")));
 			   this->BACKGROUND_ZONE_TEXTE->Location = System::Drawing::Point(75, 116);
 			   this->BACKGROUND_ZONE_TEXTE->Name = L"BACKGROUND_ZONE_TEXTE";
 			   this->BACKGROUND_ZONE_TEXTE->Size = System::Drawing::Size(683, 550);
@@ -648,12 +649,6 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 
 	private: System::Void GestionClient_Load(System::Object^ sender, System::EventArgs^ e)
 	{
-		this->oSvc_Client = gcnew NS_Comp_Svc::CLservices_Client();
-
-		this->AFFICHAGE_CLIENT->Refresh();
-		this->oSvc_Client->selectionner_Client("Rsl");
-		this->AFFICHAGE_CLIENT->DataSource = this->oDs;
-		this->AFFICHAGE_CLIENT->DataMember = "Rsl";
 	}
 
 
@@ -674,17 +669,22 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 		// On vérifie si l'ID contient quelque chose, sinon il contient quelque chose on ne fait rien et on transmet
 
 		// Acquisition des données
+		
+		
 		String^ Client_Nom = this->TXT_NOM_CLIENT->Text;
 		String^ Client_Prenom = this->TXT_PRENOM_CLIENT->Text;
-		DateTime Client_Date_N = DateTime::Parse(this->TXT_BD_CLIENT->Text);
+		String^ Client_Date_N = this->TXT_BD_CLIENT->Text;  
 		String^ Client_Mail = this->TXT_MAIL_CLIENT->Text;
 		String^ Client_Rue = this->TXT_RUE_CLIENT->Text;
 		String^ Client_Code_Postal = this->TXT_CP_CLIENT->Text;
 		String^ Client_Ville = this->TXT_VILLE_CLIENT->Text;
 		String^ Client_Batiment = this->TXT_BAT_CLIENT->Text;
 		int Client_Etage = Convert::ToInt32(this->TXT_ETAGE_CLIENT->Text);
+
+
+
 		// Action à faire
-		this->oSvc_Client->ajouter_Client(Client_Nom, Client_Prenom, Client_Mail, Client_Date_N, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
+		this->oSvc_Client->ajouter_Client(Client_Nom, Client_Prenom, Client_Date_N, Client_Mail, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
 		// Vide de la page
 
 		this->TXT_ID_CLIENT->Text = "";
@@ -706,20 +706,20 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 
 		// Acquisition des données
 
-		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
+		String^ Client_ID = this->TXT_ID_CLIENT->Text;
 
 		String^ Client_Nom = this->TXT_NOM_CLIENT->Text;
 		String^ Client_Prenom = this->TXT_PRENOM_CLIENT->Text;
-		DateTime Client_Date_N = DateTime::Parse(this->TXT_BD_CLIENT->Text);
+		String^ Client_Date_N = this->TXT_BD_CLIENT->Text;
 		String^ Client_Mail = this->TXT_MAIL_CLIENT->Text;
 		String^ Client_Rue = this->TXT_RUE_CLIENT->Text;
 		String^ Client_Code_Postal = this->TXT_CP_CLIENT->Text;
 		String^ Client_Ville = this->TXT_VILLE_CLIENT->Text;
 		String^ Client_Batiment = this->TXT_BAT_CLIENT->Text;
-		int Client_Etage = Convert::ToInt32(this->TXT_ETAGE_CLIENT->Text);
+		String^ Client_Etage = this->TXT_ETAGE_CLIENT->Text;
 
 		// Action à faire
-		this->oSvc_Client->modifier_Client(Client_ID,Client_Nom, Client_Prenom, Client_Mail, Client_Date_N, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
+
 
 		// Vide de la page
 		
@@ -739,22 +739,14 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 
 	private: System::Void BOUTON_SUPP_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
-
-		this->oSvc_Client->supprimer_Client(Client_ID);
+		String^ Client_ID = this->TXT_ID_CLIENT->Text;
 
 		this->TXT_ID_CLIENT->Text = "";
 	}
 
 	private: System::Void BOUTON_AFF_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
-
-		this->AFFICHAGE_CLIENT->Refresh();
-		this->oSvc_Client->selectionner_Client_Ind("Rsl", Client_ID);
-		this->AFFICHAGE_CLIENT->DataSource = this->oDs;
-		this->AFFICHAGE_CLIENT->DataMember = "Rsl";
-
+		String^ Client_ID = this->TXT_ID_CLIENT->Text;
 
 		this->TXT_ID_CLIENT->Text = "";
 	}
@@ -763,43 +755,23 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 	{
 		// On récupère l'ID en cours 
 
-		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
+		String^ Client_ID = this->TXT_ID_CLIENT->Text;
 
 		// On la transmet a une méthode qui va récupérer tout les éléments précédents dans la BDD et les transmettre.
 
 		// Ensuite on les affiche dans les TXT
-		/*
-		if (this->TXT_ID_CLIENT->Text == "")
-		{
-			this->TXT_ID_CLIENT->Text = getId(Client_ID);
-			this->TXT_NOM_CLIENT->Text = getNom(Client_ID);
-			this->TXT_PRENOM_CLIENT->Text = getPrenom(Client_ID);
-			this->TXT_BD_CLIENT->Text = getDate_N(Client_ID);
-			this->TXT_MAIL_CLIENT->Text = getMail(Client_ID);
-			this->TXT_RUE_CLIENT->Text = getRue(Client_ID);
-			this->TXT_CP_CLIENT->Text = getCP(Client_ID);
-			this->TXT_VILLE_CLIENT->Text = getVille(Client_ID);
-			this->TXT_BAT_CLIENT->Text = getBat(Client_ID);
-			this->TXT_ETAGE_CLIENT->Text = getEtage(Client_ID);
-		}
-		else
-		{
-			int ID_Precedent = Client_ID - 1;
 
-			this->TXT_ID_CLIENT->Text = getId(ID_Precedent);
-			this->TXT_NOM_CLIENT->Text = getNom(ID_Precedent);
-			this->TXT_PRENOM_CLIENT->Text = getPrenom(ID_Precedent);
-			this->TXT_BD_CLIENT->Text = getDate_N(ID_Precedent);
-			this->TXT_MAIL_CLIENT->Text = getMail(ID_Precedent);
-			this->TXT_RUE_CLIENT->Text = getRue(ID_Precedent;
-			this->TXT_CP_CLIENT->Text = getCP(ID_Precedent);
-			this->TXT_VILLE_CLIENT->Text = getVille(ID_Precedent);
-			this->TXT_BAT_CLIENT->Text = getBat(ID_Precedent);
-			this->TXT_ETAGE_CLIENT->Text = getEtage(ID_Precedent);
-		}
+		this->TXT_ID_CLIENT->Text = "ID précédent";
 
-		*/
-		
+		this->TXT_NOM_CLIENT->Text = "Nom précédent";
+		this->TXT_PRENOM_CLIENT->Text = "Prenom précédent";
+		this->TXT_BD_CLIENT->Text = "06/12/2023 00:00";
+		this->TXT_MAIL_CLIENT->Text = "E mail";
+		this->TXT_RUE_CLIENT->Text = "Rue précédent";
+		this->TXT_CP_CLIENT->Text = "CP précédent";
+		this->TXT_VILLE_CLIENT->Text = "Ville précédent";
+		this->TXT_BAT_CLIENT->Text = "Bat précédent";
+		this->TXT_ETAGE_CLIENT->Text = "Etage précédent";
 	}
 
 	private: System::Void SKIP_CLIENT_DROITE_Click(System::Object^ sender, System::EventArgs^ e)
@@ -838,8 +810,6 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 		this->TXT_BAT_CLIENT->Text = "";
 		this->TXT_ETAGE_CLIENT->Text = "";
 	}
-
-
 };
 
 }

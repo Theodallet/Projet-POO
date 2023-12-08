@@ -121,12 +121,16 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_PERSONNEL;
 	private: System::Windows::Forms::Label^ DATE_EMBAUCHE_PERSONNEL;
-	private: System::Windows::Forms::Label^ TXT_ROLE_PERSONNEL;
-	private: System::Windows::Forms::Label^ TXT_ID_SUP_PERSONNEL;
-	private: System::Windows::Forms::DateTimePicker^ TXT_DATE_EMBAUCHE_PERSONNEL;
+private: System::Windows::Forms::Label^ LABEL_ROLE_PERSONNEL;
 
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
+private: System::Windows::Forms::Label^ LABEL_ID_SUP;
+
+	private: System::Windows::Forms::DateTimePicker^ TXT_DATE_EMBAUCHE_PERSONNEL;
+private: System::Windows::Forms::TextBox^ TEXT_ROLE_PERSONNEL;
+
+
+private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
+
 
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
@@ -178,11 +182,11 @@ namespace APPGRAPHIQUEPROJET {
 			   this->BACKGROUND_ZONE_PERSONNEL = (gcnew System::Windows::Forms::PictureBox());
 			   this->BACKGROUND_PERSONNEL = (gcnew System::Windows::Forms::PictureBox());
 			   this->DATE_EMBAUCHE_PERSONNEL = (gcnew System::Windows::Forms::Label());
-			   this->TXT_ROLE_PERSONNEL = (gcnew System::Windows::Forms::Label());
-			   this->TXT_ID_SUP_PERSONNEL = (gcnew System::Windows::Forms::Label());
+			   this->LABEL_ROLE_PERSONNEL = (gcnew System::Windows::Forms::Label());
+			   this->LABEL_ID_SUP = (gcnew System::Windows::Forms::Label());
 			   this->TXT_DATE_EMBAUCHE_PERSONNEL = (gcnew System::Windows::Forms::DateTimePicker());
-			   this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			   this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			   this->TEXT_ROLE_PERSONNEL = (gcnew System::Windows::Forms::TextBox());
+			   this->TXT_ID_SUP = (gcnew System::Windows::Forms::TextBox());
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AFFICHAGE_PERSONNEL))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LOGO))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BarreNoir))->BeginInit();
@@ -259,6 +263,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->TXT_ETAGE_PERSONNEL->Name = L"TXT_ETAGE_PERSONNEL";
 			   this->TXT_ETAGE_PERSONNEL->Size = System::Drawing::Size(303, 26);
 			   this->TXT_ETAGE_PERSONNEL->TabIndex = 144;
+			   this->TXT_ETAGE_PERSONNEL->TextChanged += gcnew System::EventHandler(this, &GestionPersonnel::TXT_ETAGE_PERSONNEL_TextChanged);
 			   // 
 			   // LOGO
 			   // 
@@ -616,31 +621,31 @@ namespace APPGRAPHIQUEPROJET {
 			   this->DATE_EMBAUCHE_PERSONNEL->TabIndex = 152;
 			   this->DATE_EMBAUCHE_PERSONNEL->Text = L"Date d\'embauche";
 			   // 
-			   // TXT_ROLE_PERSONNEL
+			   // LABEL_ROLE_PERSONNEL
 			   // 
-			   this->TXT_ROLE_PERSONNEL->AutoSize = true;
-			   this->TXT_ROLE_PERSONNEL->BackColor = System::Drawing::Color::Black;
-			   this->TXT_ROLE_PERSONNEL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			   this->LABEL_ROLE_PERSONNEL->AutoSize = true;
+			   this->LABEL_ROLE_PERSONNEL->BackColor = System::Drawing::Color::Black;
+			   this->LABEL_ROLE_PERSONNEL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->TXT_ROLE_PERSONNEL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->TXT_ROLE_PERSONNEL->Location = System::Drawing::Point(419, 495);
-			   this->TXT_ROLE_PERSONNEL->Name = L"TXT_ROLE_PERSONNEL";
-			   this->TXT_ROLE_PERSONNEL->Size = System::Drawing::Size(46, 20);
-			   this->TXT_ROLE_PERSONNEL->TabIndex = 153;
-			   this->TXT_ROLE_PERSONNEL->Text = L"Role";
+			   this->LABEL_ROLE_PERSONNEL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->LABEL_ROLE_PERSONNEL->Location = System::Drawing::Point(419, 495);
+			   this->LABEL_ROLE_PERSONNEL->Name = L"LABEL_ROLE_PERSONNEL";
+			   this->LABEL_ROLE_PERSONNEL->Size = System::Drawing::Size(46, 20);
+			   this->LABEL_ROLE_PERSONNEL->TabIndex = 153;
+			   this->LABEL_ROLE_PERSONNEL->Text = L"Role";
 			   // 
-			   // TXT_ID_SUP_PERSONNEL
+			   // LABEL_ID_SUP
 			   // 
-			   this->TXT_ID_SUP_PERSONNEL->AutoSize = true;
-			   this->TXT_ID_SUP_PERSONNEL->BackColor = System::Drawing::Color::Black;
-			   this->TXT_ID_SUP_PERSONNEL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-					static_cast<System::Byte>(0)));
-			   this->TXT_ID_SUP_PERSONNEL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->TXT_ID_SUP_PERSONNEL->Location = System::Drawing::Point(573, 495);
-			   this->TXT_ID_SUP_PERSONNEL->Name = L"TXT_ID_SUP_PERSONNEL";
-			   this->TXT_ID_SUP_PERSONNEL->Size = System::Drawing::Size(108, 20);
-			   this->TXT_ID_SUP_PERSONNEL->TabIndex = 154;
-			   this->TXT_ID_SUP_PERSONNEL->Text = L"ID supérieur";
+			   this->LABEL_ID_SUP->AutoSize = true;
+			   this->LABEL_ID_SUP->BackColor = System::Drawing::Color::Black;
+			   this->LABEL_ID_SUP->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->LABEL_ID_SUP->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->LABEL_ID_SUP->Location = System::Drawing::Point(573, 495);
+			   this->LABEL_ID_SUP->Name = L"LABEL_ID_SUP";
+			   this->LABEL_ID_SUP->Size = System::Drawing::Size(108, 20);
+			   this->LABEL_ID_SUP->TabIndex = 154;
+			   this->LABEL_ID_SUP->Text = L"ID supérieur";
 			   // 
 			   // TXT_DATE_EMBAUCHE_PERSONNEL
 			   // 
@@ -651,32 +656,33 @@ namespace APPGRAPHIQUEPROJET {
 			   this->TXT_DATE_EMBAUCHE_PERSONNEL->Size = System::Drawing::Size(286, 26);
 			   this->TXT_DATE_EMBAUCHE_PERSONNEL->TabIndex = 155;
 			   // 
-			   // textBox1
+			   // TEXT_ROLE_PERSONNEL
 			   // 
-			   this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			   this->TEXT_ROLE_PERSONNEL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
+				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			   this->TEXT_ROLE_PERSONNEL->Location = System::Drawing::Point(420, 520);
+			   this->TEXT_ROLE_PERSONNEL->Name = L"TEXT_ROLE_PERSONNEL";
+			   this->TEXT_ROLE_PERSONNEL->Size = System::Drawing::Size(149, 26);
+			   this->TEXT_ROLE_PERSONNEL->TabIndex = 156;
+			   this->TEXT_ROLE_PERSONNEL->TextChanged += gcnew System::EventHandler(this, &GestionPersonnel::textBox1_TextChanged);
+			   // 
+			   // TXT_ID_SUP
+			   // 
+			   this->TXT_ID_SUP->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
-			   this->textBox1->Location = System::Drawing::Point(420, 520);
-			   this->textBox1->Name = L"textBox1";
-			   this->textBox1->Size = System::Drawing::Size(149, 26);
-			   this->textBox1->TabIndex = 156;
-			   // 
-			   // textBox2
-			   // 
-			   this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				   static_cast<System::Byte>(0)));
-			   this->textBox2->Location = System::Drawing::Point(579, 520);
-			   this->textBox2->Name = L"textBox2";
-			   this->textBox2->Size = System::Drawing::Size(149, 26);
-			   this->textBox2->TabIndex = 157;
+			   this->TXT_ID_SUP->Location = System::Drawing::Point(579, 520);
+			   this->TXT_ID_SUP->Name = L"TXT_ID_SUP";
+			   this->TXT_ID_SUP->Size = System::Drawing::Size(149, 26);
+			   this->TXT_ID_SUP->TabIndex = 157;
 			   // 
 			   // GestionPersonnel
 			   // 
 			   this->ClientSize = System::Drawing::Size(1256, 725);
-			   this->Controls->Add(this->textBox2);
-			   this->Controls->Add(this->textBox1);
+			   this->Controls->Add(this->TXT_ID_SUP);
+			   this->Controls->Add(this->TEXT_ROLE_PERSONNEL);
 			   this->Controls->Add(this->TXT_DATE_EMBAUCHE_PERSONNEL);
-			   this->Controls->Add(this->TXT_ID_SUP_PERSONNEL);
-			   this->Controls->Add(this->TXT_ROLE_PERSONNEL);
+			   this->Controls->Add(this->LABEL_ID_SUP);
+			   this->Controls->Add(this->LABEL_ROLE_PERSONNEL);
 			   this->Controls->Add(this->DATE_EMBAUCHE_PERSONNEL);
 			   this->Controls->Add(this->BOUTON_CLEAR_PERSONNEL);
 			   this->Controls->Add(this->SKIP_PERSONNEL_DROITE);
@@ -731,7 +737,7 @@ namespace APPGRAPHIQUEPROJET {
 #pragma endregion
 	private: System::Void GestionPersonnel_Load(System::Object^ sender, System::EventArgs^ e)
 	{
-		this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+	
 	}
 
 	private: System::Void RETOUR_PERSONNEL_HOME_Click(System::Object^ sender, System::EventArgs^ e) 
@@ -749,20 +755,17 @@ namespace APPGRAPHIQUEPROJET {
 	{
 		String^ Personnel_Nom = this->TXT_NOM_PERSONNEL->Text;
 		String^ Personnel_Prenom = this->TXT_PRENOM_PERSONNEL->Text;
-		DateTime Personnel_Date_N = DateTime::Parse(this->TXT_BD_PERSONNEL->Text);
+		String^ Personnel_Date_N = this->TXT_BD_PERSONNEL->Text;
 		String^ Personnel_Mail = this->TXT_MAIL_PERSONNEL->Text;
 		String^ Personnel_Rue = this->TXT_RUE_PERSONNEL->Text;
 		String^ Personnel_Code_Postal = this->TXT_CP_PERSONNEL->Text;
 		String^ Personnel_Ville = this->TXT_VILLE_PERSONNEL->Text;
 		String^ Personnel_Batiment = this->TXT_BAT_PERSONNEL->Text;
-		int Personnel_Etage = Convert::ToInt32(this->TXT_ETAGE_PERSONNEL->Text);
-		DateTime Personnel_Date_E = DateTime::Parse(this->TXT_DATE_EMBAUCHE_PERSONNEL->Text);
+		String^ Personnel_Etage = this->TXT_ETAGE_PERSONNEL->Text;
+		String^ Personnel_Date_E = this->TXT_DATE_EMBAUCHE_PERSONNEL->Text;
 		String^ Personnel_Role = this->TXT_RUE_PERSONNEL->Text;
-		int Personnel_ID_Supperieur = Convert::ToInt32(this->textBox2->Text);
-
-		this->oSvc_Personel->ajouter_Personel(Personnel_Nom, Personnel_Prenom, Personnel_Mail, Personnel_Date_N, Personnel_Ville, Personnel_Rue, Personnel_Code_Postal, Personnel_Batiment, Personnel_Etage, Personnel_Date_E, Personnel_Role, Personnel_ID_Supperieur);
-
-
+		String^ Personnel_ID_Supperieur = this->TXT_ID_SUP->Text;
+		
 		this->TXT_NOM_PERSONNEL->Text = "";
 		this->TXT_PRENOM_PERSONNEL->Text = "";
 		this->TXT_BD_PERSONNEL->Text = "";
@@ -774,7 +777,7 @@ namespace APPGRAPHIQUEPROJET {
 		this->TXT_ETAGE_PERSONNEL->Text = "";
 		this->TXT_DATE_EMBAUCHE_PERSONNEL->Text = "";
 		this->TXT_RUE_PERSONNEL->Text = "";
-		this->TXT_ID_SUP_PERSONNEL->Text = "";
+		this->TXT_ID_SUP->Text = "";
 	}
 	private: System::Void BOUTON_MODIF_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
@@ -790,7 +793,7 @@ namespace APPGRAPHIQUEPROJET {
 		String^ Personnel_Etage = this->TXT_ETAGE_PERSONNEL->Text;
 		String^ Personnel_Date_E = this->TXT_DATE_EMBAUCHE_PERSONNEL->Text;
 		String^ Personnel_Role = this->TXT_RUE_PERSONNEL->Text;
-		String^ Personnel_ID_Supperieur = this->TXT_ID_SUP_PERSONNEL->Text;
+		String^ Personnel_ID_Supperieur = this->TXT_ID_SUP->Text;
 
 		this->TXT_ID_PERSONNEL->Text = "";
 		this->TXT_NOM_PERSONNEL->Text = "";
@@ -804,7 +807,7 @@ namespace APPGRAPHIQUEPROJET {
 		this->TXT_ETAGE_PERSONNEL->Text = "";
 		this->TXT_DATE_EMBAUCHE_PERSONNEL->Text = "";
 		this->TXT_RUE_PERSONNEL->Text = "";
-		this->TXT_ID_SUP_PERSONNEL->Text = "";
+		this->TXT_ID_SUP->Text = "";
 	}
 
 	private: System::Void BOUTON_SUPP_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
@@ -831,14 +834,14 @@ namespace APPGRAPHIQUEPROJET {
 		this->TXT_ETAGE_PERSONNEL->Text = "Précédent";
 		this->TXT_DATE_EMBAUCHE_PERSONNEL->Text = "06/12/2023 00:00";
 		this->TXT_RUE_PERSONNEL->Text = "Précédent";
-		this->TXT_ID_SUP_PERSONNEL->Text = "Précédent";
+		this->TXT_ID_SUP->Text = "Précédent";
 	} 
 	private: System::Void SKIP_PERSONNEL_DROITE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 		this->TXT_ID_PERSONNEL->Text = "Suivant"; 
 		this->TXT_NOM_PERSONNEL->Text = "Suivant";
 		this->TXT_PRENOM_PERSONNEL->Text = "06/12/2023 00:00";
-		this->TXT_BD_PERSONNEL->Text = "Suivant";
+		this->TXT_BD_PERSONNEL->Text = "06/12/2023 00:00";
 		this->TXT_MAIL_PERSONNEL->Text = "Suivant";
 		this->TXT_RUE_PERSONNEL->Text = "Suivant";
 		this->TXT_CP_PERSONNEL->Text = "Suivant";
@@ -846,8 +849,13 @@ namespace APPGRAPHIQUEPROJET {
 		this->TXT_BAT_PERSONNEL->Text = "Suivant";
 		this->TXT_ETAGE_PERSONNEL->Text = "Suivant";
 		this->TXT_DATE_EMBAUCHE_PERSONNEL->Text = "06/12/2023 00:00";
-		this->TXT_RUE_PERSONNEL->Text = "Suivant";
-		this->TXT_ID_SUP_PERSONNEL->Text = "Suivant";
+		this->TXT_RUE_PERSONNEL->Text = "t";
+		this->TXT_ROLE_PERSONNEL->Text = "";
+		this->TXT_ID_SUP->Text = "d";
 	}
-	};
+	private: System::Void TXT_ETAGE_PERSONNEL_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+};
 }
