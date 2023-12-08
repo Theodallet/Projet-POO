@@ -756,18 +756,18 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 	{
 		String^ Personnel_Nom = this->TXT_NOM_PERSONNEL->Text;
 		String^ Personnel_Prenom = this->TXT_PRENOM_PERSONNEL->Text;
-		String^ Personnel_Date_N = this->TXT_BD_PERSONNEL->Text;
+		DateTime Personnel_Date_N = DateTime::Parse(this->TXT_BD_PERSONNEL->Text);
 		String^ Personnel_Mail = this->TXT_MAIL_PERSONNEL->Text;
 		String^ Personnel_Rue = this->TXT_RUE_PERSONNEL->Text;
 		String^ Personnel_Code_Postal = this->TXT_CP_PERSONNEL->Text;
 		String^ Personnel_Ville = this->TXT_VILLE_PERSONNEL->Text;
 		String^ Personnel_Batiment = this->TXT_BAT_PERSONNEL->Text;
-		String^ Personnel_Etage = this->TXT_ETAGE_PERSONNEL->Text;
-		String^ Personnel_Date_E = this->TXT_DATE_EMBAUCHE_PERSONNEL->Text;
+		int Personnel_Etage = Convert::ToInt32(this->TXT_ETAGE_PERSONNEL->Text);
+		DateTime Personnel_Date_E = DateTime::Parse(this->TXT_DATE_EMBAUCHE_PERSONNEL->Text);
 		String^ Personnel_Role = this->TEXT_ROLE_PERSONNEL->Text;
-		String^ Personnel_ID_Supperieur = this->TXT_ID_SUP->Text;
+		int Personnel_ID_Supperieur = Convert::ToInt32(this->TXT_ID_SUP->Text);
 
-		this->oSvc_Personel->ajouter_Personel(System::String ^ Nom, System::String ^ Prenom, System::String ^ Mail, System::DateTime ^ Date_N, System::String ^ Ville, System::String ^ Rue, System::String ^ Code_Postal, System::String ^ Nom_Bat, int Etage, System::DateTime ^ Date_E, System::String ^ Role, int Sup_Id)
+		this->oSvc_Personel->ajouter_Personel(Personnel_Nom, Personnel_Prenom, Personnel_Mail, Personnel_Date_N, Personnel_Ville, Personnel_Rue, Personnel_Code_Postal, Personnel_Batiment, Personnel_Etage, Personnel_Date_E, Personnel_Role, Personnel_ID_Supperieur);
 		
 		this->TXT_NOM_PERSONNEL->Text = "";
 		this->TXT_PRENOM_PERSONNEL->Text = "";
