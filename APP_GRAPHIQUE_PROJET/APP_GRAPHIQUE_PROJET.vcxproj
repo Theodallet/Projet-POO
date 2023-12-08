@@ -138,6 +138,7 @@
     <ClCompile Include="GestionPersonnel.cpp" />
     <ClCompile Include="GestionStatistiques.cpp" />
     <ClCompile Include="GestionStock.cpp" />
+    <ClCompile Include="HelpPage.cpp" />
     <ClCompile Include="HomePage.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="PageAccueil.cpp" />
@@ -159,6 +160,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="GestionStock.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="HelpPage.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="HomePage.h">
@@ -187,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionStock.resx">
       <DependentUpon>GestionStock.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpPage.resx">
+      <DependentUpon>HelpPage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.h</DependentUpon>

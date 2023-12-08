@@ -5,6 +5,7 @@
 #include "GestionPersonnel.h"
 #include "GestionStatistiques.h"
 #include "GestionStock.h"
+#include "HelpPage.h"
 
 namespace APPGRAPHIQUEPROJET {
 
@@ -48,9 +49,6 @@ namespace APPGRAPHIQUEPROJET {
 			this->label8->Text = "";
 		}
 
-
-
-
 	protected:
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
@@ -87,16 +85,7 @@ namespace APPGRAPHIQUEPROJET {
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label8;
-
-
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::Button^ Manuel_utilisation;
 
 	protected:
 
@@ -134,6 +123,7 @@ namespace APPGRAPHIQUEPROJET {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->Manuel_utilisation = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
@@ -164,7 +154,7 @@ namespace APPGRAPHIQUEPROJET {
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label2->Location = System::Drawing::Point(72, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(302, 50);
+			this->label2->Size = System::Drawing::Size(383, 62);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"GADGET GROVE";
 			this->label2->Click += gcnew System::EventHandler(this, &HomePage::label2_Click);
@@ -186,7 +176,7 @@ namespace APPGRAPHIQUEPROJET {
 				static_cast<System::Byte>(0)));
 			this->label3->Location = System::Drawing::Point(154, 104);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(172, 38);
+			this->label3->Size = System::Drawing::Size(217, 48);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"GESTION";
 			this->label3->Click += gcnew System::EventHandler(this, &HomePage::label3_Click);
@@ -199,13 +189,14 @@ namespace APPGRAPHIQUEPROJET {
 			this->label15->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label15->Location = System::Drawing::Point(468, 24);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(234, 25);
+			this->label15->Size = System::Drawing::Size(303, 29);
 			this->label15->TabIndex = 36;
 			this->label15->Text = L"Make your inspiration real";
 			// 
 			// pictureBox7
 			// 
 			this->pictureBox7->BackColor = System::Drawing::Color::White;
+			this->pictureBox7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->pictureBox7->Location = System::Drawing::Point(53, 76);
 			this->pictureBox7->Name = L"pictureBox7";
 			this->pictureBox7->Size = System::Drawing::Size(1167, 610);
@@ -329,7 +320,7 @@ namespace APPGRAPHIQUEPROJET {
 				static_cast<System::Byte>(0)));
 			this->label4->Location = System::Drawing::Point(468, 158);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(131, 25);
+			this->label4->Size = System::Drawing::Size(162, 31);
 			this->label4->TabIndex = 48;
 			this->label4->Text = L"Description";
 			// 
@@ -341,7 +332,7 @@ namespace APPGRAPHIQUEPROJET {
 				static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(468, 373);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(131, 25);
+			this->label5->Size = System::Drawing::Size(162, 31);
 			this->label5->TabIndex = 49;
 			this->label5->Text = L"Description";
 			// 
@@ -353,7 +344,7 @@ namespace APPGRAPHIQUEPROJET {
 				static_cast<System::Byte>(0)));
 			this->label6->Location = System::Drawing::Point(470, 498);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(131, 25);
+			this->label6->Size = System::Drawing::Size(162, 31);
 			this->label6->TabIndex = 50;
 			this->label6->Text = L"Description";
 			// 
@@ -365,7 +356,7 @@ namespace APPGRAPHIQUEPROJET {
 				static_cast<System::Byte>(0)));
 			this->label7->Location = System::Drawing::Point(468, 261);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(131, 25);
+			this->label7->Size = System::Drawing::Size(162, 31);
 			this->label7->TabIndex = 51;
 			this->label7->Text = L"Description";
 			// 
@@ -377,13 +368,30 @@ namespace APPGRAPHIQUEPROJET {
 				static_cast<System::Byte>(0)));
 			this->label8->Location = System::Drawing::Point(470, 606);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(131, 25);
+			this->label8->Size = System::Drawing::Size(162, 31);
 			this->label8->TabIndex = 52;
 			this->label8->Text = L"Description";
+			// 
+			// Manuel_utilisation
+			// 
+			this->Manuel_utilisation->BackColor = System::Drawing::SystemColors::ControlText;
+			this->Manuel_utilisation->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Manuel_utilisation.BackgroundImage")));
+			this->Manuel_utilisation->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Manuel_utilisation->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->Manuel_utilisation->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold));
+			this->Manuel_utilisation->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->Manuel_utilisation->Location = System::Drawing::Point(996, 287);
+			this->Manuel_utilisation->Name = L"Manuel_utilisation";
+			this->Manuel_utilisation->Size = System::Drawing::Size(205, 242);
+			this->Manuel_utilisation->TabIndex = 53;
+			this->Manuel_utilisation->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
+			this->Manuel_utilisation->UseVisualStyleBackColor = false;
+			this->Manuel_utilisation->Click += gcnew System::EventHandler(this, &HomePage::Manuel_utilisation_Click);
 			// 
 			// HomePage
 			// 
 			this->ClientSize = System::Drawing::Size(1256, 725);
+			this->Controls->Add(this->Manuel_utilisation);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
@@ -454,6 +462,13 @@ namespace APPGRAPHIQUEPROJET {
 	}
 	
 	private: System::Void elementHost1_ChildChanged(System::Object^ sender, System::Windows::Forms::Integration::ChildChangedEventArgs^ e) {
+	}
+	private: System::Void Manuel_utilisation_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		this->Hide();
+		ManuelUtilisation^ ObjetManuel = gcnew ManuelUtilisation(this);
+		
+		ObjetManuel->ShowDialog();
 	}
 
 
@@ -564,7 +579,5 @@ namespace APPGRAPHIQUEPROJET {
 		this->label8->Text = "";
 
 	}
-
-	
 };
 }
