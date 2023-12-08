@@ -938,9 +938,17 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
 		}
 
-
-
 		this->TXT_ID_PERSONNEL->Text = "";
+		this->TXT_NOM_PERSONNEL->Text = "";
+		this->TXT_PRENOM_PERSONNEL->Text = "";
+		this->TXT_MAIL_PERSONNEL->Text = "";
+		this->TXT_RUE_PERSONNEL->Text = "";
+		this->TXT_CP_PERSONNEL->Text = "";
+		this->TXT_VILLE_PERSONNEL->Text = "";
+		this->TXT_BAT_PERSONNEL->Text = "";
+		this->TXT_ETAGE_PERSONNEL->Text = "";
+		this->TEXT_ROLE_PERSONNEL->Text = "";
+		this->TXT_ID_SUP->Text = "";
 	}
 	private: System::Void SKIP_PERSONNEL_GAUCHE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
@@ -981,3 +989,6 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 }
 };
 }
+
+
+
