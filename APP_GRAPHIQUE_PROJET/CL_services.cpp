@@ -417,7 +417,7 @@ void NS_Comp_Svc::CLservices_Commande::supprimer_Commande(int Id) {
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices_Commande::modifier_Commande(int Id, System::String^ Date_Liv, System::String^ Date_Emi, float Total_HT, float Total_TTC, float Total_TVA, System::String^ Moyen_Paiment, int Id_Cli, int Adresse_Liv, int Adresse_Fac) {
+void NS_Comp_Svc::CLservices_Commande::modifier_Commande(int Id, System::DateTime^ Date_Liv, System::DateTime^ Date_Emi, float Total_HT, float Total_TTC, float Total_TVA, System::String^ Moyen_Paiment, int Id_Cli, int Adresse_Liv, int Adresse_Fac) {
 
 	System::String^ sql;
 	this->oMapp_Commande->setId(Id);

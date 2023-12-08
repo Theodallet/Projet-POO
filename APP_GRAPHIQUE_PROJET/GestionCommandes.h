@@ -566,7 +566,6 @@ private: System::Windows::Forms::PictureBox^ BACKGROUND_ZONE_TEXTE;
 			   this->TXT_MOYEN_PAIMENT_COMMANDE->Name = L"TXT_MOYEN_PAIMENT_COMMANDE";
 			   this->TXT_MOYEN_PAIMENT_COMMANDE->Size = System::Drawing::Size(286, 26);
 			   this->TXT_MOYEN_PAIMENT_COMMANDE->TabIndex = 214;
-			   this->TXT_MOYEN_PAIMENT_COMMANDE->TextChanged += gcnew System::EventHandler(this, &GestionCommandes::TXT_MOYEN_PAIMENT_COMMANDE_TextChanged);
 			   // 
 			   // BACKGROUND_ZONE_TEXTE
 			   // 
@@ -749,7 +748,7 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 	}
 
 
-	private: System::Void SKIP_CLIENT_DROITE_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void SKIP_CLIENT_DROITE_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		String^ Commande_ID = this->TXT_ID_COMMANDE->Text;
 
@@ -757,16 +756,12 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 
 		this->TXT_ID_COMMANDE->Text = "";
 
-		this->TXT_ID_CLIENT_COMMANDE->Text = "Suivant"; 
+		this->TXT_ID_CLIENT_COMMANDE->Text = "Suivant";
 		this->TXT_DATE_LIV_COMMANDE->Text = "06/12/2023 00:00";
 		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "Suivant";
 		this->TXT_ARTICLE_COMMANDE->Text = "Suivant";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "Suivant";
-	
-	
 
-
-	private: System::Void TXT_MOYEN_PAIMENT_COMMANDE_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 };
 }

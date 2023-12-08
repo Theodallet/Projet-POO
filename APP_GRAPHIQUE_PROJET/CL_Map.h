@@ -173,7 +173,7 @@ namespace NS_Comp_Mappage
 		System::String^ Nom;
 		System::String^ Prenom;
 		System::DateTime^ Date_Liv;
-		System::String^ Date_Emi;
+		System::DateTime^ Date_Emi;
 		float Total_HT;
 		float Total_TTC;
 		float Total_TVA;
@@ -188,7 +188,7 @@ namespace NS_Comp_Mappage
 		void setNom(System::String^);
 		void setPrenom(System::String^);
 		void setDate_Liv(System::DateTime^);
-		void setDate_Emi(System::String^);
+		void setDate_Emi(System::DateTime^);
 		void setTotal_HT(float);
 		void setTotal_TTC(float);
 		void setTotal_TVA(float);
