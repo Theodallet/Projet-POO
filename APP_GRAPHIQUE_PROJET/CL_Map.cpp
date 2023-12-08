@@ -143,11 +143,11 @@ void NS_Comp_Mappage::CL_Map_Commande::setAdresse_Liv(int Adresse_Liv) { this->A
 void NS_Comp_Mappage::CL_Map_Commande::setAdresse_Fac(int Adresse_Fac) { this->Adresse_Fac = Adresse_Fac; }
 
 System::String^ NS_Comp_Mappage::CL_Map_Commande::Select_Commande(void) { return "EXECUTE Afficher_Commande ; "; }
-System::String^ NS_Comp_Mappage::CL_Map_Commande::Select_Commande_Id(void) { return "EXECUTE Afficher_Commande_Id " + this->Id + "; "; }
+System::String^ NS_Comp_Mappage::CL_Map_Commande::Select_Commande_Id(void) { return "EXECUTE Afficher_Commande_Id '" + this->Id + "'; "; }
 System::String^ NS_Comp_Mappage::CL_Map_Commande::Insert_Commande(void) { return "EXECUTE Creer_Commande '" + this->Date_Liv + "'," + this->Total_HT + "," + this->Total_TTC + "," + this->Total_TVA + ",'" + this->Moyen_Paiment + "'," + this->Id_Cli + "," + this->Adresse_Liv + "," + this->Adresse_Fac + "  ;"; }
-System::String^ NS_Comp_Mappage::CL_Map_Commande::Delete_Commande(void) { return "EXECUTE Supprimer_Commande " + this->Id + ";"; }
-System::String^ NS_Comp_Mappage::CL_Map_Commande::Update_Commande(void) { return "EXECUTE Modifier_Commande " + this->Id + ",'" + this->Date_Liv + "','" + this->Date_Emi + "'," + this->Total_HT + "," + this->Total_TTC + "," + this->Total_TVA + ",'" + this->Moyen_Paiment + "'," + this->Id_Cli + "," + this->Adresse_Liv + "," + this->Adresse_Fac + " ;"; }
-System::String^ NS_Comp_Mappage::CL_Map_Commande::Update_Total_Commande(void) { return "EXECUTE Modifier_Total " + this->Id + "; "; }
+System::String^ NS_Comp_Mappage::CL_Map_Commande::Delete_Commande(void) { return "EXECUTE Supprimer_Commande '" + this->Id + "';"; }
+System::String^ NS_Comp_Mappage::CL_Map_Commande::Update_Commande(void) { return "EXECUTE Modifier_Commande '" + this->Id + "','" + this->Date_Liv + "','" + this->Date_Emi + "'," + this->Total_HT + "," + this->Total_TTC + "," + this->Total_TVA + ",'" + this->Moyen_Paiment + "'," + this->Id_Cli + "," + this->Adresse_Liv + "," + this->Adresse_Fac + " ;"; }
+System::String^ NS_Comp_Mappage::CL_Map_Commande::Update_Total_Commande(void) { return "EXECUTE Modifier_Total '" + this->Id + "'; "; }
 
 //---------------------------------Mappage de la classe Contient--------------------------------------------------------
 
@@ -157,9 +157,9 @@ void NS_Comp_Mappage::CL_Map_Contient::setId_Com(System::String^ Id_Com) { this-
 void NS_Comp_Mappage::CL_Map_Contient::setQuantite_Article(int Id) { this->Quantite_Article = Quantite_Article; }
 
 
-System::String^ NS_Comp_Mappage::CL_Map_Contient::Insert_Contient(void) { return "EXECUTE Creer_Contient " + this->Id_Art + "," + this->Id_Com + "," + this->Quantite_Article + "; "; }
-System::String^ NS_Comp_Mappage::CL_Map_Contient::Delete_Contient(void) { return "EXECUTE Supprimer_Contient " + this->Id_Art + "," + this->Id_Com + "; "; }
-System::String^ NS_Comp_Mappage::CL_Map_Contient::Update_Contient(void) { return "EXECUTE Modifier_Contient " + this->Id_Art + "," + this->Id_Com + " ," + this->Quantite_Article + "; "; }
+System::String^ NS_Comp_Mappage::CL_Map_Contient::Insert_Contient(void) { return "EXECUTE Creer_Contient " + this->Id_Art + ",'" + this->Id_Com + "'," + this->Quantite_Article + "; "; }
+System::String^ NS_Comp_Mappage::CL_Map_Contient::Delete_Contient(void) { return "EXECUTE Supprimer_Contient " + this->Id_Art + ",'" + this->Id_Com + "'; "; }
+System::String^ NS_Comp_Mappage::CL_Map_Contient::Update_Contient(void) { return "EXECUTE Modifier_Contient " + this->Id_Art + ",'" + this->Id_Com + "' ," + this->Quantite_Article + "; "; }
 
 //---------------------------------Mappage de la classe Statistique--------------------------------------------------------
 
