@@ -74,7 +74,7 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Windows::Forms::Label^ TITRE_CLIENT;
 	private: System::Windows::Forms::Button^ BOUTON_ADD_CLIENT;
-private: System::Windows::Forms::Label^ LABEL_ID_CLIENT;
+	private: System::Windows::Forms::Label^ LABEL_ID_CLIENT;
 
 
 	private: System::Windows::Forms::Label^ LABEL_BD_CLIENT;
@@ -85,7 +85,7 @@ private: System::Windows::Forms::Label^ LABEL_ID_CLIENT;
 	private: System::Windows::Forms::Label^ LABEL_BAT_CLIENT;
 	private: System::Windows::Forms::Button^ BOUTON_AFF_CLIENT;
 	private: System::Windows::Forms::TextBox^ TXT_NOM_CLIENT;
-private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
+	private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 
 
 	private: System::Windows::Forms::Label^ LABEL_MAIL_CLIENT;
@@ -652,7 +652,7 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 	}
 
 
-// Retour vers le home -----------------------------------------------------------------------------------------------------------------
+		   // Retour vers le home -----------------------------------------------------------------------------------------------------------------
 	private: System::Void RETURN_CLIENTS_HOME_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->Hide();
@@ -660,7 +660,7 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 
 	}
 
-// Récolte et actions bouton -----------------------------------------------------------------------------------------------------------
+		   // Récolte et actions bouton -----------------------------------------------------------------------------------------------------------
 
 	private: System::Void BOUTON_ADD_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
 	{
@@ -669,11 +669,11 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 		// On vérifie si l'ID contient quelque chose, sinon il contient quelque chose on ne fait rien et on transmet
 
 		// Acquisition des données
-		
-		
+
+
 		String^ Client_Nom = this->TXT_NOM_CLIENT->Text;
 		String^ Client_Prenom = this->TXT_PRENOM_CLIENT->Text;
-		String^ Client_Date_N = this->TXT_BD_CLIENT->Text;  
+		String^ Client_Date_N = this->TXT_BD_CLIENT->Text;
 		String^ Client_Mail = this->TXT_MAIL_CLIENT->Text;
 		String^ Client_Rue = this->TXT_RUE_CLIENT->Text;
 		String^ Client_Code_Postal = this->TXT_CP_CLIENT->Text;
@@ -700,7 +700,7 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 
 	}
 
-	private: System::Void BOUTON_MODIF_CLIENT_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void BOUTON_MODIF_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		// Code de verification intégrité de données avant
 
@@ -722,7 +722,7 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 
 
 		// Vide de la page
-		
+
 		this->TXT_ID_CLIENT->Text = "";
 
 		this->TXT_NOM_CLIENT->Text = "";
@@ -734,7 +734,7 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 		this->TXT_VILLE_CLIENT->Text = "";
 		this->TXT_BAT_CLIENT->Text = "";
 		this->TXT_ETAGE_CLIENT->Text = "";
-		
+
 	}
 
 	private: System::Void BOUTON_SUPP_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
@@ -797,7 +797,7 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 		this->TXT_ETAGE_CLIENT->Text = "Etage suivant";
 	}
 
-	private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->TXT_ID_CLIENT->Text = "";
 		this->TXT_NOM_CLIENT->Text = "";
@@ -810,6 +810,6 @@ private: System::Windows::Forms::TextBox^ TXT_RUE_CLIENT;
 		this->TXT_BAT_CLIENT->Text = "";
 		this->TXT_ETAGE_CLIENT->Text = "";
 	}
-};
+	};
 
 }
