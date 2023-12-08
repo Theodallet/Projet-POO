@@ -395,7 +395,7 @@ System::Data::DataSet^ NS_Comp_Svc::CLservices_Commande::selectionner_Commande_I
 	return this->oCad->getRows(sql, dataTableName);
 }
 
-void NS_Comp_Svc::CLservices_Commande::ajouter_Commande(System::String^ Date_Liv, float Total_HT, float Total_TTC, float Total_TVA, System::String^ Moyen_Paiment, int Id_Cli, int Adresse_Liv) {
+void NS_Comp_Svc::CLservices_Commande::ajouter_Commande(System::DateTime^ Date_Liv, float Total_HT, float Total_TTC, float Total_TVA, System::String^ Moyen_Paiment, int Id_Cli, int Adresse_Liv) {
 
 	System::String^ sql;
 	this->oMapp_Commande->setDate_Liv(Date_Liv);

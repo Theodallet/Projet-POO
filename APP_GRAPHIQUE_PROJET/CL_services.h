@@ -84,7 +84,7 @@ namespace NS_Comp_Svc
 		System::Data::DataSet^ selectionner_Commande(System::String^);
 		System::Data::DataSet^ selectionner_Commande_Id(System::String^, int);
 
-		void ajouter_Commande(System::String^, float, float, float, System::String^, int, int);
+		void ajouter_Commande(System::DateTime^, float, float, float, System::String^, int, int);
 		void supprimer_Commande(int);
 		void modifier_Commande(int, System::String^, System::String^, float, float, float, System::String^, int, int, int);
 		void modifier_Total_Commande(int);

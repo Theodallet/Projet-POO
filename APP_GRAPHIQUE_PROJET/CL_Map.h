@@ -187,7 +187,7 @@ namespace NS_Comp_Mappage
 		void setId_Cli(int);
 		void setNom(System::String^);
 		void setPrenom(System::String^);
-		void setDate_Liv(System::String^);
+		void setDate_Liv(System::DateTime^);
 		void setDate_Emi(System::String^);
 		void setTotal_HT(float);
 		void setTotal_TTC(float);
