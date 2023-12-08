@@ -172,7 +172,7 @@ namespace NS_Comp_Mappage
 		int Id_Cli;
 		System::String^ Nom;
 		System::String^ Prenom;
-		System::String^ Date_Liv;
+		System::DateTime^ Date_Liv;
 		System::String^ Date_Emi;
 		float Total_HT;
 		float Total_TTC;
