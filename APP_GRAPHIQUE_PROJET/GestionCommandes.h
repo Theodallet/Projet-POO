@@ -133,6 +133,8 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: NS_Comp_Svc::CLservices_Contient^ oSvc_Contient;
 	private: NS_Comp_Svc::CLservices_Commande^ oSvc_Commande;
+private: System::Windows::Forms::Label^ label2;
+private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 	private: System::Data::DataSet^ oDs;
 #pragma region Windows Form Designer generated code
 		   /// <summary>
@@ -181,6 +183,8 @@ namespace APPGRAPHIQUEPROJET {
 			   this->SKIP_CLIENT_GAUCHE = (gcnew System::Windows::Forms::Button());
 			   this->SKIP_CLIENT_DROITE = (gcnew System::Windows::Forms::Button());
 			   this->BOUTON_CLEAR_CLIENT = (gcnew System::Windows::Forms::Button());
+			   this->label2 = (gcnew System::Windows::Forms::Label());
+			   this->TXT_MOYEN_PAIMENT_COMMANDE = (gcnew System::Windows::Forms::TextBox());
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AFFICHAGE_COMMANDES))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LOGO))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BarreNoir))->BeginInit();
@@ -194,7 +198,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->label40->ForeColor = System::Drawing::Color::Red;
 			   this->label40->Location = System::Drawing::Point(817, 827);
 			   this->label40->Name = L"label40";
-			   this->label40->Size = System::Drawing::Size(166, 13);
+			   this->label40->Size = System::Drawing::Size(225, 17);
 			   this->label40->TabIndex = 172;
 			   this->label40->Text = L"Message erreur potentielle ajouter";
 			   // 
@@ -204,6 +208,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->AFFICHAGE_COMMANDES->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			   this->AFFICHAGE_COMMANDES->Location = System::Drawing::Point(777, 114);
 			   this->AFFICHAGE_COMMANDES->Name = L"AFFICHAGE_COMMANDES";
+			   this->AFFICHAGE_COMMANDES->RowHeadersWidth = 51;
 			   this->AFFICHAGE_COMMANDES->Size = System::Drawing::Size(412, 550);
 			   this->AFFICHAGE_COMMANDES->TabIndex = 204;
 			   // 
@@ -211,18 +216,18 @@ namespace APPGRAPHIQUEPROJET {
 			   // 
 			   this->TXT_ARTICLE_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->TXT_ARTICLE_COMMANDE->Location = System::Drawing::Point(101, 406);
+			   this->TXT_ARTICLE_COMMANDE->Location = System::Drawing::Point(101, 431);
 			   this->TXT_ARTICLE_COMMANDE->Name = L"TXT_ARTICLE_COMMANDE";
-			   this->TXT_ARTICLE_COMMANDE->Size = System::Drawing::Size(136, 26);
+			   this->TXT_ARTICLE_COMMANDE->Size = System::Drawing::Size(136, 30);
 			   this->TXT_ARTICLE_COMMANDE->TabIndex = 202;
 			   // 
 			   // TXT_ETAGE_LIV_COMMANDE
 			   // 
 			   this->TXT_ETAGE_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->TXT_ETAGE_LIV_COMMANDE->Location = System::Drawing::Point(424, 483);
+			   this->TXT_ETAGE_LIV_COMMANDE->Location = System::Drawing::Point(424, 501);
 			   this->TXT_ETAGE_LIV_COMMANDE->Name = L"TXT_ETAGE_LIV_COMMANDE";
-			   this->TXT_ETAGE_LIV_COMMANDE->Size = System::Drawing::Size(303, 26);
+			   this->TXT_ETAGE_LIV_COMMANDE->Size = System::Drawing::Size(303, 30);
 			   this->TXT_ETAGE_LIV_COMMANDE->TabIndex = 200;
 			   // 
 			   // LOGO
@@ -240,9 +245,9 @@ namespace APPGRAPHIQUEPROJET {
 			   // 
 			   this->TXT_DATE_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->TXT_DATE_LIV_COMMANDE->Location = System::Drawing::Point(98, 333);
+			   this->TXT_DATE_LIV_COMMANDE->Location = System::Drawing::Point(98, 317);
 			   this->TXT_DATE_LIV_COMMANDE->Name = L"TXT_DATE_LIV_COMMANDE";
-			   this->TXT_DATE_LIV_COMMANDE->Size = System::Drawing::Size(286, 26);
+			   this->TXT_DATE_LIV_COMMANDE->Size = System::Drawing::Size(286, 30);
 			   this->TXT_DATE_LIV_COMMANDE->TabIndex = 183;
 			   // 
 			   // RETURN_COMMANDES_HOME
@@ -265,9 +270,9 @@ namespace APPGRAPHIQUEPROJET {
 			   // 
 			   this->TXT_BAT_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->TXT_BAT_LIV_COMMANDE->Location = System::Drawing::Point(423, 406);
+			   this->TXT_BAT_LIV_COMMANDE->Location = System::Drawing::Point(425, 431);
 			   this->TXT_BAT_LIV_COMMANDE->Name = L"TXT_BAT_LIV_COMMANDE";
-			   this->TXT_BAT_LIV_COMMANDE->Size = System::Drawing::Size(302, 26);
+			   this->TXT_BAT_LIV_COMMANDE->Size = System::Drawing::Size(302, 30);
 			   this->TXT_BAT_LIV_COMMANDE->TabIndex = 190;
 			   // 
 			   // NomApp
@@ -279,7 +284,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->NomApp->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->NomApp->Location = System::Drawing::Point(69, 6);
 			   this->NomApp->Name = L"NomApp";
-			   this->NomApp->Size = System::Drawing::Size(401, 50);
+			   this->NomApp->Size = System::Drawing::Size(507, 62);
 			   this->NomApp->TabIndex = 173;
 			   this->NomApp->Text = L"| Gestion Commandes";
 			   // 
@@ -287,9 +292,9 @@ namespace APPGRAPHIQUEPROJET {
 			   // 
 			   this->TXT_VILLE_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->TXT_VILLE_LIV_COMMANDE->Location = System::Drawing::Point(422, 333);
+			   this->TXT_VILLE_LIV_COMMANDE->Location = System::Drawing::Point(425, 353);
 			   this->TXT_VILLE_LIV_COMMANDE->Name = L"TXT_VILLE_LIV_COMMANDE";
-			   this->TXT_VILLE_LIV_COMMANDE->Size = System::Drawing::Size(302, 26);
+			   this->TXT_VILLE_LIV_COMMANDE->Size = System::Drawing::Size(302, 30);
 			   this->TXT_VILLE_LIV_COMMANDE->TabIndex = 194;
 			   // 
 			   // BarreNoir
@@ -305,18 +310,18 @@ namespace APPGRAPHIQUEPROJET {
 			   // 
 			   this->TXT_ID_CLIENT_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->TXT_ID_CLIENT_COMMANDE->Location = System::Drawing::Point(98, 265);
+			   this->TXT_ID_CLIENT_COMMANDE->Location = System::Drawing::Point(98, 253);
 			   this->TXT_ID_CLIENT_COMMANDE->Name = L"TXT_ID_CLIENT_COMMANDE";
-			   this->TXT_ID_CLIENT_COMMANDE->Size = System::Drawing::Size(286, 26);
+			   this->TXT_ID_CLIENT_COMMANDE->Size = System::Drawing::Size(286, 30);
 			   this->TXT_ID_CLIENT_COMMANDE->TabIndex = 179;
 			   // 
 			   // TXT_CP_LIV_COMMANDE
 			   // 
 			   this->TXT_CP_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->TXT_CP_LIV_COMMANDE->Location = System::Drawing::Point(423, 265);
+			   this->TXT_CP_LIV_COMMANDE->Location = System::Drawing::Point(423, 272);
 			   this->TXT_CP_LIV_COMMANDE->Name = L"TXT_CP_LIV_COMMANDE";
-			   this->TXT_CP_LIV_COMMANDE->Size = System::Drawing::Size(302, 26);
+			   this->TXT_CP_LIV_COMMANDE->Size = System::Drawing::Size(302, 30);
 			   this->TXT_CP_LIV_COMMANDE->TabIndex = 186;
 			   // 
 			   // TITRE_COMMANDES
@@ -328,7 +333,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->TITRE_COMMANDES->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->TITRE_COMMANDES->Location = System::Drawing::Point(94, 134);
 			   this->TITRE_COMMANDES->Name = L"TITRE_COMMANDES";
-			   this->TITRE_COMMANDES->Size = System::Drawing::Size(308, 20);
+			   this->TITRE_COMMANDES->Size = System::Drawing::Size(381, 25);
 			   this->TITRE_COMMANDES->TabIndex = 191;
 			   this->TITRE_COMMANDES->Text = L"CARACTERISTIQUES COMMANDES";
 			   // 
@@ -338,7 +343,7 @@ namespace APPGRAPHIQUEPROJET {
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_RUE_LIV_COMMANDE->Location = System::Drawing::Point(422, 194);
 			   this->TXT_RUE_LIV_COMMANDE->Name = L"TXT_RUE_LIV_COMMANDE";
-			   this->TXT_RUE_LIV_COMMANDE->Size = System::Drawing::Size(303, 22);
+			   this->TXT_RUE_LIV_COMMANDE->Size = System::Drawing::Size(303, 26);
 			   this->TXT_RUE_LIV_COMMANDE->TabIndex = 188;
 			   // 
 			   // LABEL_ID_CLIEN_COMMANDE
@@ -348,9 +353,9 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_ID_CLIEN_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->LABEL_ID_CLIEN_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->LABEL_ID_CLIEN_COMMANDE->Location = System::Drawing::Point(97, 242);
+			   this->LABEL_ID_CLIEN_COMMANDE->Location = System::Drawing::Point(97, 226);
 			   this->LABEL_ID_CLIEN_COMMANDE->Name = L"LABEL_ID_CLIEN_COMMANDE";
-			   this->LABEL_ID_CLIEN_COMMANDE->Size = System::Drawing::Size(79, 20);
+			   this->LABEL_ID_CLIEN_COMMANDE->Size = System::Drawing::Size(95, 25);
 			   this->LABEL_ID_CLIEN_COMMANDE->TabIndex = 181;
 			   this->LABEL_ID_CLIEN_COMMANDE->Text = L"ID Client";
 			   // 
@@ -360,7 +365,7 @@ namespace APPGRAPHIQUEPROJET {
 				   static_cast<System::Byte>(0)));
 			   this->TXT_ID_COMMANDE->Location = System::Drawing::Point(98, 190);
 			   this->TXT_ID_COMMANDE->Name = L"TXT_ID_COMMANDE";
-			   this->TXT_ID_COMMANDE->Size = System::Drawing::Size(286, 26);
+			   this->TXT_ID_COMMANDE->Size = System::Drawing::Size(286, 30);
 			   this->TXT_ID_COMMANDE->TabIndex = 196;
 			   // 
 			   // BOUTON_AJOUTER_COMMANDE
@@ -387,7 +392,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_ID_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_ID_COMMANDE->Location = System::Drawing::Point(94, 167);
 			   this->LABEL_ID_COMMANDE->Name = L"LABEL_ID_COMMANDE";
-			   this->LABEL_ID_COMMANDE->Size = System::Drawing::Size(120, 20);
+			   this->LABEL_ID_COMMANDE->Size = System::Drawing::Size(144, 25);
 			   this->LABEL_ID_COMMANDE->TabIndex = 195;
 			   this->LABEL_ID_COMMANDE->Text = L"ID commande";
 			   // 
@@ -413,9 +418,9 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_DATE_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->LABEL_DATE_LIV_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->LABEL_DATE_LIV_COMMANDE->Location = System::Drawing::Point(97, 310);
+			   this->LABEL_DATE_LIV_COMMANDE->Location = System::Drawing::Point(97, 287);
 			   this->LABEL_DATE_LIV_COMMANDE->Name = L"LABEL_DATE_LIV_COMMANDE";
-			   this->LABEL_DATE_LIV_COMMANDE->Size = System::Drawing::Size(143, 20);
+			   this->LABEL_DATE_LIV_COMMANDE->Size = System::Drawing::Size(173, 25);
 			   this->LABEL_DATE_LIV_COMMANDE->TabIndex = 184;
 			   this->LABEL_DATE_LIV_COMMANDE->Text = L"Date de livraison";
 			   // 
@@ -441,9 +446,9 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_ETAGE_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->LABEL_ETAGE_LIV_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->LABEL_ETAGE_LIV_COMMANDE->Location = System::Drawing::Point(421, 460);
+			   this->LABEL_ETAGE_LIV_COMMANDE->Location = System::Drawing::Point(420, 469);
 			   this->LABEL_ETAGE_LIV_COMMANDE->Name = L"LABEL_ETAGE_LIV_COMMANDE";
-			   this->LABEL_ETAGE_LIV_COMMANDE->Size = System::Drawing::Size(145, 20);
+			   this->LABEL_ETAGE_LIV_COMMANDE->Size = System::Drawing::Size(177, 25);
 			   this->LABEL_ETAGE_LIV_COMMANDE->TabIndex = 193;
 			   this->LABEL_ETAGE_LIV_COMMANDE->Text = L"Etage (Livraison)";
 			   // 
@@ -469,9 +474,9 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_BAT_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->LABEL_BAT_LIV_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->LABEL_BAT_LIV_COMMANDE->Location = System::Drawing::Point(420, 383);
+			   this->LABEL_BAT_LIV_COMMANDE->Location = System::Drawing::Point(420, 399);
 			   this->LABEL_BAT_LIV_COMMANDE->Name = L"LABEL_BAT_LIV_COMMANDE";
-			   this->LABEL_BAT_LIV_COMMANDE->Size = System::Drawing::Size(210, 20);
+			   this->LABEL_BAT_LIV_COMMANDE->Size = System::Drawing::Size(255, 25);
 			   this->LABEL_BAT_LIV_COMMANDE->TabIndex = 192;
 			   this->LABEL_BAT_LIV_COMMANDE->Text = L"Nom Batiment (Livraison)";
 			   // 
@@ -484,7 +489,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_RUE_LIV_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_RUE_LIV_COMMANDE->Location = System::Drawing::Point(420, 170);
 			   this->LABEL_RUE_LIV_COMMANDE->Name = L"LABEL_RUE_LIV_COMMANDE";
-			   this->LABEL_RUE_LIV_COMMANDE->Size = System::Drawing::Size(130, 20);
+			   this->LABEL_RUE_LIV_COMMANDE->Size = System::Drawing::Size(159, 25);
 			   this->LABEL_RUE_LIV_COMMANDE->TabIndex = 185;
 			   this->LABEL_RUE_LIV_COMMANDE->Text = L"Rue (Livraison)";
 			   // 
@@ -495,9 +500,9 @@ namespace APPGRAPHIQUEPROJET {
 			   this->ID_ARTICLE_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->ID_ARTICLE_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->ID_ARTICLE_COMMANDE->Location = System::Drawing::Point(97, 383);
+			   this->ID_ARTICLE_COMMANDE->Location = System::Drawing::Point(97, 406);
 			   this->ID_ARTICLE_COMMANDE->Name = L"ID_ARTICLE_COMMANDE";
-			   this->ID_ARTICLE_COMMANDE->Size = System::Drawing::Size(84, 20);
+			   this->ID_ARTICLE_COMMANDE->Size = System::Drawing::Size(100, 25);
 			   this->ID_ARTICLE_COMMANDE->TabIndex = 199;
 			   this->ID_ARTICLE_COMMANDE->Text = L"ID Article";
 			   // 
@@ -508,9 +513,9 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_CP_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->LABEL_CP_LIV_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->LABEL_CP_LIV_COMMANDE->Location = System::Drawing::Point(420, 242);
+			   this->LABEL_CP_LIV_COMMANDE->Location = System::Drawing::Point(420, 240);
 			   this->LABEL_CP_LIV_COMMANDE->Name = L"LABEL_CP_LIV_COMMANDE";
-			   this->LABEL_CP_LIV_COMMANDE->Size = System::Drawing::Size(194, 20);
+			   this->LABEL_CP_LIV_COMMANDE->Size = System::Drawing::Size(239, 25);
 			   this->LABEL_CP_LIV_COMMANDE->TabIndex = 187;
 			   this->LABEL_CP_LIV_COMMANDE->Text = L"Code Postal (Livraison)";
 			   // 
@@ -521,16 +526,16 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_VILLE_LIV_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->LABEL_VILLE_LIV_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->LABEL_VILLE_LIV_COMMANDE->Location = System::Drawing::Point(420, 310);
+			   this->LABEL_VILLE_LIV_COMMANDE->Location = System::Drawing::Point(420, 321);
 			   this->LABEL_VILLE_LIV_COMMANDE->Name = L"LABEL_VILLE_LIV_COMMANDE";
-			   this->LABEL_VILLE_LIV_COMMANDE->Size = System::Drawing::Size(131, 20);
+			   this->LABEL_VILLE_LIV_COMMANDE->Size = System::Drawing::Size(163, 25);
 			   this->LABEL_VILLE_LIV_COMMANDE->TabIndex = 189;
 			   this->LABEL_VILLE_LIV_COMMANDE->Text = L"Ville (Livraison)";
 			   // 
 			   // BACKGROUND_ZONE_TEXTE
 			   // 
 			   this->BACKGROUND_ZONE_TEXTE->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"BACKGROUND_ZONE_TEXTE.BackgroundImage")));
-			   this->BACKGROUND_ZONE_TEXTE->Location = System::Drawing::Point(78, 114);
+			   this->BACKGROUND_ZONE_TEXTE->Location = System::Drawing::Point(78, 138);
 			   this->BACKGROUND_ZONE_TEXTE->Name = L"BACKGROUND_ZONE_TEXTE";
 			   this->BACKGROUND_ZONE_TEXTE->Size = System::Drawing::Size(683, 550);
 			   this->BACKGROUND_ZONE_TEXTE->TabIndex = 203;
@@ -552,7 +557,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->BOUTON_AJOUTER_ARTICLE_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->BOUTON_AJOUTER_ARTICLE_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->BOUTON_AJOUTER_ARTICLE_COMMANDE->Location = System::Drawing::Point(98, 453);
+			   this->BOUTON_AJOUTER_ARTICLE_COMMANDE->Location = System::Drawing::Point(98, 473);
 			   this->BOUTON_AJOUTER_ARTICLE_COMMANDE->Name = L"BOUTON_AJOUTER_ARTICLE_COMMANDE";
 			   this->BOUTON_AJOUTER_ARTICLE_COMMANDE->Size = System::Drawing::Size(139, 26);
 			   this->BOUTON_AJOUTER_ARTICLE_COMMANDE->TabIndex = 205;
@@ -566,7 +571,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->BOUTON_SUPPRIMER_ARTICLE_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6.75F, System::Drawing::FontStyle::Bold,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->BOUTON_SUPPRIMER_ARTICLE_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->BOUTON_SUPPRIMER_ARTICLE_COMMANDE->Location = System::Drawing::Point(245, 454);
+			   this->BOUTON_SUPPRIMER_ARTICLE_COMMANDE->Location = System::Drawing::Point(245, 474);
 			   this->BOUTON_SUPPRIMER_ARTICLE_COMMANDE->Name = L"BOUTON_SUPPRIMER_ARTICLE_COMMANDE";
 			   this->BOUTON_SUPPRIMER_ARTICLE_COMMANDE->Size = System::Drawing::Size(139, 26);
 			   this->BOUTON_SUPPRIMER_ARTICLE_COMMANDE->TabIndex = 206;
@@ -580,7 +585,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->BOUTON_AFFICHER_ARTICLE_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->BOUTON_AFFICHER_ARTICLE_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->BOUTON_AFFICHER_ARTICLE_COMMANDE->Location = System::Drawing::Point(98, 485);
+			   this->BOUTON_AFFICHER_ARTICLE_COMMANDE->Location = System::Drawing::Point(98, 505);
 			   this->BOUTON_AFFICHER_ARTICLE_COMMANDE->Name = L"BOUTON_AFFICHER_ARTICLE_COMMANDE";
 			   this->BOUTON_AFFICHER_ARTICLE_COMMANDE->Size = System::Drawing::Size(139, 26);
 			   this->BOUTON_AFFICHER_ARTICLE_COMMANDE->TabIndex = 207;
@@ -591,9 +596,9 @@ namespace APPGRAPHIQUEPROJET {
 			   // 
 			   this->TXT_QUANTITE_ARTICLE_CLIENT->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->TXT_QUANTITE_ARTICLE_CLIENT->Location = System::Drawing::Point(245, 406);
+			   this->TXT_QUANTITE_ARTICLE_CLIENT->Location = System::Drawing::Point(245, 430);
 			   this->TXT_QUANTITE_ARTICLE_CLIENT->Name = L"TXT_QUANTITE_ARTICLE_CLIENT";
-			   this->TXT_QUANTITE_ARTICLE_CLIENT->Size = System::Drawing::Size(139, 26);
+			   this->TXT_QUANTITE_ARTICLE_CLIENT->Size = System::Drawing::Size(139, 30);
 			   this->TXT_QUANTITE_ARTICLE_CLIENT->TabIndex = 208;
 			   // 
 			   // LABEL_QUANTITE_ARTICLE_COMMANDE
@@ -603,9 +608,9 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->Location = System::Drawing::Point(241, 383);
+			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->Location = System::Drawing::Point(241, 407);
 			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->Name = L"LABEL_QUANTITE_ARTICLE_COMMANDE";
-			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->Size = System::Drawing::Size(132, 20);
+			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->Size = System::Drawing::Size(158, 25);
 			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->TabIndex = 209;
 			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->Text = L"Quantité article";
 			   // 
@@ -652,9 +657,34 @@ namespace APPGRAPHIQUEPROJET {
 			   this->BOUTON_CLEAR_CLIENT->UseVisualStyleBackColor = false;
 			   this->BOUTON_CLEAR_CLIENT->Click += gcnew System::EventHandler(this, &GestionCommandes::BOUTON_CLEAR_CLIENT_Click);
 			   // 
+			   // label2
+			   // 
+			   this->label2->AutoSize = true;
+			   this->label2->BackColor = System::Drawing::Color::Black;
+			   this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->label2->Location = System::Drawing::Point(97, 350);
+			   this->label2->Name = L"label2";
+			   this->label2->Size = System::Drawing::Size(189, 25);
+			   this->label2->TabIndex = 213;
+			   this->label2->Text = L"Moyen de paiment";
+			   // 
+			   // TXT_MOYEN_PAIMENT_COMMANDE
+			   // 
+			   this->TXT_MOYEN_PAIMENT_COMMANDE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular,
+				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			   this->TXT_MOYEN_PAIMENT_COMMANDE->Location = System::Drawing::Point(98, 376);
+			   this->TXT_MOYEN_PAIMENT_COMMANDE->Name = L"TXT_MOYEN_PAIMENT_COMMANDE";
+			   this->TXT_MOYEN_PAIMENT_COMMANDE->Size = System::Drawing::Size(286, 30);
+			   this->TXT_MOYEN_PAIMENT_COMMANDE->TabIndex = 214;
+			   this->TXT_MOYEN_PAIMENT_COMMANDE->TextChanged += gcnew System::EventHandler(this, &GestionCommandes::TXT_MOYEN_PAIMENT_COMMANDE_TextChanged);
+			   // 
 			   // GestionCommandes
 			   // 
 			   this->ClientSize = System::Drawing::Size(1256, 725);
+			   this->Controls->Add(this->TXT_MOYEN_PAIMENT_COMMANDE);
+			   this->Controls->Add(this->label2);
 			   this->Controls->Add(this->BOUTON_CLEAR_CLIENT);
 			   this->Controls->Add(this->SKIP_CLIENT_DROITE);
 			   this->Controls->Add(this->SKIP_CLIENT_GAUCHE);
@@ -1131,5 +1161,7 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 	
 
 
-	};
+	private: System::Void TXT_MOYEN_PAIMENT_COMMANDE_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
