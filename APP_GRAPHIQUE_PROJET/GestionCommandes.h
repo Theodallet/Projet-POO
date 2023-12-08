@@ -125,6 +125,7 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: NS_Comp_Svc::CLservices_Contient^ oSvc_Contient;
 	private: NS_Comp_Svc::CLservices_Commande^ oSvc_Commande;
+
 private: System::Windows::Forms::Label^ label2;
 private: System::Windows::Forms::TextBox^ TXT_MOYEN_PAIMENT_COMMANDE;
 private: System::Windows::Forms::PictureBox^ BACKGROUND_ZONE_TEXTE;
@@ -779,9 +780,16 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 
 	private: System::Void BOUTON_AFFICHER_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		String^ Commande_ID = this->TXT_ID_COMMANDE->Text;
+		int Commande_ID = Convert::ToInt32(this->TXT_ID_COMMANDE->Text);
 
-		// Commannde d'affichage
+		this->oSvc_Commande = gcnew NS_Comp_Svc::CLservices_Commande();
+		this->AFFICHAGE_COMMANDES->Refresh();
+		this->oDs = this->oSvc_Commande->selectionner_Commande_Id("Rsl", Commande_ID);
+		this->AFFICHAGE_COMMANDES->DataSource = this->oDs;
+		this->AFFICHAGE_COMMANDES->DataMember = "Rsl";
+
+
+		this->TXT_ID_COMMANDE->Text = "";
 
 		this->TXT_ID_COMMANDE->Text = "";
 	}
