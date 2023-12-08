@@ -777,7 +777,7 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 		int Etage_Livraison = Convert::ToInt32(this->TXT_ETAGE_LIV_COMMANDE->Text);
 
 		// Action à faire
-		this->oSvc_Commande->ajouter_Commande(Date_Livraison,nullptr,nullptr,nullptr,Moyen_Paiment, Client_ID, Adresse_Liv, Adresse_Fac);
+		this->oSvc_Commande->ajouter_Commande(Date_Livraison,nullptr,nullptr,nullptr,Moyen_Paiment, Client_ID,);
 		this
 		ajouter_Contient(int Id_Art, int Id_Com, int Quantite_Article) 
 			ajouter_Commande(System::String ^ Date_Liv, float Total_HT, float Total_TTC, float Total_TVA, System::String ^ Moyen_Paiment, int Id_Cli, int Adresse_Liv)
