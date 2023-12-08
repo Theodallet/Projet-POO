@@ -588,7 +588,7 @@ namespace APPGRAPHIQUEPROJET {
 		this->TXT_STOCK_ARTICLE->Text = "";
 
 		this->AFFICHAGE_STOCK->Refresh();
-		this->oDs = this->oSvc_Article->selectionner_Article_Id("Rsl", Article_ID);
+		this->oDs = this->oSvc_Article->selectionner_Article("Rsl");
 		this->AFFICHAGE_STOCK->DataSource = this->oDs;
 		this->AFFICHAGE_STOCK->DataMember = "Rsl";
 	}
@@ -616,7 +616,7 @@ namespace APPGRAPHIQUEPROJET {
 		this->TXT_STOCK_ARTICLE->Text = "";
 
 		this->AFFICHAGE_STOCK->Refresh();
-		this->oDs = this->oSvc_Article->selectionner_Article_Id("Rsl", Article_ID);
+		this->oDs = this->oSvc_Article->selectionner_Article("Rsl");
 		this->AFFICHAGE_STOCK->DataSource = this->oDs;
 		this->AFFICHAGE_STOCK->DataMember = "Rsl";
 	}
@@ -630,7 +630,7 @@ namespace APPGRAPHIQUEPROJET {
 		this->TXT_ID_ARTICLE->Text = "";
 
 		this->AFFICHAGE_STOCK->Refresh();
-		this->oDs = this->oSvc_Article->selectionner_Article_Id("Rsl", Article_ID);
+		this->oDs = this->oSvc_Article->selectionner_Article("Rsl");
 		this->AFFICHAGE_STOCK->DataSource = this->oDs;
 		this->AFFICHAGE_STOCK->DataMember = "Rsl";
 	}
