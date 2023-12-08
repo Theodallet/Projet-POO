@@ -748,23 +748,34 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 	
 	private: System::Void BOUTON_CLEAR_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-
+		this->TXT_NOM_PERSONNEL->Text = "";
+		this->TXT_PRENOM_PERSONNEL->Text = "";
+		this->TXT_BD_PERSONNEL->Text = "";
+		this->TXT_MAIL_PERSONNEL->Text = "";
+		this->TXT_RUE_PERSONNEL->Text = "";
+		this->TXT_CP_PERSONNEL->Text = "";
+		this->TXT_VILLE_PERSONNEL->Text = "";
+		this->TXT_BAT_PERSONNEL->Text = "";
+		this->TXT_ETAGE_PERSONNEL->Text = "";
+		this->TXT_DATE_EMBAUCHE_PERSONNEL->Text = "";
+		this->TXT_RUE_PERSONNEL->Text = "";
+		this->TXT_ID_SUP->Text = "";
 	}
 
 	private: System::Void BOUTON_ADD_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 		String^ Personnel_Nom = this->TXT_NOM_PERSONNEL->Text;
 		String^ Personnel_Prenom = this->TXT_PRENOM_PERSONNEL->Text;
-		String^ Personnel_Date_N = this->TXT_BD_PERSONNEL->Text;
+		DateTime Personnel_Date_N = DateTime::Parse(this->TXT_BD_PERSONNEL->Text);
 		String^ Personnel_Mail = this->TXT_MAIL_PERSONNEL->Text;
 		String^ Personnel_Rue = this->TXT_RUE_PERSONNEL->Text;
 		String^ Personnel_Code_Postal = this->TXT_CP_PERSONNEL->Text;
 		String^ Personnel_Ville = this->TXT_VILLE_PERSONNEL->Text;
 		String^ Personnel_Batiment = this->TXT_BAT_PERSONNEL->Text;
 		String^ Personnel_Etage = this->TXT_ETAGE_PERSONNEL->Text;
-		String^ Personnel_Date_E = this->TXT_DATE_EMBAUCHE_PERSONNEL->Text;
+		DateTime Personnel_Date_E = DateTime::Parse(this->TXT_DATE_EMBAUCHE_PERSONNEL->Text);
 		String^ Personnel_Role = this->TXT_RUE_PERSONNEL->Text;
-		String^ Personnel_ID_Supperieur = this->TXT_ID_SUP->Text;
+		int Personnel_ID_Supperieur = Convert::ToInt32(this->TXT_ID_SUP->Text);
 		
 		this->TXT_NOM_PERSONNEL->Text = "";
 		this->TXT_PRENOM_PERSONNEL->Text = "";
@@ -781,19 +792,19 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 	}
 	private: System::Void BOUTON_MODIF_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		String^ Personnel_ID = this->TXT_ID_PERSONNEL->Text;
+		int Personnel_ID = Convert::ToInt32(this->TXT_ID_PERSONNEL->Text);
 		String^ Personnel_Nom = this->TXT_NOM_PERSONNEL->Text;
 		String^ Personnel_Prenom = this->TXT_PRENOM_PERSONNEL->Text;
-		String^ Personnel_Date_N = this->TXT_BD_PERSONNEL->Text;
+		DateTime Personnel_Date_N = DateTime::Parse(this->TXT_BD_PERSONNEL->Text);
 		String^ Personnel_Mail = this->TXT_MAIL_PERSONNEL->Text;
 		String^ Personnel_Rue = this->TXT_RUE_PERSONNEL->Text;
 		String^ Personnel_Code_Postal = this->TXT_CP_PERSONNEL->Text;
 		String^ Personnel_Ville = this->TXT_VILLE_PERSONNEL->Text;
 		String^ Personnel_Batiment = this->TXT_BAT_PERSONNEL->Text;
 		String^ Personnel_Etage = this->TXT_ETAGE_PERSONNEL->Text;
-		String^ Personnel_Date_E = this->TXT_DATE_EMBAUCHE_PERSONNEL->Text;
+		DateTime Personnel_Date_E = DateTime::Parse(this->TXT_DATE_EMBAUCHE_PERSONNEL->Text);
 		String^ Personnel_Role = this->TXT_RUE_PERSONNEL->Text;
-		String^ Personnel_ID_Supperieur = this->TXT_ID_SUP->Text;
+		int Personnel_ID_Supperieur = Convert::ToInt32(this->TXT_ID_SUP->Text);
 
 		this->TXT_ID_PERSONNEL->Text = "";
 		this->TXT_NOM_PERSONNEL->Text = "";
