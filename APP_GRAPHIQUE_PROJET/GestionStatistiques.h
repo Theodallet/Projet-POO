@@ -1,9 +1,5 @@
 #pragma once
 #include "CL_services.h"
-<<<<<<< HEAD
-=======
-#include <iostream>
->>>>>>> parent of 3bbd288 (Modification des erreurs de label et text box)
 namespace APPGRAPHIQUEPROJET {
 
 	using namespace System;
@@ -12,7 +8,6 @@ namespace APPGRAPHIQUEPROJET {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
 
 	/// <summary>
 	/// Description résumée de GestionClient1
@@ -53,60 +48,99 @@ namespace APPGRAPHIQUEPROJET {
 		/// </summary>
 		System::ComponentModel::Container^ components;
 
+
 	private: System::Windows::Forms::Label^ label1;
+
+
+
 	private: System::Windows::Forms::PictureBox^ LOGO;
 	private: System::Windows::Forms::Button^ RETURN_STATS_HOME;
+
+
+
 	private: System::Windows::Forms::Label^ NomApp;
+
 	private: System::Windows::Forms::PictureBox^ BarreNoir;
 	private: System::Windows::Forms::Label^ TITRE_STATISTIQUES;
 	private: System::Windows::Forms::Button^ BOUTON_AFFICHER_STAT;
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_TEXT_8;
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_TEXT_1;
+
 	private: System::Windows::Forms::Label^ label40;
+
 	private: System::Windows::Forms::Label^ LABEL_PANIER_MOY;
 	private: System::Windows::Forms::ComboBox^ SELECTEUR_VAL;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
 	private: System::Windows::Forms::TextBox^ TXT_INT_MOIS_2;
+
+
 	private: System::Windows::Forms::Label^ LABEL_CALCUL_CA;
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_TEXT_2;
 	private: System::Windows::Forms::Label^ LABEL_IDENTIFIER_SEUIL;
+
+
+
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_TEXT_3;
 	private: System::Windows::Forms::TextBox^ TXT_ID_CLI_4;
+
+
 	private: System::Windows::Forms::Label^ LABEL_ACHAT_CLIENT;
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_TEXT_4;
 	private: System::Windows::Forms::TextBox^ TXT_REMISE_10;
+
+
+
 	private: System::Windows::Forms::Label^ LABEL_MAX_10;
+
+
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_TEXT_5;
 	private: System::Windows::Forms::Label^ IDENTIFIER_MIN_10;
+
+
+
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_TEXT_6;
 	private: System::Windows::Forms::Label^ LABEL_VAL_STOCK_COMMERCIAL;
+
+
+
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_TEXT_7;
 	private: System::Windows::Forms::Label^ LABEL_ACHAT_STOCK;
+
+
+
 	private: System::Windows::Forms::PictureBox^ BACKG_8;
 	private: System::Windows::Forms::Label^ LABEL_SIMUL_SANS_ARG;
+
+
+
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_TEXT_9;
 	private: System::Windows::Forms::TextBox^ TXT_DEMARQUE_10;
+
+
 	private: System::Windows::Forms::Label^ LABEL_SIMUL_AVEC_ARG;
+
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_TEXT_10;
+
 	private: System::Windows::Forms::Label^ LABEL_CONSIGNE_MOIS;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::DataGridView^ AFFICHAGE_STAT;
 	private: System::Windows::Forms::TextBox^ TXT_MARGE_10;
+
 	private: System::Windows::Forms::TextBox^ TXT_TVA_10;
 	private: System::Windows::Forms::TextBox^ TXT_VALEUR__REQUETE_RETOUR;
+
+
 	private: System::Windows::Forms::Label^ LABEL_REQUETE_RETOUR_NUM;
+
 	private: System::Windows::Forms::Label^ LABEL_DEMANDE_REQUETE;
+
 	private: System::Windows::Forms::Label^ LABEL_INDICATION_10;
+
+
+
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
-<<<<<<< HEAD
 	private: NS_Comp_Svc::CLservices_Stat^ oSvc_Stat;
 	private: System::Data::DataSet^ oDs;
-=======
-
-	private: NS_Comp_Svc::CLservices_Stat^ oSvc_Stat;
-	private: System::Data::DataSet^ oDs;
-
->>>>>>> parent of 3bbd288 (Modification des erreurs de label et text box)
 #pragma region Windows Form Designer generated code
 		   /// <summary>
 		   /// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
@@ -722,24 +756,20 @@ namespace APPGRAPHIQUEPROJET {
 
 
 #pragma endregion
-	private: System::Void GestionStatistiques_Load(System::Object^ sender, System::EventArgs^ e)
-	{
-		this->oSvc_Stat = gcnew NS_Comp_Svc::CLservices_Stat();
-	}
-
-
 	private: System::Void SELECTEUR_VAL_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
 	{
-		
 	}
 
-	private: System::Void RETURN_STATS_HOME_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void GestionStatistiques_Load(System::Object^ sender, System::EventArgs^ e)
+	{
+	}
+	private: System::Void RETURN_STATS_HOME_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->Hide();
 		ObjetStat->Show();
 	}
 
-	private: System::Void BOUTON_AFFICHER_STAT_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void BOUTON_AFFICHER_STAT_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		int Val = Convert::ToInt32(this->SELECTEUR_VAL->Text);
 
@@ -751,11 +781,7 @@ namespace APPGRAPHIQUEPROJET {
 		float Stat_Marge = Convert::ToSingle(this->TXT_MARGE_10->Text);
 		float Stat_Remise = Convert::ToSingle(this->TXT_REMISE_10->Text);
 		float Stat_Demarque = Convert::ToSingle(this->TXT_DEMARQUE_10->Text);
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> parent of 3bbd288 (Modification des erreurs de label et text box)
 		if (Val == 1)
 		{
 			this->oSvc_Stat->Calcul_Panier_Moyen();
@@ -797,19 +823,8 @@ namespace APPGRAPHIQUEPROJET {
 			this->oSvc_Stat->Variations_Valeurs_Commerciales_Valeur(Stat_TVA, Stat_Marge, Stat_Remise, Stat_Demarque);
 		}
 
-<<<<<<< HEAD
-
-	}
-=======
->>>>>>> parent of 3bbd288 (Modification des erreurs de label et text box)
 
 	}
 
-
-
-
-
-
-	
-};
+	};
 }
