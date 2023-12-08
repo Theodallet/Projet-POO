@@ -223,7 +223,7 @@ namespace NS_Comp_Mappage
 	{
 	private:
 		System::String^ sSql;
-		System::String^ Date_Fac;
+		System::DateTime^ Date_Fac;
 		float Total;
 		int Id_Client;
 		int Id_Art;
@@ -240,7 +240,7 @@ namespace NS_Comp_Mappage
 		void setTotal(float);
 		void setId_Client(int);
 		void setId_Art(int);
-		void setDate_Fac(System::String^);
+		void setDate_Fac(System::DateTime^);
 		void setStock_Art(int);
 		void setMois(int);
 

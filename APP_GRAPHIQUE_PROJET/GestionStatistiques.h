@@ -139,8 +139,11 @@ namespace APPGRAPHIQUEPROJET {
 
 
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
 	private: NS_Comp_Svc::CLservices_Stat^ oSvc_Stat;
 	private: System::Data::DataSet^ oDs;
+
+
 #pragma region Windows Form Designer generated code
 		   /// <summary>
 		   /// Méthode requise pour la prise en charge du concepteur - ne modifiez pas

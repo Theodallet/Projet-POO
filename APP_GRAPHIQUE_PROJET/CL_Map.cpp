@@ -168,7 +168,7 @@ NS_Comp_Mappage::CL_Map_Stat::CL_Map_Stat() {}
 void NS_Comp_Mappage::CL_Map_Stat::setTotal(float Total) { this->Total = Total; }
 void NS_Comp_Mappage::CL_Map_Stat::setId_Client(int Id_Client) { this->Id_Client = Id_Client; }
 void NS_Comp_Mappage::CL_Map_Stat::setId_Art(int Id_Art) { this->Id_Art = Id_Art; }
-void NS_Comp_Mappage::CL_Map_Stat::setDate_Fac(System::String^ Date_Fac) { this->Date_Fac = Date_Fac; }
+void NS_Comp_Mappage::CL_Map_Stat::setDate_Fac(System::DateTime^ Date_Fac) { this->Date_Fac = Date_Fac; }
 void NS_Comp_Mappage::CL_Map_Stat::setStock_Art(int Stock_Art) { this->Stock_Art = Stock_Art; }
 void NS_Comp_Mappage::CL_Map_Stat::setMois(int Mois) { this->Mois = Mois; }
 void NS_Comp_Mappage::CL_Map_Stat::setTVA(float) { this->TVA = TVA; }
