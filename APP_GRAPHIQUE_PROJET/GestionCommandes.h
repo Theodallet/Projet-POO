@@ -133,6 +133,7 @@ private: System::Windows::Forms::Label^ label3;
 private: System::Windows::Forms::DateTimePicker^ TXT_DATE_EM_COMMANDE;
 private: System::Windows::Forms::Label^ label4;
 private: System::Windows::Forms::TextBox^ TXT_ID_ADR_FACT;
+private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 	private: System::Data::DataSet^ oDs;
 #pragma region Windows Form Designer generated code
 		   /// <summary>
@@ -179,6 +180,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_ADR_FACT;
 			   this->TXT_DATE_EM_COMMANDE = (gcnew System::Windows::Forms::DateTimePicker());
 			   this->label4 = (gcnew System::Windows::Forms::Label());
 			   this->TXT_ID_ADR_FACT = (gcnew System::Windows::Forms::TextBox());
+			   this->BOUTON_MODIFIER_ARTICLE = (gcnew System::Windows::Forms::Button());
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AFFICHAGE_COMMANDES))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LOGO))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BarreNoir))->BeginInit();
@@ -631,9 +633,25 @@ private: System::Windows::Forms::TextBox^ TXT_ID_ADR_FACT;
 			   this->TXT_ID_ADR_FACT->Size = System::Drawing::Size(303, 22);
 			   this->TXT_ID_ADR_FACT->TabIndex = 218;
 			   // 
+			   // BOUTON_MODIFIER_ARTICLE
+			   // 
+			   this->BOUTON_MODIFIER_ARTICLE->BackColor = System::Drawing::SystemColors::HotTrack;
+			   this->BOUTON_MODIFIER_ARTICLE->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			   this->BOUTON_MODIFIER_ARTICLE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			   this->BOUTON_MODIFIER_ARTICLE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->BOUTON_MODIFIER_ARTICLE->Location = System::Drawing::Point(245, 505);
+			   this->BOUTON_MODIFIER_ARTICLE->Name = L"BOUTON_MODIFIER_ARTICLE";
+			   this->BOUTON_MODIFIER_ARTICLE->Size = System::Drawing::Size(139, 26);
+			   this->BOUTON_MODIFIER_ARTICLE->TabIndex = 219;
+			   this->BOUTON_MODIFIER_ARTICLE->Text = L"MODIFIER ARTICLE";
+			   this->BOUTON_MODIFIER_ARTICLE->UseVisualStyleBackColor = false;
+			   this->BOUTON_MODIFIER_ARTICLE->Click += gcnew System::EventHandler(this, &GestionCommandes::BOUTON_MODIFIER_ARTICLE_Click);
+			   // 
 			   // GestionCommandes
 			   // 
 			   this->ClientSize = System::Drawing::Size(1256, 725);
+			   this->Controls->Add(this->BOUTON_MODIFIER_ARTICLE);
 			   this->Controls->Add(this->TXT_ID_ADR_FACT);
 			   this->Controls->Add(this->label4);
 			   this->Controls->Add(this->TXT_DATE_EM_COMMANDE);
@@ -869,5 +887,7 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 	
 		
 	}
+private: System::Void BOUTON_MODIFIER_ARTICLE_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
