@@ -667,12 +667,10 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 		int Article_Quantite = Convert::ToInt32(this->TXT_QUANTITE_ARTICLE_CLIENT->Text);
 		int Commande_ID_Livraison = Convert::ToInt32(this->TXT_ID_ADRESSE_COMMANDE->Text);
 
-		// Action à faire
-		
-
+	
 		this->oSvc_Commande->ajouter_Commande(Date_Livraison, 0, 0, 0, Moyen_Paiment, Commande_ID_Livraison, Article_ID);
-		//this->ajouter_Contient(int Id_Art, int Id_Com, int Quantite_Article)
-		//this->ajouter_Commande(System::String ^ Date_Liv, float Total_HT, float Total_TTC, float Total_TVA, System::String ^ Moyen_Paiment, int Id_Cli, int Adresse_Liv);
+		this->oSvc_Contient->ajouter_Contient(Article_ID, Commande_ID, Article_Quantite);
+		
 
 		this->TXT_ID_COMMANDE->Text = "";  // A retirer
 		this->TXT_ID_CLIENT_COMMANDE->Text = "";
@@ -680,6 +678,7 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "";
 		this->TXT_ARTICLE_COMMANDE->Text = "";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "";
+		this->TXT_ID_ADRESSE_COMMANDE->Text = "";
 	
 	}
 		   
@@ -692,11 +691,7 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 		String^ Moyen_Paiment = this->TXT_MOYEN_PAIMENT_COMMANDE->Text;
 		String^ Article_ID = this->TXT_ARTICLE_COMMANDE->Text;
 		String^ Article_Quantite = this->TXT_QUANTITE_ARTICLE_CLIENT->Text;
-		String^ Route_Livraison = this->TXT_RUE_LIV_COMMANDE->Text;
-		String^ CodePostal_Livraison = this->TXT_CP_LIV_COMMANDE->Text;
-		String^ Ville_Livraison = this->TXT_VILLE_LIV_COMMANDE->Text;
-		String^ Batiment_Livraison = this->TXT_BAT_LIV_COMMANDE->Text;
-		String^ Etage_Livraison = this->TXT_ETAGE_LIV_COMMANDE->Text;
+
 
 		// Action à faire
 
@@ -710,11 +705,7 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "";
 		this->TXT_ARTICLE_COMMANDE->Text = "";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "";
-		this->TXT_RUE_LIV_COMMANDE->Text = "";
-		this->TXT_CP_LIV_COMMANDE->Text = "";
-		this->TXT_VILLE_LIV_COMMANDE->Text = "";
-		this->TXT_BAT_LIV_COMMANDE->Text = "";
-		this->TXT_ETAGE_LIV_COMMANDE->Text = "";
+
 	}
 
 
@@ -752,11 +743,7 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "Précédent";
 		this->TXT_ARTICLE_COMMANDE->Text = "Précédent";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "Précédent";
-		this->TXT_RUE_LIV_COMMANDE->Text = "Précédent";
-		this->TXT_CP_LIV_COMMANDE->Text = "Précédent";
-		this->TXT_VILLE_LIV_COMMANDE->Text = "Précédent";
-		this->TXT_BAT_LIV_COMMANDE->Text = "Précédent";
-		this->TXT_ETAGE_LIV_COMMANDE->Text = "Précédent";
+
 
 
 	}
@@ -775,12 +762,7 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 		this->TXT_MOYEN_PAIMENT_COMMANDE->Text = "Suivant";
 		this->TXT_ARTICLE_COMMANDE->Text = "Suivant";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "Suivant";
-		this->TXT_RUE_LIV_COMMANDE->Text = "Suivant";
-		this->TXT_CP_LIV_COMMANDE->Text = "Suivant";
-		this->TXT_VILLE_LIV_COMMANDE->Text = "Suivant";
-		this->TXT_BAT_LIV_COMMANDE->Text = "Suivant";
-		this->TXT_ETAGE_LIV_COMMANDE->Text = "Suivant";
-	}
+	
 	
 
 
