@@ -793,10 +793,10 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 		String^ Personnel_Code_Postal = this->TXT_CP_PERSONNEL->Text;
 		String^ Personnel_Ville = this->TXT_VILLE_PERSONNEL->Text;
 		String^ Personnel_Batiment = this->TXT_BAT_PERSONNEL->Text;
-		String^ Personnel_Etage = this->TXT_ETAGE_PERSONNEL->Text;
+		int Personnel_Etage = Convert::ToInt32(this->TXT_ETAGE_PERSONNEL->Text);
 		String^ Personnel_Date_E = this->TXT_DATE_EMBAUCHE_PERSONNEL->Text;
-		String^ Personnel_Role = this->TXT_RUE_PERSONNEL->Text;
-		String^ Personnel_ID_Supperieur = this->TXT_ID_SUP->Text;
+		int Personnel_Role = Convert::ToInt32(this->TXT_RUE_PERSONNEL->Text);
+		int Personnel_ID_Supperieur = Convert::ToInt32(this->TXT_ID_SUP->Text);
 
 		this->TXT_ID_PERSONNEL->Text = "";
 		this->TXT_NOM_PERSONNEL->Text = "";
