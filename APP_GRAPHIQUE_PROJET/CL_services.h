@@ -99,9 +99,9 @@ namespace NS_Comp_Svc
 	public:
 		CLservices_Contient(void);
 
-		void ajouter_Contient(int, int, int);
-		void supprimer_Contient(int, int);
-		void modifier_Contient(int, int, int);
+		void ajouter_Contient(int, System::String^, int);
+		void supprimer_Contient(int, System::String^);
+		void modifier_Contient(int, System::String^, int);
 
 	};
 

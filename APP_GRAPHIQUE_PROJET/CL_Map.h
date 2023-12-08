@@ -206,12 +206,12 @@ namespace NS_Comp_Mappage
 	ref class CL_Map_Contient {
 	private:
 		int Id_Art;
-		int Id_Com;
+		System::String^ Id_Com;
 		int Quantite_Article;
 	public:
 		CL_Map_Contient();
 		void setId_Art(int);
-		void setId_Com(int);
+		void setId_Com(System::String^);
 		void setQuantite_Article(int);
 
 		System::String^ Insert_Contient(void);

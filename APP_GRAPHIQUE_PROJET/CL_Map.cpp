@@ -153,7 +153,7 @@ System::String^ NS_Comp_Mappage::CL_Map_Commande::Update_Total_Commande(void) { 
 
 NS_Comp_Mappage::CL_Map_Contient::CL_Map_Contient() {}
 void NS_Comp_Mappage::CL_Map_Contient::setId_Art(int Id) { this->Id_Art = Id_Art; }
-void NS_Comp_Mappage::CL_Map_Contient::setId_Com(int Id) { this->Id_Com = Id_Com; }
+void NS_Comp_Mappage::CL_Map_Contient::setId_Com(System::String^ Id_Com) { this->Id_Com = Id_Com; }
 void NS_Comp_Mappage::CL_Map_Contient::setQuantite_Article(int Id) { this->Quantite_Article = Quantite_Article; }
 
 

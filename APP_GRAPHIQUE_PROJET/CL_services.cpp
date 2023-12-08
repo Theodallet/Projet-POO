@@ -453,7 +453,7 @@ NS_Comp_Svc::CLservices_Contient::CLservices_Contient(void)
 	this->oMapp_Contient = gcnew NS_Comp_Mappage::CL_Map_Contient();
 }
 
-void NS_Comp_Svc::CLservices_Contient::ajouter_Contient(int Id_Art, int Id_Com, int Quantite_Article) {
+void NS_Comp_Svc::CLservices_Contient::ajouter_Contient(int Id_Art, System::String^ Id_Com, int Quantite_Article) {
 
 	System::String^ sql;
 	this->oMapp_Contient->setId_Art(Id_Art);
@@ -464,7 +464,7 @@ void NS_Comp_Svc::CLservices_Contient::ajouter_Contient(int Id_Art, int Id_Com, 
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices_Contient::supprimer_Contient(int Id_Art, int Id_Com) {
+void NS_Comp_Svc::CLservices_Contient::supprimer_Contient(int Id_Art, System::String^ Id_Com) {
 
 	System::String^ sql;
 	this->oMapp_Contient->setId_Art(Id_Art);
@@ -474,7 +474,7 @@ void NS_Comp_Svc::CLservices_Contient::supprimer_Contient(int Id_Art, int Id_Com
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices_Contient::modifier_Contient(int Id_Art, int Id_Com, int Quantite_Article) {
+void NS_Comp_Svc::CLservices_Contient::modifier_Contient(int Id_Art, System::String^ Id_Com, int Quantite_Article) {
 
 	System::String^ sql;
 	this->oMapp_Contient->setId_Art(Id_Art);
