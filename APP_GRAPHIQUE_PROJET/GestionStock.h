@@ -529,7 +529,10 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Void BOUTON_CLEAR_STOCK_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-
+		this->TXT_NOM_ARTICLE->Text = "";
+		this->TXT_PRIX_ARTICLE->Text = "";
+		this->TXT_COULEUR_ARTICLE->Text = "";
+		this->TXT_TVA_ARTICLE->Text = "";
 	}
 
 
