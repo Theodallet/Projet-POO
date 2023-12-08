@@ -556,7 +556,7 @@ namespace APPGRAPHIQUEPROJET {
 		String^ Article_Couleur = this->TXT_COULEUR_ARTICLE->Text;
 		float Article_TVA = Convert::ToSingle(this->TXT_TVA_ARTICLE->Text);
 
-		this->oSvc_Article->ajouter_Article(Article_ID, Article_Nom, Article_Prix, Article_Couleur, Article_TVA);
+		this->oSvc_Article->ajouter_Article(Article_ID, Article_Prix, Article_Nom, Article_Couleur, Article_TVA);
 
 
 		this->TXT_ID_ARTICLE->Text = "";
