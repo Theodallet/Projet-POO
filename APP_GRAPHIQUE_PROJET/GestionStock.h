@@ -94,6 +94,8 @@ namespace APPGRAPHIQUEPROJET {
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 	private: NS_Comp_Svc::CLservices_Article^ oSvc_Article;
+	private: System::Windows::Forms::TextBox^ TXT_STOCK_ARTICLE;
+	private: System::Windows::Forms::Label^ LABEL_STOCK_ARTICLE;
 	private: System::Data::DataSet^ oDs;
 
 
@@ -132,6 +134,8 @@ namespace APPGRAPHIQUEPROJET {
 			   this->SKIP_PERSONNEL_GAUCHE = (gcnew System::Windows::Forms::Button());
 			   this->SKIP_PERSONNEL_DROITE = (gcnew System::Windows::Forms::Button());
 			   this->BOUTON_CLEAR_STOCK = (gcnew System::Windows::Forms::Button());
+			   this->TXT_STOCK_ARTICLE = (gcnew System::Windows::Forms::TextBox());
+			   this->LABEL_STOCK_ARTICLE = (gcnew System::Windows::Forms::Label());
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AFFICHAGE_STOCK))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LOGO))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BarreNoir))->BeginInit();
@@ -155,7 +159,7 @@ namespace APPGRAPHIQUEPROJET {
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_COULEUR_ARTICLE->Location = System::Drawing::Point(102, 386);
 			   this->TXT_COULEUR_ARTICLE->Name = L"TXT_COULEUR_ARTICLE";
-			   this->TXT_COULEUR_ARTICLE->Size = System::Drawing::Size(286, 35);
+			   this->TXT_COULEUR_ARTICLE->Size = System::Drawing::Size(286, 26);
 			   this->TXT_COULEUR_ARTICLE->TabIndex = 304;
 			   // 
 			   // LOGO
@@ -194,7 +198,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->NomApp->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->NomApp->Location = System::Drawing::Point(65, 11);
 			   this->NomApp->Name = L"NomApp";
-			   this->NomApp->Size = System::Drawing::Size(425, 74);
+			   this->NomApp->Size = System::Drawing::Size(282, 50);
 			   this->NomApp->TabIndex = 275;
 			   this->NomApp->Text = L"| Gestion Stock";
 			   // 
@@ -213,7 +217,7 @@ namespace APPGRAPHIQUEPROJET {
 				   static_cast<System::Byte>(0)));
 			   this->TXT_PRIX_ARTICLE->Location = System::Drawing::Point(102, 321);
 			   this->TXT_PRIX_ARTICLE->Name = L"TXT_PRIX_ARTICLE";
-			   this->TXT_PRIX_ARTICLE->Size = System::Drawing::Size(286, 35);
+			   this->TXT_PRIX_ARTICLE->Size = System::Drawing::Size(286, 26);
 			   this->TXT_PRIX_ARTICLE->TabIndex = 282;
 			   // 
 			   // TXT_NOM_ARTICLE
@@ -222,7 +226,7 @@ namespace APPGRAPHIQUEPROJET {
 				   static_cast<System::Byte>(0)));
 			   this->TXT_NOM_ARTICLE->Location = System::Drawing::Point(102, 257);
 			   this->TXT_NOM_ARTICLE->Name = L"TXT_NOM_ARTICLE";
-			   this->TXT_NOM_ARTICLE->Size = System::Drawing::Size(286, 35);
+			   this->TXT_NOM_ARTICLE->Size = System::Drawing::Size(286, 26);
 			   this->TXT_NOM_ARTICLE->TabIndex = 281;
 			   // 
 			   // TITREADD_Stock
@@ -234,7 +238,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->TITREADD_Stock->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->TITREADD_Stock->Location = System::Drawing::Point(95, 137);
 			   this->TITREADD_Stock->Name = L"TITREADD_Stock";
-			   this->TITREADD_Stock->Size = System::Drawing::Size(367, 29);
+			   this->TITREADD_Stock->Size = System::Drawing::Size(252, 20);
 			   this->TITREADD_Stock->TabIndex = 293;
 			   this->TITREADD_Stock->Text = L"CARACTERISTIQUES STOCK";
 			   // 
@@ -244,7 +248,7 @@ namespace APPGRAPHIQUEPROJET {
 				   static_cast<System::Byte>(0)));
 			   this->TXT_TVA_ARTICLE->Location = System::Drawing::Point(102, 453);
 			   this->TXT_TVA_ARTICLE->Name = L"TXT_TVA_ARTICLE";
-			   this->TXT_TVA_ARTICLE->Size = System::Drawing::Size(286, 30);
+			   this->TXT_TVA_ARTICLE->Size = System::Drawing::Size(286, 22);
 			   this->TXT_TVA_ARTICLE->TabIndex = 290;
 			   // 
 			   // LABEL_NOM_ARTICLE
@@ -256,7 +260,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_NOM_ARTICLE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_NOM_ARTICLE->Location = System::Drawing::Point(95, 234);
 			   this->LABEL_NOM_ARTICLE->Name = L"LABEL_NOM_ARTICLE";
-			   this->LABEL_NOM_ARTICLE->Size = System::Drawing::Size(68, 29);
+			   this->LABEL_NOM_ARTICLE->Size = System::Drawing::Size(45, 20);
 			   this->LABEL_NOM_ARTICLE->TabIndex = 283;
 			   this->LABEL_NOM_ARTICLE->Text = L"Nom";
 			   // 
@@ -266,7 +270,7 @@ namespace APPGRAPHIQUEPROJET {
 				   static_cast<System::Byte>(0)));
 			   this->TXT_ID_ARTICLE->Location = System::Drawing::Point(102, 193);
 			   this->TXT_ID_ARTICLE->Name = L"TXT_ID_ARTICLE";
-			   this->TXT_ID_ARTICLE->Size = System::Drawing::Size(286, 35);
+			   this->TXT_ID_ARTICLE->Size = System::Drawing::Size(286, 26);
 			   this->TXT_ID_ARTICLE->TabIndex = 298;
 			   // 
 			   // LABEL_PRIX_ARTICLE
@@ -278,7 +282,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_PRIX_ARTICLE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_PRIX_ARTICLE->Location = System::Drawing::Point(95, 298);
 			   this->LABEL_PRIX_ARTICLE->Name = L"LABEL_PRIX_ARTICLE";
-			   this->LABEL_PRIX_ARTICLE->Size = System::Drawing::Size(58, 29);
+			   this->LABEL_PRIX_ARTICLE->Size = System::Drawing::Size(38, 20);
 			   this->LABEL_PRIX_ARTICLE->TabIndex = 284;
 			   this->LABEL_PRIX_ARTICLE->Text = L"Prix";
 			   // 
@@ -306,7 +310,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_ID_ARTICLE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_ID_ARTICLE->Location = System::Drawing::Point(95, 170);
 			   this->LABEL_ID_ARTICLE->Name = L"LABEL_ID_ARTICLE";
-			   this->LABEL_ID_ARTICLE->Size = System::Drawing::Size(119, 29);
+			   this->LABEL_ID_ARTICLE->Size = System::Drawing::Size(84, 20);
 			   this->LABEL_ID_ARTICLE->TabIndex = 297;
 			   this->LABEL_ID_ARTICLE->Text = L"ID Article";
 			   // 
@@ -334,7 +338,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL8COULEUR_ARTICLE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL8COULEUR_ARTICLE->Location = System::Drawing::Point(98, 363);
 			   this->LABEL8COULEUR_ARTICLE->Name = L"LABEL8COULEUR_ARTICLE";
-			   this->LABEL8COULEUR_ARTICLE->Size = System::Drawing::Size(105, 29);
+			   this->LABEL8COULEUR_ARTICLE->Size = System::Drawing::Size(71, 20);
 			   this->LABEL8COULEUR_ARTICLE->TabIndex = 286;
 			   this->LABEL8COULEUR_ARTICLE->Text = L"Couleur";
 			   // 
@@ -377,7 +381,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_TVA_ARTICLE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_TVA_ARTICLE->Location = System::Drawing::Point(98, 430);
 			   this->LABEL_TVA_ARTICLE->Name = L"LABEL_TVA_ARTICLE";
-			   this->LABEL_TVA_ARTICLE->Size = System::Drawing::Size(126, 29);
+			   this->LABEL_TVA_ARTICLE->Size = System::Drawing::Size(86, 20);
 			   this->LABEL_TVA_ARTICLE->TabIndex = 287;
 			   this->LABEL_TVA_ARTICLE->Text = L"Taux TVA";
 			   // 
@@ -407,7 +411,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->label40->ForeColor = System::Drawing::Color::Red;
 			   this->label40->Location = System::Drawing::Point(818, 830);
 			   this->label40->Name = L"label40";
-			   this->label40->Size = System::Drawing::Size(250, 20);
+			   this->label40->Size = System::Drawing::Size(166, 13);
 			   this->label40->TabIndex = 274;
 			   this->label40->Text = L"Message erreur potentielle ajouter";
 			   // 
@@ -467,9 +471,33 @@ namespace APPGRAPHIQUEPROJET {
 			   this->BOUTON_CLEAR_STOCK->UseVisualStyleBackColor = false;
 			   this->BOUTON_CLEAR_STOCK->Click += gcnew System::EventHandler(this, &GestionStock::BOUTON_CLEAR_STOCK_Click);
 			   // 
+			   // TXT_STOCK_ARTICLE
+			   // 
+			   this->TXT_STOCK_ARTICLE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			   this->TXT_STOCK_ARTICLE->Location = System::Drawing::Point(415, 193);
+			   this->TXT_STOCK_ARTICLE->Name = L"TXT_STOCK_ARTICLE";
+			   this->TXT_STOCK_ARTICLE->Size = System::Drawing::Size(286, 22);
+			   this->TXT_STOCK_ARTICLE->TabIndex = 310;
+			   // 
+			   // LABEL_STOCK_ARTICLE
+			   // 
+			   this->LABEL_STOCK_ARTICLE->AutoSize = true;
+			   this->LABEL_STOCK_ARTICLE->BackColor = System::Drawing::Color::Black;
+			   this->LABEL_STOCK_ARTICLE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->LABEL_STOCK_ARTICLE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->LABEL_STOCK_ARTICLE->Location = System::Drawing::Point(411, 170);
+			   this->LABEL_STOCK_ARTICLE->Name = L"LABEL_STOCK_ARTICLE";
+			   this->LABEL_STOCK_ARTICLE->Size = System::Drawing::Size(109, 20);
+			   this->LABEL_STOCK_ARTICLE->TabIndex = 311;
+			   this->LABEL_STOCK_ARTICLE->Text = L"Stock article";
+			   // 
 			   // GestionStock
 			   // 
 			   this->ClientSize = System::Drawing::Size(1256, 725);
+			   this->Controls->Add(this->LABEL_STOCK_ARTICLE);
+			   this->Controls->Add(this->TXT_STOCK_ARTICLE);
 			   this->Controls->Add(this->BOUTON_CLEAR_STOCK);
 			   this->Controls->Add(this->SKIP_PERSONNEL_DROITE);
 			   this->Controls->Add(this->SKIP_PERSONNEL_GAUCHE);
@@ -522,17 +550,17 @@ namespace APPGRAPHIQUEPROJET {
 		this->oSvc_Article->selectionner_Article("Rsl");
 		this->AFFICHAGE_STOCK->DataSource = this->oDs;
 		this->AFFICHAGE_STOCK->DataMember = "Rsl";
-		
-	}	
 
-	private: System::Void RETURN_CLIENTS_HOME_Click(System::Object^ sender, System::EventArgs^ e) 
+	}
+
+	private: System::Void RETURN_CLIENTS_HOME_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		ObjetStock->Show();
 		this->Hide();
-	
+
 	}
 
-	private: System::Void BOUTON_CLEAR_STOCK_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void BOUTON_CLEAR_STOCK_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->TXT_NOM_ARTICLE->Text = "";
 		this->TXT_PRIX_ARTICLE->Text = "";
@@ -542,7 +570,7 @@ namespace APPGRAPHIQUEPROJET {
 
 
 
-	private: System::Void BOUTON_AJOUTER_ARTICLE_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void BOUTON_AJOUTER_ARTICLE_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		String^ Article_Nom = this->TXT_NOM_ARTICLE->Text;
 		float Article_Prix = Convert::ToSingle(this->TXT_PRIX_ARTICLE->Text);
@@ -559,8 +587,8 @@ namespace APPGRAPHIQUEPROJET {
 
 
 
-	
-	private: System::Void BOUTON_MODIFIER_ARTICLE_Click(System::Object^ sender, System::EventArgs^ e) 
+
+	private: System::Void BOUTON_MODIFIER_ARTICLE_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		int Article_ID = Convert::ToInt32(this->TXT_ID_ARTICLE->Text);
 		String^ Article_Nom = this->TXT_NOM_ARTICLE->Text;
@@ -585,7 +613,7 @@ namespace APPGRAPHIQUEPROJET {
 		this->TXT_ID_ARTICLE->Text = "";
 	}
 
-	private: System::Void BOUTON_AFFICHAGE_ARTICLE_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void BOUTON_AFFICHAGE_ARTICLE_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		String^ Article_ID = this->TXT_ID_ARTICLE->Text;
 
@@ -599,17 +627,17 @@ namespace APPGRAPHIQUEPROJET {
 
 
 
-	private: System::Void SKIP_PERSONNEL_GAUCHE_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void SKIP_PERSONNEL_GAUCHE_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		String^ Article_ID = this->TXT_ID_ARTICLE->Text;
-	
+
 		this->TXT_ID_ARTICLE->Text = "Précédent";
 		this->TXT_NOM_ARTICLE->Text = "Précédent";
 		this->TXT_PRIX_ARTICLE->Text = "Précédent";
 		this->TXT_COULEUR_ARTICLE->Text = "Précédent";
 		this->TXT_TVA_ARTICLE->Text = "Précédent";
 	}
-	private: System::Void SKIP_PERSONNEL_DROITE_Click(System::Object^ sender, System::EventArgs^ e) 
+	private: System::Void SKIP_PERSONNEL_DROITE_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		String^ Article_ID = this->TXT_ID_ARTICLE->Text;
 
@@ -619,7 +647,7 @@ namespace APPGRAPHIQUEPROJET {
 		this->TXT_COULEUR_ARTICLE->Text = "Suivant";
 		this->TXT_TVA_ARTICLE->Text = "Suivant";
 	}
-private: System::Void BACKGROUND_STOCK_TEXTE_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+	private: System::Void BACKGROUND_STOCK_TEXTE_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	};
 }
