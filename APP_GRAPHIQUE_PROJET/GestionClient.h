@@ -687,6 +687,11 @@ namespace APPGRAPHIQUEPROJET {
 		this->oSvc_Client->ajouter_Client(Client_Nom, Client_Prenom, Client_Mail, Client_Date_N, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
 		// Vide de la page
 
+		this->AFFICHAGE_CLIENT->Refresh();
+		this->oSvc_Client->selectionner_Client("Rsl");
+		this->AFFICHAGE_CLIENT->DataSource = this->oDs;
+		this->AFFICHAGE_CLIENT->DataMember = "Rsl";
+
 		this->TXT_ID_CLIENT->Text = "";
 		this->TXT_NOM_CLIENT->Text = "";
 		this->TXT_PRENOM_CLIENT->Text = "";

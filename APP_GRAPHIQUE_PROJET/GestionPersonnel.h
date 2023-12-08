@@ -738,6 +738,10 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 	private: System::Void GestionPersonnel_Load(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+		this->AFFICHAGE_PERSONNEL->Refresh();
+		this->oDs = this->oSvc_Personel->selectionner_Personel("Rsl");
+		this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+		this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
 
 	}
 
@@ -838,10 +842,11 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 	}
 	private: System::Void BOUTON_AFF_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		String^ Personnel_ID = this->TXT_ID_PERSONNEL->Text;
-	
+		int Personnel_ID = Convert::ToInt32(this->TXT_ID_PERSONNEL->Text);
+
+		this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
 		this->AFFICHAGE_PERSONNEL->Refresh();
-		this->oSvc_Personel->selectionner_Personel("Rsl");
+		this->oDs = this->oSvc_Personel->selectionner_Personel_Ind("Rsl", Personnel_ID);
 		this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
 		this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
 
