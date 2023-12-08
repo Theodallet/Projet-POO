@@ -762,6 +762,7 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Void GestionStatistiques_Load(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->oSvc_Stat = gcnew NS_Comp_Svc::CLservices_Stat();
 	}
 	private: System::Void RETURN_STATS_HOME_Click(System::Object^ sender, System::EventArgs^ e)
 	{

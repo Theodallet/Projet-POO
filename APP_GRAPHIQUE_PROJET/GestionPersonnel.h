@@ -794,9 +794,12 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 		String^ Personnel_Ville = this->TXT_VILLE_PERSONNEL->Text;
 		String^ Personnel_Batiment = this->TXT_BAT_PERSONNEL->Text;
 		int Personnel_Etage = Convert::ToInt32(this->TXT_ETAGE_PERSONNEL->Text);
-		String^ Personnel_Date_E = this->TXT_DATE_EMBAUCHE_PERSONNEL->Text;
-		int Personnel_Role = Convert::ToInt32(this->TXT_RUE_PERSONNEL->Text);
+		DateTime Personnel_Date_E = DateTime::Parse(this->TXT_DATE_EMBAUCHE_PERSONNEL->Text);
+		String^ Personnel_Role = this->TEXT_ROLE_PERSONNEL->Text;
 		int Personnel_ID_Supperieur = Convert::ToInt32(this->TXT_ID_SUP->Text);
+
+		this->oSvc_Personel->modifier_Personel(Personnel_ID, Personnel_Nom, Personnel_Prenom, Personnel_Mail, Personnel_Date_N, Personnel_Ville, Personnel_Rue, Personnel_Code_Postal, Personnel_Batiment, Personnel_Etage, Personnel_Date_E, Personnel_Role, Personnel_ID_Supperieur);
+
 
 		this->TXT_ID_PERSONNEL->Text = "";
 		this->TXT_NOM_PERSONNEL->Text = "";
@@ -815,7 +818,10 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 
 	private: System::Void BOUTON_SUPP_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		String^ Personnel_ID = this->TXT_ID_PERSONNEL->Text;
+		int Personnel_ID = Convert::ToInt32(this->TXT_ID_PERSONNEL->Text);
+
+		this->oSvc_Personel->supprimer_Personel(Personnel_ID);
+
 		this->TXT_ID_PERSONNEL->Text = "";
 	}
 	private: System::Void BOUTON_AFF_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
