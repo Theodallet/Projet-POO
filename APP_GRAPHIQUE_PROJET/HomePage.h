@@ -86,6 +86,8 @@ namespace APPGRAPHIQUEPROJET {
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::Button^ Manuel_utilisation;
+	private: System::Windows::Forms::DataGridView^ AFFICHAGE_INFO;
+	private: System::Windows::Forms::Label^ LABEL_INFO;
 
 	protected:
 
@@ -124,10 +126,13 @@ namespace APPGRAPHIQUEPROJET {
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->Manuel_utilisation = (gcnew System::Windows::Forms::Button());
+			this->AFFICHAGE_INFO = (gcnew System::Windows::Forms::DataGridView());
+			this->LABEL_INFO = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AFFICHAGE_INFO))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// pictureBox2
@@ -154,7 +159,7 @@ namespace APPGRAPHIQUEPROJET {
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label2->Location = System::Drawing::Point(72, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(383, 62);
+			this->label2->Size = System::Drawing::Size(455, 74);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"GADGET GROVE";
 			this->label2->Click += gcnew System::EventHandler(this, &HomePage::label2_Click);
@@ -174,9 +179,9 @@ namespace APPGRAPHIQUEPROJET {
 			this->label3->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(154, 104);
+			this->label3->Location = System::Drawing::Point(57, 83);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(217, 48);
+			this->label3->Size = System::Drawing::Size(257, 58);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"GESTION";
 			this->label3->Click += gcnew System::EventHandler(this, &HomePage::label3_Click);
@@ -189,7 +194,7 @@ namespace APPGRAPHIQUEPROJET {
 			this->label15->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label15->Location = System::Drawing::Point(468, 24);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(303, 29);
+			this->label15->Size = System::Drawing::Size(357, 36);
 			this->label15->TabIndex = 36;
 			this->label15->Text = L"Make your inspiration real";
 			// 
@@ -316,11 +321,11 @@ namespace APPGRAPHIQUEPROJET {
 			// 
 			this->label4->AutoSize = true;
 			this->label4->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->Location = System::Drawing::Point(468, 158);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(162, 31);
+			this->label4->Size = System::Drawing::Size(120, 25);
 			this->label4->TabIndex = 48;
 			this->label4->Text = L"Description";
 			// 
@@ -328,11 +333,11 @@ namespace APPGRAPHIQUEPROJET {
 			// 
 			this->label5->AutoSize = true;
 			this->label5->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(468, 373);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(162, 31);
+			this->label5->Size = System::Drawing::Size(120, 25);
 			this->label5->TabIndex = 49;
 			this->label5->Text = L"Description";
 			// 
@@ -340,11 +345,11 @@ namespace APPGRAPHIQUEPROJET {
 			// 
 			this->label6->AutoSize = true;
 			this->label6->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->Location = System::Drawing::Point(470, 498);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(162, 31);
+			this->label6->Size = System::Drawing::Size(120, 25);
 			this->label6->TabIndex = 50;
 			this->label6->Text = L"Description";
 			// 
@@ -352,11 +357,11 @@ namespace APPGRAPHIQUEPROJET {
 			// 
 			this->label7->AutoSize = true;
 			this->label7->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label7->Location = System::Drawing::Point(468, 261);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(162, 31);
+			this->label7->Size = System::Drawing::Size(120, 25);
 			this->label7->TabIndex = 51;
 			this->label7->Text = L"Description";
 			// 
@@ -364,11 +369,11 @@ namespace APPGRAPHIQUEPROJET {
 			// 
 			this->label8->AutoSize = true;
 			this->label8->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label8->Location = System::Drawing::Point(470, 606);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(162, 31);
+			this->label8->Size = System::Drawing::Size(120, 25);
 			this->label8->TabIndex = 52;
 			this->label8->Text = L"Description";
 			// 
@@ -380,17 +385,39 @@ namespace APPGRAPHIQUEPROJET {
 			this->Manuel_utilisation->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->Manuel_utilisation->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold));
 			this->Manuel_utilisation->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->Manuel_utilisation->Location = System::Drawing::Point(996, 287);
+			this->Manuel_utilisation->Location = System::Drawing::Point(390, 93);
 			this->Manuel_utilisation->Name = L"Manuel_utilisation";
-			this->Manuel_utilisation->Size = System::Drawing::Size(205, 242);
+			this->Manuel_utilisation->Size = System::Drawing::Size(52, 48);
 			this->Manuel_utilisation->TabIndex = 53;
 			this->Manuel_utilisation->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageAboveText;
 			this->Manuel_utilisation->UseVisualStyleBackColor = false;
 			this->Manuel_utilisation->Click += gcnew System::EventHandler(this, &HomePage::Manuel_utilisation_Click);
 			// 
+			// AFFICHAGE_INFO
+			// 
+			this->AFFICHAGE_INFO->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->AFFICHAGE_INFO->Location = System::Drawing::Point(783, 158);
+			this->AFFICHAGE_INFO->Name = L"AFFICHAGE_INFO";
+			this->AFFICHAGE_INFO->RowHeadersWidth = 62;
+			this->AFFICHAGE_INFO->RowTemplate->Height = 28;
+			this->AFFICHAGE_INFO->Size = System::Drawing::Size(421, 501);
+			this->AFFICHAGE_INFO->TabIndex = 54;
+			// 
+			// LABEL_INFO
+			// 
+			this->LABEL_INFO->AutoSize = true;
+			this->LABEL_INFO->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->LABEL_INFO->Location = System::Drawing::Point(783, 132);
+			this->LABEL_INFO->Name = L"LABEL_INFO";
+			this->LABEL_INFO->Size = System::Drawing::Size(106, 20);
+			this->LABEL_INFO->TabIndex = 55;
+			this->LABEL_INFO->Text = L"Informations :";
+			// 
 			// HomePage
 			// 
 			this->ClientSize = System::Drawing::Size(1256, 725);
+			this->Controls->Add(this->LABEL_INFO);
+			this->Controls->Add(this->AFFICHAGE_INFO);
 			this->Controls->Add(this->Manuel_utilisation);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label7);
@@ -417,6 +444,7 @@ namespace APPGRAPHIQUEPROJET {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AFFICHAGE_INFO))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
