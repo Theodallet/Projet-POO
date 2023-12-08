@@ -168,7 +168,7 @@ namespace NS_Comp_Mappage
 
 	ref class CL_Map_Commande {
 	private:
-		int Id;
+		System::String^ Id;
 		int Id_Cli;
 		System::String^ Nom;
 		System::String^ Prenom;
@@ -183,7 +183,7 @@ namespace NS_Comp_Mappage
 
 	public:
 		CL_Map_Commande();
-		void setId(int);
+		void setId(System::String^);
 		void setId_Cli(int);
 		void setNom(System::String^);
 		void setPrenom(System::String^);

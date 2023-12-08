@@ -723,12 +723,11 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT_COMMANDE->Text);
 		DateTime^ Date_Livraison = DateTime::Parse(this->TXT_DATE_LIV_COMMANDE->Text);
 		String^ Moyen_Paiment = this->TXT_MOYEN_PAIMENT_COMMANDE->Text;
-		int Article_ID = Convert::ToInt32(this->TXT_ARTICLE_COMMANDE->Text);
-		int Article_Quantite = Convert::ToInt32(this->TXT_QUANTITE_ARTICLE_CLIENT->Text);
 		int Commande_ID_Livraison = Convert::ToInt32(this->TXT_ID_ADRESSE_COMMANDE->Text);
+		int Commande_ID_Facturation = Convert::ToInt32(this->TXT_ID_ADR_FACT->Text);
 
 	
-		this->oSvc_Commande->ajouter_Commande(Date_Livraison, 0, 0, 0, Moyen_Paiment, Commande_ID_Livraison, Article_ID);
+		this->oSvc_Commande->ajouter_Commande(Date_Livraison, 0, 0, 0, Moyen_Paiment, Client_ID, Commande_ID_Livraison, Commande_ID_Facturation);
 		
 		
 		this->TXT_ID_CLIENT_COMMANDE->Text = "";
@@ -737,13 +736,19 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 		this->TXT_ARTICLE_COMMANDE->Text = "";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "";
 		this->TXT_ID_ADRESSE_COMMANDE->Text = "";
+
+		this->oSvc_Commande = gcnew NS_Comp_Svc::CLservices_Commande();
+		this->AFFICHAGE_COMMANDES->Refresh();
+		this->oDs = this->oSvc_Commande->selectionner_Commande("Rsl");
+		this->AFFICHAGE_COMMANDES->DataSource = this->oDs;
+		this->AFFICHAGE_COMMANDES->DataMember = "Rsl";
 	
 	}
 		   
 
 private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-	int Commande_ID = Convert::ToInt32(this->TXT_ID_COMMANDE->Text); // A retirer
+	String^ Commande_ID = this->TXT_ID_COMMANDE->Text; 
 	int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT_COMMANDE->Text);
 	DateTime^ Date_Livraison = DateTime::Parse(this->TXT_DATE_LIV_COMMANDE->Text);
 	DateTime^ Date_Emission = DateTime::Parse(this->TXT_DATE_EM_COMMANDE->Text);
@@ -755,7 +760,7 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 
 	
 	this->oSvc_Commande->modifier_Commande(Commande_ID, Date_Livraison, Date_Emission, 0, 0, 0, Moyen_Paiment, Client_ID, Commande_ID_Livraison, Commande_ID_Facturation);
-	
+
 	this->TXT_ID_COMMANDE->Text = "";  // A retirer
 	this->TXT_ID_CLIENT_COMMANDE->Text = "";
 	this->TXT_DATE_LIV_COMMANDE->Text = "";
@@ -764,23 +769,35 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 	this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "";
 	this->TXT_ID_ADRESSE_COMMANDE->Text = "";
 
+	this->oSvc_Commande = gcnew NS_Comp_Svc::CLservices_Commande();
+	this->AFFICHAGE_COMMANDES->Refresh();
+	this->oDs = this->oSvc_Commande->selectionner_Commande("Rsl");
+	this->AFFICHAGE_COMMANDES->DataSource = this->oDs;
+	this->AFFICHAGE_COMMANDES->DataMember = "Rsl";
+
 	}
 
 
 	private: System::Void BOUTON_SUPPRIMER_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		int Commande_ID = Convert::ToInt32(this->TXT_ID_COMMANDE->Text);
+		String^ Commande_ID = this->TXT_ID_COMMANDE->Text;
 
 		this->oSvc_Commande->supprimer_Commande(Commande_ID);
 
 		this->TXT_ID_COMMANDE->Text = "";
+
+		this->oSvc_Commande = gcnew NS_Comp_Svc::CLservices_Commande();
+		this->AFFICHAGE_COMMANDES->Refresh();
+		this->oDs = this->oSvc_Commande->selectionner_Commande("Rsl");
+		this->AFFICHAGE_COMMANDES->DataSource = this->oDs;
+		this->AFFICHAGE_COMMANDES->DataMember = "Rsl";
 
 	}
 	
 
 	private: System::Void BOUTON_AFFICHER_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		//int Commande_ID = Convert::ToInt32(this->TXT_ID_COMMANDE->Text);
+		String^ Commande_ID = this->TXT_ID_COMMANDE->Text;
 
 		this->oSvc_Commande = gcnew NS_Comp_Svc::CLservices_Commande();
 		this->AFFICHAGE_COMMANDES->Refresh();
@@ -846,8 +863,8 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 	}
 	private: System::Void BOUTON_SUPPRIMER_ARTICLE_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		int Commande_ID = Convert::ToInt32(this->TXT_ID_COMMANDE->Text);
-		
+		String^ Commande_ID = this->TXT_ID_COMMANDE->Text;
+
 		this->oSvc_Commande->supprimer_Commande(Commande_ID);
 
 		this->TXT_ID_COMMANDE->Text = ""; 

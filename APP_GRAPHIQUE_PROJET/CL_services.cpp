@@ -389,7 +389,7 @@ System::Data::DataSet^ NS_Comp_Svc::CLservices_Commande::selectionner_Commande(S
 	return this->oCad->getRows(sql, dataTableName);
 }
 
-System::Data::DataSet^ NS_Comp_Svc::CLservices_Commande::selectionner_Commande_Id(System::String^ dataTableName, int Id)
+System::Data::DataSet^ NS_Comp_Svc::CLservices_Commande::selectionner_Commande_Id(System::String^ dataTableName, System::String^ Id)
 {
 	System::String^ sql;
 	this->oMapp_Commande->setId(Id);
@@ -397,7 +397,7 @@ System::Data::DataSet^ NS_Comp_Svc::CLservices_Commande::selectionner_Commande_I
 	return this->oCad->getRows(sql, dataTableName);
 }
 
-void NS_Comp_Svc::CLservices_Commande::ajouter_Commande(System::DateTime^ Date_Liv, float Total_HT, float Total_TTC, float Total_TVA, System::String^ Moyen_Paiment, int Id_Cli, int Adresse_Liv) {
+void NS_Comp_Svc::CLservices_Commande::ajouter_Commande(System::DateTime^ Date_Liv, float Total_HT, float Total_TTC, float Total_TVA, System::String^ Moyen_Paiment, int Id_Cli, int Adresse_Liv, int Adresse_Fac) {
 
 	System::String^ sql;
 	this->oMapp_Commande->setDate_Liv(Date_Liv);
@@ -407,11 +407,12 @@ void NS_Comp_Svc::CLservices_Commande::ajouter_Commande(System::DateTime^ Date_L
 	this->oMapp_Commande->setMoyen_Paiment(Moyen_Paiment);
 	this->oMapp_Commande->setId_Cli(Id_Cli);
 	this->oMapp_Commande->setAdresse_Liv(Adresse_Liv);
+	this->oMapp_Commande->setAdresse_Fac(Adresse_Fac);
 	sql = this->oMapp_Commande->Insert_Commande();
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices_Commande::supprimer_Commande(int Id) {
+void NS_Comp_Svc::CLservices_Commande::supprimer_Commande(System::String^ Id) {
 
 	System::String^ sql;
 	this->oMapp_Commande->setId(Id);
@@ -419,7 +420,7 @@ void NS_Comp_Svc::CLservices_Commande::supprimer_Commande(int Id) {
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices_Commande::modifier_Commande(int Id, System::DateTime^ Date_Liv, System::DateTime^ Date_Emi, float Total_HT, float Total_TTC, float Total_TVA, System::String^ Moyen_Paiment, int Id_Cli, int Adresse_Liv, int Adresse_Fac) {
+void NS_Comp_Svc::CLservices_Commande::modifier_Commande(System::String^ Id, System::DateTime^ Date_Liv, System::DateTime^ Date_Emi, float Total_HT, float Total_TTC, float Total_TVA, System::String^ Moyen_Paiment, int Id_Cli, int Adresse_Liv, int Adresse_Fac) {
 
 	System::String^ sql;
 	this->oMapp_Commande->setId(Id);
@@ -436,7 +437,7 @@ void NS_Comp_Svc::CLservices_Commande::modifier_Commande(int Id, System::DateTim
 	this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Svc::CLservices_Commande::modifier_Total_Commande(int Id) {
+void NS_Comp_Svc::CLservices_Commande::modifier_Total_Commande(System::String^ Id) {
 
 	System::String^ sql;
 	this->oMapp_Commande->setId(Id);
