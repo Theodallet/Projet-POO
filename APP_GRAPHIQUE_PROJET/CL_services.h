@@ -112,17 +112,17 @@ namespace NS_Comp_Svc
 		NS_Comp_Mappage::CL_Map_Stat^ oMapp_Stat;
 	public:
 		CLservices_Stat(void);
-		void Calcul_Panier_Moyen(void);
-		void Calcul_Chiffre_Affaire_Mois(int);
-		void Produit_Reaprovisionnement(void);
-		void Total_Achat_Client(int);
-		void Article_Plus_Vendu(void);
-		void Article_Moins_Vendu(void);
-		void Valeur_Commercial_Stock(void);
-		void Valeur_Achat_Stock(void);
+		System::Data::DataSet^ Calcul_Panier_Moyen(System::String^);
+		System::Data::DataSet^ Calcul_Chiffre_Affaire_Mois(System::String^ , int);
+		System::Data::DataSet^ Produit_Reaprovisionnement(System::String^);
+		System::Data::DataSet^ Total_Achat_Client(System::String^ , int);
+		System::Data::DataSet^ Article_Plus_Vendu(System::String^);
+		System::Data::DataSet^ Article_Moins_Vendu(System::String^);
+		System::Data::DataSet^ Valeur_Commercial_Stock(System::String^);
+		System::Data::DataSet^ Valeur_Achat_Stock(System::String^);
 
-		void Variations_Valeurs_Commerciales(void);
-		void Variations_Valeurs_Commerciales_Valeur(float, float, float, float);
+		System::Data::DataSet^ Variations_Valeurs_Commerciales(System::String^);
+		System::Data::DataSet^ Variations_Valeurs_Commerciales_Valeur(System::String^ , float, float, float, float);
 
 	};
 }

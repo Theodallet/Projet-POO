@@ -779,52 +779,94 @@ namespace APPGRAPHIQUEPROJET {
 
 		// Je met ici toutes les récupérations de valeurs :
 
-		int Stat_Mois = Convert::ToInt32(this->TXT_INT_MOIS_2->Text);
-		int Stat_ID_Client = Convert::ToInt32(this->TXT_ID_CLI_4->Text);
-		float Stat_TVA = Convert::ToSingle(this->TXT_TVA_10->Text);
-		float Stat_Marge = Convert::ToSingle(this->TXT_MARGE_10->Text);
-		float Stat_Remise = Convert::ToSingle(this->TXT_REMISE_10->Text);
-		float Stat_Demarque = Convert::ToSingle(this->TXT_DEMARQUE_10->Text);
-
 		if (Val == 1)
 		{
-			this->oSvc_Stat->Calcul_Panier_Moyen();
+			this->oSvc_Stat = gcnew NS_Comp_Svc::CLservices_Stat();
+			this->AFFICHAGE_STAT->Refresh();
+			this->oDs = this->oSvc_Stat->Calcul_Panier_Moyen("Rsl");
+			this->AFFICHAGE_STAT->DataSource = this->oDs;
+			this->AFFICHAGE_STAT->DataMember = "Rsl";
 		}
 		else if (Val == 2)
 		{
-			this->oSvc_Stat->Calcul_Chiffre_Affaire_Mois(Stat_Mois);
+			int Stat_Mois = Convert::ToInt32(this->TXT_INT_MOIS_2->Text);
+
+			this->oSvc_Stat = gcnew NS_Comp_Svc::CLservices_Stat();
+			this->AFFICHAGE_STAT->Refresh();
+			this->oDs = this->oSvc_Stat->Calcul_Chiffre_Affaire_Mois("Rsl", Stat_Mois);
+			this->AFFICHAGE_STAT->DataSource = this->oDs;
+			this->AFFICHAGE_STAT->DataMember = "Rsl";
 		}
 		else if (Val == 3)
 		{
-			this->oSvc_Stat->Produit_Reaprovisionnement();
+			this->oSvc_Stat = gcnew NS_Comp_Svc::CLservices_Stat();
+			this->AFFICHAGE_STAT->Refresh();
+			this->oDs = this->oSvc_Stat->Produit_Reaprovisionnement("Rsl");
+			this->AFFICHAGE_STAT->DataSource = this->oDs;
+			this->AFFICHAGE_STAT->DataMember = "Rsl";
 		}
 		else if (Val == 4)
 		{
-			this->oSvc_Stat->Total_Achat_Client(Stat_ID_Client);
+			int Stat_ID_Client = Convert::ToInt32(this->TXT_ID_CLI_4->Text);
+			
+			this->oSvc_Stat = gcnew NS_Comp_Svc::CLservices_Stat();
+			this->AFFICHAGE_STAT->Refresh();
+			this->oDs = this->oSvc_Stat->Total_Achat_Client("Rsl", Stat_ID_Client);
+			this->AFFICHAGE_STAT->DataSource = this->oDs;
+			this->AFFICHAGE_STAT->DataMember = "Rsl";
 		}
 		else if (Val == 5)
 		{
-			this->oSvc_Stat->Article_Plus_Vendu();
+			this->oSvc_Stat = gcnew NS_Comp_Svc::CLservices_Stat();
+			this->AFFICHAGE_STAT->Refresh();
+			this->oDs = this->oSvc_Stat->Article_Plus_Vendu("Rsl");
+			this->AFFICHAGE_STAT->DataSource = this->oDs;
+			this->AFFICHAGE_STAT->DataMember = "Rsl";
 		}
 		else if (Val == 6)
 		{
-			this->oSvc_Stat->Article_Moins_Vendu();
+			this->oSvc_Stat = gcnew NS_Comp_Svc::CLservices_Stat();
+			this->AFFICHAGE_STAT->Refresh();
+			this->oDs = this->oSvc_Stat->Article_Moins_Vendu("Rsl");
+			this->AFFICHAGE_STAT->DataSource = this->oDs;
+			this->AFFICHAGE_STAT->DataMember = "Rsl";
 		}
 		else if (Val == 7)
 		{
-			this->oSvc_Stat->Valeur_Commercial_Stock();
+			this->oSvc_Stat = gcnew NS_Comp_Svc::CLservices_Stat();
+			this->AFFICHAGE_STAT->Refresh();
+			this->oDs = this->oSvc_Stat->Valeur_Commercial_Stock("Rsl");
+			this->AFFICHAGE_STAT->DataSource = this->oDs;
+			this->AFFICHAGE_STAT->DataMember = "Rsl";
 		}
 		else if (Val == 8)
 		{
-			this->oSvc_Stat->Valeur_Achat_Stock();
+			this->oSvc_Stat = gcnew NS_Comp_Svc::CLservices_Stat();
+			this->AFFICHAGE_STAT->Refresh();
+			this->oDs = this->oSvc_Stat->Valeur_Achat_Stock("Rsl");
+			this->AFFICHAGE_STAT->DataSource = this->oDs;
+			this->AFFICHAGE_STAT->DataMember = "Rsl";
 		}
 		else if (Val == 9)
 		{
-			this->oSvc_Stat->Variations_Valeurs_Commerciales();
+			this->oSvc_Stat = gcnew NS_Comp_Svc::CLservices_Stat();
+			this->AFFICHAGE_STAT->Refresh();
+			this->oDs = this->oSvc_Stat->Variations_Valeurs_Commerciales("Rsl");
+			this->AFFICHAGE_STAT->DataSource = this->oDs;
+			this->AFFICHAGE_STAT->DataMember = "Rsl";
 		}
-		else
+		else if (Val == 10)
 		{
-			this->oSvc_Stat->Variations_Valeurs_Commerciales_Valeur(Stat_TVA, Stat_Marge, Stat_Remise, Stat_Demarque);
+			float Stat_TVA = Convert::ToSingle(this->TXT_TVA_10->Text);
+			float Stat_Marge = Convert::ToSingle(this->TXT_MARGE_10->Text);
+			float Stat_Remise = Convert::ToSingle(this->TXT_REMISE_10->Text);
+			float Stat_Demarque = Convert::ToSingle(this->TXT_DEMARQUE_10->Text);
+
+			this->oSvc_Stat = gcnew NS_Comp_Svc::CLservices_Stat();
+			this->AFFICHAGE_STAT->Refresh();
+			this->oDs = this->oSvc_Stat->Variations_Valeurs_Commerciales_Valeur("Rsl", Stat_TVA, Stat_Marge, Stat_Remise, Stat_Demarque);
+			this->AFFICHAGE_STAT->DataSource = this->oDs;
+			this->AFFICHAGE_STAT->DataMember = "Rsl";
 		}
 
 

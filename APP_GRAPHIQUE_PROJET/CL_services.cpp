@@ -493,81 +493,92 @@ NS_Comp_Svc::CLservices_Stat::CLservices_Stat(void)
 	this->oMapp_Stat = gcnew NS_Comp_Mappage::CL_Map_Stat();
 }
 
-void NS_Comp_Svc::CLservices_Stat::Calcul_Panier_Moyen(void) {
+System::Data::DataSet^ NS_Comp_Svc::CLservices_Stat::Calcul_Panier_Moyen(System::String^ dataTableName) {
 
 	System::String^ sql;
 
 	sql = this->oMapp_Stat->Calcul_Panier_Moyen();
 	this->oCad->actionRows(sql);
+	return this->oCad->getRows(sql, dataTableName);
 }
 
-void NS_Comp_Svc::CLservices_Stat::Calcul_Chiffre_Affaire_Mois(int Mois) {
+System::Data::DataSet^ NS_Comp_Svc::CLservices_Stat::Calcul_Chiffre_Affaire_Mois(System::String^ dataTableName, int Mois) {
 
 	System::String^ sql;
 	this->oMapp_Stat->setMois(Mois);
 
 	sql = this->oMapp_Stat->Calcul_Chiffre_Affaire_Mois();
 	this->oCad->actionRows(sql);
+	return this->oCad->getRows(sql, dataTableName);
 }
-
-void NS_Comp_Svc::CLservices_Stat::Produit_Reaprovisionnement(void) {
+//---------------------------------------------------------------------------------------------------------------------
+System::Data::DataSet^ NS_Comp_Svc::CLservices_Stat::Produit_Reaprovisionnement(System::String^ dataTableName) {
 
 	System::String^ sql;
 
 	sql = this->oMapp_Stat->Produit_Reaprovisionnement();
 	this->oCad->actionRows(sql);
-}
+	return this->oCad->getRows(sql, dataTableName);
 
-void NS_Comp_Svc::CLservices_Stat::Total_Achat_Client(int Id_Client) {
+}
+//---------------------------------------------------------------------------------------------------------------------
+
+System::Data::DataSet^ NS_Comp_Svc::CLservices_Stat::Total_Achat_Client(System::String^ dataTableName, int Id_Client) {
 
 	System::String^ sql;
 	this->oMapp_Stat->setId_Client(Id_Client);
 
 	sql = this->oMapp_Stat->Total_Achat_Client();
 	this->oCad->actionRows(sql);
+	return this->oCad->getRows(sql, dataTableName);
 }
 
-void NS_Comp_Svc::CLservices_Stat::Article_Plus_Vendu(void) {
+System::Data::DataSet^ NS_Comp_Svc::CLservices_Stat::Article_Plus_Vendu(System::String^ dataTableName) {
 
 	System::String^ sql;
 
 	sql = this->oMapp_Stat->Article_Plus_Vendu();
 	this->oCad->actionRows(sql);
+	return this->oCad->getRows(sql, dataTableName);
 }
 
-void NS_Comp_Svc::CLservices_Stat::Article_Moins_Vendu(void) {
+System::Data::DataSet^ NS_Comp_Svc::CLservices_Stat::Article_Moins_Vendu(System::String^ dataTableName) {
 
 	System::String^ sql;
 
 	sql = this->oMapp_Stat->Article_Moins_Vendu();
 	this->oCad->actionRows(sql);
+	return this->oCad->getRows(sql, dataTableName);
 }
 
-void NS_Comp_Svc::CLservices_Stat::Valeur_Commercial_Stock(void) {
+System::Data::DataSet^ NS_Comp_Svc::CLservices_Stat::Valeur_Commercial_Stock(System::String^ dataTableName) {
 
 	System::String^ sql;
 
 	sql = this->oMapp_Stat->Valeur_Commercial_Stock();
 	this->oCad->actionRows(sql);
+	return this->oCad->getRows(sql, dataTableName);
 }
 
-void NS_Comp_Svc::CLservices_Stat::Valeur_Achat_Stock(void) {
+System::Data::DataSet^ NS_Comp_Svc::CLservices_Stat::Valeur_Achat_Stock(System::String^ dataTableName) {
 
 	System::String^ sql;
 
 	sql = this->oMapp_Stat->Valeur_Achat_Stock();
 	this->oCad->actionRows(sql);
+	return this->oCad->getRows(sql, dataTableName);
 }
 
-void NS_Comp_Svc::CLservices_Stat::Variations_Valeurs_Commerciales(void) {
+System::Data::DataSet^ NS_Comp_Svc::CLservices_Stat::Variations_Valeurs_Commerciales(System::String^ dataTableName) {
 
 	System::String^ sql;
 
 	sql = this->oMapp_Stat->Variations_Valeurs_Commerciales();
 	this->oCad->actionRows(sql);
+	return this->oCad->getRows(sql, dataTableName);
 }
 
-void NS_Comp_Svc::CLservices_Stat::Variations_Valeurs_Commerciales_Valeur(float TVA, float MargeCommerciale, float RemiseCommerciale, float DemarqueInconnue) {
+System::Data::DataSet^ NS_Comp_Svc::CLservices_Stat::Variations_Valeurs_Commerciales_Valeur(System::String^ dataTableName, float TVA, float MargeCommerciale, float RemiseCommerciale, float DemarqueInconnue) {
 
 	System::String^ sql;
 	this->oMapp_Stat->setTVA(TVA);
@@ -577,5 +588,6 @@ void NS_Comp_Svc::CLservices_Stat::Variations_Valeurs_Commerciales_Valeur(float 
 
 	sql = this->oMapp_Stat->Variations_Valeurs_Commerciales_Valeur();
 	this->oCad->actionRows(sql);
+	return this->oCad->getRows(sql, dataTableName);
 
 }
