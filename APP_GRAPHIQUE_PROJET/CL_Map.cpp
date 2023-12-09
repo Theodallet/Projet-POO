@@ -143,7 +143,7 @@ void NS_Comp_Mappage::CL_Map_Commande::setAdresse_Liv(int Adresse_Liv) { this->A
 void NS_Comp_Mappage::CL_Map_Commande::setAdresse_Fac(int Adresse_Fac) { this->Adresse_Fac = Adresse_Fac; }
 
 System::String^ NS_Comp_Mappage::CL_Map_Commande::Select_Commande(void) { return "EXECUTE Afficher_Commande ; "; }
-System::String^ NS_Comp_Mappage::CL_Map_Commande::Select_Commande_Id(void) { return "EXECUTE Afficher_Commande_Id '" + this->Id + "'; "; }
+System::String^ NS_Comp_Mappage::CL_Map_Commande::Select_Commande_Id(void) { return "EXECUTE Afficher_Commande_Ref '" + this->Id + "'; "; }
 System::String^ NS_Comp_Mappage::CL_Map_Commande::Insert_Commande(void) { return "EXECUTE Creer_Commande '" + this->Date_Liv + "'," + this->Total_HT + "," + this->Total_TTC + "," + this->Total_TVA + ",'" + this->Moyen_Paiment + "'," + this->Id_Cli + "," + this->Adresse_Liv + "," + this->Adresse_Fac + "  ;"; }
 System::String^ NS_Comp_Mappage::CL_Map_Commande::Delete_Commande(void) { return "EXECUTE Supprimer_Commande '" + this->Id + "';"; }
 System::String^ NS_Comp_Mappage::CL_Map_Commande::Update_Commande(void) { return "EXECUTE Modifier_Commande '" + this->Id + "','" + this->Date_Liv + "','" + this->Date_Emi + "'," + this->Total_HT + "," + this->Total_TTC + "," + this->Total_TVA + ",'" + this->Moyen_Paiment + "'," + this->Id_Cli + "," + this->Adresse_Liv + "," + this->Adresse_Fac + " ;"; }

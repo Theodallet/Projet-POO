@@ -194,7 +194,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 			   this->label40->ForeColor = System::Drawing::Color::Red;
 			   this->label40->Location = System::Drawing::Point(817, 827);
 			   this->label40->Name = L"label40";
-			   this->label40->Size = System::Drawing::Size(166, 13);
+			   this->label40->Size = System::Drawing::Size(250, 20);
 			   this->label40->TabIndex = 172;
 			   this->label40->Text = L"Message erreur potentielle ajouter";
 			   // 
@@ -214,7 +214,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_ARTICLE_COMMANDE->Location = System::Drawing::Point(101, 431);
 			   this->TXT_ARTICLE_COMMANDE->Name = L"TXT_ARTICLE_COMMANDE";
-			   this->TXT_ARTICLE_COMMANDE->Size = System::Drawing::Size(136, 26);
+			   this->TXT_ARTICLE_COMMANDE->Size = System::Drawing::Size(136, 35);
 			   this->TXT_ARTICLE_COMMANDE->TabIndex = 202;
 			   // 
 			   // LOGO
@@ -234,7 +234,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_DATE_LIV_COMMANDE->Location = System::Drawing::Point(98, 317);
 			   this->TXT_DATE_LIV_COMMANDE->Name = L"TXT_DATE_LIV_COMMANDE";
-			   this->TXT_DATE_LIV_COMMANDE->Size = System::Drawing::Size(286, 26);
+			   this->TXT_DATE_LIV_COMMANDE->Size = System::Drawing::Size(286, 35);
 			   this->TXT_DATE_LIV_COMMANDE->TabIndex = 183;
 			   // 
 			   // RETURN_COMMANDES_HOME
@@ -262,7 +262,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 			   this->NomApp->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->NomApp->Location = System::Drawing::Point(69, 6);
 			   this->NomApp->Name = L"NomApp";
-			   this->NomApp->Size = System::Drawing::Size(401, 50);
+			   this->NomApp->Size = System::Drawing::Size(606, 74);
 			   this->NomApp->TabIndex = 173;
 			   this->NomApp->Text = L"| Gestion Commandes";
 			   // 
@@ -281,7 +281,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_ID_CLIENT_COMMANDE->Location = System::Drawing::Point(98, 253);
 			   this->TXT_ID_CLIENT_COMMANDE->Name = L"TXT_ID_CLIENT_COMMANDE";
-			   this->TXT_ID_CLIENT_COMMANDE->Size = System::Drawing::Size(286, 26);
+			   this->TXT_ID_CLIENT_COMMANDE->Size = System::Drawing::Size(286, 35);
 			   this->TXT_ID_CLIENT_COMMANDE->TabIndex = 179;
 			   // 
 			   // TITRE_COMMANDES
@@ -293,7 +293,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 			   this->TITRE_COMMANDES->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->TITRE_COMMANDES->Location = System::Drawing::Point(94, 134);
 			   this->TITRE_COMMANDES->Name = L"TITRE_COMMANDES";
-			   this->TITRE_COMMANDES->Size = System::Drawing::Size(308, 20);
+			   this->TITRE_COMMANDES->Size = System::Drawing::Size(445, 29);
 			   this->TITRE_COMMANDES->TabIndex = 191;
 			   this->TITRE_COMMANDES->Text = L"CARACTERISTIQUES COMMANDES";
 			   // 
@@ -303,7 +303,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_ID_ADRESSE_COMMANDE->Location = System::Drawing::Point(422, 194);
 			   this->TXT_ID_ADRESSE_COMMANDE->Name = L"TXT_ID_ADRESSE_COMMANDE";
-			   this->TXT_ID_ADRESSE_COMMANDE->Size = System::Drawing::Size(303, 22);
+			   this->TXT_ID_ADRESSE_COMMANDE->Size = System::Drawing::Size(303, 30);
 			   this->TXT_ID_ADRESSE_COMMANDE->TabIndex = 188;
 			   // 
 			   // LABEL_ID_CLIEN_COMMANDE
@@ -315,7 +315,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 			   this->LABEL_ID_CLIEN_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_ID_CLIEN_COMMANDE->Location = System::Drawing::Point(97, 226);
 			   this->LABEL_ID_CLIEN_COMMANDE->Name = L"LABEL_ID_CLIEN_COMMANDE";
-			   this->LABEL_ID_CLIEN_COMMANDE->Size = System::Drawing::Size(79, 20);
+			   this->LABEL_ID_CLIEN_COMMANDE->Size = System::Drawing::Size(113, 29);
 			   this->LABEL_ID_CLIEN_COMMANDE->TabIndex = 181;
 			   this->LABEL_ID_CLIEN_COMMANDE->Text = L"ID Client";
 			   // 
@@ -325,7 +325,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 				   static_cast<System::Byte>(0)));
 			   this->TXT_ID_COMMANDE->Location = System::Drawing::Point(98, 190);
 			   this->TXT_ID_COMMANDE->Name = L"TXT_ID_COMMANDE";
-			   this->TXT_ID_COMMANDE->Size = System::Drawing::Size(286, 26);
+			   this->TXT_ID_COMMANDE->Size = System::Drawing::Size(286, 35);
 			   this->TXT_ID_COMMANDE->TabIndex = 196;
 			   // 
 			   // BOUTON_AJOUTER_COMMANDE
@@ -352,7 +352,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 			   this->LABEL_ID_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_ID_COMMANDE->Location = System::Drawing::Point(94, 167);
 			   this->LABEL_ID_COMMANDE->Name = L"LABEL_ID_COMMANDE";
-			   this->LABEL_ID_COMMANDE->Size = System::Drawing::Size(120, 20);
+			   this->LABEL_ID_COMMANDE->Size = System::Drawing::Size(173, 29);
 			   this->LABEL_ID_COMMANDE->TabIndex = 195;
 			   this->LABEL_ID_COMMANDE->Text = L"ID commande";
 			   // 
@@ -380,7 +380,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 			   this->LABEL_DATE_LIV_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_DATE_LIV_COMMANDE->Location = System::Drawing::Point(97, 287);
 			   this->LABEL_DATE_LIV_COMMANDE->Name = L"LABEL_DATE_LIV_COMMANDE";
-			   this->LABEL_DATE_LIV_COMMANDE->Size = System::Drawing::Size(143, 20);
+			   this->LABEL_DATE_LIV_COMMANDE->Size = System::Drawing::Size(209, 29);
 			   this->LABEL_DATE_LIV_COMMANDE->TabIndex = 184;
 			   this->LABEL_DATE_LIV_COMMANDE->Text = L"Date de livraison";
 			   // 
@@ -423,7 +423,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 			   this->LABEL_ID_ADRESSE_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_ID_ADRESSE_COMMANDE->Location = System::Drawing::Point(420, 170);
 			   this->LABEL_ID_ADRESSE_COMMANDE->Name = L"LABEL_ID_ADRESSE_COMMANDE";
-			   this->LABEL_ID_ADRESSE_COMMANDE->Size = System::Drawing::Size(187, 20);
+			   this->LABEL_ID_ADRESSE_COMMANDE->Size = System::Drawing::Size(271, 29);
 			   this->LABEL_ID_ADRESSE_COMMANDE->TabIndex = 185;
 			   this->LABEL_ID_ADRESSE_COMMANDE->Text = L"ID Adresse (Livraison)";
 			   // 
@@ -436,7 +436,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 			   this->ID_ARTICLE_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->ID_ARTICLE_COMMANDE->Location = System::Drawing::Point(97, 406);
 			   this->ID_ARTICLE_COMMANDE->Name = L"ID_ARTICLE_COMMANDE";
-			   this->ID_ARTICLE_COMMANDE->Size = System::Drawing::Size(84, 20);
+			   this->ID_ARTICLE_COMMANDE->Size = System::Drawing::Size(119, 29);
 			   this->ID_ARTICLE_COMMANDE->TabIndex = 199;
 			   this->ID_ARTICLE_COMMANDE->Text = L"ID Article";
 			   // 
@@ -492,6 +492,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 			   this->BOUTON_AFFICHER_ARTICLE_COMMANDE->TabIndex = 207;
 			   this->BOUTON_AFFICHER_ARTICLE_COMMANDE->Text = L"AFFICHER ARTICLES";
 			   this->BOUTON_AFFICHER_ARTICLE_COMMANDE->UseVisualStyleBackColor = false;
+			   this->BOUTON_AFFICHER_ARTICLE_COMMANDE->Click += gcnew System::EventHandler(this, &GestionCommandes::BOUTON_AFFICHER_ARTICLE_COMMANDE_Click);
 			   // 
 			   // TXT_QUANTITE_ARTICLE_CLIENT
 			   // 
@@ -499,7 +500,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_QUANTITE_ARTICLE_CLIENT->Location = System::Drawing::Point(245, 430);
 			   this->TXT_QUANTITE_ARTICLE_CLIENT->Name = L"TXT_QUANTITE_ARTICLE_CLIENT";
-			   this->TXT_QUANTITE_ARTICLE_CLIENT->Size = System::Drawing::Size(139, 26);
+			   this->TXT_QUANTITE_ARTICLE_CLIENT->Size = System::Drawing::Size(139, 35);
 			   this->TXT_QUANTITE_ARTICLE_CLIENT->TabIndex = 208;
 			   // 
 			   // LABEL_QUANTITE_ARTICLE_COMMANDE
@@ -511,7 +512,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->Location = System::Drawing::Point(241, 407);
 			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->Name = L"LABEL_QUANTITE_ARTICLE_COMMANDE";
-			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->Size = System::Drawing::Size(132, 20);
+			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->Size = System::Drawing::Size(190, 29);
 			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->TabIndex = 209;
 			   this->LABEL_QUANTITE_ARTICLE_COMMANDE->Text = L"Quantité article";
 			   // 
@@ -567,7 +568,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 			   this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->label2->Location = System::Drawing::Point(97, 350);
 			   this->label2->Name = L"label2";
-			   this->label2->Size = System::Drawing::Size(155, 20);
+			   this->label2->Size = System::Drawing::Size(227, 29);
 			   this->label2->TabIndex = 213;
 			   this->label2->Text = L"Moyen de paiment";
 			   // 
@@ -577,7 +578,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_MOYEN_PAIMENT_COMMANDE->Location = System::Drawing::Point(98, 376);
 			   this->TXT_MOYEN_PAIMENT_COMMANDE->Name = L"TXT_MOYEN_PAIMENT_COMMANDE";
-			   this->TXT_MOYEN_PAIMENT_COMMANDE->Size = System::Drawing::Size(286, 26);
+			   this->TXT_MOYEN_PAIMENT_COMMANDE->Size = System::Drawing::Size(286, 35);
 			   this->TXT_MOYEN_PAIMENT_COMMANDE->TabIndex = 214;
 			   // 
 			   // BACKGROUND_ZONE_TEXTE
@@ -598,7 +599,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 			   this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->label3->Location = System::Drawing::Point(418, 287);
 			   this->label3->Name = L"label3";
-			   this->label3->Size = System::Drawing::Size(137, 20);
+			   this->label3->Size = System::Drawing::Size(199, 29);
 			   this->label3->TabIndex = 215;
 			   this->label3->Text = L"Date d\'emission";
 			   // 
@@ -608,7 +609,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_DATE_EM_COMMANDE->Location = System::Drawing::Point(422, 317);
 			   this->TXT_DATE_EM_COMMANDE->Name = L"TXT_DATE_EM_COMMANDE";
-			   this->TXT_DATE_EM_COMMANDE->Size = System::Drawing::Size(286, 26);
+			   this->TXT_DATE_EM_COMMANDE->Size = System::Drawing::Size(286, 35);
 			   this->TXT_DATE_EM_COMMANDE->TabIndex = 216;
 			   // 
 			   // label4
@@ -620,7 +621,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 			   this->label4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->label4->Location = System::Drawing::Point(418, 226);
 			   this->label4->Name = L"label4";
-			   this->label4->Size = System::Drawing::Size(208, 20);
+			   this->label4->Size = System::Drawing::Size(296, 29);
 			   this->label4->TabIndex = 217;
 			   this->label4->Text = L"ID Adresse (Facturation)";
 			   // 
@@ -630,7 +631,7 @@ private: System::Windows::Forms::Button^ BOUTON_MODIFIER_ARTICLE;
 				   static_cast<System::Byte>(0)));
 			   this->TXT_ID_ADR_FACT->Location = System::Drawing::Point(422, 253);
 			   this->TXT_ID_ADR_FACT->Name = L"TXT_ID_ADR_FACT";
-			   this->TXT_ID_ADR_FACT->Size = System::Drawing::Size(303, 22);
+			   this->TXT_ID_ADR_FACT->Size = System::Drawing::Size(303, 30);
 			   this->TXT_ID_ADR_FACT->TabIndex = 218;
 			   // 
 			   // BOUTON_MODIFIER_ARTICLE
@@ -814,19 +815,28 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 
 	private: System::Void BOUTON_AFFICHER_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		String^ Commande_ID = this->TXT_ID_COMMANDE->Text;
 
-		this->oSvc_Commande = gcnew NS_Comp_Svc::CLservices_Commande();
-		this->AFFICHAGE_COMMANDES->Refresh();
-		this->oDs = this->oSvc_Commande->selectionner_Commande("Rsl");
-		this->AFFICHAGE_COMMANDES->DataSource = this->oDs;
-		this->AFFICHAGE_COMMANDES->DataMember = "Rsl";
+		if (this->TXT_ID_COMMANDE->Text != "") {
+			String^ Commande_ID = this->TXT_ID_COMMANDE->Text;
 
+			this->oSvc_Commande = gcnew NS_Comp_Svc::CLservices_Commande();
+			this->AFFICHAGE_COMMANDES->Refresh();
+			this->oDs = this->oSvc_Commande->selectionner_Commande_Id("Rsl", Commande_ID);
+			this->AFFICHAGE_COMMANDES->DataSource = this->oDs;
+			this->AFFICHAGE_COMMANDES->DataMember = "Rsl";
+		}
+		else{
+			this->oSvc_Commande = gcnew NS_Comp_Svc::CLservices_Commande();
+			this->AFFICHAGE_COMMANDES->Refresh();
+			this->oDs = this->oSvc_Commande->selectionner_Commande("Rsl");
+			this->AFFICHAGE_COMMANDES->DataSource = this->oDs;
+			this->AFFICHAGE_COMMANDES->DataMember = "Rsl";
 
+		}
+		
 		this->TXT_ID_COMMANDE->Text = "";
-
 		this->TXT_ID_COMMANDE->Text = "";
-	}
+	}                                                                           
 
 
 	private: System::Void SKIP_CLIENT_GAUCHE_Click(System::Object^ sender, System::EventArgs^ e) 
@@ -865,13 +875,13 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 	}
 	private: System::Void BOUTON_AJOUTER_ARTICLE_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		String^ Ref_Com= this->TXT_ID_COMMANDE->Text;
+		String^ Commande_ID = this->TXT_ID_COMMANDE->Text;
 		int Article_ID = Convert::ToInt32(this->TXT_ARTICLE_COMMANDE->Text);
 		int Article_Quantite = Convert::ToInt32(this->TXT_QUANTITE_ARTICLE_CLIENT->Text);
 		
 		
-		this->oSvc_Contient->ajouter_Contient(Article_ID, Ref_Com, Article_Quantite);
-		this->oSvc_Commande->modifier_Total_Commande(Ref_Com);
+		this->oSvc_Contient->ajouter_Contient(Article_ID, Commande_ID, Article_Quantite);
+		this->oSvc_Commande->modifier_Total_Commande(Commande_ID);
 
 		this->TXT_ID_COMMANDE->Text = ""; 
 		this->TXT_ARTICLE_COMMANDE->Text = "";
@@ -884,10 +894,9 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 		int Article_ID = Convert::ToInt32(this->TXT_ARTICLE_COMMANDE->Text);
 
 		this->oSvc_Contient->supprimer_Contient(Article_ID, Commande_ID);
-		this->oSvc_Commande->modifier_Total_Commande(Commande_ID);
 
 		this->TXT_ID_COMMANDE->Text = ""; 
-	
+		this->TXT_ARTICLE_COMMANDE->Text = "";
 		
 	}
 	private: System::Void BOUTON_MODIFIER_ARTICLE_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -902,5 +911,8 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 		this->TXT_ARTICLE_COMMANDE->Text = "";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "";
 }
+	private: System::Void BOUTON_AFFICHER_ARTICLE_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	
 };
 }

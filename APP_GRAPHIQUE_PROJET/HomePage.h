@@ -192,7 +192,7 @@ namespace APPGRAPHIQUEPROJET {
 			this->label15->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15));
 			this->label15->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label15->Location = System::Drawing::Point(468, 24);
+			this->label15->Location = System::Drawing::Point(533, 12);
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(357, 36);
 			this->label15->TabIndex = 36;
@@ -229,9 +229,9 @@ namespace APPGRAPHIQUEPROJET {
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold));
 			this->button1->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->button1->Location = System::Drawing::Point(1099, 12);
+			this->button1->Location = System::Drawing::Point(1078, 12);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(145, 36);
+			this->button1->Size = System::Drawing::Size(166, 36);
 			this->button1->TabIndex = 10;
 			this->button1->Text = L"DECONNEXION";
 			this->button1->UseVisualStyleBackColor = false;

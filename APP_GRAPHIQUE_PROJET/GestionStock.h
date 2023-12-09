@@ -572,7 +572,6 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Void BOUTON_AJOUTER_ARTICLE_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		
 		String^ Article_Nom = this->TXT_NOM_ARTICLE->Text;
 		float Article_Prix = Convert::ToSingle(this->TXT_PRIX_ARTICLE->Text);
 		String^ Article_Couleur = this->TXT_COULEUR_ARTICLE->Text;
