@@ -33,7 +33,15 @@ namespace APPGRAPHIQUEPROJET {
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
-
+		bool check_client_ID_entry();
+		bool check_client_name_entry();
+		bool check_client_surname_entry();
+		//bool check_client_mail_entry();
+		//bool check_client_ville_entry();
+		//bool check_client_rue_entry();
+		//bool check_client_code_postal_entry();
+		//bool check_client_name_building_entry();
+		//bool check_client_floor_entry();
 
 	protected:
 		/// <summary>
@@ -673,9 +681,29 @@ namespace APPGRAPHIQUEPROJET {
 
 		// On vérifie si l'ID contient quelque chose, sinon il contient quelque chose on ne fait rien et on transmet
 
+	// Acquisition des données
+	
+	// Vérification du champ ID client
+		if (!check_client_ID_entry()) {
+			// Affichage d'un message d'erreur et sortie de la fonction
+			return;
+		}
+
 		// Acquisition des données
+		bool isNameValid = check_client_name_entry();
 		String^ Client_Nom = this->TXT_NOM_CLIENT->Text;
+		if (!isNameValid) {
+			MessageBox::Show("Le champ prénom client ne doit contenir que des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+		bool isSurnameValid = check_client_surname_entry();
 		String^ Client_Prenom = this->TXT_PRENOM_CLIENT->Text;
+		if (!isSurnameValid) {
+			MessageBox::Show("Le champ prénom client ne doit contenir que des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+
 		DateTime Client_Date_N = DateTime::Parse(this->TXT_BD_CLIENT->Text);
 		String^ Client_Mail = this->TXT_MAIL_CLIENT->Text;
 		String^ Client_Rue = this->TXT_RUE_CLIENT->Text;
@@ -712,8 +740,7 @@ namespace APPGRAPHIQUEPROJET {
 		// Acquisition des données
 
 		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
-
-		String^ Client_Nom = this->TXT_NOM_CLIENT->Text;
+		String^ Client_Nom = this->TXT_NOM_CLIENT->Text; ;
 		String^ Client_Prenom = this->TXT_PRENOM_CLIENT->Text;
 		DateTime Client_Date_N = DateTime::Parse(this->TXT_BD_CLIENT->Text);
 		String^ Client_Mail = this->TXT_MAIL_CLIENT->Text;

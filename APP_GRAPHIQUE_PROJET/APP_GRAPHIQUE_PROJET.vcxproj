@@ -95,6 +95,8 @@
       <AdditionalDependencies />
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>WinMain</EntryPointSymbol>
+      <AddModuleNamesToAssembly>
+      </AddModuleNamesToAssembly>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
