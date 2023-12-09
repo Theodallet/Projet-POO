@@ -883,6 +883,10 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 		this->oSvc_Contient->ajouter_Contient(Article_ID, Commande_ID, Article_Quantite);
 		this->oSvc_Commande->modifier_Total_Commande(Commande_ID);
 
+		if (Article_Quantite = 0) {
+			this->oSvc_Contient->supprimer_Contient(Article_ID, Commande_ID);
+		}
+
 		this->TXT_ID_COMMANDE->Text = ""; 
 		this->TXT_ARTICLE_COMMANDE->Text = "";
 		this->TXT_QUANTITE_ARTICLE_CLIENT->Text = "";
@@ -903,6 +907,10 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 		String^ Commande_ID = this->TXT_ID_COMMANDE->Text;
 		int Article_ID = Convert::ToInt32(this->TXT_ARTICLE_COMMANDE->Text);
 		int Article_Quantite = Convert::ToInt32(this->TXT_QUANTITE_ARTICLE_CLIENT->Text);
+
+		if (Article_Quantite = 0) {
+			this->oSvc_Contient->supprimer_Contient(Article_ID, Commande_ID);
+		}
 
 		this->oSvc_Contient->modifier_Contient(Article_ID, Commande_ID, Article_Quantite);
 		this->oSvc_Commande->modifier_Total_Commande(Commande_ID);
