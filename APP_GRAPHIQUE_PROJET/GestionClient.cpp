@@ -132,6 +132,14 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_surname_entry()
 
 bool APPGRAPHIQUEPROJET::GestionClient::check_client_mail_entry()
 {
+	String^ Client_Mail = this->TXT_PRENOM_CLIENT->Text;
+
+	// Vérifier si l'entrée est nulle ou non 
+	if (String::IsNullOrEmpty(Client_Mail)) {
+		MessageBoxA(NULL, "Le champ Mail client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		return false;
+	}
+
 	// Convertir System::String^ en std::string
 	std::string emailStdString = msclr::interop::marshal_as<std::string>(this->TXT_MAIL_CLIENT->Text);
 
@@ -141,6 +149,14 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_mail_entry()
 	// Vérifier si la chaîne correspond à l'expression régulière
 	if(std::regex_match(emailStdString, regexPattern) == FALSE ){
 		MessageBoxA(NULL, "Mail invalide.", "Erreur", MB_OK | MB_ICONERROR);
+	}
+
+	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
+	for (char c : emailStdString) {
+		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
+			MessageBoxA(NULL, "Le champ prénom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			return false;
+		}
 	}
 	
 	return TRUE;
