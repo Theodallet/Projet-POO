@@ -277,7 +277,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_name_building_entry()
 	// On vérifie que le texte ne contient que des lettres
 	for (char c : personnelBatimentdString) {
 		if (!isalnum(c)) { // VARIANTE AVEC DE l'ALPHANUMERIQUE
-			MessageBoxA(NULL, "Le champ batiment personnel ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ bâtiment ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -285,7 +285,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_name_building_entry()
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
 	for (char c : personnelBatimentdString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ batiment personnel ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ batiment ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -304,7 +304,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_floor_entry()
 	// On vérifie que le texte ne contient que des chiffres
 	for (char c : clientEtageString) {
 		if (!Char::IsDigit(c)) {
-			MessageBoxA(NULL, "Le champ batiment client ne doit contenir que des chiffres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ etage ne doit contenir que des chiffres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -312,7 +312,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_floor_entry()
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
 	for (char c : clientEtageString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ nom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ etage ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -332,7 +332,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_role_entry()
 	// On vérifie que le texte ne contient que des lettres
 	for (char c : personnelRoledString) {
 		if (!isalnum(c)) { // VARIANTE AVEC DE l'ALPHANUMERIQUE
-			MessageBoxA(NULL, "Le champ nom client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ role personel ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -340,7 +340,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_role_entry()
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
 	for (char c : personnelRoledString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ nom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ role personel ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -359,7 +359,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_ID_supperior_entry()
 	// On vérifie que le texte ne contient que des chiffres
 	for (char c : peronnelIDSuppString) {
 		if (!Char::IsDigit(c)) {
-			MessageBoxA(NULL, "Le champ batiment client ne doit contenir que des chiffres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ Id supperieur ne doit contenir que des chiffres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -367,7 +367,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_ID_supperior_entry()
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
 	for (char c : peronnelIDSuppString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ nom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ Id supperieur ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
