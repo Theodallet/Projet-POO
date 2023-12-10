@@ -353,12 +353,6 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_ID_supperior_entry()
 {
 	String^ Personnel_ID_Supperieur = this->TXT_ID_SUP->Text;
 
-	// Vérifier si l'entrée est nulle ou non 
-	if (String::IsNullOrEmpty(Personnel_ID_Supperieur)) {
-		MessageBoxA(NULL, "Le champ ID client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
-		return false;
-	}
-
 	// Convertir System::String^ en std::string
 	std::string peronnelIDSuppString = msclr::interop::marshal_as<std::string>(Personnel_ID_Supperieur);
 
