@@ -874,7 +874,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 		bool isIDSuppValid = check_personnel_ID_supperior_entry();
 
 
-		if (isNameValid & isSurnameValid & isMailValid & isRueValid & isCPValid & isVilleValid & isBatimentValid & isEtageValid & isRoleValid & isIDSuppValid) {
+		if (isIDValid & isNameValid & isSurnameValid & isMailValid & isRueValid & isCPValid & isVilleValid & isBatimentValid & isEtageValid & isRoleValid & isIDSuppValid) {
 			this->oSvc_Personel->modifier_Personel(Personnel_ID, Personnel_Nom, Personnel_Prenom, Personnel_Mail, Personnel_Date_N, Personnel_Ville, Personnel_Rue, Personnel_Code_Postal, Personnel_Batiment, Personnel_Etage, Personnel_Date_E, Personnel_Role, Personnel_ID_Supperieur);
 		}
 
@@ -901,9 +901,22 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 
 	private: System::Void BOUTON_SUPP_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		int Personnel_ID = Convert::ToInt32(this->TXT_ID_PERSONNEL->Text);
+		int Personnel_ID;
+		if (this->TXT_ETAGE_PERSONNEL->Text != "") {
+			Personnel_ID = Convert::ToInt32(this->TXT_ID_PERSONNEL->Text);
+		}
 
-		this->oSvc_Personel->supprimer_Personel(Personnel_ID);
+		bool isIDValid = check_personnel_ID_entry();
+
+		if (isIDValid) {
+			this->oSvc_Personel->supprimer_Personel(Personnel_ID);
+		}
+
+		this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+		this->AFFICHAGE_PERSONNEL->Refresh();
+		this->oDs = this->oSvc_Personel->selectionner_Personel("Rsl");
+		this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+		this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
 
 		this->TXT_ID_PERSONNEL->Text = "";
 	}
