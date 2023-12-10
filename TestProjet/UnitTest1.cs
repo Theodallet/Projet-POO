@@ -785,13 +785,77 @@ namespace VotreNamespaceDeTest
 
     public class CL_Map_CommandeTests
     {
+        
+
+
+    }
+
+    public class CL_Map_ContientTests
+    {
+        public void Insert_Contient_Test()
+        {
+            CL_Map_ClientTests Test = new CL_Map_Client();
+
+            int IDArt = 1;
+            int IDComm = 1;
+            int Quantite = 1;
+
+            var result = Test.Insert_Contient(IDArt, IDComm, Quantite);
+            var result = Test.Select_Contient();
+
+            Assert.AreEqual(1, result[0]);
+            Assert.AreEqual(1, result[1]);
+            Assert.AreEqual(1, result[2]);
+          
+        }
+
+        public void Delete_Contient_Test()
+        {
+            CL_Map_ClientTests Test = new CL_Map_Client();
+
+            int IDArt = 1;
+            int IDComm = 1;
+            
+
+            var production = Test.Delete_Contient(IDArt, IDComm);
+            var result = Test.Select_Contient();
+
+
+            Assert.AreEqual("", result[0]);
+            Assert.AreEqual("", result[1]);
+            Assert.AreEqual("", result[2]);
+
+
+        }
+
+        public void Update_Contient_Test()
+        {
+            CL_Map_ClientTests Test = new CL_Map_Client();
+
+            int IDArt = 1;
+            int IDComm = 1;
+            int Quantite = 5;
+
+
+            var production = Test.Update_Contient(IDArt, IDComm, Quantite);
+            var result = Test.Select_Contient();
+
+
+            Assert.AreEqual(1, result[0]);
+            Assert.AreEqual(1, result[1]);
+            Assert.AreEqual(5, result[2]);
+        }
+    }
+
+    public class CL_Map_StockTests
+    {
         public void Select_Article_ID_Test()
         {
             CL_Map_ClientTests Test = new CL_Map_Client();
 
             int Id = 1;
 
-            
+
             var result = Test.Select_Article_ID(Id);
 
             Assert.AreEqual(1, result[0]);
@@ -800,7 +864,7 @@ namespace VotreNamespaceDeTest
             Assert.AreEqual("Vert", result[3]);
             Assert.AreEqual(5, result[4]);
             Assert.AreEqual(20, result[5]);
-           
+
 
         }
 
@@ -872,54 +936,6 @@ namespace VotreNamespaceDeTest
             Assert.AreEqual("Noir", result[3]);
             Assert.AreEqual(5, result[4]);
             Assert.AreEqual(20, result[5]);
-
-        }
-
-
-    }
-
-    public class CL_Map_ContientTests
-    {
-        public void Insert_Contient_Test()
-        {
-
-        }
-
-        public void Delete_Contient_Test()
-        {
-
-        }
-
-        public void Update_Contient_Test()
-        {
-
-        }
-    }
-
-    public class CL_Map_StockTests
-    {
-        public void Select_Article_ID_Test()
-        {
-
-        }
-
-        public void Select_Article_Test()
-        {
-
-        }
-
-        public void Delete_Article_Test()
-        {
-
-        }
-
-        public void Insert_Article_Test()
-        {
-
-        }
-
-        public void Update_Article_Test()
-        {
 
         }
     }
