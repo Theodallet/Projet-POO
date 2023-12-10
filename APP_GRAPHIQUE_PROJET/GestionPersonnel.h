@@ -904,8 +904,6 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 	}
 	private: System::Void BOUTON_MODIF_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		int Personnel_ID;
-
 		int Personnel_ID = Convert::ToInt32(this->TXT_ID_PERSONNEL->Text);
 		String^ Personnel_Nom = this->TXT_NOM_PERSONNEL->Text;
 		String^ Personnel_Prenom = this->TXT_PRENOM_PERSONNEL->Text;

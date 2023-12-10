@@ -159,13 +159,8 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_mail_entry()
 		}
 	}
 	
-	return TRUE;
+	return true;
 }
-
-
-
-
-
 //
 // 6) Méthode pour checker l' entrée pour la ville du client + éviter les injections SQL
 //
@@ -202,8 +197,6 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_ville_entry()
 	// Le texte est valide -> on retourne true
 	return true;
 }
-
-
 //
 // 7) Méthode pour checker l' entrée pour la rue du client + éviter les injections SQL
 //
@@ -240,7 +233,6 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_rue_entry()
 	// Le texte est valide -> on retourne true
 	return true;
 }
-
 //
 // 8) Méthode pour checker l' entrée pour le code postal du client + éviter les injections SQL
 //
@@ -277,7 +269,6 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_code_postal_entry()
 	// Le texte est valide -> on retourne true
 	return true;
 }
-
 //
 // 9) Méthode pour checker l' entrée pour le nom du bâtiment + éviter les injections SQL
 //
