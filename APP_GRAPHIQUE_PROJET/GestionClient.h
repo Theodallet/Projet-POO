@@ -709,8 +709,12 @@ namespace APPGRAPHIQUEPROJET {
 		bool isBatimentValid = check_client_name_building_entry();
 		String^ Client_Batiment = this->TXT_BAT_CLIENT->Text;
 
-		bool isEtageValid = check_client_floor_entry();
+		bool isFloorValid = check_client_floor_entry();
 		int Client_Etage = Convert::ToInt32(this->TXT_ETAGE_CLIENT->Text);
+		if (!isSurnameValid) {
+			MessageBox::Show("Le champ 'étage' client ne doit contenir que des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
 		// Action à faire
 		this->oSvc_Client->ajouter_Client(Client_Nom, Client_Prenom, Client_Mail, Client_Date_N, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
