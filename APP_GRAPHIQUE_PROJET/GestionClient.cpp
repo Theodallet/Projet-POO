@@ -18,6 +18,12 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_ID_entry()
 {
 	String^ Client_ID = this->TXT_ID_CLIENT->Text;
 
+	// Vérifier si l'entrée est nulle ou non 
+	if (String::IsNullOrEmpty(Client_ID)) {
+		MessageBoxA(NULL, "Le champ ID client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		return false;
+	}
+
 	// Convertir System::String^ en std::string
 	std::string clientIDString = msclr::interop::marshal_as<std::string>(Client_ID);
 
@@ -50,6 +56,12 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_ID_entry()
 bool APPGRAPHIQUEPROJET::GestionClient::check_client_name_entry()
 {
 	String^ Client_Nom = this->TXT_NOM_CLIENT->Text;
+
+	// Vérifier si l'entrée est nulle ou non 
+	if (String::IsNullOrEmpty(Client_Nom)) {
+		MessageBoxA(NULL, "Le champ Nom client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		return false;
+	}
 
 	// Convertir System::String^ en std::string
 	std::string clientNomStdString = msclr::interop::marshal_as<std::string>(Client_Nom);
@@ -85,13 +97,19 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_surname_entry()
 {
 	String^ Client_Prenom = this->TXT_PRENOM_CLIENT->Text;
 
+	// Vérifier si l'entrée est nulle ou non 
+	if (String::IsNullOrEmpty(Client_Prenom)) {
+		MessageBoxA(NULL, "Le champ Prenom client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		return false;
+	}
+
 	// Convertir System::String^ en std::string
 	std::string clientPrenomStdString = msclr::interop::marshal_as<std::string>(Client_Prenom);
 
 	// On vérifie que le texte ne contient que des lettres
 	for (char c : clientPrenomStdString) {
 		if (!isalpha(c)) {
-			MessageBoxA(NULL, "Le champ nom client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ prénom client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -99,7 +117,7 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_surname_entry()
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
 	for (char c : clientPrenomStdString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ nom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ prénom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -115,49 +133,35 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_mail_entry()
 {
 	String^ Client_Mail = this->TXT_MAIL_CLIENT->Text;
 
-	// Convertir System::String^ en std::string
-	std::string clientMailStdString = msclr::interop::marshal_as<std::string>(Client_Mail);
-
-	// On vérifie que le texte ne contient que des caractères alphanumériques et l'@
-	bool is_valid = true;
-	for (char c : clientMailStdString) {
-		if (!isalnum(c) && c != '@') {
-			is_valid = false;
-			break;
-		}
-	}
-
-	if (!is_valid) {
-		MessageBoxA(NULL, "Le champ mail client ne doit contenir que des lettres, des chiffres et l'@.", "Erreur", MB_OK | MB_ICONERROR);
+	// Vérifier si l'entrée est nulle ou non 
+	if (String::IsNullOrEmpty(Client_Mail)) {
+		MessageBoxA(NULL, "Le champ email client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
-	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
-	for (char c : clientMailStdString) {
-		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ mail client ne doit pas contenir de caractères spéciaux pouvant être utilisés pour des injections SQL.", "Erreur", MB_OK | MB_ICONERROR);
-			return false;
-		}
-	}
-
-	// On vérifie que le texte contient un @
-	if (Client_Mail->IndexOf('@') == -1) {
-		MessageBoxA(NULL, "Le champ mail doit contenir un @.", "Erreur", MB_OK | MB_ICONERROR);
+	// Vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
+	if (Client_Mail->IndexOfAny(gcnew array<Char>{'"', '\'', '\\', ';', '`', '<', '>'}) != -1) {
+		MessageBoxA(NULL, "Le champ mail client ne doit pas contenir de caractères spéciaux pouvant être utilisés pour des injections SQL.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
-	// On vérifie que le texte contient une extension de mail valide
-	String^ extension = Client_Mail->Substring(Client_Mail->IndexOf(L'@') + 1);
-	std::string clientExtensionStdString = msclr::interop::marshal_as<std::string>(extension);
+	// Vérifie que le texte contient un @
+	int atIndex = Client_Mail->IndexOf('@');
+	if (atIndex == -1 || atIndex == 0 || atIndex == Client_Mail->Length - 1) {
+		MessageBoxA(NULL, "Le champ mail doit contenir un @ et ne peut pas commencer ou se terminer par @.", "Erreur", MB_OK | MB_ICONERROR);
+		return false;
+	}
+
+	// Vérifie que le texte contient une extension de mail valide
+	String^ extension = Client_Mail->Substring(atIndex + 1);
 
 	// Liste des extensions valides
-	std::vector<std::string> valid_extensions = { ".com", ".fr", ".net", ".org", ".edu" };
-
+	array<String^>^ valid_extensions = { ".com", ".fr", ".net", ".org", ".edu" };
 	bool is_valid_extension = false;
 
-	for (const std::string& valid_extension : valid_extensions) {
+	for each (String ^ valid_extension in valid_extensions) {
 		// Comparaison insensible à la casse
-		if (_stricmp(clientExtensionStdString.c_str(), valid_extension.c_str()) == 0) {
+		if (extension->Equals(valid_extension, StringComparison::OrdinalIgnoreCase)) {
 			is_valid_extension = true;
 			break;
 		}
@@ -173,6 +177,8 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_mail_entry()
 }
 
 
+
+
 //
 // 6) Méthode pour checker l' entrée pour la ville du client + éviter les injections SQL
 //
@@ -180,6 +186,12 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_mail_entry()
 bool APPGRAPHIQUEPROJET::GestionClient::check_client_ville_entry()
 {
 	String^ Client_Ville = this->TXT_VILLE_CLIENT->Text;
+
+	// Vérifier si l'entrée est nulle ou non 
+	if (String::IsNullOrEmpty(Client_Ville)) {
+		MessageBoxA(NULL, "Le champ Ville client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		return false;
+	}
 
 	// Convertir System::String^ en std::string
 	std::string clientVilleStdString = msclr::interop::marshal_as<std::string>(Client_Ville);
@@ -213,6 +225,12 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_rue_entry()
 {
 	String^ Client_Rue = this->TXT_RUE_CLIENT->Text;
 
+	// Vérifier si l'entrée est nulle ou non 
+	if (String::IsNullOrEmpty(Client_Rue)) {
+		MessageBoxA(NULL, "Le champ Rue client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		return false;
+	}
+
 	// Convertir System::String^ en std::string
 	std::string clientRuedString = msclr::interop::marshal_as<std::string>(Client_Rue);
 
@@ -243,6 +261,12 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_rue_entry()
 bool APPGRAPHIQUEPROJET::GestionClient::check_client_code_postal_entry()
 {
 	String^ Client_Code_Postal = this->TXT_CP_CLIENT->Text;
+
+	// Vérifier si l'entrée est nulle ou non 
+	if (String::IsNullOrEmpty(Client_Code_Postal)) {
+		MessageBoxA(NULL, "Le champ Code Postal client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		return false;
+	}
 
 	// Convertir System::String^ en std::string
 	std::string clientCodePostaldString = msclr::interop::marshal_as<std::string>(Client_Code_Postal);

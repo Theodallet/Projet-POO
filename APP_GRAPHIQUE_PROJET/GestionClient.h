@@ -688,10 +688,7 @@ namespace APPGRAPHIQUEPROJET {
 		// Acquisition des données
 		bool isNameValid = check_client_name_entry();
 		String^ Client_Nom = this->TXT_NOM_CLIENT->Text;
-		if (!isNameValid) {
-			MessageBox::Show("Le champ 'nom' client ne doit contenir que des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-			return;
-		}
+
 
 		bool isSurnameValid = check_client_surname_entry();
 		String^ Client_Prenom = this->TXT_PRENOM_CLIENT->Text;
@@ -726,7 +723,7 @@ namespace APPGRAPHIQUEPROJET {
 		bool isVilleValid = check_client_ville_entry();
 		String^ Client_Ville = this->TXT_VILLE_CLIENT->Text;
 		if (!isVilleValid) {
-			MessageBox::Show("Le champ 'Ville' client ne doit contenir que ...", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show("Le champ 'Ville' client ne doit contenir que lettres", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			return;
 		}
 
