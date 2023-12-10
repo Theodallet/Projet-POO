@@ -838,22 +838,51 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 	}
 	private: System::Void BOUTON_MODIF_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		int Personnel_ID = Convert::ToInt32(this->TXT_ID_PERSONNEL->Text);
-		String^ Personnel_Nom = this->TXT_NOM_PERSONNEL->Text;
+		int Personnel_ID;
+		if (this->TXT_ETAGE_PERSONNEL->Text != "") {
+			Personnel_ID = Convert::ToInt32(this->TXT_ID_PERSONNEL->Text);
+		}
+		String^ Personnel_Nom = this->TXT_NOM_PERSONNEL->Text;;
 		String^ Personnel_Prenom = this->TXT_PRENOM_PERSONNEL->Text;
-		DateTime Personnel_Date_N = DateTime::Parse(this->TXT_BD_PERSONNEL->Text);
 		String^ Personnel_Mail = this->TXT_MAIL_PERSONNEL->Text;
 		String^ Personnel_Rue = this->TXT_RUE_PERSONNEL->Text;
+		DateTime Personnel_Date_N = DateTime::Parse(this->TXT_BD_PERSONNEL->Text);
 		String^ Personnel_Code_Postal = this->TXT_CP_PERSONNEL->Text;
 		String^ Personnel_Ville = this->TXT_VILLE_PERSONNEL->Text;
 		String^ Personnel_Batiment = this->TXT_BAT_PERSONNEL->Text;
-		int Personnel_Etage = Convert::ToInt32(this->TXT_ETAGE_PERSONNEL->Text);
+		int Personnel_Etage;
+		if (this->TXT_ETAGE_PERSONNEL->Text != "") {
+			Personnel_Etage = Convert::ToInt32(this->TXT_ID_SUP->Text);
+		}
 		DateTime Personnel_Date_E = DateTime::Parse(this->TXT_DATE_EMBAUCHE_PERSONNEL->Text);
 		String^ Personnel_Role = this->TEXT_ROLE_PERSONNEL->Text;
-		int Personnel_ID_Supperieur = Convert::ToInt32(this->TXT_ID_SUP->Text);
+		int Personnel_ID_Supperieur;
+		if (this->TXT_ETAGE_PERSONNEL->Text != "") {
+			Personnel_ID_Supperieur = Convert::ToInt32(this->TXT_ID_SUP->Text);
+		}
 
-		this->oSvc_Personel->modifier_Personel(Personnel_ID, Personnel_Nom, Personnel_Prenom, Personnel_Mail, Personnel_Date_N, Personnel_Ville, Personnel_Rue, Personnel_Code_Postal, Personnel_Batiment, Personnel_Etage, Personnel_Date_E, Personnel_Role, Personnel_ID_Supperieur);
+		bool isIDValid = check_personnel_ID_entry();
+		bool isNameValid = check_personnel_name_entry();
+		bool isSurnameValid = check_personnel_surname_entry();
+		bool isMailValid = check_personnel_mail_entry();
+		bool isRueValid = check_personnel_rue_entry();
+		bool isCPValid = check_personnel_code_postal_entry();
+		bool isVilleValid = check_personnel_ville_entry();
+		bool isBatimentValid = check_personnel_name_building_entry();
+		bool isEtageValid = check_personnel_floor_entry();
+		bool isRoleValid = check_personnel_role_entry();
+		bool isIDSuppValid = check_personnel_ID_supperior_entry();
 
+
+		if (isNameValid & isSurnameValid & isMailValid & isRueValid & isCPValid & isVilleValid & isBatimentValid & isEtageValid & isRoleValid & isIDSuppValid) {
+			this->oSvc_Personel->modifier_Personel(Personnel_ID, Personnel_Nom, Personnel_Prenom, Personnel_Mail, Personnel_Date_N, Personnel_Ville, Personnel_Rue, Personnel_Code_Postal, Personnel_Batiment, Personnel_Etage, Personnel_Date_E, Personnel_Role, Personnel_ID_Supperieur);
+		}
+
+		this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+		this->AFFICHAGE_PERSONNEL->Refresh();
+		this->oDs = this->oSvc_Personel->selectionner_Personel("Rsl");
+		this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+		this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
 
 		this->TXT_ID_PERSONNEL->Text = "";
 		this->TXT_NOM_PERSONNEL->Text = "";
