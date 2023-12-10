@@ -117,6 +117,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->TitreManuel->Size = System::Drawing::Size(494, 62);
 			   this->TitreManuel->TabIndex = 241;
 			   this->TitreManuel->Text = L"| Manuel d\'utilisation";
+			   this->TitreManuel->Click += gcnew System::EventHandler(this, &ManuelUtilisation::TitreManuel_Click);
 			   // 
 			   // BarreNoir
 			   // 
@@ -133,11 +134,12 @@ namespace APPGRAPHIQUEPROJET {
 			   this->label2->Font = (gcnew System::Drawing::Font(L"Lucida Console", 3, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->label2->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			   this->label2->Location = System::Drawing::Point(693, 167);
+			   this->label2->Location = System::Drawing::Point(714, 142);
 			   this->label2->Name = L"label2";
 			   this->label2->Size = System::Drawing::Size(1973, 1153);
 			   this->label2->TabIndex = 244;
 			   this->label2->Text = resources->GetString(L"label2.Text");
+			   this->label2->Click += gcnew System::EventHandler(this, &ManuelUtilisation::label2_Click);
 			   // 
 			   // label3
 			   // 
@@ -149,6 +151,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->label3->Size = System::Drawing::Size(403, 51);
 			   this->label3->TabIndex = 245;
 			   this->label3->Text = L"Un jour, un sdf à dit : ";
+			   this->label3->Click += gcnew System::EventHandler(this, &ManuelUtilisation::label3_Click);
 			   // 
 			   // label4
 			   // 
@@ -160,6 +163,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->label4->Size = System::Drawing::Size(675, 380);
 			   this->label4->TabIndex = 246;
 			   this->label4->Text = resources->GetString(L"label4.Text");
+			   this->label4->Click += gcnew System::EventHandler(this, &ManuelUtilisation::label4_Click);
 			   // 
 			   // ManuelUtilisation
 			   // 
@@ -188,6 +192,14 @@ namespace APPGRAPHIQUEPROJET {
 	}
 
 private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void TitreManuel_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
