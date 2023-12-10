@@ -686,96 +686,45 @@ namespace APPGRAPHIQUEPROJET {
 	// Vérification du champ ID client
 
 		// Acquisition des données
-
-		String^ Client_Nom;
-		String^ Client_Prenom;
-		String^ Client_Mail;
-		String^ Client_Rue;
-		DateTime Client_Date_N;
-		String^ Client_Code_Postal;
-		String^ Client_Ville;
-		String^ Client_Batiment;
+		
+		String^ Client_Nom = this->TXT_NOM_CLIENT->Text;
+		String^ Client_Prenom = this->TXT_PRENOM_CLIENT->Text;
+		String^ Client_Mail = this->TXT_MAIL_CLIENT->Text;
+		DateTime Client_Date_N = DateTime::Parse(this->TXT_BD_CLIENT->Text); // aucune entrée utilisateur donc pas de vérification
+		String^ Client_Rue = this->TXT_RUE_CLIENT->Text;
+		String^ Client_Code_Postal = this->TXT_CP_CLIENT->Text;
+		String^ Client_Ville = this->TXT_VILLE_CLIENT->Text;
+		String^ Client_Batiment = this->TXT_BAT_CLIENT->Text;
 		int Client_Etage;
-
-		bool isValid = false;
-
-		while (!isValid) {
-			// Vérifier le champ 'nom'
-			bool isNameValid = check_client_name_entry();
-			if (!isNameValid) {
-				MessageBox::Show("Le champ 'nom' client ne doit contenir que des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-			Client_Nom = this->TXT_NOM_CLIENT->Text;
-
-			// Vérifier le champ 'prénom'
-			bool isSurnameValid = check_client_surname_entry();
-			if (!isSurnameValid) {
-				MessageBox::Show("Le champ 'prénom' client ne doit contenir que des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-			Client_Prenom = this->TXT_PRENOM_CLIENT->Text;
-
-			// Vérifier le champ 'mail'
-			bool isMailValid = check_client_mail_entry();
-			if (!isMailValid) {
-				//MessageBox::Show("Le champ 'mail' client ne doit contenir que une extension valide.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-
-			DateTime Client_Date_N = DateTime::Parse(this->TXT_BD_CLIENT->Text); // aucune entrée utilisateur donc pas de vérification
-
-			Client_Mail = this->TXT_MAIL_CLIENT->Text;
-
-			// Vérifier le champ 'rue'
-			bool isRueValid = check_client_rue_entry();
-			if (!isRueValid) {
-				MessageBox::Show("Le champ 'rue' client ne doit contenir que des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-			Client_Rue = this->TXT_RUE_CLIENT->Text;
-
-			// Vérifier le champ 'code postal'
-			bool isCPValid = check_client_code_postal_entry();
-			if (!isCPValid) {
-				MessageBox::Show("Le champ 'code postal' client ne doit contenir que des chiffres et des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-			Client_Code_Postal = this->TXT_CP_CLIENT->Text;
-
-			// Vérifier le champ 'ville'
-			bool isVilleValid = check_client_ville_entry();
-			if (!isVilleValid) {
-				MessageBox::Show("Le champ 'ville' client ne doit contenir que des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-			Client_Ville = this->TXT_VILLE_CLIENT->Text;
-
-			// Vérifier le champ 'bâtiment'
-			bool isBatimentValid = check_client_name_building_entry();
-			if (!isBatimentValid) {
-				MessageBox::Show("Le champ 'bâtiment' client ne doit contenir que des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-			Client_Batiment = this->TXT_BAT_CLIENT->Text;
-
-			// Vérifier le champ 'étage'
-			bool isEtageValid = check_client_floor_entry();
-			if (!isEtageValid) {
-				MessageBox::Show("Le champ 'étage' client ne doit contenir que des chiffres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-			int Client_Etage;
-			if (this->TXT_ETAGE_CLIENT->Text != "") {
-				int Client_Etage = Convert::ToInt32(this->TXT_ETAGE_CLIENT->Text);
-			}
-
-			// Si toutes les vérifications passent, marquer comme valide et sortir de la boucle
-			isValid = true;
+		if (this->TXT_ETAGE_CLIENT->Text != "") {
+			Client_Etage = Convert::ToInt32(this->TXT_ETAGE_CLIENT->Text);
 		}
+
+		bool isNameValid = check_client_name_entry();
+        bool isSurnameValid = check_client_surname_entry();
+		bool isMailValid = check_client_mail_entry();
+		bool isRueValid = check_client_rue_entry();
+		bool isCPValid = check_client_code_postal_entry();
+		bool isVilleValid = check_client_ville_entry();
+		bool isBatimentValid = check_client_name_building_entry();
+		bool isEtageValid = check_client_floor_entry();
+
+
+											
+		if (isNameValid & isSurnameValid & isMailValid & isRueValid & isCPValid & isVilleValid & isBatimentValid & isEtageValid) {
+			this->oSvc_Client->ajouter_Client(Client_Nom, Client_Prenom, Client_Mail, Client_Date_N, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
+		}
+										
+									
+								
+							
+						
+					
+				
+			
 		
 		// Action à faire
-		this->oSvc_Client->ajouter_Client(Client_Nom, Client_Prenom, Client_Mail, Client_Date_N, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
+		
 		// Vide de la page
 
 		this->AFFICHAGE_CLIENT->Refresh();
