@@ -56,6 +56,9 @@ namespace APPGRAPHIQUEPROJET {
 	private: System::Windows::Forms::Label^ TitreManuel;
 
 	private: System::Windows::Forms::PictureBox^ BarreNoir;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label4;
 
 
 
@@ -77,9 +80,13 @@ namespace APPGRAPHIQUEPROJET {
 		   /// </summary>
 		   void InitializeComponent(void)
 		   {
+			   System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ManuelUtilisation::typeid));
 			   this->RETURN_MAUNEL_UTILISATION_HOME = (gcnew System::Windows::Forms::Button());
 			   this->TitreManuel = (gcnew System::Windows::Forms::Label());
 			   this->BarreNoir = (gcnew System::Windows::Forms::PictureBox());
+			   this->label2 = (gcnew System::Windows::Forms::Label());
+			   this->label3 = (gcnew System::Windows::Forms::Label());
+			   this->label4 = (gcnew System::Windows::Forms::Label());
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BarreNoir))->BeginInit();
 			   this->SuspendLayout();
 			   // 
@@ -114,15 +121,52 @@ namespace APPGRAPHIQUEPROJET {
 			   // BarreNoir
 			   // 
 			   this->BarreNoir->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			   this->BarreNoir->Location = System::Drawing::Point(-4, -20);
+			   this->BarreNoir->Location = System::Drawing::Point(-21, -80);
 			   this->BarreNoir->Name = L"BarreNoir";
-			   this->BarreNoir->Size = System::Drawing::Size(1291, 943);
+			   this->BarreNoir->Size = System::Drawing::Size(1291, 184);
 			   this->BarreNoir->TabIndex = 242;
 			   this->BarreNoir->TabStop = false;
+			   // 
+			   // label2
+			   // 
+			   this->label2->BackColor = System::Drawing::SystemColors::ButtonFace;
+			   this->label2->Font = (gcnew System::Drawing::Font(L"Lucida Console", 3, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label2->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			   this->label2->Location = System::Drawing::Point(693, 167);
+			   this->label2->Name = L"label2";
+			   this->label2->Size = System::Drawing::Size(1973, 1153);
+			   this->label2->TabIndex = 244;
+			   this->label2->Text = resources->GetString(L"label2.Text");
+			   // 
+			   // label3
+			   // 
+			   this->label3->AutoSize = true;
+			   this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 22.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label3->Location = System::Drawing::Point(27, 167);
+			   this->label3->Name = L"label3";
+			   this->label3->Size = System::Drawing::Size(403, 51);
+			   this->label3->TabIndex = 245;
+			   this->label3->Text = L"Un jour, un sdf à dit : ";
+			   // 
+			   // label4
+			   // 
+			   this->label4->AutoSize = true;
+			   this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				   static_cast<System::Byte>(0)));
+			   this->label4->Location = System::Drawing::Point(12, 243);
+			   this->label4->Name = L"label4";
+			   this->label4->Size = System::Drawing::Size(675, 380);
+			   this->label4->TabIndex = 246;
+			   this->label4->Text = resources->GetString(L"label4.Text");
 			   // 
 			   // ManuelUtilisation
 			   // 
 			   this->ClientSize = System::Drawing::Size(1256, 725);
+			   this->Controls->Add(this->label4);
+			   this->Controls->Add(this->label3);
+			   this->Controls->Add(this->label2);
 			   this->Controls->Add(this->RETURN_MAUNEL_UTILISATION_HOME);
 			   this->Controls->Add(this->TitreManuel);
 			   this->Controls->Add(this->BarreNoir);
