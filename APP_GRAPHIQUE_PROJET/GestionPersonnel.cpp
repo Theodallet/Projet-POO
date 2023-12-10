@@ -380,7 +380,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_role_entry()
 	// On vérifie que le texte ne contient que des lettres
 	for (char c : personnelRoledString) {
 		if (!isalnum(c)) { // VARIANTE AVEC DE l'ALPHANUMERIQUE
-			MessageBoxA(NULL, "Le champ nom client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ role personnel doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -388,7 +388,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_role_entry()
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
 	for (char c : personnelRoledString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ nom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ role personnel ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -403,7 +403,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_ID_supperior_entry()
 
 	// Vérifier si l'entrée est nulle ou non 
 	if (String::IsNullOrEmpty(Personnel_ID_Supperieur)) {
-		MessageBoxA(NULL, "Le champ ID client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		MessageBoxA(NULL, "Le champ ID supérieur personnel ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
@@ -413,7 +413,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_ID_supperior_entry()
 	// On vérifie que le texte ne contient que des chiffres
 	for (char c : peronnelIDSuppString) {
 		if (!Char::IsDigit(c)) {
-			MessageBoxA(NULL, "Le champ batiment client ne doit contenir que des chiffres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ id supérieur personnel ne doit contenir que des chiffres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
