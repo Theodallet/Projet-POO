@@ -1,5 +1,5 @@
 #include "GestionStock.h"
-#include <iostream>
+/*#include <iostream>
 #include <stdexcept>
 #include <Windows.h> 
 #include <msclr/marshal_cppstd.h>
@@ -316,3 +316,4 @@ bool APPGRAPHIQUEPROJET::GestionStock::check_article_quantity_entry();
 	return true;
 }
 
+*/
