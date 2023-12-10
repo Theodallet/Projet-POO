@@ -669,7 +669,13 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Void BOUTON_SUPPRIMER_ARTICLE_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		int Article_ID = Convert::ToInt32(this->TXT_ID_ARTICLE->Text);
+		int Article_ID;
+		if (this->TXT_ID_ARTICLE->Text != "")
+		{
+			Article_ID = Convert::ToInt32(this->TXT_ID_ARTICLE->Text);
+		}
+
+		bool isIDValid = check_article_ID_entry();
 
 		this->oSvc_Article->supprimer_Article(Article_ID);
 
