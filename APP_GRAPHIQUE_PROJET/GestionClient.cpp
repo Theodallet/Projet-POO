@@ -133,6 +133,12 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_mail_entry()
 {
 	String^ Client_Mail = this->TXT_MAIL_CLIENT->Text;
 
+	// Vérifier si l'entrée est nulle ou non 
+	if (String::IsNullOrEmpty(Client_Mail)) {
+		MessageBoxA(NULL, "Le champ Prenom client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		return false;
+	}
+
 	// Convertir System::String^ en std::string
 	std::string clientMailStdString = msclr::interop::marshal_as<std::string>(Client_Mail);
 

@@ -719,7 +719,7 @@ namespace APPGRAPHIQUEPROJET {
 			// Vérifier le champ 'mail'
 			bool isMailValid = check_client_mail_entry();
 			if (!isMailValid) {
-				MessageBox::Show("Le champ 'mail' client ne doit contenir que une signature valide.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show("Le champ 'mail' client ne doit contenir que une extension valide.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
 				return;
 			}
 
