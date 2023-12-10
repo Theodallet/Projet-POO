@@ -26,7 +26,7 @@ bool APPGRAPHIQUEPROJET::GestionStock::check_article_ID_entry()
 	// On vérifie que le texte ne contient que des chiffres
 	for (char c : articleIDString) {
 		if (!Char::IsDigit(c)) {
-			MessageBoxA(NULL, "Le champs ID article client ne doit contenir que des chiffres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ ID article stock ne doit contenir que des chiffres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -34,7 +34,7 @@ bool APPGRAPHIQUEPROJET::GestionStock::check_article_ID_entry()
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
 	for (char c : articleIDString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ ID article ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ ID article stock ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
