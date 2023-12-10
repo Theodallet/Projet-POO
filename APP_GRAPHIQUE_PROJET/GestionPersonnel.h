@@ -809,8 +809,6 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 		bool isVilleValid = check_personnel_ville_entry();
 		bool isBatimentValid = check_personnel_name_building_entry();
 		bool isEtageValid = check_personnel_floor_entry();
-		bool is = check_personnel_floor_entry();
-		bool isEtageValid = check_personnel_floor_entry();
 		bool isRoleValid = check_personnel_role_entry();
 		bool isIDSuppValid = check_personnel_ID_supperior_entry();
 
@@ -818,6 +816,12 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 		if (isNameValid & isSurnameValid & isMailValid & isRueValid & isCPValid & isVilleValid & isBatimentValid & isEtageValid & isRoleValid & isIDSuppValid) {
 			this->oSvc_Personel->ajouter_Personel(Personnel_Nom, Personnel_Prenom, Personnel_Mail, Personnel_Date_N, Personnel_Ville, Personnel_Rue, Personnel_Code_Postal, Personnel_Batiment, Personnel_Etage, Personnel_Date_E, Personnel_Role, Personnel_ID_Supperieur);
 		}
+
+		this->oSvc_Personel = gcnew NS_Comp_Svc::CLservices_Personel();
+		this->AFFICHAGE_PERSONNEL->Refresh();
+		this->oDs = this->oSvc_Personel->selectionner_Personel("Rsl");
+		this->AFFICHAGE_PERSONNEL->DataSource = this->oDs;
+		this->AFFICHAGE_PERSONNEL->DataMember = "Rsl";
 		
 		this->TXT_NOM_PERSONNEL->Text = "";
 		this->TXT_PRENOM_PERSONNEL->Text = "";
