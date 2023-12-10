@@ -700,16 +700,16 @@ namespace APPGRAPHIQUEPROJET {
 		bool isRueValid = check_client_rue_entry();
 		String^ Client_Rue = this->TXT_RUE_CLIENT->Text;		
 
-		bool isCPValid = check_client_rue_entry();
+		bool isCPValid = check_client_code_postal_entry();
 		String^ Client_Code_Postal = this->TXT_CP_CLIENT->Text;
 
 		bool isVilleValid = check_client_ville_entry();
 		String^ Client_Ville = this->TXT_VILLE_CLIENT->Text;
 
-		bool isBatimentValid = check_client_ville_entry();
+		bool isBatimentValid = check_client_name_building_entry();
 		String^ Client_Batiment = this->TXT_BAT_CLIENT->Text;
 
-		bool isEtageValid = check_client_ville_entry();
+		bool isEtageValid = check_client_floor_entry();
 		int Client_Etage = Convert::ToInt32(this->TXT_ETAGE_CLIENT->Text);
 
 		// Action à faire
