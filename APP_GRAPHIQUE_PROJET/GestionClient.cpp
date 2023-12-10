@@ -338,8 +338,6 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_name_building_entry()
 	return true;
 }
 
-
-
 bool APPGRAPHIQUEPROJET::GestionClient::check_client_floor_entry()
 {
 	String^ Client_Etage = this->TXT_ETAGE_CLIENT->Text;
