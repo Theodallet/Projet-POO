@@ -152,4 +152,33 @@ namespace VotreNamespaceDeTest
         }
             
     }
+
+    public class CL_Map_PersonnelTests
+    {
+
+
+
+
+
+
+    }
+
+    public class CL_Map_CommandeTests
+    {
+
+    }
+
+
+    public class CL_Map_StockTests
+    {
+
+    }
+
+
+    public class CL_Map_StatistiquesTests
+    {
+
+    }
+
+
 }
