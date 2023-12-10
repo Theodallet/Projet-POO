@@ -133,35 +133,50 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_mail_entry()
 {
 	String^ Client_Mail = this->TXT_MAIL_CLIENT->Text;
 
-	// Vérifier si l'entrée est nulle ou non 
-	if (String::IsNullOrEmpty(Client_Mail)) {
-		MessageBoxA(NULL, "Le champ email client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+	// Convertir System::String^ en std::string
+	std::string clientMailStdString = msclr::interop::marshal_as<std::string>(Client_Mail);
+
+	// On vérifie que le texte ne contient que des caractères alphanumériques et l'@
+	bool is_valid = true;
+	for (char c : clientMailStdString) {
+		if (!isalnum(c) && c != '@') {
+			is_valid = false;
+			break;
+		}
+	}
+
+	if (!is_valid) {
+		MessageBoxA(NULL, "Le champ mail client ne doit contenir que des lettres, des chiffres et l'@.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
-	// Vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
-	if (Client_Mail->IndexOfAny(gcnew array<Char>{'"', '\'', '\\', ';', '`', '<', '>'}) != -1) {
-		MessageBoxA(NULL, "Le champ mail client ne doit pas contenir de caractères spéciaux pouvant être utilisés pour des injections SQL.", "Erreur", MB_OK | MB_ICONERROR);
-		return false;
+	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
+	for (char c : clientMailStdString) {
+		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
+			MessageBoxA(NULL, "Le champ mail client ne doit pas contenir de caractères spéciaux pouvant être utilisés pour des injections SQL.", "Erreur", MB_OK | MB_ICONERROR);
+			return false;
+		}
 	}
 
-	// Vérifie que le texte contient un @
+	// On vérifie que le texte contient un @
 	int atIndex = Client_Mail->IndexOf('@');
 	if (atIndex == -1 || atIndex == 0 || atIndex == Client_Mail->Length - 1) {
 		MessageBoxA(NULL, "Le champ mail doit contenir un @ et ne peut pas commencer ou se terminer par @.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
-	// Vérifie que le texte contient une extension de mail valide
+	// On vérifie que le texte contient une extension de mail valide
 	String^ extension = Client_Mail->Substring(atIndex + 1);
+	std::string clientExtensionStdString = msclr::interop::marshal_as<std::string>(extension);
 
 	// Liste des extensions valides
-	array<String^>^ valid_extensions = { ".com", ".fr", ".net", ".org", ".edu" };
+	std::vector<std::string> valid_extensions = { ".com", ".fr", ".net", ".org", ".edu" };
+
 	bool is_valid_extension = false;
 
-	for each (String ^ valid_extension in valid_extensions) {
+	for (const std::string& valid_extension : valid_extensions) {
 		// Comparaison insensible à la casse
-		if (extension->Equals(valid_extension, StringComparison::OrdinalIgnoreCase)) {
+		if (_stricmp(clientExtensionStdString.c_str(), valid_extension.c_str()) == 0) {
 			is_valid_extension = true;
 			break;
 		}
@@ -175,6 +190,7 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_mail_entry()
 	// Le texte est valide -> on retourne true
 	return true;
 }
+
 
 
 
