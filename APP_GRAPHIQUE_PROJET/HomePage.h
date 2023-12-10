@@ -159,7 +159,7 @@ namespace APPGRAPHIQUEPROJET {
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label2->Location = System::Drawing::Point(72, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(455, 74);
+			this->label2->Size = System::Drawing::Size(302, 50);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"GADGET GROVE";
 			this->label2->Click += gcnew System::EventHandler(this, &HomePage::label2_Click);
@@ -181,7 +181,7 @@ namespace APPGRAPHIQUEPROJET {
 				static_cast<System::Byte>(0)));
 			this->label3->Location = System::Drawing::Point(57, 83);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(257, 58);
+			this->label3->Size = System::Drawing::Size(172, 38);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"GESTION";
 			this->label3->Click += gcnew System::EventHandler(this, &HomePage::label3_Click);
@@ -194,7 +194,7 @@ namespace APPGRAPHIQUEPROJET {
 			this->label15->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label15->Location = System::Drawing::Point(533, 12);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(357, 36);
+			this->label15->Size = System::Drawing::Size(234, 25);
 			this->label15->TabIndex = 36;
 			this->label15->Text = L"Make your inspiration real";
 			// 
@@ -321,11 +321,11 @@ namespace APPGRAPHIQUEPROJET {
 			// 
 			this->label4->AutoSize = true;
 			this->label4->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(468, 158);
+			this->label4->Location = System::Drawing::Point(448, 158);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(120, 25);
+			this->label4->Size = System::Drawing::Size(71, 13);
 			this->label4->TabIndex = 48;
 			this->label4->Text = L"Description";
 			// 
@@ -333,11 +333,11 @@ namespace APPGRAPHIQUEPROJET {
 			// 
 			this->label5->AutoSize = true;
 			this->label5->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(468, 373);
+			this->label5->Location = System::Drawing::Point(448, 373);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(120, 25);
+			this->label5->Size = System::Drawing::Size(71, 13);
 			this->label5->TabIndex = 49;
 			this->label5->Text = L"Description";
 			// 
@@ -345,11 +345,11 @@ namespace APPGRAPHIQUEPROJET {
 			// 
 			this->label6->AutoSize = true;
 			this->label6->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(470, 498);
+			this->label6->Location = System::Drawing::Point(448, 498);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(120, 25);
+			this->label6->Size = System::Drawing::Size(71, 13);
 			this->label6->TabIndex = 50;
 			this->label6->Text = L"Description";
 			// 
@@ -357,11 +357,11 @@ namespace APPGRAPHIQUEPROJET {
 			// 
 			this->label7->AutoSize = true;
 			this->label7->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(468, 261);
+			this->label7->Location = System::Drawing::Point(448, 261);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(120, 25);
+			this->label7->Size = System::Drawing::Size(71, 13);
 			this->label7->TabIndex = 51;
 			this->label7->Text = L"Description";
 			// 
@@ -369,11 +369,11 @@ namespace APPGRAPHIQUEPROJET {
 			// 
 			this->label8->AutoSize = true;
 			this->label8->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(470, 606);
+			this->label8->Location = System::Drawing::Point(448, 606);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(120, 25);
+			this->label8->Size = System::Drawing::Size(71, 13);
 			this->label8->TabIndex = 52;
 			this->label8->Text = L"Description";
 			// 
@@ -409,7 +409,7 @@ namespace APPGRAPHIQUEPROJET {
 			this->LABEL_INFO->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->LABEL_INFO->Location = System::Drawing::Point(783, 132);
 			this->LABEL_INFO->Name = L"LABEL_INFO";
-			this->LABEL_INFO->Size = System::Drawing::Size(106, 20);
+			this->LABEL_INFO->Size = System::Drawing::Size(70, 13);
 			this->LABEL_INFO->TabIndex = 55;
 			this->LABEL_INFO->Text = L"Informations :";
 			// 
