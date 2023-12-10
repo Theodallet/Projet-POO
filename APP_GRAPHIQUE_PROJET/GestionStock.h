@@ -32,7 +32,12 @@ namespace APPGRAPHIQUEPROJET {
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
-
+		bool check_article_ID_entry();
+		bool check_article_name_entry();
+		bool check_article_price_entry();
+		bool check_article_color_entry();
+		bool check_article_TVA_entry();
+		bool check_article_quantity_entry();
 
 
 	protected:
