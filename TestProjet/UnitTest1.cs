@@ -248,7 +248,7 @@ namespace VotreNamespaceDeTest
             String Nom = "Brunel";
             String Prenom = "Florian";
             String Mail = "florian.brunel@viacesi.fr";
-            DateTime DatedeNaissance = 18/02/2004 10:00:00;
+            DateTime DatedeNaissance = 18/02/2004;
             String Ville = "Fresles";
             String Rue = "833 Route de Pommereval";
             String CodePostal = "76270";
@@ -787,27 +787,91 @@ namespace VotreNamespaceDeTest
     {
         public void Select_Article_ID_Test()
         {
+            CL_Map_ClientTests Test = new CL_Map_Client();
+
+            int Id = 1;
+
+            
+            var result = Test.Select_Article_ID(Id);
+
+            Assert.AreEqual(1, result[0]);
+            Assert.AreEqual(15, result[1]);
+            Assert.AreEqual("Arduino UNO", result[2]);
+            Assert.AreEqual("Vert", result[3]);
+            Assert.AreEqual(5, result[4]);
+            Assert.AreEqual(20, result[5]);
+           
 
         }
 
         public void Select_Article_Test()
         {
+            CL_Map_ClientTests Test = new CL_Map_Client();
 
+            var result = Test.Select_Article();
+
+            Assert.AreEqual(1, result[0]);
+            Assert.AreEqual(15, result[1]);
+            Assert.AreEqual("Arduino UNO", result[2]);
+            Assert.AreEqual("Vert", result[3]);
+            Assert.AreEqual(5, result[4]);
+            Assert.AreEqual(20, result[5]);
         }
 
         public void Insert_Article_Test()
         {
+            CL_Map_ClientTests Test = new CL_Map_Client();
 
+            int IDArt = 1;
+            float Prix = 15;
+            String Nom = "Arduino UNO";
+            String Couleur = "Vert";
+            int Stock = 5;
+            float TVA = 20;
+
+            var result = Test.Insert_Article(IDArt, Prix, Nom, Couleur, Stock, TVA);
+
+            Assert.AreEqual(1, result[0]);
+            Assert.AreEqual(15, result[1]);
+            Assert.AreEqual("Arduino UNO", result[2]);
+            Assert.AreEqual("Vert", result[3]);
+            Assert.AreEqual(5, result[4]);
+            Assert.AreEqual(20, result[5]);
         }
 
         public void Delete_Article_Test()
         {
+            CL_Map_ClientTests Test = new CL_Map_Client();
 
+            int IDSup = 1;
+
+            var result = Test.Delete_Article(IDSup);
+
+            Assert.AreEqual("", result[0]);
+            Assert.AreEqual("", result[1]);
+            Assert.AreEqual("", result[2]);
+            Assert.AreEqual("", result[3]);
+            Assert.AreEqual("", result[4]);
+            Assert.AreEqual("", result[5]);
         }
 
         public void Update_Article_Test()
         {
+            int IDArt = 1;
+            float Prix = 20;
+            String Nom = "Arduino MEGA"
+            String Couleur = "Noir";
+            int Stock = 5;
+            float TVA = 20;
 
+            var result = Test.Update_Article(IDArt, Prix, Nom, Couleur, Stock, TVA);
+
+            Assert.AreEqual(1, result[0]);
+            Assert.AreEqual(20, result[1]);
+            Assert.AreEqual("Arduino MEGA", result[2]);
+            Assert.AreEqual("Noir", result[3]);
+            Assert.AreEqual(5, result[4]);
+            Assert.AreEqual(20, result[5]);
 
         }
 
