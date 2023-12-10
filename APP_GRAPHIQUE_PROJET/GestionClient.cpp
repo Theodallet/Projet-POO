@@ -3,6 +3,7 @@
 #include <stdexcept>
 #include <Windows.h> 
 #include <msclr/marshal_cppstd.h>
+#include <regex>
 
 #pragma comment(lib, "user32.lib")
 
@@ -131,70 +132,18 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_surname_entry()
 
 bool APPGRAPHIQUEPROJET::GestionClient::check_client_mail_entry()
 {
-	String^ Client_Mail = this->TXT_MAIL_CLIENT->Text;
-
-	// Vérifier si l'entrée est nulle ou non 
-	if (String::IsNullOrEmpty(Client_Mail)) {
-		MessageBoxA(NULL, "Le champ Prenom client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
-		return false;
-	}
-
 	// Convertir System::String^ en std::string
-	std::string clientMailStdString = msclr::interop::marshal_as<std::string>(Client_Mail);
+	std::string emailStdString = msclr::interop::marshal_as<std::string>(this->TXT_MAIL_CLIENT->Text);
 
-	// On vérifie que le texte ne contient que des caractères alphanumériques et l'@
-	bool is_valid = true;
-	for (char c : clientMailStdString) {
-		if (!isalnum(c) && c != '@') {
-			is_valid = false;
-			break;
-		}
+	// Expression régulière pour valider une adresse e-mail simple
+	std::regex regexPattern(R"([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})");
+
+	// Vérifier si la chaîne correspond à l'expression régulière
+	if(std::regex_match(emailStdString, regexPattern) == FALSE ){
+		MessageBoxA(NULL, "Mail invalide.", "Erreur", MB_OK | MB_ICONERROR);
 	}
-
-	if (!is_valid) {
-		MessageBoxA(NULL, "Le champ mail client ne doit contenir que des lettres, des chiffres et l'@.", "Erreur", MB_OK | MB_ICONERROR);
-		return false;
-	}
-
-	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
-	for (char c : clientMailStdString) {
-		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ mail client ne doit pas contenir de caractères spéciaux pouvant être utilisés pour des injections SQL.", "Erreur", MB_OK | MB_ICONERROR);
-			return false;
-		}
-	}
-
-	// On vérifie que le texte contient un @
-	int atIndex = Client_Mail->IndexOf('@');
-	if (atIndex == -1 || atIndex == 0 || atIndex == Client_Mail->Length - 1) {
-		MessageBoxA(NULL, "Le champ mail doit contenir un @ et ne peut pas commencer ou se terminer par @.", "Erreur", MB_OK | MB_ICONERROR);
-		return false;
-	}
-
-	// On vérifie que le texte contient une extension de mail valide
-	String^ extension = Client_Mail->Substring(atIndex + 1);
-	std::string clientExtensionStdString = msclr::interop::marshal_as<std::string>(extension);
-
-	// Liste des extensions valides
-	std::vector<std::string> valid_extensions = { "gmail.com", ".fr", ".net", ".org", ".edu" };
-
-	bool is_valid_extension = false;
-
-	for (const std::string& valid_extension : valid_extensions) {
-		// Comparaison insensible à la casse
-		if (_stricmp(clientExtensionStdString.c_str(), valid_extension.c_str()) == 0) {
-			is_valid_extension = true;
-			break;
-		}
-	}
-
-	if (!is_valid_extension) {
-		MessageBoxW(NULL, L"Le champ mail doit contenir une extension valide.", L"Erreur", MB_OK | MB_ICONERROR);
-		return false;
-	}
-
-	// Le texte est valide -> on retourne true
-	return true;
+	
+	return TRUE;
 }
 
 
