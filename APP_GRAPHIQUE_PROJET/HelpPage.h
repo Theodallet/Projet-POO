@@ -57,6 +57,7 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Windows::Forms::PictureBox^ BarreNoir;
 	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
 
 
 
@@ -76,11 +77,14 @@ namespace APPGRAPHIQUEPROJET {
 		   /// </summary>
 		   void InitializeComponent(void)
 		   {
+			   System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ManuelUtilisation::typeid));
 			   this->RETURN_MAUNEL_UTILISATION_HOME = (gcnew System::Windows::Forms::Button());
 			   this->TitreManuel = (gcnew System::Windows::Forms::Label());
 			   this->BarreNoir = (gcnew System::Windows::Forms::PictureBox());
 			   this->label2 = (gcnew System::Windows::Forms::Label());
+			   this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BarreNoir))->BeginInit();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			   this->SuspendLayout();
 			   // 
 			   // RETURN_MAUNEL_UTILISATION_HOME
@@ -116,7 +120,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->BarreNoir->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
 			   this->BarreNoir->Location = System::Drawing::Point(-4, -20);
 			   this->BarreNoir->Name = L"BarreNoir";
-			   this->BarreNoir->Size = System::Drawing::Size(1291, 759);
+			   this->BarreNoir->Size = System::Drawing::Size(1291, 104);
 			   this->BarreNoir->TabIndex = 242;
 			   this->BarreNoir->TabStop = false;
 			   // 
@@ -127,15 +131,25 @@ namespace APPGRAPHIQUEPROJET {
 			   this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 25.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->label2->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			   this->label2->Location = System::Drawing::Point(395, 282);
+			   this->label2->Location = System::Drawing::Point(225, 225);
 			   this->label2->Name = L"label2";
-			   this->label2->Size = System::Drawing::Size(425, 60);
+			   this->label2->Size = System::Drawing::Size(415, 59);
 			   this->label2->TabIndex = 244;
 			   this->label2->Text = L"JFUME LA BEUUUH";
+			   // 
+			   // pictureBox2
+			   // 
+			   this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
+			   this->pictureBox2->Location = System::Drawing::Point(-4, 74);
+			   this->pictureBox2->Name = L"pictureBox2";
+			   this->pictureBox2->Size = System::Drawing::Size(1263, 657);
+			   this->pictureBox2->TabIndex = 245;
+			   this->pictureBox2->TabStop = false;
 			   // 
 			   // ManuelUtilisation
 			   // 
 			   this->ClientSize = System::Drawing::Size(1256, 725);
+			   this->Controls->Add(this->pictureBox2);
 			   this->Controls->Add(this->label2);
 			   this->Controls->Add(this->RETURN_MAUNEL_UTILISATION_HOME);
 			   this->Controls->Add(this->TitreManuel);
@@ -143,6 +157,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->Name = L"ManuelUtilisation";
 			   this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BarreNoir))->EndInit();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			   this->ResumeLayout(false);
 			   this->PerformLayout();
 
