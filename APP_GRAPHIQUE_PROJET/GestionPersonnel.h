@@ -782,112 +782,42 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 
 	private: System::Void BOUTON_ADD_PERSONNEL_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		String^ Personnel_Nom;
-		String^ Personnel_Prenom;
-		String^ Personnel_Mail;
-		String^ Personnel_Rue;
-		DateTime Personnel_Date_N;
-		String^ Personnel_Code_Postal;
-		String^ Personnel_Ville;
-		String^ Personnel_Batiment;
+		String^ Personnel_Nom = this->TXT_NOM_PERSONNEL->Text;;
+		String^ Personnel_Prenom = this->TXT_PRENOM_PERSONNEL->Text;
+		String^ Personnel_Mail = this->TXT_MAIL_PERSONNEL->Text;
+		String^ Personnel_Rue = this->TXT_RUE_PERSONNEL->Text;
+		DateTime Personnel_Date_N = DateTime::Parse(this->TXT_BD_PERSONNEL->Text);
+		String^ Personnel_Code_Postal = this->TXT_CP_PERSONNEL->Text;
+		String^ Personnel_Ville = this->TXT_VILLE_PERSONNEL->Text;
+		String^ Personnel_Batiment = this->TXT_BAT_PERSONNEL->Text;
 		int Personnel_Etage;
-		DateTime Personnel_Date_E;
-		String^ Personnel_Role;
+		if (this->TXT_ETAGE_PERSONNEL->Text != "") {
+			Personnel_Etage = Convert::ToInt32(this->TXT_ID_SUP->Text);
+		}
+		DateTime Personnel_Date_E = DateTime::Parse(this->TXT_DATE_EMBAUCHE_PERSONNEL->Text);
+		String^ Personnel_Role = this->TEXT_ROLE_PERSONNEL->Text;
 		int Personnel_ID_Supperieur;
-
-		bool isValid = false;
-
-		while (!isValid) {
-			// Vérifier le champ 'nom'
-			bool isNameValid = check_personnel_name_entry();
-			if (!isNameValid) {
-				MessageBox::Show("Le champ 'nom' client ne doit contenir que des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-			Personnel_Nom = this->TXT_NOM_PERSONNEL->Text;
-
-			// Vérifier le champ 'prénom'
-			bool isSurnameValid = check_personnel_surname_entry();
-			if (!isSurnameValid) {
-				MessageBox::Show("Le champ 'prénom' client ne doit contenir que des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-			Personnel_Prenom = this->TXT_PRENOM_PERSONNEL->Text;
-
-			// Vérifier le champ 'mail'
-			bool isMailValid = check_personnel_mail_entry();
-			if (!isMailValid) {
-				MessageBox::Show("Le champ 'mail' client ne doit contenir que une extension valide.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-			Personnel_Mail = this->TXT_MAIL_PERSONNEL->Text;
-
-			Personnel_Date_N = DateTime::Parse(this->TXT_BD_PERSONNEL->Text);
-
-			// Vérifier le champ 'rue'
-			bool isRueValid = check_personnel_rue_entry();
-			if (!isRueValid) {
-				MessageBox::Show("Le champ 'rue' client ne doit contenir que des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-			Personnel_Rue = this->TXT_RUE_PERSONNEL->Text;
-
-			// Vérifier le champ 'code postal'
-			bool isCPValid = check_personnel_code_postal_entry();
-			if (!isCPValid) {
-				MessageBox::Show("Le champ 'code postal' client ne doit contenir que des chiffres et des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-			Personnel_Code_Postal = this->TXT_CP_PERSONNEL->Text;
-
-			// Vérifier le champ 'ville'
-			bool isVilleValid = check_personnel_ville_entry();
-			if (!isVilleValid) {
-				MessageBox::Show("Le champ 'ville' client ne doit contenir que des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-			Personnel_Ville = this->TXT_VILLE_PERSONNEL->Text;
-
-			// Vérifier le champ 'bâtiment'
-			bool isBatimentValid = check_personnel_name_building_entry();
-			if (!isBatimentValid) {
-				MessageBox::Show("Le champ 'bâtiment' client ne doit contenir que des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-			Personnel_Batiment = this->TXT_BAT_PERSONNEL->Text;
-
-			// Vérifier le champ 'étage'
-			bool isEtageValid = check_personnel_floor_entry();
-			if (!isEtageValid) {
-				MessageBox::Show("Le champ 'étage' client ne doit contenir que des chiffres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-			Personnel_Etage = Convert::ToInt32(this->TXT_ETAGE_PERSONNEL->Text);
-
-			// Si toutes les vérifications passent, marquer comme valide et sortir de la boucle
-			isValid = true;
-
-			Personnel_Date_E = DateTime::Parse(this->TXT_DATE_EMBAUCHE_PERSONNEL->Text);
-
-			// Vérifier le champ 'role'
-			bool isRoleValid = check_personnel_role_entry();
-			if (!isRoleValid) {
-				MessageBox::Show("Le champ 'étage' client ne doit contenir que des chiffres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-			String^ Personnel_Role = this->TEXT_ROLE_PERSONNEL->Text;
-
-			// Vérifier le champ 'étage'
-			bool isIDSuppValid = check_personnel_ID_supperior_entry();
-			if (!isIDSuppValid) {
-				MessageBox::Show("Le champ 'étage' client ne doit contenir que des chiffres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
+		if (this->TXT_ETAGE_PERSONNEL->Text != "") {
 			Personnel_ID_Supperieur = Convert::ToInt32(this->TXT_ID_SUP->Text);
 		}
 
+		bool isNameValid = check_personnel_name_entry();
+		bool isSurnameValid = check_personnel_surname_entry();
+		bool isMailValid = check_personnel_mail_entry();
+		bool isRueValid = check_personnel_rue_entry();
+		bool isCPValid = check_personnel_code_postal_entry();
+		bool isVilleValid = check_personnel_ville_entry();
+		bool isBatimentValid = check_personnel_name_building_entry();
+		bool isEtageValid = check_personnel_floor_entry();
+		bool is = check_personnel_floor_entry();
+		bool isEtageValid = check_personnel_floor_entry();
+		bool isRoleValid = check_personnel_role_entry();
+		bool isIDSuppValid = check_personnel_ID_supperior_entry();
 
-		this->oSvc_Personel->ajouter_Personel(Personnel_Nom, Personnel_Prenom, Personnel_Mail, Personnel_Date_N, Personnel_Ville, Personnel_Rue, Personnel_Code_Postal, Personnel_Batiment, Personnel_Etage, Personnel_Date_E, Personnel_Role, Personnel_ID_Supperieur);
+
+		if (isNameValid & isSurnameValid & isMailValid & isRueValid & isCPValid & isVilleValid & isBatimentValid & isEtageValid & isRoleValid & isIDSuppValid) {
+			this->oSvc_Personel->ajouter_Personel(Personnel_Nom, Personnel_Prenom, Personnel_Mail, Personnel_Date_N, Personnel_Ville, Personnel_Rue, Personnel_Code_Postal, Personnel_Batiment, Personnel_Etage, Personnel_Date_E, Personnel_Role, Personnel_ID_Supperieur);
+		}
 		
 		this->TXT_NOM_PERSONNEL->Text = "";
 		this->TXT_PRENOM_PERSONNEL->Text = "";
