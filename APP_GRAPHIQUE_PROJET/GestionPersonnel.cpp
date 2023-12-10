@@ -326,6 +326,12 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_role_entry()
 {
 	String^ Personnel_Role = this->TEXT_ROLE_PERSONNEL->Text;
 
+	// Vérifier si l'entrée est nulle ou non 
+	if (String::IsNullOrEmpty(Personnel_Role)) {
+		MessageBoxA(NULL, "Le champ Code Postal personnel ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		return false;
+	}
+
 	// Convertir System::String^ en std::string
 	std::string personnelRoledString = msclr::interop::marshal_as<std::string>(Personnel_Role);
 
