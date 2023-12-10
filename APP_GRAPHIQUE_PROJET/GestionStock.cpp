@@ -9,12 +9,6 @@
 
 using namespace std;
 
-float Article_Prix = Convert::ToSingle(this->TXT_PRIX_ARTICLE->Text);
-float Article_TVA = Convert::ToSingle(this->TXT_TVA_ARTICLE->Text);
-
-bool check_article_price_entry();
-bool check_article_TVA_entry();
-
 
 bool APPGRAPHIQUEPROJET::GestionStock::check_article_ID_entry()
 {
@@ -88,38 +82,34 @@ bool APPGRAPHIQUEPROJET::GestionStock::check_article_name_entry()
 	return true;
 }
 
-
-
-
 //
 // 3) Méthode pour checker les entrées pour le prénom du client + éviter les injections SQL
 //
-
-bool APPGRAPHIQUEPROJET::GestionStock::check_article_color_entry();
+bool APPGRAPHIQUEPROJET::GestionStock::check_article_color_entry()
 {
 	String^ Article_Couleur = this->TXT_COULEUR_ARTICLE->Text;
 
 	// Vérifier si l'entrée est nulle ou non 
 	if (String::IsNullOrEmpty(Article_Couleur)) {
-		MessageBoxA(NULL, "Le champ Prenom client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		MessageBoxA(NULL, "Le champ Couleur article ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
 	// Convertir System::String^ en std::string
-	std::string articleColorStdString = msclr::interop::marshal_as<std::string>(Article_Couleur);
+	std::string clientCouleurStdString = msclr::interop::marshal_as<std::string>(Article_Couleur);
 
 	// On vérifie que le texte ne contient que des lettres
-	for (char c : articleColorStdString) {
+	for (char c : clientCouleurStdString) {
 		if (!isalpha(c)) {
-			MessageBoxA(NULL, "Le champ prénom client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ 'couleur' article ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
 
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
-	for (char c : articleColorStdString) {
+	for (char c : clientCouleurStdString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ prénom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ couleur article ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -130,55 +120,32 @@ bool APPGRAPHIQUEPROJET::GestionStock::check_article_color_entry();
 //
 // 4) Méthode pour checker l' entrée pour la ville du client + éviter les injections SQL
 //
-
-bool APPGRAPHIQUEPROJET::GestionClient::check_client_mail_entry()
+bool APPGRAPHIQUEPROJET::GestionStock::check_article_quantity_entry()
 {
-	String^ Client_Mail = this->TXT_PRENOM_CLIENT->Text;
-
-	// Convertir System::String^ en std::string
-	std::string emailStdString = msclr::interop::marshal_as<std::string>(this->TXT_MAIL_CLIENT->Text);
-
-	// Expression régulière pour valider une adresse e-mail simple
-	std::regex regexPattern(R"([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})");
-
-	// Vérifier si la chaîne correspond à l'expression régulière
-	if (std::regex_match(emailStdString, regexPattern) == FALSE) {
-		MessageBoxA(NULL, "Mail invalide.", "Erreur", MB_OK | MB_ICONERROR);
-		return FALSE;
-	}
-
-	return true;
-
-}
-//
-// 6) Méthode pour checker l' entrée pour la ville du client + éviter les injections SQL
-//
-
-bool APPGRAPHIQUEPROJET::GestionClient::check_client_ville_entry()
-{
-	String^ Client_Ville = this->TXT_VILLE_CLIENT->Text;
+	String^ Article_Stock = this->TXT_STOCK_ARTICLE->Text;
 
 	// Vérifier si l'entrée est nulle ou non 
-	if (String::IsNullOrEmpty(Client_Ville)) {
-		MessageBoxA(NULL, "Le champ Ville client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+	if (String::IsNullOrEmpty(Article_Stock)) {
+		MessageBoxA(NULL, "Le champ quantité article ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
 	// Convertir System::String^ en std::string
-	std::string clientVilleStdString = msclr::interop::marshal_as<std::string>(Client_Ville);
+	std::string articleStockString = msclr::interop::marshal_as<std::string>(Article_Stock);
 
-	// On vérifie que le texte ne contient que des lettres
-	for (char c : clientVilleStdString) {
-		if (!isalpha(c)) {
-			MessageBoxA(NULL, "Le champ ville client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
-			return false;
-		}
+	// On vérifie que le texte peut être converti en float
+	try {
+		std::stof(articleStockString); // essaie de convertir la chaîne en float
+	}
+	catch (const std::invalid_argument&) {
+		MessageBoxA(NULL, "Le champs quantité article client doit être un nombre valide.", "Erreur", MB_OK | MB_ICONERROR);
+		return false;
 	}
 
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
-	for (char c : clientVilleStdString) {
+	for (char c : articleStockString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ ville client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ quantité article ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -186,35 +153,36 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_ville_entry()
 	// Le texte est valide -> on retourne true
 	return true;
 }
+
 //
 // 7) Méthode pour checker l' entrée pour la rue du client + éviter les injections SQL
 //
-
-bool APPGRAPHIQUEPROJET::GestionClient::check_client_rue_entry()
+bool APPGRAPHIQUEPROJET::GestionStock::check_article_price_entry()
 {
-	String^ Client_Rue = this->TXT_RUE_CLIENT->Text;
+	String^ Article_Prix = this->TXT_PRIX_ARTICLE->Text;
 
 	// Vérifier si l'entrée est nulle ou non 
-	if (String::IsNullOrEmpty(Client_Rue)) {
-		MessageBoxA(NULL, "Le champ Rue client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+	if (String::IsNullOrEmpty(Article_Prix)) {
+		MessageBoxA(NULL, "Le champ prix article ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
 	// Convertir System::String^ en std::string
-	std::string clientRuedString = msclr::interop::marshal_as<std::string>(Client_Rue);
+	std::string articlePriceString = msclr::interop::marshal_as<std::string>(Article_Prix);
 
-	// On vérifie que le texte ne contient que des lettres
-	for (char c : clientRuedString) {
-		if (!isalpha(c)) {
-			MessageBoxA(NULL, "Le champ nom client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
-			return false;
-		}
+	// On vérifie que le texte peut être converti en float
+	try {
+		std::stof(articlePriceString); // essaie de convertir la chaîne en float
+	}
+	catch (const std::invalid_argument&) {
+		MessageBoxA(NULL, "Le champs prix article client doit être un nombre valide.", "Erreur", MB_OK | MB_ICONERROR);
+		return false;
 	}
 
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
-	for (char c : clientRuedString) {
+	for (char c : articlePriceString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ nom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ prix article ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -222,35 +190,34 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_rue_entry()
 	// Le texte est valide -> on retourne true
 	return true;
 }
-//
-// 8) Méthode pour checker l' entrée pour le code postal du client + éviter les injections SQL
-//
 
-bool APPGRAPHIQUEPROJET::GestionClient::check_client_code_postal_entry()
+
+bool APPGRAPHIQUEPROJET::GestionStock::check_article_TVA_entry()
 {
-	String^ Client_Code_Postal = this->TXT_CP_CLIENT->Text;
+	String^ Article_TVA = this->TXT_TVA_ARTICLE->Text;
 
 	// Vérifier si l'entrée est nulle ou non 
-	if (String::IsNullOrEmpty(Client_Code_Postal)) {
-		MessageBoxA(NULL, "Le champ Code Postal client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+	if (String::IsNullOrEmpty(Article_TVA)) {
+		MessageBoxA(NULL, "Le champ TVA article ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
 	// Convertir System::String^ en std::string
-	std::string clientCodePostaldString = msclr::interop::marshal_as<std::string>(Client_Code_Postal);
+	std::string articleTVAString = msclr::interop::marshal_as<std::string>(Article_TVA);
 
-	// On vérifie que le texte ne contient que des lettres
-	for (char c : clientCodePostaldString) {
-		if (!isalnum(c)) { // VARIANTE AVEC DE l'ALPHANUMERIQUE
-			MessageBoxA(NULL, "Le champ nom client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
-			return false;
-		}
+	// On vérifie que le texte peut être converti en float
+	try {
+		std::stof(articleTVAString); // essaie de convertir la chaîne en float
+	}
+	catch (const std::invalid_argument&) {
+		MessageBoxA(NULL, "Le champs TVA article client doit être un nombre entrier ou à virgule.", "Erreur", MB_OK | MB_ICONERROR);
+		return false;
 	}
 
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
-	for (char c : clientCodePostaldString) {
+	for (char c : articleTVAString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ nom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ TVA article ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -258,61 +225,3 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_code_postal_entry()
 	// Le texte est valide -> on retourne true
 	return true;
 }
-//
-// 9) Méthode pour checker l' entrée pour le nom du bâtiment + éviter les injections SQL
-//
-
-bool APPGRAPHIQUEPROJET::GestionClient::check_client_name_building_entry()
-{
-	String^ Client_Batiment = this->TXT_BAT_CLIENT->Text;
-
-	// Convertir System::String^ en std::string
-	std::string clientBatimentdString = msclr::interop::marshal_as<std::string>(Client_Batiment);
-
-	// On vérifie que le texte ne contient que des lettres
-	for (char c : clientBatimentdString) {
-		if (!isalnum(c)) { // VARIANTE AVEC DE l'ALPHANUMERIQUE
-			MessageBoxA(NULL, "Le champ nom client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
-			return false;
-		}
-	}
-
-	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
-	for (char c : clientBatimentdString) {
-		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ nom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
-			return false;
-		}
-	}
-
-	// Le texte est valide -> on retourne true
-	return true;
-}
-
-bool APPGRAPHIQUEPROJET::GestionStock::check_article_quantity_entry();
-{
-	int Article_Stock = Convert::ToInt32(this->TXT_STOCK_ARTICLE->Text);
-
-	// Convertir System::String^ en std::string
-	std::string articleEtageString = msclr::interop::marshal_as<std::string>(Article_Stock);
-
-	// On vérifie que le texte ne contient que des chiffres
-	for (char c : articleEtageString) {
-		if (!Char::IsDigit(c)) {
-			MessageBoxA(NULL, "Le champ batiment client ne doit contenir que des chiffres.", "Erreur", MB_OK | MB_ICONERROR);
-			return false;
-		}
-	}
-
-	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
-	for (char c : articleEtageString) {
-		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ nom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
-			return false;
-		}
-	}
-
-	// Le texte est valide -> on retourne true
-	return true;
-}
-

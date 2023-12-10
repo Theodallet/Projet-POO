@@ -32,12 +32,12 @@ namespace APPGRAPHIQUEPROJET {
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
-		//bool check_article_ID_entry();
-		//bool check_article_name_entry();
-		//bool check_article_price_entry();
-		//bool check_article_color_entry();
-		//bool check_article_TVA_entry();
-		//bool check_article_quantity_entry();
+		bool check_article_ID_entry();
+		bool check_article_name_entry();
+		bool check_article_price_entry();
+		bool check_article_color_entry();
+		bool check_article_TVA_entry();
+		bool check_article_quantity_entry();
 
 
 	protected:
@@ -573,17 +573,43 @@ namespace APPGRAPHIQUEPROJET {
 		this->TXT_STOCK_ARTICLE->Text = "";
 	}
 
-
-
 	private: System::Void BOUTON_AJOUTER_ARTICLE_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		String^ Article_Nom = this->TXT_NOM_ARTICLE->Text;
-		float Article_Prix = Convert::ToSingle(this->TXT_PRIX_ARTICLE->Text);
+		float Article_Prix;
+		if (this->TXT_PRIX_ARTICLE->Text != "") {
+			Article_Prix = Convert::ToSingle(this->TXT_PRIX_ARTICLE->Text);
+		}
 		String^ Article_Couleur = this->TXT_COULEUR_ARTICLE->Text;
-		float Article_TVA = Convert::ToSingle(this->TXT_TVA_ARTICLE->Text); 
-		int Article_Stock = Convert::ToInt32(this->TXT_STOCK_ARTICLE->Text);
+		float Article_TVA;
+		if (this->TXT_TVA_ARTICLE->Text != "") {
+			Article_TVA = Convert::ToSingle(this->TXT_TVA_ARTICLE->Text);
+		}
+		int Article_Stock;
+		if (this->TXT_STOCK_ARTICLE->Text != "")
+		{
+			Article_Stock = Convert::ToInt32(this->TXT_STOCK_ARTICLE->Text);
+		}
 
-		this->oSvc_Article->ajouter_Article(Article_Prix, Article_Nom, Article_Couleur, Article_Stock, Article_TVA);
+
+		bool isNameValid = check_article_name_entry();
+		bool isPriceValid = check_article_price_entry();
+		bool isColorValid = check_article_color_entry();
+		bool isTVAValid = check_article_TVA_entry();
+		bool isQuantityValid = check_article_quantity_entry();
+
+		if (isNameValid & isPriceValid & isColorValid & isTVAValid & isQuantityValid) {
+			this->oSvc_Article->ajouter_Article(Article_Prix, Article_Nom, Article_Couleur, Article_Stock, Article_TVA);
+		}
+
+		// Action à faire
+
+		// Vide de la page
+
+		this->AFFICHAGE_STOCK->Refresh();
+		this->oSvc_Article->selectionner_Article("Rsl");
+		this->AFFICHAGE_STOCK->DataSource = this->oDs;
+		this->AFFICHAGE_STOCK->DataMember = "Rsl";
 
 		this->TXT_NOM_ARTICLE->Text = "";
 		this->TXT_PRIX_ARTICLE->Text = "";
