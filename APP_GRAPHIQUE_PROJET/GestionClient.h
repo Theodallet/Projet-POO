@@ -689,7 +689,6 @@ namespace APPGRAPHIQUEPROJET {
 		bool isNameValid = check_client_name_entry();
 		String^ Client_Nom = this->TXT_NOM_CLIENT->Text;
 
-
 		bool isSurnameValid = check_client_surname_entry();
 		String^ Client_Prenom = this->TXT_PRENOM_CLIENT->Text;
 

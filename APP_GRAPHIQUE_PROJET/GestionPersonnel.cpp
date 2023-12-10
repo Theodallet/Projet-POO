@@ -1,5 +1,4 @@
 #include "GestionPersonnel.h"
-#include "GestionClient.h"
 #include <iostream>
 #include <stdexcept>
 #include <Windows.h> 

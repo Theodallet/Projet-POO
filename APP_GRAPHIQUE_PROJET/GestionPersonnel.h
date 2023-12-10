@@ -33,6 +33,16 @@ namespace APPGRAPHIQUEPROJET {
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
+		bool check_personnel_ID_entry();
+		bool check_personnel_name_entry();
+		bool check_peronnel_surname_entry();
+		bool check_peronnel_mail_entry();
+		bool check_peronnel_ville_entry();
+		bool check_peronnel_rue_entry();
+		bool check_peronnel_code_postal_entry();
+		bool check_peronnel_name_building_entry();
+		bool check_peronnel_floor_entry();
+
 
 	protected:
 		/// <summary>

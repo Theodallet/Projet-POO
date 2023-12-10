@@ -170,7 +170,7 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_mail_entry()
 	std::string clientExtensionStdString = msclr::interop::marshal_as<std::string>(extension);
 
 	// Liste des extensions valides
-	std::vector<std::string> valid_extensions = { ".com", ".fr", ".net", ".org", ".edu" };
+	std::vector<std::string> valid_extensions = { "gmail.com", ".fr", ".net", ".org", ".edu" };
 
 	bool is_valid_extension = false;
 
