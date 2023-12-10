@@ -627,7 +627,6 @@ namespace APPGRAPHIQUEPROJET {
 		{
 			Article_ID = Convert::ToInt32(this->TXT_ID_ARTICLE->Text);
 		}
-		Convert::ToInt32(this->TXT_ID_ARTICLE->Text);
 		String^ Article_Nom = this->TXT_NOM_ARTICLE->Text;
 		float Article_Prix;
 		if (this->TXT_PRIX_ARTICLE->Text != "") {
@@ -651,8 +650,9 @@ namespace APPGRAPHIQUEPROJET {
 		bool isTVAValid = check_article_TVA_entry();
 		bool isQuantityValid = check_article_quantity_entry();
 
-		this->oSvc_Article->modifier_Article(Article_ID, Article_Prix, Article_Nom, Article_Couleur, Article_Stock, Article_TVA);
-
+		if (isIDValid & isNameValid & isPriceValid & isColorValid & isTVAValid & isQuantityValid) {
+			this->oSvc_Article->modifier_Article(Article_ID, Article_Prix, Article_Nom, Article_Couleur, Article_Stock, Article_TVA);
+		}
 
 		this->TXT_ID_ARTICLE->Text = "";
 		this->TXT_NOM_ARTICLE->Text = "";
