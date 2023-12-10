@@ -32,7 +32,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_ID_entry()
 	// On vérifie que le texte ne contient que des chiffres
 	for (char c : peronnelIDString) {
 		if (!Char::IsDigit(c)) {
-			MessageBoxA(NULL, "Le champ batiment client ne doit contenir que des chiffres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ ID personnel ne doit contenir que des chiffres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -40,7 +40,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_ID_entry()
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
 	for (char c : peronnelIDString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ nom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ ID personnel ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -61,7 +61,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_name_entry()
 
 	// Vérifier si l'entrée est nulle ou non 
 	if (String::IsNullOrEmpty(Personnel_Nom)) {
-		MessageBoxA(NULL, "Le champ Nom client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		MessageBoxA(NULL, "Le champ Nom personnel ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
@@ -71,7 +71,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_name_entry()
 	// On vérifie que le texte ne contient que des lettres
 	for (char c : personnelNomStdString) {
 		if (!isalpha(c)) {
-			MessageBoxA(NULL, "Le champ 'nom' client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ 'nom' personnel ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -79,7 +79,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_name_entry()
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
 	for (char c : personnelNomStdString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ nom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ nom personnel ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -101,7 +101,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_surname_entry()
 
 	// Vérifier si l'entrée est nulle ou non 
 	if (String::IsNullOrEmpty(Personnel_Prenom)) {
-		MessageBoxA(NULL, "Le champ Prenom client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		MessageBoxA(NULL, "Le champ Prenom personnel ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
@@ -111,7 +111,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_surname_entry()
 	// On vérifie que le texte ne contient que des lettres
 	for (char c : personnelPrenomStdString) {
 		if (!isalpha(c)) {
-			MessageBoxA(NULL, "Le champ prénom client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ prénom personnel ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -119,7 +119,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_surname_entry()
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
 	for (char c : personnelPrenomStdString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ prénom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ prénom personnel ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -161,7 +161,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_ville_entry()
 
 	// Vérifier si l'entrée est nulle ou non 
 	if (String::IsNullOrEmpty(Personnel_Ville)) {
-		MessageBoxA(NULL, "Le champ Ville client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		MessageBoxA(NULL, "Le champ Ville personnel ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
@@ -171,7 +171,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_ville_entry()
 	// On vérifie que le texte ne contient que des lettres
 	for (char c : personnelVilleStdString) {
 		if (!isalpha(c)) {
-			MessageBoxA(NULL, "Le champ ville client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ ville personnel ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -179,7 +179,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_ville_entry()
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
 	for (char c : personnelVilleStdString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ ville client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ ville personnel ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -199,7 +199,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_rue_entry()
 
 	// Vérifier si l'entrée est nulle ou non 
 	if (String::IsNullOrEmpty(Personnel_Rue)) {
-		MessageBoxA(NULL, "Le champ Rue client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		MessageBoxA(NULL, "Le champ Rue personnel ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
@@ -209,7 +209,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_rue_entry()
 	// On vérifie que le texte ne contient que des lettres
 	for (char c : personnelRueStdString) {
 		if (!isalpha(c)) {
-			MessageBoxA(NULL, "Le champ nom client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ Rue personnel  ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -217,7 +217,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_rue_entry()
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
 	for (char c : personnelRueStdString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ nom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ Rue personnel  ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -236,7 +236,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_code_postal_entry()
 
 	// Vérifier si l'entrée est nulle ou non 
 	if (String::IsNullOrEmpty(Personnel_Code_Postal)) {
-		MessageBoxA(NULL, "Le champ Code Postal client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		MessageBoxA(NULL, "Le champ Code Postal personnel ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
@@ -246,7 +246,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_code_postal_entry()
 	// On vérifie que le texte ne contient que des lettres
 	for (char c : personnelCodePostaldString) {
 		if (!isalnum(c)) { // VARIANTE AVEC DE l'ALPHANUMERIQUE
-			MessageBoxA(NULL, "Le champ nom client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ code postal personnel ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -254,7 +254,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_code_postal_entry()
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
 	for (char c : personnelCodePostaldString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ nom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ code postal personnel ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -277,7 +277,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_name_building_entry()
 	// On vérifie que le texte ne contient que des lettres
 	for (char c : personnelBatimentdString) {
 		if (!isalnum(c)) { // VARIANTE AVEC DE l'ALPHANUMERIQUE
-			MessageBoxA(NULL, "Le champ nom client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ batiment personnel ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -285,7 +285,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_name_building_entry()
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
 	for (char c : personnelBatimentdString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ nom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ batiment personnel ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
