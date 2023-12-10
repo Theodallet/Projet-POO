@@ -97,7 +97,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->RETURN_MAUNEL_UTILISATION_HOME->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			   this->RETURN_MAUNEL_UTILISATION_HOME->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold));
 			   this->RETURN_MAUNEL_UTILISATION_HOME->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->RETURN_MAUNEL_UTILISATION_HOME->Location = System::Drawing::Point(1133, 6);
+			   this->RETURN_MAUNEL_UTILISATION_HOME->Location = System::Drawing::Point(1133, 9);
 			   this->RETURN_MAUNEL_UTILISATION_HOME->Name = L"RETURN_MAUNEL_UTILISATION_HOME";
 			   this->RETURN_MAUNEL_UTILISATION_HOME->Size = System::Drawing::Size(93, 62);
 			   this->RETURN_MAUNEL_UTILISATION_HOME->TabIndex = 243;
@@ -123,7 +123,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->BarreNoir->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
 			   this->BarreNoir->Location = System::Drawing::Point(-21, -80);
 			   this->BarreNoir->Name = L"BarreNoir";
-			   this->BarreNoir->Size = System::Drawing::Size(1291, 184);
+			   this->BarreNoir->Size = System::Drawing::Size(1291, 159);
 			   this->BarreNoir->TabIndex = 242;
 			   this->BarreNoir->TabStop = false;
 			   // 
