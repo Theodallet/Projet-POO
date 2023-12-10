@@ -677,15 +677,6 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Void BOUTON_ADD_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		// Code de verification intégrité de données avant
-
-		// On vérifie si l'ID contient quelque chose, sinon il contient quelque chose on ne fait rien et on transmet
-
-	// Acquisition des données
-	
-	// Vérification du champ ID client
-
-		// Acquisition des données
 		
 		String^ Client_Nom = this->TXT_NOM_CLIENT->Text;
 		String^ Client_Prenom = this->TXT_PRENOM_CLIENT->Text;
@@ -714,15 +705,7 @@ namespace APPGRAPHIQUEPROJET {
 		if (isNameValid & isSurnameValid & isMailValid & isRueValid & isCPValid & isVilleValid & isBatimentValid & isEtageValid) {
 			this->oSvc_Client->ajouter_Client(Client_Nom, Client_Prenom, Client_Mail, Client_Date_N, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
 		}
-										
-									
-								
-							
-						
-					
-				
-			
-		
+
 		// Action à faire
 		
 		// Vide de la page
@@ -747,14 +730,10 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Void BOUTON_MODIF_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		// Code de verification intégrité de données avant
 
-		// Acquisition des données		bool isIDValid = check_client_ID_entry();
-		bool isIDValid = check_client_name_entry();
-		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
-		if (!isIDValid) {
-			MessageBox::Show("Le champ 'ID' client ne doit contenir que des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
-			return;
+		int Client_ID;
+		if (this->TXT_ID_CLIENT->Text != "") {
+			Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
 		}
 		String^ Client_Nom = this->TXT_NOM_CLIENT->Text; ;
 		String^ Client_Prenom = this->TXT_PRENOM_CLIENT->Text;
@@ -764,15 +743,33 @@ namespace APPGRAPHIQUEPROJET {
 		String^ Client_Code_Postal = this->TXT_CP_CLIENT->Text;
 		String^ Client_Ville = this->TXT_VILLE_CLIENT->Text;
 		String^ Client_Batiment = this->TXT_BAT_CLIENT->Text;
-		int Client_Etage = Convert::ToInt32(this->TXT_ETAGE_CLIENT->Text);
+		int Client_Etage;
+		if (this->TXT_ETAGE_CLIENT->Text != "") {
+			Client_Etage = Convert::ToInt32(this->TXT_ETAGE_CLIENT->Text);
+		}
 
-		// Action à faire
-		this->oSvc_Client->modifier_Client(Client_ID, Client_Nom, Client_Prenom, Client_Mail, Client_Date_N, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
+		bool isIdsValid = check_client_ID_entry();
+		bool isNameValid = check_client_name_entry();
+		bool isSurnameValid = check_client_surname_entry();
+		bool isMailValid = check_client_mail_entry();
+		bool isRueValid = check_client_rue_entry();
+		bool isCPValid = check_client_code_postal_entry();
+		bool isVilleValid = check_client_ville_entry();
+		bool isBatimentValid = check_client_name_building_entry();
+		bool isEtageValid = check_client_floor_entry();
 
+
+		if (isIdsValid & isNameValid & isSurnameValid & isMailValid & isRueValid & isCPValid & isVilleValid & isBatimentValid & isEtageValid) {
+			this->oSvc_Client->modifier_Client(Client_ID, Client_Nom, Client_Prenom, Client_Mail, Client_Date_N, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
+		}
 		// Vide de la page
 
-		this->TXT_ID_CLIENT->Text = "";
+		this->AFFICHAGE_CLIENT->Refresh();
+		this->oSvc_Client->selectionner_Client("Rsl");
+		this->AFFICHAGE_CLIENT->DataSource = this->oDs;
+		this->AFFICHAGE_CLIENT->DataMember = "Rsl";
 
+		this->TXT_ID_CLIENT->Text = "";
 		this->TXT_NOM_CLIENT->Text = "";
 		this->TXT_PRENOM_CLIENT->Text = "";
 		this->TXT_BD_CLIENT->Text = "";
@@ -787,9 +784,19 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Void BOUTON_SUPP_CLIENT_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
+		int Client_ID;
+		if (this->TXT_ID_CLIENT->Text != "") {
+			Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT->Text);
+		}
+		bool isIdsValid = check_client_ID_entry();
+		if (isIdsValid) {
+			this->oSvc_Client->supprimer_Client(Client_ID);
+		}
 
-		this->oSvc_Client->supprimer_Client(Client_ID);
+		this->AFFICHAGE_CLIENT->Refresh();
+		this->oSvc_Client->selectionner_Client("Rsl");
+		this->AFFICHAGE_CLIENT->DataSource = this->oDs;
+		this->AFFICHAGE_CLIENT->DataMember = "Rsl";
 
 		this->TXT_ID_CLIENT->Text = "";
 	}
