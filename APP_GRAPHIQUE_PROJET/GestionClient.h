@@ -689,32 +689,58 @@ namespace APPGRAPHIQUEPROJET {
 		bool isNameValid = check_client_name_entry();
 		String^ Client_Nom = this->TXT_NOM_CLIENT->Text;
 
+
 		bool isSurnameValid = check_client_surname_entry();
 		String^ Client_Prenom = this->TXT_PRENOM_CLIENT->Text;
+		if (!isSurnameValid) {
+			MessageBox::Show("Le champ 'prénom' client ne doit contenir que des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
 		DateTime Client_Date_N = DateTime::Parse(this->TXT_BD_CLIENT->Text); // aucune entrée utilisateur donc pas de vérification
 
 		bool isMailValid = check_client_mail_entry();
 		String^ Client_Mail = this->TXT_MAIL_CLIENT->Text;
+		if (!isMailValid) {
+			MessageBox::Show("Le champ 'mail' client ne doit contenir que une signature valide type (@gmail.com / @sfr.fr etc...).", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
 		bool isRueValid = check_client_rue_entry();
-		String^ Client_Rue = this->TXT_RUE_CLIENT->Text;		
+		String^ Client_Rue = this->TXT_RUE_CLIENT->Text;
+		if (!isRueValid) {
+			MessageBox::Show("Le champ 'rue' client ne doit contenir que des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
 		bool isCPValid = check_client_code_postal_entry();
 		String^ Client_Code_Postal = this->TXT_CP_CLIENT->Text;
+		if (!isCPValid) {
+			MessageBox::Show("Le champ 'code postal' client ne doit contenir que des chiffres et des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
 		bool isVilleValid = check_client_ville_entry();
 		String^ Client_Ville = this->TXT_VILLE_CLIENT->Text;
+		if (!isVilleValid) {
+			MessageBox::Show("Le champ 'Ville' client ne doit contenir que lettres", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
 		bool isBatimentValid = check_client_name_building_entry();
 		String^ Client_Batiment = this->TXT_BAT_CLIENT->Text;
+		if (!isBatimentValid) {
+			MessageBox::Show("Le champ 'Batiment' client ne doit contenir que des des lettres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
 		bool isEtageValid = check_client_floor_entry();
-		int Client_Etage;
-		if (this->TXT_ETAGE_CLIENT->Text != ""){
-			int Client_Etage = Convert::ToInt32(this->TXT_ETAGE_CLIENT->Text);
+		int Client_Etage = Convert::ToInt32(this->TXT_ETAGE_CLIENT->Text);
+		if (!isEtageValid) {
+			MessageBox::Show("Le champ 'Etage' client ne doit contenir que des des chiffres.", "Erreur", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
 		}
-	
+		
 		
 		// Action à faire
 		this->oSvc_Client->ajouter_Client(Client_Nom, Client_Prenom, Client_Mail, Client_Date_N, Client_Rue, Client_Code_Postal, Client_Ville, Client_Batiment, Client_Etage);
