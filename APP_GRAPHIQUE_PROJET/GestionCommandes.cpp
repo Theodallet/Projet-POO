@@ -124,7 +124,7 @@ bool APPGRAPHIQUEPROJET::GestionCommandes::check_commande_ID_delivery_entry()
 
 	// Vérifier si l'entrée est nulle ou non 
 	if (String::IsNullOrEmpty(Commande_ID_Livraison)) {
-		MessageBoxA(NULL, "Le champ ID de facturation commande ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		MessageBoxA(NULL, "Le champ ID de facturation de livraison ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
@@ -134,7 +134,7 @@ bool APPGRAPHIQUEPROJET::GestionCommandes::check_commande_ID_delivery_entry()
 	// On vérifie que le texte ne contient que des chiffres
 	for (char c : commandeIDLivraisonString) {
 		if (!Char::IsDigit(c)) {
-			MessageBoxA(NULL, "Le champ ID de facuration commande ne doit contenir que des chiffres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ ID de livraison commande ne doit contenir que des chiffres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -142,7 +142,7 @@ bool APPGRAPHIQUEPROJET::GestionCommandes::check_commande_ID_delivery_entry()
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
 	for (char c : commandeIDLivraisonString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ ID de facturation commande ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ ID de livraison commande ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -152,31 +152,31 @@ bool APPGRAPHIQUEPROJET::GestionCommandes::check_commande_ID_delivery_entry()
 }
 
 
-bool APPGRAPHIQUEPROJET::GestionCommandes::check_commande_ID_article_entry()
+bool APPGRAPHIQUEPROJET::GestionCommandes::check_commande_ref_entry()
 {
 	String^ Commande_ID = this->TXT_ID_COMMANDE->Text;
 
 	// Vérifier si l'entrée est nulle ou non 
 	if (String::IsNullOrEmpty(Commande_ID)) {
-		MessageBoxA(NULL, "Le champ ID client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		MessageBoxA(NULL, "Le champ ID commande ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
 	// Convertir System::String^ en std::string
-	std::string commandeIDString = msclr::interop::marshal_as<std::string>(Commande_ID);
+	std::string commandeIDStdString = msclr::interop::marshal_as<std::string>(Commande_ID);
 
-	// On vérifie que le texte ne contient que des chiffres
-	for (char c : commandeIDString) {
-		if (!Char::IsDigit(c)) {
-			MessageBoxA(NULL, "Le champ ID client stock ne doit contenir que des chiffres.", "Erreur", MB_OK | MB_ICONERROR);
+	// On vérifie que le texte ne contient que des lettres
+	for (char c : commandeIDStdString) {
+		if (!isalnum(c)) { // VARIANTE AVEC DE l'ALPHANUMERIQUE
+			MessageBoxA(NULL, "Le champ ID commande ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
 
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
-	for (char c : commandeIDString) {
+	for (char c : commandeIDStdString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ ID client stock ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ ID commande ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -184,5 +184,4 @@ bool APPGRAPHIQUEPROJET::GestionCommandes::check_commande_ID_article_entry()
 	// Le texte est valide -> on retourne true
 	return true;
 }
-
 
