@@ -423,7 +423,7 @@ namespace APPGRAPHIQUEPROJET {
 			this->LABEL_INFO->Name = L"LABEL_INFO";
 			this->LABEL_INFO->Size = System::Drawing::Size(133, 17);
 			this->LABEL_INFO->TabIndex = 55;
-			this->LABEL_INFO->Text = L"Client anniversaire :";
+			this->LABEL_INFO->Text = L"Client mail envoyé :";
 			this->LABEL_INFO->Click += gcnew System::EventHandler(this, &HomePage::LABEL_INFO_Click);
 			// 
 			// label9
@@ -434,7 +434,7 @@ namespace APPGRAPHIQUEPROJET {
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(133, 17);
 			this->label9->TabIndex = 56;
-			this->label9->Text = L"Client anniversaire :";
+			this->label9->Text = L"Client anniversaire aujourd'hui :";
 			this->label9->Click += gcnew System::EventHandler(this, &HomePage::label9_Click_1);
 			// 
 			// AFFICHE_INFO_AUJ
@@ -518,10 +518,16 @@ namespace APPGRAPHIQUEPROJET {
 	}
 	private: System::Void CreationCompte_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc_Stat = gcnew NS_Comp_Svc::CLservices_Stat();
-		this->AFFICHAGE_INFO->Refresh();
+		this->AFFICHAGE_INFO_MAIL->Refresh();
 		this->oDs = this->oSvc_Stat->Chek_anniv_15("Rsl");
-		this->AFFICHAGE_INFO->DataSource = this->oDs;
-		this->AFFICHAGE_INFO->DataMember = "Rsl";
+		this->AFFICHAGE_INFO_MAIL->DataSource = this->oDs;
+		this->AFFICHAGE_INFO_MAIL->DataMember = "Rsl";
+
+		this->oSvc_Stat = gcnew NS_Comp_Svc::CLservices_Stat();
+		this->AFFICHE_INFO_AUJ->Refresh();
+		this->oDs = this->oSvc_Stat->Chek_anniv("Rs2");
+		this->AFFICHE_INFO_AUJ->DataSource = this->oDs;
+		this->AFFICHE_INFO_AUJ->DataMember = "Rs2";
 	}
 	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
