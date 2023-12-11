@@ -19,13 +19,19 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_ID_entry()
 {
 	String^ Client_ID = this->TXT_ID_CLIENT->Text;
 
+	// Vérifier si l'entrée est nulle ou non 
+	if (String::IsNullOrEmpty(Client_ID)) {
+		MessageBoxA(NULL, "Le champ ID client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		return false;
+	}
+
 	// Convertir System::String^ en std::string
 	std::string clientIDString = msclr::interop::marshal_as<std::string>(Client_ID);
 
 	// On vérifie que le texte ne contient que des chiffres
 	for (char c : clientIDString) {
 		if (!Char::IsDigit(c)) {
-			MessageBoxA(NULL, "Le champ ID client ne doit contenir que des chiffres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ batiment client ne doit contenir que des chiffres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -33,7 +39,7 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_ID_entry()
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
 	for (char c : clientIDString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ ID client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ nom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -50,21 +56,21 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_ID_entry()
 
 bool APPGRAPHIQUEPROJET::GestionClient::check_client_name_entry()
 {
-	String^ Client_Nom = this->TXT_NOM_CLIENT->Text;
+	String^ Client_Prenom = this->TXT_NOM_CLIENT->Text;
 
 	// Vérifier si l'entrée est nulle ou non 
-	if (String::IsNullOrEmpty(Client_Nom)) {
-		MessageBoxA(NULL, "Le champ Nom client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+	if (String::IsNullOrEmpty(Client_Prenom)) {
+		MessageBoxA(NULL, "Le champ Prenom client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
 	// Convertir System::String^ en std::string
-	std::string clientNomStdString = msclr::interop::marshal_as<std::string>(Client_Nom);
+	std::string clientNomStdString = msclr::interop::marshal_as<std::string>(Client_Prenom);
 
 	// On vérifie que le texte ne contient que des lettres
 	for (char c : clientNomStdString) {
 		if (!isalpha(c)) {
-			MessageBoxA(NULL, "Le champ 'nom' client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ prénom client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -72,7 +78,7 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_name_entry()
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
 	for (char c : clientNomStdString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ nom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ prénom client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
