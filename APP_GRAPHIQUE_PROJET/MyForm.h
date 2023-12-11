@@ -117,7 +117,7 @@ namespace APPGRAPHIQUEPROJET {
 			// 
 			this->textBox1->Location = System::Drawing::Point(85, 183);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(336, 20);
+			this->textBox1->Size = System::Drawing::Size(336, 26);
 			this->textBox1->TabIndex = 1;
 			// 
 			// label2
@@ -129,7 +129,7 @@ namespace APPGRAPHIQUEPROJET {
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label2->Location = System::Drawing::Point(76, 4);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(288, 47);
+			this->label2->Size = System::Drawing::Size(431, 71);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"GADGET GROVE";
 			this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
@@ -151,7 +151,7 @@ namespace APPGRAPHIQUEPROJET {
 				static_cast<System::Byte>(0)));
 			this->label3->Location = System::Drawing::Point(78, 100);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(370, 38);
+			this->label3->Size = System::Drawing::Size(547, 58);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"CONNECTEZ VOUS : ";
 			this->label3->Click += gcnew System::EventHandler(this, &MyForm::label3_Click);
@@ -163,7 +163,7 @@ namespace APPGRAPHIQUEPROJET {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15));
 			this->label5->Location = System::Drawing::Point(80, 155);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(111, 25);
+			this->label5->Size = System::Drawing::Size(168, 36);
 			this->label5->TabIndex = 6;
 			this->label5->Text = L"Identifiant : ";
 			this->label5->Click += gcnew System::EventHandler(this, &MyForm::label5_Click);
@@ -175,7 +175,7 @@ namespace APPGRAPHIQUEPROJET {
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15));
 			this->label6->Location = System::Drawing::Point(80, 235);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(146, 25);
+			this->label6->Size = System::Drawing::Size(217, 36);
 			this->label6->TabIndex = 7;
 			this->label6->Text = L"Mot de passe : ";
 			// 
@@ -184,7 +184,7 @@ namespace APPGRAPHIQUEPROJET {
 			this->textBox2->Location = System::Drawing::Point(85, 263);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->PasswordChar = '*';
-			this->textBox2->Size = System::Drawing::Size(336, 20);
+			this->textBox2->Size = System::Drawing::Size(336, 26);
 			this->textBox2->TabIndex = 8;
 			// 
 			// button1
@@ -209,7 +209,7 @@ namespace APPGRAPHIQUEPROJET {
 			this->label15->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label15->Location = System::Drawing::Point(1021, 26);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(234, 25);
+			this->label15->Size = System::Drawing::Size(357, 36);
 			this->label15->TabIndex = 36;
 			this->label15->Text = L"Make your inspiration real";
 			// 
@@ -232,7 +232,7 @@ namespace APPGRAPHIQUEPROJET {
 			this->pictureBox5->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.InitialImage")));
 			this->pictureBox5->Location = System::Drawing::Point(-120, 54);
 			this->pictureBox5->Name = L"pictureBox5";
-			this->pictureBox5->Size = System::Drawing::Size(1425, 682);
+			this->pictureBox5->Size = System::Drawing::Size(1425, 647);
 			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox5->TabIndex = 42;
 			this->pictureBox5->TabStop = false;
@@ -258,14 +258,14 @@ namespace APPGRAPHIQUEPROJET {
 			this->label16->ForeColor = System::Drawing::Color::Red;
 			this->label16->Location = System::Drawing::Point(82, 555);
 			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(166, 13);
+			this->label16->Size = System::Drawing::Size(250, 20);
 			this->label16->TabIndex = 72;
 			this->label16->Text = L"Message erreur potentielle ajouter";
 			this->label16->Click += gcnew System::EventHandler(this, &MyForm::label16_Click);
 			// 
 			// MyForm
 			// 
-			this->ClientSize = System::Drawing::Size(1256, 725);
+			this->ClientSize = System::Drawing::Size(1256, 678);
 			this->Controls->Add(this->label16);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label15);
@@ -322,7 +322,7 @@ namespace APPGRAPHIQUEPROJET {
 		String^ mail = this->textBox1->Text;
 		String^ password = this->textBox2->Text;
 
-		if (mail == "a" && password == "a")
+		if (mail == "admin" && password == "admin")
 		{
 			this->label16->Text = "";
 			this->Hide();
