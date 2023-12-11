@@ -29,11 +29,11 @@ namespace APPGRAPHIQUEPROJET {
 			Objet = Objet2;
 			InitializeComponent();
 		}
-		//bool check_commande_ID_cient_entry();
-		//bool check_commande_payment_means_entry();
-		//bool check_commande_ID_delivery_entry();
-		//bool check_commande_ID_facturation_entry();
-		//bool check_commande_ref_entry();
+		bool check_commande_ID_cient_entry();
+		bool check_commande_payment_means_entry();
+		bool check_commande_ID_delivery_entry();
+		bool check_commande_ID_facturation_entry();
+		bool check_commande_ref_entry();
 
 	protected:
 		/// <summary>
@@ -743,15 +743,15 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 			int Commande_ID_Facturation = Convert::ToInt32(this->TXT_ID_ADR_FACT->Text);
 		}
 
-/*
+
 		bool isIdClientsValid = check_commande_ID_cient_entry();
 		bool isMoyenPaimentValid = check_commande_payment_means_entry();
 		bool isIDDeliveryValid = check_commande_ID_delivery_entry();
 		bool isIDFacturationValid = check_commande_ID_facturation_entry();
 
 		if (isIdClientsValid & isMoyenPaimentValid & isIDDeliveryValid & isIDFacturationValid ) {
-		*/	this->oSvc_Commande->ajouter_Commande(Date_Livraison, 0, 0, 0, Moyen_Paiment, Client_ID, Commande_ID_Livraison, Commande_ID_Facturation);
-		//}
+			this->oSvc_Commande->ajouter_Commande(Date_Livraison, 0, 0, 0, Moyen_Paiment, Client_ID, Commande_ID_Livraison, Commande_ID_Facturation);
+		}
 		
 		this->TXT_ID_CLIENT_COMMANDE->Text = "";
 		this->TXT_DATE_LIV_COMMANDE->Text = "";
@@ -788,7 +788,7 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 	String^ Commande_ID = this->TXT_ID_COMMANDE->Text; 
 	DateTime^ Date_Emission = DateTime::Parse(this->TXT_DATE_EM_COMMANDE->Text);
 
-	/*
+	
 	bool isIdClientsValid = check_commande_ID_cient_entry();
 	bool isMoyenPaimentValid = check_commande_payment_means_entry();
 	bool isIDDeliveryValid = check_commande_ID_delivery_entry();
@@ -797,7 +797,7 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 
 	if (isIdClientsValid & isMoyenPaimentValid & isIDDeliveryValid & isIDFacturationValid & isIDReferenceValid) {*/
 		this->oSvc_Commande->modifier_Commande(Commande_ID, Date_Livraison, Date_Emission, 0, 0, 0, Moyen_Paiment, Client_ID, Commande_ID_Livraison, Commande_ID_Facturation);
-	//}
+	}
 
 	this->TXT_ID_COMMANDE->Text = "";  
 	this->TXT_ID_CLIENT_COMMANDE->Text = "";
@@ -820,11 +820,11 @@ private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, Sys
 	{
 		String^ Commande_ID = this->TXT_ID_COMMANDE->Text;
 
-		//bool isIDReferenceValid = check_commande_ref_entry();
+		bool isIDReferenceValid = check_commande_ref_entry();
 
-		//if (isIDReferenceValid) {
+		if (isIDReferenceValid) {
 			this->oSvc_Commande->supprimer_Commande(Commande_ID);
-		//}
+		}
 
 		this->TXT_ID_COMMANDE->Text = "";
 
