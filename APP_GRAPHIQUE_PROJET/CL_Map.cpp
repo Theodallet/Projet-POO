@@ -145,11 +145,11 @@ void NS_Comp_Mappage::CL_Map_Commande::setAdresse_Fac(int Adresse_Fac) { this->A
 System::String^ NS_Comp_Mappage::CL_Map_Commande::Select_Commande(void) { return "EXECUTE Afficher_Commande ; "; }
 System::String^ NS_Comp_Mappage::CL_Map_Commande::Select_Commande_Id(void) { return "EXECUTE Afficher_Commande_Ref '" + this->Id + "'; "; }
 System::String^ NS_Comp_Mappage::CL_Map_Commande::Insert_Commande(void) { 
-	return "EXECUTE Creer_Commande '" + this->Date_Liv + "'," + this->Total_HT + "," + this->Total_TTC + "," + this->Total_TVA + ",'" + this->Moyen_Paiment + "'," + this->Id_Cli + "," + this->Adresse_Liv + "," + this->Adresse_Fac + "  ;";
-	/*  + "EXECUTE Creer_Commande '" + this->Date_Liv + "'," + this->Total_HT + "," + this->Total_TTC + "," + this->Total_TVA + ",'" + this->Moyen_Paiment + "'," + this->Id_Cli + "," + this->Adresse_Liv + "," + this->Adresse_Fac + "  ;"
+	return "EXECUTE Creer_Commande '" + this->Date_Liv + "'," + this->Total_HT + "," + this->Total_TTC + "," + this->Total_TVA + ",'" + this->Moyen_Paiment + "'," + this->Id_Cli + "," + this->Adresse_Liv + "," + this->Adresse_Fac + "  ;"
+		+ "EXECUTE Creer_Commande '" + this->Date_Liv + "'," + this->Total_HT + "," + this->Total_TTC + "," + this->Total_TVA + ",'" + this->Moyen_Paiment + "'," + this->Id_Cli + "," + this->Adresse_Liv + "," + this->Adresse_Fac + "  ;"
 		+ "DELETE FROM Possede WHERE Id_Com = ((SELECT TOP(1)Id_Com FROM Commande ORDER BY Id_Com DESC)-1)"
 		+ "DELETE FROM Commande WHERE Id_Com = ((SELECT TOP(1)Id_Com FROM Commande ORDER BY Id_Com DESC)-1)"
-		+ "DELETE FROM Contient WHERE Id_Com = ((SELECT TOP(1)Id_Com FROM Commande ORDER BY Id_Com DESC)-1)";*/
+		+ "DELETE FROM Contient WHERE Id_Com = ((SELECT TOP(1)Id_Com FROM Commande ORDER BY Id_Com DESC)-1)";
 }
 System::String^ NS_Comp_Mappage::CL_Map_Commande::Delete_Commande(void) { return "EXECUTE Supprimer_Commande '" + this->Id + "';"; }
 System::String^ NS_Comp_Mappage::CL_Map_Commande::Update_Commande(void) { return "EXECUTE Modifier_Commande '" + this->Id + "','" + this->Date_Liv + "','" + this->Date_Emi + "'," + this->Total_HT + "," + this->Total_TTC + "," + this->Total_TVA + ",'" + this->Moyen_Paiment + "'," + this->Id_Cli + "," + this->Adresse_Liv + "," + this->Adresse_Fac + " ;"; }

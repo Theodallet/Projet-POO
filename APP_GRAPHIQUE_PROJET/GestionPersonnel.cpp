@@ -197,27 +197,27 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_rue_entry()
 {
 	String^ Personnel_Rue = this->TXT_RUE_PERSONNEL->Text;
 
-	// Vérifier si l'entrée est nulle ou non 
+	// Vérifier si l'entrée est nulle ou non
 	if (String::IsNullOrEmpty(Personnel_Rue)) {
-		MessageBoxA(NULL, "Le champ Rue personnel ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		MessageBoxA(NULL, "Le champ Rue client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
 	// Convertir System::String^ en std::string
-	std::string personnelRueStdString = msclr::interop::marshal_as<std::string>(Personnel_Rue);
+	std::string personnelRuedString = msclr::interop::marshal_as<std::string>(Personnel_Rue);
 
-	// On vérifie que le texte ne contient que des lettres
-	for (char c : personnelRueStdString) {
-		if (!isalpha(c)) {
-			MessageBoxA(NULL, "Le champ Rue personnel  ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
+	// On vérifie que le texte ne contient que des lettres ou des espaces
+	for (char c : personnelRuedString) {
+		if (!isalpha(c) && c != ' ') {
+			MessageBoxA(NULL, "Le champ rue client ne doit contenir que des lettres ou des espaces.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
 
 	// On vérifie que le texte ne contient pas de caractères spéciaux pouvant être utilisés pour des injections SQL
-	for (char c : personnelRueStdString) {
+	for (char c : personnelRuedString) {
 		if (c == '"' || c == '\'' || c == '\\' || c == ';' || c == '`' || c == '<' || c == '>') {
-			MessageBoxA(NULL, "Le champ Rue personnel  ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
+			MessageBoxA(NULL, "Le champ rue client ne doit pas contenir de caractères spéciaux.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -328,7 +328,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_role_entry()
 
 	// Vérifier si l'entrée est nulle ou non 
 	if (String::IsNullOrEmpty(Personnel_Role)) {
-		MessageBoxA(NULL, "Le champ role personnel ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		MessageBoxA(NULL, "Le champ Code Postal personnel ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
