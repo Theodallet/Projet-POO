@@ -416,7 +416,7 @@ namespace APPGRAPHIQUEPROJET {
 			this->LABEL_INFO->Name = L"LABEL_INFO";
 			this->LABEL_INFO->Size = System::Drawing::Size(106, 20);
 			this->LABEL_INFO->TabIndex = 55;
-			this->LABEL_INFO->Text = L"Informations :";
+			this->LABEL_INFO->Text = L"Client anniversaire :";
 			// 
 			// HomePage
 			// 
@@ -486,7 +486,7 @@ namespace APPGRAPHIQUEPROJET {
 	private: System::Void CreationCompte_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->oSvc_Stat = gcnew NS_Comp_Svc::CLservices_Stat();
 		this->AFFICHAGE_INFO->Refresh();
-		this->oDs = this->oSvc_Stat->Chek_anniv("Rsl");
+		this->oDs = this->oSvc_Stat->Chek_anniv_15("Rsl");
 		this->AFFICHAGE_INFO->DataSource = this->oDs;
 		this->AFFICHAGE_INFO->DataMember = "Rsl";
 	}
