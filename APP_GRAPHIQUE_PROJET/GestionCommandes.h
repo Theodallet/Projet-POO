@@ -772,13 +772,23 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 
 private: System::Void BOUTON_MODIFIER_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-	String^ Commande_ID = this->TXT_ID_COMMANDE->Text; 
-	int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT_COMMANDE->Text);
+	int Client_ID;
+	if (this->TXT_ID_CLIENT_COMMANDE->Text != "") {
+		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT_COMMANDE->Text);
+	}
 	DateTime^ Date_Livraison = DateTime::Parse(this->TXT_DATE_LIV_COMMANDE->Text);
-	DateTime^ Date_Emission = DateTime::Parse(this->TXT_DATE_EM_COMMANDE->Text);
 	String^ Moyen_Paiment = this->TXT_MOYEN_PAIMENT_COMMANDE->Text;
-	int Commande_ID_Livraison = Convert::ToInt32(this->TXT_ID_ADRESSE_COMMANDE->Text);
-	int Commande_ID_Facturation = Convert::ToInt32(this->TXT_ID_ADR_FACT->Text);
+	int Commande_ID_Livraison;
+	if (this->TXT_ID_ADRESSE_COMMANDE->Text != "") {
+		int Commande_ID_Livraison = Convert::ToInt32(this->TXT_ID_ADRESSE_COMMANDE->Text);
+	}
+	int Commande_ID_Facturation;
+	if (this->TXT_ID_ADR_FACT->Text != "") {
+		int Commande_ID_Facturation = Convert::ToInt32(this->TXT_ID_ADR_FACT->Text);
+	}
+	String^ Commande_ID = this->TXT_ID_COMMANDE->Text; 
+	DateTime^ Date_Emission = DateTime::Parse(this->TXT_DATE_EM_COMMANDE->Text);
+
 
 	
 	this->oSvc_Commande->modifier_Commande(Commande_ID, Date_Livraison, Date_Emission, 0, 0, 0, Moyen_Paiment, Client_ID, Commande_ID_Livraison, Commande_ID_Facturation);
