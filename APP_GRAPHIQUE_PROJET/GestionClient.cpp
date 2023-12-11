@@ -193,7 +193,7 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_rue_entry()
 {
 	String^ Client_Rue = this->TXT_RUE_CLIENT->Text;
 
-	// Vérifier si l'entrée est nulle ou non 
+	// Vérifier si l'entrée est nulle ou non
 	if (String::IsNullOrEmpty(Client_Rue)) {
 		MessageBoxA(NULL, "Le champ Rue client ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
@@ -202,10 +202,10 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_rue_entry()
 	// Convertir System::String^ en std::string
 	std::string clientRuedString = msclr::interop::marshal_as<std::string>(Client_Rue);
 
-	// On vérifie que le texte ne contient que des lettres
+	// On vérifie que le texte ne contient que des lettres ou des espaces
 	for (char c : clientRuedString) {
-		if (!isalpha(c)) {
-			MessageBoxA(NULL, "Le champ rue client ne doit contenir que des lettres.", "Erreur", MB_OK | MB_ICONERROR);
+		if (!isalpha(c) && c != ' ') {
+			MessageBoxA(NULL, "Le champ rue client ne doit contenir que des lettres ou des espaces.", "Erreur", MB_OK | MB_ICONERROR);
 			return false;
 		}
 	}
@@ -221,6 +221,7 @@ bool APPGRAPHIQUEPROJET::GestionClient::check_client_rue_entry()
 	// Le texte est valide -> on retourne true
 	return true;
 }
+
 //
 // 8) Méthode pour checker l' entrée pour le code postal du client + éviter les injections SQL
 //
