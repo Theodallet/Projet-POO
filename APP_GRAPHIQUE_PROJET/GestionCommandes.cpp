@@ -1,5 +1,5 @@
 #include "GestionCommandes.h"
-#include <iostream>
+/*#include <iostream>
 #include <stdexcept>
 #include <Windows.h> 
 #include <msclr/marshal_cppstd.h>
@@ -185,3 +185,4 @@ bool APPGRAPHIQUEPROJET::GestionCommandes::check_commande_ref_entry()
 	return true;
 }
 
+*/
