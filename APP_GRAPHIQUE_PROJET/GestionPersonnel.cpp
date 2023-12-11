@@ -328,7 +328,7 @@ bool APPGRAPHIQUEPROJET::GestionPersonnel::check_personnel_role_entry()
 
 	// Vérifier si l'entrée est nulle ou non 
 	if (String::IsNullOrEmpty(Personnel_Role)) {
-		MessageBoxA(NULL, "Le champ Code Postal personnel ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		MessageBoxA(NULL, "Le champ role personnel ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
