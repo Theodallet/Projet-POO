@@ -126,9 +126,9 @@ namespace APPGRAPHIQUEPROJET {
 
 	private: System::Windows::Forms::PictureBox^ BACKGROUND_ZONE_TEXTE;
 	private: System::Windows::Forms::DataGridView^ AFFICHAGE_CLIENT;
-	private: System::Windows::Forms::Button^ SKIP_CLIENT_GAUCHE;
 
-	private: System::Windows::Forms::Button^ SKIP_CLIENT_DROITE;
+
+
 	private: System::Windows::Forms::Button^ BOUTON_CLEAR_CLIENT;
 
 
@@ -178,8 +178,6 @@ namespace APPGRAPHIQUEPROJET {
 			   this->TXT_ETAGE_CLIENT = (gcnew System::Windows::Forms::TextBox());
 			   this->BACKGROUND_ZONE_TEXTE = (gcnew System::Windows::Forms::PictureBox());
 			   this->AFFICHAGE_CLIENT = (gcnew System::Windows::Forms::DataGridView());
-			   this->SKIP_CLIENT_GAUCHE = (gcnew System::Windows::Forms::Button());
-			   this->SKIP_CLIENT_DROITE = (gcnew System::Windows::Forms::Button());
 			   this->BOUTON_CLEAR_CLIENT = (gcnew System::Windows::Forms::Button());
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->BarreNoir))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LOGO))->BeginInit();
@@ -197,7 +195,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->NomApp->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->NomApp->Location = System::Drawing::Point(66, 4);
 			   this->NomApp->Name = L"NomApp";
-			   this->NomApp->Size = System::Drawing::Size(287, 50);
+			   this->NomApp->Size = System::Drawing::Size(434, 74);
 			   this->NomApp->TabIndex = 2;
 			   this->NomApp->Text = L"| Gestion Client";
 			   // 
@@ -256,7 +254,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_NOM_CLIENT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_NOM_CLIENT->Location = System::Drawing::Point(94, 244);
 			   this->LABEL_NOM_CLIENT->Name = L"LABEL_NOM_CLIENT";
-			   this->LABEL_NOM_CLIENT->Size = System::Drawing::Size(45, 20);
+			   this->LABEL_NOM_CLIENT->Size = System::Drawing::Size(68, 29);
 			   this->LABEL_NOM_CLIENT->TabIndex = 52;
 			   this->LABEL_NOM_CLIENT->Text = L"Nom";
 			   // 
@@ -269,7 +267,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_PRENOM_CLIENT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_PRENOM_CLIENT->Location = System::Drawing::Point(97, 312);
 			   this->LABEL_PRENOM_CLIENT->Name = L"LABEL_PRENOM_CLIENT";
-			   this->LABEL_PRENOM_CLIENT->Size = System::Drawing::Size(70, 20);
+			   this->LABEL_PRENOM_CLIENT->Size = System::Drawing::Size(104, 29);
 			   this->LABEL_PRENOM_CLIENT->TabIndex = 53;
 			   this->LABEL_PRENOM_CLIENT->Text = L"Prénom";
 			   // 
@@ -282,7 +280,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->TITRE_CLIENT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->TITRE_CLIENT->Location = System::Drawing::Point(91, 136);
 			   this->TITRE_CLIENT->Name = L"TITRE_CLIENT";
-			   this->TITRE_CLIENT->Size = System::Drawing::Size(256, 20);
+			   this->TITRE_CLIENT->Size = System::Drawing::Size(370, 29);
 			   this->TITRE_CLIENT->TabIndex = 62;
 			   this->TITRE_CLIENT->Text = L"CARACTERISTIQUES CLIENT";
 			   // 
@@ -310,7 +308,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_ID_CLIENT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_ID_CLIENT->Location = System::Drawing::Point(91, 169);
 			   this->LABEL_ID_CLIENT->Name = L"LABEL_ID_CLIENT";
-			   this->LABEL_ID_CLIENT->Size = System::Drawing::Size(76, 20);
+			   this->LABEL_ID_CLIENT->Size = System::Drawing::Size(108, 29);
 			   this->LABEL_ID_CLIENT->TabIndex = 76;
 			   this->LABEL_ID_CLIENT->Text = L"ID client";
 			   // 
@@ -323,7 +321,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_BD_CLIENT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_BD_CLIENT->Location = System::Drawing::Point(94, 385);
 			   this->LABEL_BD_CLIENT->Name = L"LABEL_BD_CLIENT";
-			   this->LABEL_BD_CLIENT->Size = System::Drawing::Size(159, 20);
+			   this->LABEL_BD_CLIENT->Size = System::Drawing::Size(228, 29);
 			   this->LABEL_BD_CLIENT->TabIndex = 55;
 			   this->LABEL_BD_CLIENT->Text = L"Date de naissance";
 			   // 
@@ -336,7 +334,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_ETAGE_CLIENT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_ETAGE_CLIENT->Location = System::Drawing::Point(418, 462);
 			   this->LABEL_ETAGE_CLIENT->Name = L"LABEL_ETAGE_CLIENT";
-			   this->LABEL_ETAGE_CLIENT->Size = System::Drawing::Size(57, 20);
+			   this->LABEL_ETAGE_CLIENT->Size = System::Drawing::Size(81, 29);
 			   this->LABEL_ETAGE_CLIENT->TabIndex = 64;
 			   this->LABEL_ETAGE_CLIENT->Text = L"Etage";
 			   // 
@@ -349,7 +347,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_BAT_CLIENT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_BAT_CLIENT->Location = System::Drawing::Point(417, 385);
 			   this->LABEL_BAT_CLIENT->Name = L"LABEL_BAT_CLIENT";
-			   this->LABEL_BAT_CLIENT->Size = System::Drawing::Size(122, 20);
+			   this->LABEL_BAT_CLIENT->Size = System::Drawing::Size(177, 29);
 			   this->LABEL_BAT_CLIENT->TabIndex = 63;
 			   this->LABEL_BAT_CLIENT->Text = L"Nom Batiment";
 			   // 
@@ -374,7 +372,7 @@ namespace APPGRAPHIQUEPROJET {
 				   static_cast<System::Byte>(0)));
 			   this->TXT_NOM_CLIENT->Location = System::Drawing::Point(95, 267);
 			   this->TXT_NOM_CLIENT->Name = L"TXT_NOM_CLIENT";
-			   this->TXT_NOM_CLIENT->Size = System::Drawing::Size(286, 26);
+			   this->TXT_NOM_CLIENT->Size = System::Drawing::Size(286, 35);
 			   this->TXT_NOM_CLIENT->TabIndex = 49;
 			   // 
 			   // TXT_RUE_CLIENT
@@ -383,7 +381,7 @@ namespace APPGRAPHIQUEPROJET {
 				   static_cast<System::Byte>(0)));
 			   this->TXT_RUE_CLIENT->Location = System::Drawing::Point(419, 196);
 			   this->TXT_RUE_CLIENT->Name = L"TXT_RUE_CLIENT";
-			   this->TXT_RUE_CLIENT->Size = System::Drawing::Size(303, 22);
+			   this->TXT_RUE_CLIENT->Size = System::Drawing::Size(303, 30);
 			   this->TXT_RUE_CLIENT->TabIndex = 59;
 			   // 
 			   // LABEL_MAIL_CLIENT
@@ -395,7 +393,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_MAIL_CLIENT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_MAIL_CLIENT->Location = System::Drawing::Point(94, 462);
 			   this->LABEL_MAIL_CLIENT->Name = L"LABEL_MAIL_CLIENT";
-			   this->LABEL_MAIL_CLIENT->Size = System::Drawing::Size(59, 20);
+			   this->LABEL_MAIL_CLIENT->Size = System::Drawing::Size(88, 29);
 			   this->LABEL_MAIL_CLIENT->TabIndex = 103;
 			   this->LABEL_MAIL_CLIENT->Text = L"E-mail";
 			   // 
@@ -408,7 +406,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_VILLE_CLIENT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_VILLE_CLIENT->Location = System::Drawing::Point(417, 312);
 			   this->LABEL_VILLE_CLIENT->Name = L"LABEL_VILLE_CLIENT";
-			   this->LABEL_VILLE_CLIENT->Size = System::Drawing::Size(43, 20);
+			   this->LABEL_VILLE_CLIENT->Size = System::Drawing::Size(65, 29);
 			   this->LABEL_VILLE_CLIENT->TabIndex = 60;
 			   this->LABEL_VILLE_CLIENT->Text = L"Ville";
 			   // 
@@ -418,7 +416,7 @@ namespace APPGRAPHIQUEPROJET {
 				   static_cast<System::Byte>(0)));
 			   this->TXT_CP_CLIENT->Location = System::Drawing::Point(420, 267);
 			   this->TXT_CP_CLIENT->Name = L"TXT_CP_CLIENT";
-			   this->TXT_CP_CLIENT->Size = System::Drawing::Size(302, 26);
+			   this->TXT_CP_CLIENT->Size = System::Drawing::Size(302, 35);
 			   this->TXT_CP_CLIENT->TabIndex = 57;
 			   // 
 			   // BOUTON_SUPP_CLIENT
@@ -442,7 +440,7 @@ namespace APPGRAPHIQUEPROJET {
 				   static_cast<System::Byte>(0)));
 			   this->TXT_PRENOM_CLIENT->Location = System::Drawing::Point(95, 335);
 			   this->TXT_PRENOM_CLIENT->Name = L"TXT_PRENOM_CLIENT";
-			   this->TXT_PRENOM_CLIENT->Size = System::Drawing::Size(286, 26);
+			   this->TXT_PRENOM_CLIENT->Size = System::Drawing::Size(286, 35);
 			   this->TXT_PRENOM_CLIENT->TabIndex = 50;
 			   // 
 			   // TXT_ID_CLIENT
@@ -451,7 +449,7 @@ namespace APPGRAPHIQUEPROJET {
 				   static_cast<System::Byte>(0)));
 			   this->TXT_ID_CLIENT->Location = System::Drawing::Point(95, 192);
 			   this->TXT_ID_CLIENT->Name = L"TXT_ID_CLIENT";
-			   this->TXT_ID_CLIENT->Size = System::Drawing::Size(286, 26);
+			   this->TXT_ID_CLIENT->Size = System::Drawing::Size(286, 35);
 			   this->TXT_ID_CLIENT->TabIndex = 77;
 			   // 
 			   // TXT_BD_CLIENT
@@ -460,7 +458,7 @@ namespace APPGRAPHIQUEPROJET {
 				   static_cast<System::Byte>(0)));
 			   this->TXT_BD_CLIENT->Location = System::Drawing::Point(95, 408);
 			   this->TXT_BD_CLIENT->Name = L"TXT_BD_CLIENT";
-			   this->TXT_BD_CLIENT->Size = System::Drawing::Size(286, 26);
+			   this->TXT_BD_CLIENT->Size = System::Drawing::Size(286, 35);
 			   this->TXT_BD_CLIENT->TabIndex = 54;
 			   // 
 			   // TXT_VILLE_CLIENT
@@ -469,7 +467,7 @@ namespace APPGRAPHIQUEPROJET {
 				   static_cast<System::Byte>(0)));
 			   this->TXT_VILLE_CLIENT->Location = System::Drawing::Point(419, 335);
 			   this->TXT_VILLE_CLIENT->Name = L"TXT_VILLE_CLIENT";
-			   this->TXT_VILLE_CLIENT->Size = System::Drawing::Size(302, 26);
+			   this->TXT_VILLE_CLIENT->Size = System::Drawing::Size(302, 35);
 			   this->TXT_VILLE_CLIENT->TabIndex = 67;
 			   // 
 			   // LABEL_CP_CLIENT
@@ -481,7 +479,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_CP_CLIENT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_CP_CLIENT->Location = System::Drawing::Point(417, 244);
 			   this->LABEL_CP_CLIENT->Name = L"LABEL_CP_CLIENT";
-			   this->LABEL_CP_CLIENT->Size = System::Drawing::Size(106, 20);
+			   this->LABEL_CP_CLIENT->Size = System::Drawing::Size(156, 29);
 			   this->LABEL_CP_CLIENT->TabIndex = 58;
 			   this->LABEL_CP_CLIENT->Text = L"Code Postal";
 			   // 
@@ -506,7 +504,7 @@ namespace APPGRAPHIQUEPROJET {
 				   static_cast<System::Byte>(0)));
 			   this->TXT_BAT_CLIENT->Location = System::Drawing::Point(420, 408);
 			   this->TXT_BAT_CLIENT->Name = L"TXT_BAT_CLIENT";
-			   this->TXT_BAT_CLIENT->Size = System::Drawing::Size(302, 26);
+			   this->TXT_BAT_CLIENT->Size = System::Drawing::Size(302, 35);
 			   this->TXT_BAT_CLIENT->TabIndex = 61;
 			   // 
 			   // LABEL_RUE_CLIENT
@@ -518,7 +516,7 @@ namespace APPGRAPHIQUEPROJET {
 			   this->LABEL_RUE_CLIENT->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_RUE_CLIENT->Location = System::Drawing::Point(417, 172);
 			   this->LABEL_RUE_CLIENT->Name = L"LABEL_RUE_CLIENT";
-			   this->LABEL_RUE_CLIENT->Size = System::Drawing::Size(42, 20);
+			   this->LABEL_RUE_CLIENT->Size = System::Drawing::Size(60, 29);
 			   this->LABEL_RUE_CLIENT->TabIndex = 56;
 			   this->LABEL_RUE_CLIENT->Text = L"Rue";
 			   // 
@@ -528,7 +526,7 @@ namespace APPGRAPHIQUEPROJET {
 				   static_cast<System::Byte>(0)));
 			   this->TXT_MAIL_CLIENT->Location = System::Drawing::Point(95, 485);
 			   this->TXT_MAIL_CLIENT->Name = L"TXT_MAIL_CLIENT";
-			   this->TXT_MAIL_CLIENT->Size = System::Drawing::Size(286, 26);
+			   this->TXT_MAIL_CLIENT->Size = System::Drawing::Size(286, 35);
 			   this->TXT_MAIL_CLIENT->TabIndex = 111;
 			   // 
 			   // TXT_ETAGE_CLIENT
@@ -537,7 +535,7 @@ namespace APPGRAPHIQUEPROJET {
 				   static_cast<System::Byte>(0)));
 			   this->TXT_ETAGE_CLIENT->Location = System::Drawing::Point(421, 485);
 			   this->TXT_ETAGE_CLIENT->Name = L"TXT_ETAGE_CLIENT";
-			   this->TXT_ETAGE_CLIENT->Size = System::Drawing::Size(303, 26);
+			   this->TXT_ETAGE_CLIENT->Size = System::Drawing::Size(303, 35);
 			   this->TXT_ETAGE_CLIENT->TabIndex = 104;
 			   // 
 			   // BACKGROUND_ZONE_TEXTE
@@ -554,36 +552,9 @@ namespace APPGRAPHIQUEPROJET {
 			   this->AFFICHAGE_CLIENT->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			   this->AFFICHAGE_CLIENT->Location = System::Drawing::Point(774, 116);
 			   this->AFFICHAGE_CLIENT->Name = L"AFFICHAGE_CLIENT";
+			   this->AFFICHAGE_CLIENT->RowHeadersWidth = 62;
 			   this->AFFICHAGE_CLIENT->Size = System::Drawing::Size(412, 550);
 			   this->AFFICHAGE_CLIENT->TabIndex = 113;
-			   // 
-			   // SKIP_CLIENT_GAUCHE
-			   // 
-			   this->SKIP_CLIENT_GAUCHE->BackColor = System::Drawing::Color::Silver;
-			   this->SKIP_CLIENT_GAUCHE->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->SKIP_CLIENT_GAUCHE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
-				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->SKIP_CLIENT_GAUCHE->Location = System::Drawing::Point(95, 535);
-			   this->SKIP_CLIENT_GAUCHE->Name = L"SKIP_CLIENT_GAUCHE";
-			   this->SKIP_CLIENT_GAUCHE->Size = System::Drawing::Size(286, 29);
-			   this->SKIP_CLIENT_GAUCHE->TabIndex = 114;
-			   this->SKIP_CLIENT_GAUCHE->Text = L"<";
-			   this->SKIP_CLIENT_GAUCHE->UseVisualStyleBackColor = false;
-			   this->SKIP_CLIENT_GAUCHE->Click += gcnew System::EventHandler(this, &GestionClient::SKIP_CLIENT_GAUCHE_Click);
-			   // 
-			   // SKIP_CLIENT_DROITE
-			   // 
-			   this->SKIP_CLIENT_DROITE->BackColor = System::Drawing::Color::Silver;
-			   this->SKIP_CLIENT_DROITE->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			   this->SKIP_CLIENT_DROITE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
-				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->SKIP_CLIENT_DROITE->Location = System::Drawing::Point(421, 535);
-			   this->SKIP_CLIENT_DROITE->Name = L"SKIP_CLIENT_DROITE";
-			   this->SKIP_CLIENT_DROITE->Size = System::Drawing::Size(303, 29);
-			   this->SKIP_CLIENT_DROITE->TabIndex = 115;
-			   this->SKIP_CLIENT_DROITE->Text = L">";
-			   this->SKIP_CLIENT_DROITE->UseVisualStyleBackColor = false;
-			   this->SKIP_CLIENT_DROITE->Click += gcnew System::EventHandler(this, &GestionClient::SKIP_CLIENT_DROITE_Click);
 			   // 
 			   // BOUTON_CLEAR_CLIENT
 			   // 
@@ -604,8 +575,6 @@ namespace APPGRAPHIQUEPROJET {
 			   // 
 			   this->ClientSize = System::Drawing::Size(1256, 725);
 			   this->Controls->Add(this->BOUTON_CLEAR_CLIENT);
-			   this->Controls->Add(this->SKIP_CLIENT_DROITE);
-			   this->Controls->Add(this->SKIP_CLIENT_GAUCHE);
 			   this->Controls->Add(this->AFFICHAGE_CLIENT);
 			   this->Controls->Add(this->TXT_MAIL_CLIENT);
 			   this->Controls->Add(this->TXT_ETAGE_CLIENT);

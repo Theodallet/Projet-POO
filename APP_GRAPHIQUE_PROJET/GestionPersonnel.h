@@ -68,8 +68,8 @@ namespace APPGRAPHIQUEPROJET {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ BOUTON_CLEAR_PERSONNEL;
 
-	private: System::Windows::Forms::Button^ SKIP_PERSONNEL_DROITE;
-	private: System::Windows::Forms::Button^ SKIP_PERSONNEL_GAUCHE;
+
+
 
 
 	private: System::Windows::Forms::DataGridView^ AFFICHAGE_PERSONNEL;
@@ -159,8 +159,6 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 		   {
 			   System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionPersonnel::typeid));
 			   this->BOUTON_CLEAR_PERSONNEL = (gcnew System::Windows::Forms::Button());
-			   this->SKIP_PERSONNEL_DROITE = (gcnew System::Windows::Forms::Button());
-			   this->SKIP_PERSONNEL_GAUCHE = (gcnew System::Windows::Forms::Button());
 			   this->AFFICHAGE_PERSONNEL = (gcnew System::Windows::Forms::DataGridView());
 			   this->TXT_MAIL_PERSONNEL = (gcnew System::Windows::Forms::TextBox());
 			   this->TXT_ETAGE_PERSONNEL = (gcnew System::Windows::Forms::TextBox());
@@ -221,34 +219,6 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			   this->BOUTON_CLEAR_PERSONNEL->UseVisualStyleBackColor = false;
 			   this->BOUTON_CLEAR_PERSONNEL->Click += gcnew System::EventHandler(this, &GestionPersonnel::BOUTON_CLEAR_PERSONNEL_Click);
 			   // 
-			   // SKIP_PERSONNEL_DROITE
-			   // 
-			   this->SKIP_PERSONNEL_DROITE->BackColor = System::Drawing::Color::Silver;
-			   this->SKIP_PERSONNEL_DROITE->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			   this->SKIP_PERSONNEL_DROITE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
-				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->SKIP_PERSONNEL_DROITE->Location = System::Drawing::Point(418, 575);
-			   this->SKIP_PERSONNEL_DROITE->Name = L"SKIP_PERSONNEL_DROITE";
-			   this->SKIP_PERSONNEL_DROITE->Size = System::Drawing::Size(310, 29);
-			   this->SKIP_PERSONNEL_DROITE->TabIndex = 150;
-			   this->SKIP_PERSONNEL_DROITE->Text = L">";
-			   this->SKIP_PERSONNEL_DROITE->UseVisualStyleBackColor = false;
-			   this->SKIP_PERSONNEL_DROITE->Click += gcnew System::EventHandler(this, &GestionPersonnel::SKIP_PERSONNEL_DROITE_Click);
-			   // 
-			   // SKIP_PERSONNEL_GAUCHE
-			   // 
-			   this->SKIP_PERSONNEL_GAUCHE->BackColor = System::Drawing::Color::Silver;
-			   this->SKIP_PERSONNEL_GAUCHE->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			   this->SKIP_PERSONNEL_GAUCHE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
-				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->SKIP_PERSONNEL_GAUCHE->Location = System::Drawing::Point(99, 575);
-			   this->SKIP_PERSONNEL_GAUCHE->Name = L"SKIP_PERSONNEL_GAUCHE";
-			   this->SKIP_PERSONNEL_GAUCHE->Size = System::Drawing::Size(286, 29);
-			   this->SKIP_PERSONNEL_GAUCHE->TabIndex = 149;
-			   this->SKIP_PERSONNEL_GAUCHE->Text = L"<";
-			   this->SKIP_PERSONNEL_GAUCHE->UseVisualStyleBackColor = false;
-			   this->SKIP_PERSONNEL_GAUCHE->Click += gcnew System::EventHandler(this, &GestionPersonnel::SKIP_PERSONNEL_GAUCHE_Click);
-			   // 
 			   // AFFICHAGE_PERSONNEL
 			   // 
 			   this->AFFICHAGE_PERSONNEL->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
@@ -265,7 +235,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 				   static_cast<System::Byte>(0)));
 			   this->TXT_MAIL_PERSONNEL->Location = System::Drawing::Point(99, 455);
 			   this->TXT_MAIL_PERSONNEL->Name = L"TXT_MAIL_PERSONNEL";
-			   this->TXT_MAIL_PERSONNEL->Size = System::Drawing::Size(286, 30);
+			   this->TXT_MAIL_PERSONNEL->Size = System::Drawing::Size(286, 35);
 			   this->TXT_MAIL_PERSONNEL->TabIndex = 146;
 			   // 
 			   // TXT_ETAGE_PERSONNEL
@@ -274,7 +244,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_ETAGE_PERSONNEL->Location = System::Drawing::Point(422, 455);
 			   this->TXT_ETAGE_PERSONNEL->Name = L"TXT_ETAGE_PERSONNEL";
-			   this->TXT_ETAGE_PERSONNEL->Size = System::Drawing::Size(303, 30);
+			   this->TXT_ETAGE_PERSONNEL->Size = System::Drawing::Size(303, 35);
 			   this->TXT_ETAGE_PERSONNEL->TabIndex = 144;
 			   this->TXT_ETAGE_PERSONNEL->TextChanged += gcnew System::EventHandler(this, &GestionPersonnel::TXT_ETAGE_PERSONNEL_TextChanged);
 			   // 
@@ -295,7 +265,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 				   static_cast<System::Byte>(0)));
 			   this->TXT_BD_PERSONNEL->Location = System::Drawing::Point(99, 387);
 			   this->TXT_BD_PERSONNEL->Name = L"TXT_BD_PERSONNEL";
-			   this->TXT_BD_PERSONNEL->Size = System::Drawing::Size(286, 30);
+			   this->TXT_BD_PERSONNEL->Size = System::Drawing::Size(286, 35);
 			   this->TXT_BD_PERSONNEL->TabIndex = 127;
 			   // 
 			   // RETOUR_PERSONNEL_HOME
@@ -320,7 +290,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 				   static_cast<System::Byte>(0)));
 			   this->TXT_BAT_PERSONNEL->Location = System::Drawing::Point(423, 389);
 			   this->TXT_BAT_PERSONNEL->Name = L"TXT_BAT_PERSONNEL";
-			   this->TXT_BAT_PERSONNEL->Size = System::Drawing::Size(302, 30);
+			   this->TXT_BAT_PERSONNEL->Size = System::Drawing::Size(302, 35);
 			   this->TXT_BAT_PERSONNEL->TabIndex = 134;
 			   // 
 			   // NomApp
@@ -332,7 +302,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			   this->NomApp->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->NomApp->Location = System::Drawing::Point(70, 3);
 			   this->NomApp->Name = L"NomApp";
-			   this->NomApp->Size = System::Drawing::Size(451, 62);
+			   this->NomApp->Size = System::Drawing::Size(538, 74);
 			   this->NomApp->TabIndex = 117;
 			   this->NomApp->Text = L"| Gestion Personnel";
 			   // 
@@ -342,7 +312,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_VILLE_PERSONNEL->Location = System::Drawing::Point(423, 323);
 			   this->TXT_VILLE_PERSONNEL->Name = L"TXT_VILLE_PERSONNEL";
-			   this->TXT_VILLE_PERSONNEL->Size = System::Drawing::Size(302, 30);
+			   this->TXT_VILLE_PERSONNEL->Size = System::Drawing::Size(302, 35);
 			   this->TXT_VILLE_PERSONNEL->TabIndex = 138;
 			   // 
 			   // BarreNoir
@@ -360,7 +330,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_PRENOM_PERSONNEL->Location = System::Drawing::Point(99, 323);
 			   this->TXT_PRENOM_PERSONNEL->Name = L"TXT_PRENOM_PERSONNEL";
-			   this->TXT_PRENOM_PERSONNEL->Size = System::Drawing::Size(286, 30);
+			   this->TXT_PRENOM_PERSONNEL->Size = System::Drawing::Size(286, 35);
 			   this->TXT_PRENOM_PERSONNEL->TabIndex = 124;
 			   // 
 			   // TXT_NOM_PERSONNEL
@@ -369,7 +339,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 				   static_cast<System::Byte>(0)));
 			   this->TXT_NOM_PERSONNEL->Location = System::Drawing::Point(99, 260);
 			   this->TXT_NOM_PERSONNEL->Name = L"TXT_NOM_PERSONNEL";
-			   this->TXT_NOM_PERSONNEL->Size = System::Drawing::Size(286, 30);
+			   this->TXT_NOM_PERSONNEL->Size = System::Drawing::Size(286, 35);
 			   this->TXT_NOM_PERSONNEL->TabIndex = 123;
 			   // 
 			   // TXT_CP_PERSONNEL
@@ -378,7 +348,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 				   static_cast<System::Byte>(0)));
 			   this->TXT_CP_PERSONNEL->Location = System::Drawing::Point(422, 260);
 			   this->TXT_CP_PERSONNEL->Name = L"TXT_CP_PERSONNEL";
-			   this->TXT_CP_PERSONNEL->Size = System::Drawing::Size(302, 30);
+			   this->TXT_CP_PERSONNEL->Size = System::Drawing::Size(302, 35);
 			   this->TXT_CP_PERSONNEL->TabIndex = 130;
 			   // 
 			   // TITRE_PERSONNEL
@@ -390,7 +360,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			   this->TITRE_PERSONNEL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->TITRE_PERSONNEL->Location = System::Drawing::Point(95, 135);
 			   this->TITRE_PERSONNEL->Name = L"TITRE_PERSONNEL";
-			   this->TITRE_PERSONNEL->Size = System::Drawing::Size(368, 25);
+			   this->TITRE_PERSONNEL->Size = System::Drawing::Size(436, 29);
 			   this->TITRE_PERSONNEL->TabIndex = 135;
 			   this->TITRE_PERSONNEL->Text = L"CARACTERISTIQUES PERSONNEL";
 			   // 
@@ -400,7 +370,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_RUE_PERSONNEL->Location = System::Drawing::Point(423, 195);
 			   this->TXT_RUE_PERSONNEL->Name = L"TXT_RUE_PERSONNEL";
-			   this->TXT_RUE_PERSONNEL->Size = System::Drawing::Size(303, 26);
+			   this->TXT_RUE_PERSONNEL->Size = System::Drawing::Size(303, 30);
 			   this->TXT_RUE_PERSONNEL->TabIndex = 132;
 			   // 
 			   // LABEL_NOM_PERSONNEL
@@ -412,7 +382,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			   this->LABEL_NOM_PERSONNEL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_NOM_PERSONNEL->Location = System::Drawing::Point(98, 237);
 			   this->LABEL_NOM_PERSONNEL->Name = L"LABEL_NOM_PERSONNEL";
-			   this->LABEL_NOM_PERSONNEL->Size = System::Drawing::Size(56, 25);
+			   this->LABEL_NOM_PERSONNEL->Size = System::Drawing::Size(68, 29);
 			   this->LABEL_NOM_PERSONNEL->TabIndex = 125;
 			   this->LABEL_NOM_PERSONNEL->Text = L"Nom";
 			   // 
@@ -422,7 +392,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 				   static_cast<System::Byte>(0)));
 			   this->TXT_ID_PERSONNEL->Location = System::Drawing::Point(99, 191);
 			   this->TXT_ID_PERSONNEL->Name = L"TXT_ID_PERSONNEL";
-			   this->TXT_ID_PERSONNEL->Size = System::Drawing::Size(286, 30);
+			   this->TXT_ID_PERSONNEL->Size = System::Drawing::Size(286, 35);
 			   this->TXT_ID_PERSONNEL->TabIndex = 140;
 			   // 
 			   // LABEL_PRENOM_PERSONNEL
@@ -434,7 +404,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			   this->LABEL_PRENOM_PERSONNEL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_PRENOM_PERSONNEL->Location = System::Drawing::Point(98, 300);
 			   this->LABEL_PRENOM_PERSONNEL->Name = L"LABEL_PRENOM_PERSONNEL";
-			   this->LABEL_PRENOM_PERSONNEL->Size = System::Drawing::Size(86, 25);
+			   this->LABEL_PRENOM_PERSONNEL->Size = System::Drawing::Size(104, 29);
 			   this->LABEL_PRENOM_PERSONNEL->TabIndex = 126;
 			   this->LABEL_PRENOM_PERSONNEL->Text = L"Prénom";
 			   // 
@@ -462,7 +432,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			   this->LABEL_ID_PERSONNEL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_ID_PERSONNEL->Location = System::Drawing::Point(95, 168);
 			   this->LABEL_ID_PERSONNEL->Name = L"LABEL_ID_PERSONNEL";
-			   this->LABEL_ID_PERSONNEL->Size = System::Drawing::Size(134, 25);
+			   this->LABEL_ID_PERSONNEL->Size = System::Drawing::Size(162, 29);
 			   this->LABEL_ID_PERSONNEL->TabIndex = 139;
 			   this->LABEL_ID_PERSONNEL->Text = L"ID personnel";
 			   // 
@@ -490,7 +460,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			   this->LABEL_BD_PERSONNEL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_BD_PERSONNEL->Location = System::Drawing::Point(98, 364);
 			   this->LABEL_BD_PERSONNEL->Name = L"LABEL_BD_PERSONNEL";
-			   this->LABEL_BD_PERSONNEL->Size = System::Drawing::Size(191, 25);
+			   this->LABEL_BD_PERSONNEL->Size = System::Drawing::Size(228, 29);
 			   this->LABEL_BD_PERSONNEL->TabIndex = 128;
 			   this->LABEL_BD_PERSONNEL->Text = L"Date de naissance";
 			   // 
@@ -518,7 +488,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			   this->LABEL_ETAGE_PERSONNEL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_ETAGE_PERSONNEL->Location = System::Drawing::Point(421, 428);
 			   this->LABEL_ETAGE_PERSONNEL->Name = L"LABEL_ETAGE_PERSONNEL";
-			   this->LABEL_ETAGE_PERSONNEL->Size = System::Drawing::Size(68, 25);
+			   this->LABEL_ETAGE_PERSONNEL->Size = System::Drawing::Size(81, 29);
 			   this->LABEL_ETAGE_PERSONNEL->TabIndex = 137;
 			   this->LABEL_ETAGE_PERSONNEL->Text = L"Etage";
 			   // 
@@ -546,7 +516,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			   this->LABEL_BAT_PERSONNEL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_BAT_PERSONNEL->Location = System::Drawing::Point(420, 364);
 			   this->LABEL_BAT_PERSONNEL->Name = L"LABEL_BAT_PERSONNEL";
-			   this->LABEL_BAT_PERSONNEL->Size = System::Drawing::Size(146, 25);
+			   this->LABEL_BAT_PERSONNEL->Size = System::Drawing::Size(177, 29);
 			   this->LABEL_BAT_PERSONNEL->TabIndex = 136;
 			   this->LABEL_BAT_PERSONNEL->Text = L"Nom Batiment";
 			   // 
@@ -559,7 +529,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			   this->LABEL_RUE_PERSONNEL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_RUE_PERSONNEL->Location = System::Drawing::Point(421, 171);
 			   this->LABEL_RUE_PERSONNEL->Name = L"LABEL_RUE_PERSONNEL";
-			   this->LABEL_RUE_PERSONNEL->Size = System::Drawing::Size(50, 25);
+			   this->LABEL_RUE_PERSONNEL->Size = System::Drawing::Size(60, 29);
 			   this->LABEL_RUE_PERSONNEL->TabIndex = 129;
 			   this->LABEL_RUE_PERSONNEL->Text = L"Rue";
 			   // 
@@ -572,7 +542,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			   this->LABEL_MAIL_PERSONNEL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_MAIL_PERSONNEL->Location = System::Drawing::Point(98, 428);
 			   this->LABEL_MAIL_PERSONNEL->Name = L"LABEL_MAIL_PERSONNEL";
-			   this->LABEL_MAIL_PERSONNEL->Size = System::Drawing::Size(73, 25);
+			   this->LABEL_MAIL_PERSONNEL->Size = System::Drawing::Size(88, 29);
 			   this->LABEL_MAIL_PERSONNEL->TabIndex = 143;
 			   this->LABEL_MAIL_PERSONNEL->Text = L"E-mail";
 			   // 
@@ -585,7 +555,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			   this->LABEL_CP_PERSONNEL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_CP_PERSONNEL->Location = System::Drawing::Point(421, 237);
 			   this->LABEL_CP_PERSONNEL->Name = L"LABEL_CP_PERSONNEL";
-			   this->LABEL_CP_PERSONNEL->Size = System::Drawing::Size(130, 25);
+			   this->LABEL_CP_PERSONNEL->Size = System::Drawing::Size(156, 29);
 			   this->LABEL_CP_PERSONNEL->TabIndex = 131;
 			   this->LABEL_CP_PERSONNEL->Text = L"Code Postal";
 			   // 
@@ -598,7 +568,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			   this->LABEL_VILLE_PERSONNEL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_VILLE_PERSONNEL->Location = System::Drawing::Point(419, 300);
 			   this->LABEL_VILLE_PERSONNEL->Name = L"LABEL_VILLE_PERSONNEL";
-			   this->LABEL_VILLE_PERSONNEL->Size = System::Drawing::Size(54, 25);
+			   this->LABEL_VILLE_PERSONNEL->Size = System::Drawing::Size(65, 29);
 			   this->LABEL_VILLE_PERSONNEL->TabIndex = 133;
 			   this->LABEL_VILLE_PERSONNEL->Text = L"Ville";
 			   // 
@@ -630,7 +600,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			   this->DATE_EMBAUCHE_PERSONNEL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->DATE_EMBAUCHE_PERSONNEL->Location = System::Drawing::Point(98, 495);
 			   this->DATE_EMBAUCHE_PERSONNEL->Name = L"DATE_EMBAUCHE_PERSONNEL";
-			   this->DATE_EMBAUCHE_PERSONNEL->Size = System::Drawing::Size(180, 25);
+			   this->DATE_EMBAUCHE_PERSONNEL->Size = System::Drawing::Size(215, 29);
 			   this->DATE_EMBAUCHE_PERSONNEL->TabIndex = 152;
 			   this->DATE_EMBAUCHE_PERSONNEL->Text = L"Date d\'embauche";
 			   // 
@@ -643,7 +613,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			   this->LABEL_ROLE_PERSONNEL->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_ROLE_PERSONNEL->Location = System::Drawing::Point(419, 495);
 			   this->LABEL_ROLE_PERSONNEL->Name = L"LABEL_ROLE_PERSONNEL";
-			   this->LABEL_ROLE_PERSONNEL->Size = System::Drawing::Size(55, 25);
+			   this->LABEL_ROLE_PERSONNEL->Size = System::Drawing::Size(68, 29);
 			   this->LABEL_ROLE_PERSONNEL->TabIndex = 153;
 			   this->LABEL_ROLE_PERSONNEL->Text = L"Role";
 			   // 
@@ -656,7 +626,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			   this->LABEL_ID_SUP->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			   this->LABEL_ID_SUP->Location = System::Drawing::Point(573, 495);
 			   this->LABEL_ID_SUP->Name = L"LABEL_ID_SUP";
-			   this->LABEL_ID_SUP->Size = System::Drawing::Size(129, 25);
+			   this->LABEL_ID_SUP->Size = System::Drawing::Size(156, 29);
 			   this->LABEL_ID_SUP->TabIndex = 154;
 			   this->LABEL_ID_SUP->Text = L"ID supérieur";
 			   // 
@@ -666,7 +636,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TXT_DATE_EMBAUCHE_PERSONNEL->Location = System::Drawing::Point(99, 520);
 			   this->TXT_DATE_EMBAUCHE_PERSONNEL->Name = L"TXT_DATE_EMBAUCHE_PERSONNEL";
-			   this->TXT_DATE_EMBAUCHE_PERSONNEL->Size = System::Drawing::Size(286, 30);
+			   this->TXT_DATE_EMBAUCHE_PERSONNEL->Size = System::Drawing::Size(286, 35);
 			   this->TXT_DATE_EMBAUCHE_PERSONNEL->TabIndex = 155;
 			   // 
 			   // TEXT_ROLE_PERSONNEL
@@ -675,7 +645,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->TEXT_ROLE_PERSONNEL->Location = System::Drawing::Point(420, 520);
 			   this->TEXT_ROLE_PERSONNEL->Name = L"TEXT_ROLE_PERSONNEL";
-			   this->TEXT_ROLE_PERSONNEL->Size = System::Drawing::Size(149, 30);
+			   this->TEXT_ROLE_PERSONNEL->Size = System::Drawing::Size(149, 35);
 			   this->TEXT_ROLE_PERSONNEL->TabIndex = 156;
 			   this->TEXT_ROLE_PERSONNEL->TextChanged += gcnew System::EventHandler(this, &GestionPersonnel::textBox1_TextChanged);
 			   // 
@@ -685,7 +655,7 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 				   static_cast<System::Byte>(0)));
 			   this->TXT_ID_SUP->Location = System::Drawing::Point(579, 520);
 			   this->TXT_ID_SUP->Name = L"TXT_ID_SUP";
-			   this->TXT_ID_SUP->Size = System::Drawing::Size(149, 30);
+			   this->TXT_ID_SUP->Size = System::Drawing::Size(149, 35);
 			   this->TXT_ID_SUP->TabIndex = 157;
 			   // 
 			   // GestionPersonnel
@@ -698,8 +668,6 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 			   this->Controls->Add(this->LABEL_ROLE_PERSONNEL);
 			   this->Controls->Add(this->DATE_EMBAUCHE_PERSONNEL);
 			   this->Controls->Add(this->BOUTON_CLEAR_PERSONNEL);
-			   this->Controls->Add(this->SKIP_PERSONNEL_DROITE);
-			   this->Controls->Add(this->SKIP_PERSONNEL_GAUCHE);
 			   this->Controls->Add(this->AFFICHAGE_PERSONNEL);
 			   this->Controls->Add(this->TXT_MAIL_PERSONNEL);
 			   this->Controls->Add(this->TXT_ETAGE_PERSONNEL);
