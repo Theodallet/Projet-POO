@@ -29,6 +29,11 @@ namespace APPGRAPHIQUEPROJET {
 			Objet = Objet2;
 			InitializeComponent();
 		}
+		bool check_commande_ID_cient_entry();
+		bool check_commande_payment_means_entry();
+		bool check_commande_ID_delivery_entry();
+		bool check_commande_ID_facturation_entry();
+		bool check_commande_ID_article_entry();
 
 	protected:
 		/// <summary>
@@ -723,15 +728,31 @@ private: System::Void BOUTON_CLEAR_CLIENT_Click(System::Object^ sender, System::
 
 	private: System::Void BOUTON_AJOUTER_COMMANDE_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT_COMMANDE->Text);
+		int Client_ID;
+		if (this->TXT_ID_CLIENT_COMMANDE->Text != "") {
+			int Client_ID = Convert::ToInt32(this->TXT_ID_CLIENT_COMMANDE->Text);
+		}
 		DateTime^ Date_Livraison = DateTime::Parse(this->TXT_DATE_LIV_COMMANDE->Text);
 		String^ Moyen_Paiment = this->TXT_MOYEN_PAIMENT_COMMANDE->Text;
-		int Commande_ID_Livraison = Convert::ToInt32(this->TXT_ID_ADRESSE_COMMANDE->Text);
-		int Commande_ID_Facturation = Convert::ToInt32(this->TXT_ID_ADR_FACT->Text);
+		int Commande_ID_Livraison;
+		if (this->TXT_ID_ADRESSE_COMMANDE->Text != "") {
+			int Commande_ID_Livraison = Convert::ToInt32(this->TXT_ID_ADRESSE_COMMANDE->Text);
+		}
+		int Commande_ID_Facturation;
+		if (this->TXT_ID_ADR_FACT->Text != "") {
+			int Commande_ID_Facturation = Convert::ToInt32(this->TXT_ID_ADR_FACT->Text);
+		}
 
-	
-		this->oSvc_Commande->ajouter_Commande(Date_Livraison, 0, 0, 0, Moyen_Paiment, Client_ID, Commande_ID_Livraison, Commande_ID_Facturation);
-		
+
+		bool isIdClientsValid = check_commande_ID_cient_entry();
+		bool isMoyenPaimentValid = check_commande_payment_means_entry();
+		bool isIDDeliveryValid = check_commande_ID_delivery_entry();
+		bool isIDFacturationValid = check_commande_ID_facturation_entry();
+		bool isIDArticleValid = check_commande_ID_article_entry();
+
+		if (isIdClientsValid & isMoyenPaimentValid & isIDDeliveryValid & isIDFacturationValid & isIDArticleValid) {
+			this->oSvc_Commande->ajouter_Commande(Date_Livraison, 0, 0, 0, Moyen_Paiment, Client_ID, Commande_ID_Livraison, Commande_ID_Facturation);
+		}
 		
 		this->TXT_ID_CLIENT_COMMANDE->Text = "";
 		this->TXT_DATE_LIV_COMMANDE->Text = "";
