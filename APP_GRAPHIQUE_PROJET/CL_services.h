@@ -124,5 +124,9 @@ namespace NS_Comp_Svc
 		System::Data::DataSet^ Variations_Valeurs_Commerciales(System::String^);
 		System::Data::DataSet^ Variations_Valeurs_Commerciales_Valeur(System::String^ , float, float, float, float);
 
+		System::Data::DataSet^ Chek_anniv(System::String^);
+		System::Data::DataSet^ Chek_anniv_15(System::String^);
+
+
 	};
 }

@@ -591,3 +591,18 @@ System::Data::DataSet^ NS_Comp_Svc::CLservices_Stat::Variations_Valeurs_Commerci
 	return this->oCad->getRows(sql, dataTableName);
 
 }
+
+System::Data::DataSet^ NS_Comp_Svc::CLservices_Stat::Chek_anniv(System::String^ dataTableName) {
+	System::String^ sql;
+
+	sql = this->oMapp_Stat->Chek_anniv();
+	this->oCad->actionRows(sql);
+	return this->oCad->getRows(sql, dataTableName);
+}
+System::Data::DataSet^ NS_Comp_Svc::CLservices_Stat::Chek_anniv_15(System::String^ dataTableName) {
+	System::String^ sql;
+
+	sql = this->oMapp_Stat->Chek_anniv_15();
+	this->oCad->actionRows(sql);
+	return this->oCad->getRows(sql, dataTableName);
+}

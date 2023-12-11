@@ -195,5 +195,7 @@ System::String^ NS_Comp_Mappage::CL_Map_Stat::Valeur_Achat_Stock(void) { return 
 System::String^ NS_Comp_Mappage::CL_Map_Stat::Variations_Valeurs_Commerciales(void) { return "EXECUTE Variations_Valeurs_Commerciales ; "; }
 System::String^ NS_Comp_Mappage::CL_Map_Stat::Variations_Valeurs_Commerciales_Valeur(void) { return "EXECUTE Variations_Valeurs_Commerciales_Valeur " + this->TVA + "," + this->MargeCommerciale + "," + this->RemiseCommerciale + "," + this->DemarqueInconnue + " ; "; }
 
+System::String^ NS_Comp_Mappage::CL_Map_Stat::Chek_anniv(void) { return "EXECUTE Chek_anniv ;"; }
+System::String^ NS_Comp_Mappage::CL_Map_Stat::Chek_anniv_15(void) { return "EXECUTE Chek_anniv_15 ;"; }
 
 

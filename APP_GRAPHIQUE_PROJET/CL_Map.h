@@ -261,6 +261,9 @@ namespace NS_Comp_Mappage
 
 		System::String^ Variations_Valeurs_Commerciales(void);
 		System::String^ Variations_Valeurs_Commerciales_Valeur(void);
+
+		System::String^ Chek_anniv(void);
+		System::String^ Chek_anniv_15(void);
 	};
 }
 
