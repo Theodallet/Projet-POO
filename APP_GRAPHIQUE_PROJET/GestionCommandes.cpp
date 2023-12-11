@@ -124,7 +124,7 @@ bool APPGRAPHIQUEPROJET::GestionCommandes::check_commande_ID_delivery_entry()
 
 	// Vérifier si l'entrée est nulle ou non 
 	if (String::IsNullOrEmpty(Commande_ID_Livraison)) {
-		MessageBoxA(NULL, "Le champ ID de facturation de livraison ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
+		MessageBoxA(NULL, "Le champ ID de livraison de livraison ne peut pas être vide.", "Erreur", MB_OK | MB_ICONERROR);
 		return false;
 	}
 
