@@ -761,12 +761,12 @@ private: System::Windows::Forms::TextBox^ TXT_ID_SUP;
 		String^ Personnel_Batiment = this->TXT_BAT_PERSONNEL->Text;
 		int Personnel_Etage;
 		if (this->TXT_ETAGE_PERSONNEL->Text != "") {
-			Personnel_Etage = Convert::ToInt32(this->TXT_ID_SUP->Text);
+			Personnel_Etage = Convert::ToInt32(this->TXT_ETAGE_PERSONNEL->Text);
 		}
 		DateTime Personnel_Date_E = DateTime::Parse(this->TXT_DATE_EMBAUCHE_PERSONNEL->Text);
 		String^ Personnel_Role = this->TEXT_ROLE_PERSONNEL->Text;
 		int Personnel_ID_Supperieur;
-		if (this->TXT_ETAGE_PERSONNEL->Text != "") {
+		if (this->TXT_ID_SUP->Text != "") {
 			Personnel_ID_Supperieur = Convert::ToInt32(this->TXT_ID_SUP->Text);
 		}
 
